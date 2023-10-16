@@ -1,11 +1,13 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import Button from '../components/Ui/Button';
+
 
 function ProfilePage(props) {
     return (
         <div>
             <h1>Profile page</h1>
-            <Link to={'/'}>صفحه اول</Link>
+            <Link to={'/'}><Button>FirstPage</Button></Link>
         </div>
     );
 }
