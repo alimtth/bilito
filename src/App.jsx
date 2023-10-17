@@ -8,9 +8,9 @@ function App() {
       bilito
     </div>
     <div className="flex justify-center items-center">
-    <div className="w-20 h-20 bg-gray-600 flex justify-center rounded-full text-cyan-50 items-center">
+     <div className="w-20 h-20 bg-gray-600 flex justify-center rounded-full text-cyan-50 items-center">
       salam
-    </div>
+     </div>
     </div>
     </div>
     </>
