@@ -21,9 +21,9 @@ function Button({ children, variant = "outline", size, ...props }) {
       className={`p-4 rounded flex justify-center items-center gap-4  ${variants[variant]} ${sizes[size]}`}
       {...props}
     >
-      <img src={tickSquareButton} />
-      {children}
       <img src={arrowDownButton} />
+      {children}
+      <img src={tickSquareButton} />
     </button>
   );
 }
