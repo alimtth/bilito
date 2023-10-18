@@ -11,9 +11,14 @@ export default {
           500: '#1D91CC',
           600: '#11577A',
         }
-      }
-      
+      },
+          height: {
+            'sm': '32px',
+            'md': '40px',
+            'lg': '48px',
+            'xl': '56px',
     },
+    }
   },
   plugins: [],
 }
