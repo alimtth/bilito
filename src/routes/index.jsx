@@ -1,5 +1,5 @@
-import {createBrowserRouter} from "react-router-dom";
 import React from "react";
+import {createBrowserRouter} from "react-router-dom";
 import HomePage from "../pages/index.jsx";
 import AuthPage from "../pages/Auth.jsx";
 import ProfilePage from "../pages/Profile.jsx";

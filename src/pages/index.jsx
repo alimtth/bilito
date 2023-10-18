@@ -6,16 +6,8 @@ function HomePage(props) {
     return (
         <div>
             <h1>Pages:</h1>
-            <ul>
-            <br />
-            
-                <li>
-                </li>
-                <br />
-                <li>
-                    <Link to={'/profile'}><Button>Profile</Button></Link>
-                </li>
-            </ul>
+            <Link to={'/profile'}><Button>Profile</Button></Link>
+            <Link to={'/auth'}><Button>Auth</Button></Link>
         </div>
     );
 }
