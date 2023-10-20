@@ -1,0 +1,12 @@
+.contact-us-button{
+    display: flex;
+    width: 182px;
+    height: 66px;
+    padding: 16px 21px;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background: var(--primary-shade-2, #11577A);
+    flex-direction: row-reverse;
+}
