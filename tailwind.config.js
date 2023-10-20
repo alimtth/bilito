@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -9,7 +8,8 @@ export default {
     extend: {
       colors: {
         gray:{
-          100:'#ADADAD'
+          100:'#ADADAD',
+          200:'#F9F9F9',
         },
         blue: {
           500: '#1D91CC',
