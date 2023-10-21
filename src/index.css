@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: estedad;
+    src: url('./assets/fonts/Estedad-v5.0-Fontjo.com/estedad.woff2');
+}
+*{
+    font-family: estedad;
+}
+body{
+    font-family: estedad;
+}
+button,input{
+    font-family: estedad;
+    cursor: pointer;
+}
+footer hr{
+    margin: 32px auto;
+    width: 1224px;
+    height: 3px;
+    background-color: #EDEDED;
+}

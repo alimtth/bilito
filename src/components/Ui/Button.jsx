@@ -29,7 +29,7 @@ function Button({ children, variant = "outline", size, ...props }) {
 }
 
 Button.propTypes = {
-  children: PropTypes,
+  children: PropTypes.node,
   variant: PropTypes.oneOf(["fill", "outline"]),
   sizes: PropTypes.oneOf(["sm", "md", "lg"]),
 };
