@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import tickSquareButton from "/src/assets/tick-square-button.svg"
+import tickSquareButton from "/src/assets/tick-square-light-button.svg"
 import arrowDownButton from "/src/assets/arrow-down-button.svg"
 
-function Button({ children, variant = "outline", size, ...props }) {
+function Button({ children, variant = "outline", size = "lg", ...props }) {
   const variants = {
     fill: "rounded-lg px-4 py-2 bg-blue-500 text-white hover:bg-blue-600 ",
     outline:
@@ -18,7 +18,7 @@ function Button({ children, variant = "outline", size, ...props }) {
 
   return (
     <button
-      className={`p-4 rounded flex justify-center items-center gap-4  ${variants[variant]} ${sizes[size]}`}
+      className={`p-4 rounded flex justify-between items-center gap-4  ${variants[variant]} ${sizes[size]}`}
       {...props}
     >
       <img src={arrowDownButton} />
