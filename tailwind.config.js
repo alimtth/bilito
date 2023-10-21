@@ -10,14 +10,12 @@ export default {
         gray:{
           100:'#ADADAD',
           200:'#F9F9F9',
+          300: '#DFDFDF'
         },
         blue: {
           500: '#1D91CC',
           600: '#11577A',
         },
-        gray: {
-          100: '#DFDFDF'
-        }
       },
           height: {
             'sm': '32px',
