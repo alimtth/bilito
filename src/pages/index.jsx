@@ -1,14 +1,18 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import Button from '../components/Ui/Button';
+import Input from '../components/Ui/Input';
+import './style.css'
 
 function HomePage(props) {
     return (
-        <div>
+        <>
             <h1>Pages:</h1>
-            <Link to={'/profile'}><Button>Profile</Button></Link>
-            <Link to={'/auth'}><Button>Auth</Button></Link>
-        </div>
+            <Button>dafabdhln</Button>
+            <Link to={'/profile'}><Button variant='fill' size='xl'>Profile</Button></Link>
+            <Link to={'/auth'}><Button variant='fill' size='xl'>Auth</Button></Link>
+            <Input>salam</Input>
+        </>
     );
 }
 

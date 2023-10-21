@@ -10,6 +10,9 @@ export default {
         blue: {
           500: '#1D91CC',
           600: '#11577A',
+        },
+        gray: {
+          100: '#DFDFDF'
         }
       },
           height: {

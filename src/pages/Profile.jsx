@@ -7,7 +7,7 @@ function ProfilePage(props) {
     return (
         <div>
             <h1>Profile page</h1>
-            <Link to={'/'}><Button>FirstPage</Button></Link>
+            <Link to={'/'}><Button variant='fill' size='xl'>FirstPage</Button></Link>
         </div>
     );
 }
