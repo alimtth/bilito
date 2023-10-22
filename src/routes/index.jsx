@@ -3,6 +3,7 @@ import {createBrowserRouter} from "react-router-dom";
 import HomePage from "../pages/index.jsx";
 import AuthPage from "../pages/Auth.jsx";
 import ProfilePage from "../pages/Profile.jsx";
+import FormDialog from "../components/LoginDialog/index.jsx";
 
 const routes =[
     {
@@ -11,7 +12,7 @@ const routes =[
     },
     {
         path: "/auth",
-        element: <AuthPage/>,
+        element: <FormDialog/>,
     },
     {
         path: "/profile",

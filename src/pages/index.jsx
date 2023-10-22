@@ -6,6 +6,7 @@ import './style.css'
 import DatePickerComponent from "../components/DatePicker/DatePickerComponent.jsx";
 import Footer from "../components/Footer/index.jsx";
 import CustomizedAccordions from "../components/Accordion/index.jsx";
+import Advantages from "../components/Advantages/index.jsx";
 
 function HomePage(props) {
     return (
@@ -20,6 +21,7 @@ function HomePage(props) {
             <Link to={'/auth'}><Button>Auth</Button></Link>
             <DatePickerComponent/>
             <CustomizedAccordions/>
+            <Advantages/>
             <Footer/>
        </>
     );

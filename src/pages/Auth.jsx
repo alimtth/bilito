@@ -6,7 +6,9 @@ function AuthPage() {
     return (
         <div>
             <h1>Auth page</h1>
-            <Link to={'/'}><Button variant='fill' size='xl'>FirstPage</Button></Link>
+            <Link to={'/'}>
+                <Button variant='fill' size='xl'>FirstPage</Button>
+            </Link>
         </div>
          
     );
