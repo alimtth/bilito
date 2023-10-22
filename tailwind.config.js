@@ -17,6 +17,7 @@ export default {
           400:  '#E8F4FA',
           500: '#1D91CC',
           600: '#11577A',
+          650: '#1D91CC',
         },
       },
           height: {
