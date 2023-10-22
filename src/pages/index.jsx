@@ -7,6 +7,7 @@ import DatePickerComponent from "../components/DatePicker/DatePickerComponent.js
 import Footer from "../components/Footer/index.jsx";
 import CustomizedAccordions from "../components/Accordion/index.jsx";
 import Advantages from "../components/Advantages/index.jsx";
+import HomePageComponenets from '../components/HomePagePictures/HomePageComponenets';
 
 function HomePage(props) {
     return (
@@ -20,6 +21,7 @@ function HomePage(props) {
             <Link to={'/profile'}><Button>Profile</Button></Link>
             <Link to={'/auth'}><Button>Auth</Button></Link>
             <DatePickerComponent/>
+            <HomePageComponenets/>
             <CustomizedAccordions/>
             <Advantages/>
             <Footer/>
