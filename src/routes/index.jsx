@@ -3,6 +3,7 @@ import {createBrowserRouter} from "react-router-dom";
 import HomePage from "../pages/index.jsx";
 import AuthPage from "../pages/Auth.jsx";
 import ProfilePage from "../pages/Profile.jsx";
+import NotFuond from "@/pages/404/NotFuond.jsx";
 
 const routes =[
     {
@@ -16,6 +17,10 @@ const routes =[
     {
         path: "/profile",
         element: <ProfilePage/>,
+    },
+    {
+        path: "*",
+        element: <NotFuond/>
     },
 ];
 const router =  createBrowserRouter(routes)
