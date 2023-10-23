@@ -1,9 +1,10 @@
-import React from 'react'
-import shiraz from '../../assets/Images/Icons/HomePageShiraz.jpg'
-import dubai from '../../assets/Images/Icons/HomePageDubai.jpg'
-import turkey from '../../assets/Images/Icons/HomePageTurkey.jpg'
-import kish from '../../assets/Images/Icons/HomePageKish.jpg'
+import React from "react";
+import shiraz from "../../assets/Images/Icons/HomePageShiraz.jpg";
+import dubai from "../../assets/Images/Icons/HomePageDubai.jpg";
+import turkey from "../../assets/Images/Icons/HomePageTurkey.jpg";
+import kish from "../../assets/Images/Icons/HomePageKish.jpg";
 function HomePageComponenets() {
+
     return (
         <div className='flex justify-center gap-6'>
             <div className='rounded-lg overflow-hidden relative flex justify-start items-end  '>
@@ -33,7 +34,8 @@ function HomePageComponenets() {
                 </div>
             </div>
         </div>
-    )
+  
+  );
 }
 
-export default HomePageComponenets
+export default HomePageComponenets;
