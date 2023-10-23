@@ -8,6 +8,7 @@ import Footer from "../components/Footer/index.jsx";
 import CustomizedAccordions from "../components/Accordion/index.jsx";
 import Advantages from "../components/Advantages/index.jsx";
 import HomePageComponenets from '../components/HomePagePictures/HomePageComponenets';
+import Popular from '../components/PopularTicked';
 
 function HomePage(props) {
     return (
@@ -22,6 +23,7 @@ function HomePage(props) {
             <Link to={'/auth'}><Button>Auth</Button></Link>
             <DatePickerComponent/>
             <HomePageComponenets/>
+            <Popular/>
             <CustomizedAccordions/>
             <Advantages/>
             <Footer/>
