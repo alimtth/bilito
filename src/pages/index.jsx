@@ -7,12 +7,20 @@ import Footer from "@/components/Footer/index.jsx";
 import NavBar from "@/components/NavBar/index"
 import './style.css'
 import CustomizedAccordions from '@/components/Accordion';
+import DatePickerComponent from "../components/DatePicker/DatePickerComponent.jsx";
+import Footer from "../components/Footer/index.jsx";
+import CustomizedAccordions from "../components/Accordion/index.jsx";
+import Advantages from "../components/Advantages/index.jsx";
+import HomePageComponenets from '../components/HomePagePictures/HomePageComponenets';
+import Popular from '../components/PopularTicked';
 
 function HomePage(props) {
     return (
         <>
             <NavBar/>
             <DatePickerComponent/>
+            <HomePageComponenets/>
+            <Popular/>
             <CustomizedAccordions/>
             <Footer/>
        </>
