@@ -73,7 +73,7 @@ function DatePickerComponent(props) {
     ;
 
     return (
-        <div className='flex justify-center '>
+        <div className='flex justify-center mt-96'>
             <div className='flex border border-gray-100 rounded'>
                 <Select
                     labelId="demo-customized-select-label"
