@@ -15,7 +15,6 @@ function HomePage(props) {
     return (
         <>
             <NavBar/>
-            <DatePickerComponent/>
             <HomePageComponenets/>
             <Popular/>
             <CustomizedAccordions/>
