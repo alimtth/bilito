@@ -15,10 +15,12 @@ import TweeterIcon from '../../assets/Images/Icons/TweeterIcon.png'
 import LinkedInIcon from '../../assets/Images/Icons/LinkedInIcon.png'
 import YouTubeIcon from '../../assets/Images/Icons/YouTubeIcon.png'
 import ArrowUp from '../../assets/Images/arrow-circle-up.png'
+import './style.css'
+
 function Footer(props) {
     return (
-        <footer className='container mx-auto mt-32 bg-gray-200'>
-            <div className='flex'>
+        <footer className='mx-auto mt-32 bg-gray-200'>
+            <div className='flex'  id='container'>
                 <div className='flex flex-col justify-start basis-3/4 text-[#606060] text-xl font-normal'>
                     <div className='flex flex-col'>
                         <span className='font-bold text-black leading-7'>اپلیکیشن بیلیتو</span>
@@ -33,8 +35,8 @@ function Footer(props) {
                 </div>
                 <div className='flex flex-col basis-1/4'>
                     <div className='flex justify-center items-start gap-[24px]'>
-                        <div><ContactUsButton icon={PlayStoreIcon}>Play Store</ContactUsButton></div>
-                        <div><ContactUsButton icon={AppleIcon}>Apple Store</ContactUsButton></div>
+                        <div><ContactUsButton id='container' icon={PlayStoreIcon}>Play Store</ContactUsButton></div>
+                        <div><ContactUsButton id='container' icon={AppleIcon}>Apple Store</ContactUsButton></div>
                     </div>
                     <div className='inline-flex flex-col justify-center gap-[24px] my-20'>
                         <div className='text-[#606060] font-bold text-xl leading-7'>
@@ -60,7 +62,7 @@ function Footer(props) {
                     <img src={FaceBookIcon} alt="FaceBookIcon"/>
                     <img src={TweeterIcon} alt="TweeterIcon"/>
                 </div>
-                <div className='flex gap-[20px] items-end'>
+                <div className='flex gap-[20px] items-end' >
                     <img src={EpIcon} alt={'EpIcon'}/>
                     <img src={CaoIcon} alt={'CaoIcon'}/>
                     <img src={AiraIcon} alt={'AiraIcon'}/>
