@@ -19,7 +19,7 @@ import './style.css'
 
 function Footer(props) {
     return (
-        <footer className='mx-auto mt-32 bg-gray-200'>
+        <footer className='mx-auto pt-6 bg-gray-200'>
             <div className='flex'  id='container'>
                 <div className='flex flex-col justify-start basis-3/4 text-[#606060] text-xl font-normal'>
                     <div className='flex flex-col'>

@@ -5,7 +5,7 @@ import turkey from "../../assets/Images/Icons/HomePageTurkey.jpg";
 import kish from "../../assets/Images/Icons/HomePageKish.jpg";
 function HomePageComponenets() {
   return (
-    <div className="flex justify-center gap-6">
+    <div className="flex justify-center gap-6 pt-48" id='container'>
       <div className="relative flex justify-start items-end  ">
         <img src={kish} className="rounded-md " />
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent to-slate-800 opacity-60 rounded-md"></div>

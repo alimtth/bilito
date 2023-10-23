@@ -7,7 +7,7 @@ import serachIcon from "@/assets/Images/Icons/search-normal.svg";
 
 function SearcBox() {
   return (
-    <section className="absolute top-44">
+    <section className="absolute top-72 shadow-2xl rounded">
       <span
         className="bg-white flex flex-col items-start rounded-lg p-6"
         id="container"
