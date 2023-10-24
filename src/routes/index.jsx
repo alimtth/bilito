@@ -28,7 +28,8 @@ const routes =[
     {
         path: "/ticket",
         element: <TickedList />
-    }
+    },
+    {
         path: "/login",
         element: <Login /> 
     },
