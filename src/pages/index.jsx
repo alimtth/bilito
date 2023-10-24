@@ -1,26 +1,26 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import Button from '../components/Ui/Button';
-import Input from '@/components/Ui/Input';
-import DatePickerComponent from "@/components/DatePicker/DatePickerComponent.jsx";
-import Footer from "@/components/Footer/index.jsx";
 import NavBar from "@/components/NavBar/index"
-import './style.css'
+import Popular from '../components/PopularTicked';
+import History from '@/components/NavBar/History';
+import Footer from "@/components/Footer/index.jsx";
 import CustomizedAccordions from '@/components/Accordion';
 import Advantages from "../components/Advantages/index.jsx";
+import SearchBox from "@/components/NavBar/SearchBox/index";
 import HomePageComponenets from '../components/HomePagePictures/HomePageComponenets';
-import Popular from '../components/PopularTicked';
+import './style.css'
 
-function HomePage(props) {
+
+function HomePage() {
     return (
-        <>
+        <div className='flex items-center flex-col w-full'>
             <NavBar/>
+            <SearchBox/>
             <HomePageComponenets/>
             <Popular/>
             <CustomizedAccordions/>
             <Advantages/>
             <Footer/>
-       </>
+       </div>
     );
 }
 
