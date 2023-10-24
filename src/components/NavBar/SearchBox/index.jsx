@@ -4,17 +4,19 @@ import AirplanNotSelected from "@/assets/Images/Icons/AirplaneNotSelected.svg";
 import Button from "@/components/Ui/Button";
 import Input from "@/components/Ui/Input";
 import serachIcon from "@/assets/Images/Icons/search-normal.svg";
+import History from "../History";
 
 function SearcBox() {
   return (
+    <>
     <section className="absolute top-72 shadow-2xl rounded">
       <span
         className="bg-white flex flex-col items-start rounded-lg p-6"
         id="container"
       >
         <div>
-          <ul className="flex justify-around gap-10 text-base">
-            <li className="flex gap-2">
+          <ul className="flex justify-around gap-10 text-base ">
+            <li className="flex gap-2 text-blue-500">
               <img src={AirplanSelected} />
               پرواز خارجی
             </li>
@@ -36,10 +38,12 @@ function SearcBox() {
             چند مسیره
           </Button>
         </div>
-        <div className="flex flex-row gap-2">
-          <Input size="lg" placeholder={"مبدا"} />
-          <p className="py-2">⇆</p>
-          <Input size="lg" placeholder={"مقصد"} />
+        <div className="flex flex-row gap-8">
+          <div className="flex flex-row gap-3 items-center">
+            <Input size="lg" placeholder={"مبدا"} />
+            <p className="py-2 text-xl">⇆</p>
+            <Input size="lg" placeholder={"مقصد"} />
+          </div>
           <Input size="lg" placeholder={"تاریخ رفت و برگشت"} />
           <Input size="lg" placeholder={"تعداد مسافر"} />
           <Input size="lg" placeholder={"کلاس پرواز"} />
@@ -50,6 +54,11 @@ function SearcBox() {
         </div>
       </span>
     </section>
+    <br /><br />
+    <br /><br />
+    <br /><br />
+      <History/>
+    </>
   );
 }
 

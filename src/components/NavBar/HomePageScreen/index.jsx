@@ -9,10 +9,9 @@ function HomePageScreen() {
       <section className="flex flex-col relative items-center">
         <img src={titlePic} />
         <span className="absolute top-11 text-2xl" id="container">
-          <b className="text-white">
-            راحتی و سرعت در <br /> رزرو بلیط هواپیما با بیلیتو
-          </b>
-        <SearchBox/>
+          <p className="text-white font-bold text-3xl pr-20">
+            راحتی و سرعت در <br /><br /> رزرو بلیط هواپیما با بیلیتو
+          </p>
         </span>
       </section>
     </>
