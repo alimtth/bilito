@@ -5,6 +5,8 @@ import AuthPage from "../pages/Auth.jsx";
 import ProfilePage from "../pages/Profile.jsx";
 import NotFuond from "@/pages/404/NotFuond.jsx";
 import TickedList from "@/pages/PageTicketList/TickedList.jsx";
+import Login from "@/components/Auth/Login/Login.jsx";
+
 
 const routes =[
     {
@@ -27,6 +29,9 @@ const routes =[
         path: "/ticket",
         element: <TickedList />
     }
+        path: "/login",
+        element: <Login /> 
+    },
 ];
 const router =  createBrowserRouter(routes)
 export default router;
