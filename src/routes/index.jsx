@@ -4,6 +4,7 @@ import HomePage from "../pages/index.jsx";
 import AuthPage from "../pages/Auth.jsx";
 import ProfilePage from "../pages/Profile.jsx";
 import NotFuond from "@/pages/404/NotFuond.jsx";
+import Login from "@/components/Auth/Login/Login.jsx";
 
 const routes =[
     {
@@ -21,6 +22,10 @@ const routes =[
     {
         path: "*",
         element: <NotFuond/>
+    },
+    {
+        path: "/login",
+        element: <Login /> 
     },
 ];
 const router =  createBrowserRouter(routes)

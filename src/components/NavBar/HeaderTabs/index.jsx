@@ -4,8 +4,8 @@ import userIconLog from "@/assets/Images/Icons/UserIconLog.svg";
 import CallIcon from "@/assets/Images/Icons/CallIcon.svg";
 import arrowDown from "@/assets/Images/Icons/arrow-down.svg";
 import Button from "@/components/Ui/Button";
-import '../style.css'
-function HeaderTabs() {
+import "../style.css";
+function HeaderTabs({ onClick }) {
   return (
     <>
       <header className="flex justify-between py-4" id="container">
@@ -29,7 +29,7 @@ function HeaderTabs() {
           </div>
           <Button variant="fill">
             <img src={userIconLog} />
-            ورود/ ثبت نام
+            <div onClick={onClick}> ورود/ ثبت نام</div>
           </Button>
         </div>
       </header>
