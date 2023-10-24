@@ -12,6 +12,7 @@ export default {
           200:'#F9F9F9',
           300: '#DFDFDF',
           400: '#EDEDED',
+          450: '#ADADAD',
           500: '#868686'
         },
         blue: {

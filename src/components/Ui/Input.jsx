@@ -14,7 +14,7 @@ function Input({ size = "lg", placeholder }) {
       <input
         type="text"
         placeholder={`${placeholder}`}
-        className={`py-4 focus:outline-none text-right h-full flex-grow ${sizes[size]}`}
+        className={`py-4 focus:outline-none text-right h-full flex-grow placeholder-gray-450 ${sizes[size]}`}
       />
       {/* <img src={tickSquareButton} /> */}
     </div>
