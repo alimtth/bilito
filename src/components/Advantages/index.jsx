@@ -7,7 +7,7 @@ import HeadPhone from '../../assets/Images/headphone.png'
 
 function Advantages(props) {
     return (
-        <div className='mt-24 py-12 bg-blue-400' >
+        <div className='mt-24 py-12 bg-blue-400 w-full' >
 
 
             <div className='flex justify-around' id='container'>
