@@ -5,8 +5,7 @@ import HomePageScreen from "./HomePageScreen";
 function NavBar() {
   return (
     <>
-      <HeaderTabs/>
-      <HomePageScreen/>
+      
     </>
   );
 }
