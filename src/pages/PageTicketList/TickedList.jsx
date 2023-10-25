@@ -2,7 +2,7 @@ import HeaderTabs from '@/components/NavBar/HeaderTabs'
 import HomePageScreen from '@/components/NavBar/HomePageScreen'
 import React from 'react'
 import titlePic from "@/assets/Images/titlePic.png";
-import { IoIosArrowDown } from "react-icons/io"
+// import { IoIosArrowDown } from "react-icons/io"
 import airplane from '@/assets/Images/Icons/airplaneBorder.svg'
 import calendar from '@/assets/Images/Icons/calendar.svg'
 import profileAdd from '@/assets/Images/Icons/profile-add.svg'
@@ -48,14 +48,14 @@ function TickedList() {
         <div className='gap-2 py-2 px-4 flex flex-shrink-0 flex-col items-start border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 '>
           <div className='flex justify-between items-center self-stretch '>
             <p>تقویم قیمتی</p>
-            <IoIosArrowDown />
+            {/* <IoIosArrowDown /> */}
           </div>
         </div>
 
         <div className='gap-2 py-2 px-6 flex flex-col justify-center items-center border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 '>
           <div className='flex  justify-between items-center '>
             <p>متن ورودی</p>
-            <IoIosArrowDown />
+            {/* <IoIosArrowDown /> */}
           </div>
         </div>
       </div>

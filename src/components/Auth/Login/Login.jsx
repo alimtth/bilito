@@ -14,8 +14,6 @@ function Login() {
 
   return (
     <div>
-      <HeaderTabs onClick={openModal} />
-      <HomePageScreen />
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-10 backdrop-blur-[0.5px] flex justify-center items-center">
           <div className="w-[600px]">

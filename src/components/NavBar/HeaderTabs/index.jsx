@@ -5,6 +5,7 @@ import CallIcon from "@/assets/Images/Icons/CallIcon.svg";
 import arrowDown from "@/assets/Images/Icons/arrow-down.svg";
 import Button from "@/components/Ui/Button";
 import "../style.css";
+import { Link } from "react-router-dom";
 function HeaderTabs({ onClick }) {
   return (
     <>
@@ -27,10 +28,13 @@ function HeaderTabs({ onClick }) {
             <p>پشتیبانی</p>
             <img src={CallIcon} />
           </div>
+          <Link to={'/login'}>
           <Button variant="fill">
             <img src={userIconLog} />
             <div onClick={onClick}> ورود/ ثبت نام</div>
           </Button>
+          </Link>
+         
         </div>
       </header>
     </>
