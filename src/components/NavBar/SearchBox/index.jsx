@@ -9,7 +9,7 @@ import History from "../History";
 function SearcBox() {
   return (
     <>
-    <section className="absolute top-72 shadow-2xl rounded">
+    <section className="z-10 translate-y-[-50%] shadow-2xl rounded">
       <span
         className="bg-white flex flex-col items-start rounded-lg p-6"
         id="container"
