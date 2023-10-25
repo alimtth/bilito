@@ -1,38 +1,32 @@
-import React from "react";
+import React, { Children } from "react";
 import {createBrowserRouter} from "react-router-dom";
-import HomePage from "../pages/index.jsx";
-import AuthPage from "../pages/Auth.jsx";
-import ProfilePage from "../pages/Profile.jsx";
-import NotFuond from "@/pages/404/NotFuond.jsx";
-import TickedList from "@/pages/PageTicketList/TickedList.jsx";
-import Login from "@/components/Auth/Login/Login.jsx";
+import HomePage from "@/pages/index.jsx";
+import NotFound from "@/pages/404/NotFound.jsx";
+
+import BaseLayout from "@/pages/BaseLayout/index.jsx";
+import Login from "@/components/Auth/Login/Login";
 
 
 const routes =[
     {
-        path: "/",
-        element: <HomePage/>,
-    },
-    {
-        path: "/auth",
-        element: <AuthPage/>,
-    },
-    {
-        path: "/profile",
-        element: <ProfilePage/>,
+        path: '/',
+        element: <BaseLayout/>,
+        children :[
+            {
+                index: true,
+                element: <HomePage/>,
+            },
+            {
+                path:'login',
+                element: <Login/>,
+            },
+        ]
     },
     {
         path: "*",
-        element: <NotFuond/>
+        element: <NotFound/>
     },
-    {
-        path: "/ticket",
-        element: <TickedList />
-    },
-    {
-        path: "/login",
-        element: <Login /> 
-    },
+    
 ];
 const router =  createBrowserRouter(routes)
 export default router;

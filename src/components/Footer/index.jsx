@@ -53,7 +53,7 @@ function Footer(props) {
                     </div>
                 </div>
             </div>
-            <div className='flex justify-around items-center '>
+            <div className='flex justify-around items-center ' id='container'>
                 <div className='flex gap-[20px] justify-center'>
                     <img src={TelegramIcon} alt="TelegramIcon"/>
                     <img src={LinkedInIcon} alt="LinkedInIcon"/>

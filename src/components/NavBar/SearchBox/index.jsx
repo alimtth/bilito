@@ -3,10 +3,10 @@ import AirplanSelected from "@/assets/Images/Icons/AirplaneSelected.svg";
 import AirplanNotSelected from "@/assets/Images/Icons/AirplaneNotSelected.svg";
 import Button from "@/components/Ui/Button";
 import Input from "@/components/Ui/Input";
-import serachIcon from "@/assets/Images/Icons/search-normal.svg";
+import searchIcon from "@/assets/Images/Icons/search-normal.svg";
 import History from "../History";
 
-function SearcBox() {
+function SearchBox() {
   return (
     <>
     <section className="z-10 translate-y-[-50%] shadow-2xl rounded">
@@ -48,18 +48,15 @@ function SearcBox() {
           <Input size="lg" placeholder={"تعداد مسافر"} />
           <Input size="lg" placeholder={"کلاس پرواز"} />
           <Button variant="fill" size="xl">
-            <img src={serachIcon} />
+            <img src={searchIcon} />
             جستجو
           </Button>
         </div>
       </span>
     </section>
-    <br /><br />
-    <br /><br />
-    <br /><br />
       <History/>
     </>
   );
 }
 
-export default SearcBox;
+export default SearchBox;

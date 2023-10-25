@@ -6,7 +6,7 @@ import tick from '@/assets/Images/Icons/Tick.png';
 import { Link } from "react-router-dom";
 import HomePageScreen from "@/components/NavBar/HomePageScreen";
 function Login() {
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(true);
 
   const openModal = () => {
     setShowModal(true);
@@ -25,6 +25,7 @@ function Login() {
                 <h3 className="font-semibold mt-7 flex justify-center text-[20px]">ورود یا ثبت نام</h3>
                 <h6 className="-mr-[150px] font-normal text-gray-600 mt-[32px] mb-[16px]">کد تایید به شماره موبایلی که وارد می‌کنید، ارسال خواهد شد.</h6>
                 <TextField
+                dir="rtl"
                   label="شماره همراه"
                   className="w-[536px] h-[48px] flex flex-col justify-center font1 "
                   placeholder="سنسندش"
