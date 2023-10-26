@@ -6,6 +6,7 @@ import calendar from '@/assets/Images/Icons/calendar.svg'
 import profileAdd from '@/assets/Images/Icons/profile-add.svg'
 import EditPen from '@/assets/Images/Icons/edit.svg'
 import Button from '@/components/Ui/Button';
+import TicketList from "@/components/TicketList/index.jsx";
 
 function TickedList() {
   return (
@@ -40,36 +41,23 @@ function TickedList() {
         </div>
 
       </section>
-      
-      <div className='mt-20 gap-8 flex flex-row '>
-        <div className='gap-2 py-2 px-4 flex flex-shrink-0 flex-col items-start border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 w-[745px] '>
-          <div className='flex justify-between items-center self-stretch '>
-            <p>تقویم قیمتی</p>
-            <IoIosArrowDown />
+      <div className='flex basis-3/4 flex-col'>
+        <div className='mt-20 gap-8 flex flex-row '>
+          <div className='gap-2 py-2 px-4 flex flex-shrink-0 flex-col items-start border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 w-[745px] '>
+            <div className='flex justify-between items-center self-stretch '>
+              <p>تقویم قیمتی</p>
+              <IoIosArrowDown />
+            </div>
+          </div>
+          <div className='gap-2 py-2 px-6 flex  justify-center items-center border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 '>
+            <div className='flex  justify-between items-center '>
+              <p>متن ورودی</p>
+              <IoIosArrowDown />
+            </div>
           </div>
         </div>
-
-        <div className='gap-2 py-2 px-6 flex  justify-center items-center border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 '>
-          <div className='flex  justify-between items-center '>
-            <p>متن ورودی</p>
-            <IoIosArrowDown />
-          </div>
-        </div>
+        <TicketList/>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
   )
 }

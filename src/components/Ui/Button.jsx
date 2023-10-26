@@ -19,7 +19,7 @@ function Button({ children, variant = "outline", size = "lg", ...props }) {
 
   return (
     <button
-      className={`p-4 rounded flex justify-between aligh items-center gap-4  ${variants[variant]} ${sizes[size]}`}
+      className={`p-4 rounded flex justify-between items-center gap-4  ${variants[variant]} ${sizes[size]}`}
       {...props}
     >
       {children}
