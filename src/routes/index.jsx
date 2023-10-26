@@ -6,6 +6,7 @@ import NotFound from "@/pages/404/NotFound.jsx";
 import BaseLayout from "@/pages/BaseLayout/index.jsx";
 import Login from "@/components/Auth/Login/Login";
 import Register from "@/components/Auth/Register/Register"
+import TickedList from "@/pages/PageTicketList/TickedList";
 
 
 const routes =[
@@ -24,6 +25,10 @@ const routes =[
             {
                 path:'register',
                 element: <Register />
+            },
+            {
+                path:'ticket',
+                element: <TickedList />
             }
         ]
     },
