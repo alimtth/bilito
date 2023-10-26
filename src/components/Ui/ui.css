@@ -18,6 +18,7 @@
 .label {
     position: absolute;
     font-size: 1rem;
+
     right: 5%;
     top: 50%;
     transform: translateY(-50%);
@@ -37,12 +38,13 @@
     padding: 1rem 0.7rem;
     color: gray;
     transition: 0.1s ease-out;
+    width: 536px;
 }
 .input-text-field:focus {
-    border-color: #6200EE;
+    border-color: #1D91CC;
 }
 .input-text-field:focus + label {
-    color: #6200EE;
+    color: #1D91CC;
     top: 0;
     transform: translateY(-50%) scale(.9);
 }

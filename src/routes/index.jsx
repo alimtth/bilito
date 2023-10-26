@@ -5,6 +5,7 @@ import NotFound from "@/pages/404/NotFound.jsx";
 
 import BaseLayout from "@/pages/BaseLayout/index.jsx";
 import Login from "@/components/Auth/Login/Login";
+import Register from "@/components/Auth/Register/Register"
 
 
 const routes =[
@@ -20,6 +21,10 @@ const routes =[
                 path:'login',
                 element: <Login/>,
             },
+            {
+                path:'register',
+                element: <Register />
+            }
         ]
     },
     {
