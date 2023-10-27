@@ -8,7 +8,7 @@ import EditPen from "@/assets/Images/Icons/edit.svg";
 import Button from "@/components/Ui/Button";
 import { ArrowUpward } from "@mui/icons-material";
 import { Slider } from "@mui/material";
-import airport from "@/assets/Images/Icons/Airport.png"
+import airport from "@/assets/Images/Icons/Airport.png";
 
 function TickedList() {
   return (
@@ -44,8 +44,8 @@ function TickedList() {
         </div>
       </section>
 
-      <div className="flex mt-16">
-        <div className="w-[288px] h-[1045px] bg-gray-400 rounded-[8px] basis-[25%] p-[24px]">
+      <div className="flex mt-16 ">
+        <div className="w-[288px] bg-gray-400 rounded-[8px] basis-[25%] p-[24px] ml-[25px]">
           <div className="flex justify-between">
             <h3>تعداد نتایج: 121</h3>
             <h3 className="text-blue-500 text-[13px]"> پاک کردن فیلتر‌ها</h3>
@@ -88,73 +88,99 @@ function TickedList() {
           <div className="flex flex-col gap-4 items-start mt-[17px]">
             <div className="flex">
               <input type="checkbox" className="border-none outline-none" />
-              <img src={airport} className="w-[26px] h-[27px] mr-[10px] rounded-[50px]" />
+              <img
+                src={airport}
+                className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
+              />
               <h3 className="mr-[10px]">Pegasus</h3>
             </div>
             <div className="flex">
               <input type="checkbox" className="border-none outline-none" />
-              <img src={airport} className="w-[26px] h-[27px] mr-[10px] rounded-[50px]" />
+              <img
+                src={airport}
+                className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
+              />
               <h3 className="mr-[10px]">gulf</h3>
             </div>
             <div className="flex">
               <input type="checkbox" className="border-none outline-none" />
-              <img src={airport} className="w-[26px] h-[27px] mr-[10px] rounded-[50px]" />
+              <img
+                src={airport}
+                className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
+              />
               <h3 className="mr-[10px]">emirates</h3>
             </div>
             <div className="flex">
               <input type="checkbox" className="border-none outline-none" />
-              <img src={airport} className="w-[26px] h-[27px] mr-[10px] rounded-[50px]" />
+              <img
+                src={airport}
+                className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
+              />
               <h3 className="mr-[10px]">oman</h3>
             </div>
             <div className="flex">
               <input type="checkbox" className="border-none outline-none" />
-              <img src={airport} className="w-[26px] h-[27px] mr-[10px] rounded-[50px]" />
+              <img
+                src={airport}
+                className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
+              />
               <h3 className="mr-[10px]">Qatar Airways</h3>
             </div>
             <div className="flex">
               <input type="checkbox" className="border-none outline-none" />
-              <img src={airport} className="w-[26px] h-[27px] mr-[10px] rounded-[50px]" />
+              <img
+                src={airport}
+                className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
+              />
               <h3 className="mr-[10px]">Flydubai</h3>
             </div>
             <hr className="mt-[16px] bg-gray-500 w-full h-[2px]" />
+
+            {/* //////////////////////////////////////////////////////////////////// */}
+            <div className="flex justify-between">
+              <h4>تعداد توقف</h4>
+              <IoIosArrowDown />
+            </div>
             <div className="flex flex-col gap-4 items-start mt-[17px]">
-            <div className="flex">
-              <input type="checkbox" className="border-none outline-none" />
-              <img src={airport} className="w-[26px] h-[27px] mr-[10px] rounded-[50px]" />
-              <h3 className="mr-[10px]">Pegasus</h3>
-            </div>
-            <div className="flex">
-              <input type="checkbox" className="border-none outline-none" />
-              <img src={airport} className="w-[26px] h-[27px] mr-[10px] rounded-[50px]" />
-              <h3 className="mr-[10px]">gulf</h3>
-            </div>
-            <div className="flex">
-              <input type="checkbox" className="border-none outline-none" />
-              <img src={airport} className="w-[26px] h-[27px] mr-[10px] rounded-[50px]" />
-              <h3 className="mr-[10px]">emirates</h3>
-            </div>
-            <div className="flex">
-              <input type="checkbox" className="border-none outline-none" />
-              <img src={airport} className="w-[26px] h-[27px] mr-[10px] rounded-[50px]" />
-              <h3 className="mr-[10px]">oman</h3>
-            </div>
-            <div className="flex">
-              <input type="checkbox" className="border-none outline-none" />
-              <img src={airport} className="w-[26px] h-[27px] mr-[10px] rounded-[50px]" />
-              <h3 className="mr-[10px]">Qatar Airways</h3>
-            </div>
-            <div className="flex">
-              <input type="checkbox" className="border-none outline-none" />
-              <img src={airport} className="w-[26px] h-[27px] mr-[10px] rounded-[50px]" />
-              <h3 className="mr-[10px]">Flydubai</h3>
+              <div className="flex">
+                <input type="radio" className="border-none outline-none" />
+                <img
+                  src={airport}
+                  className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
+                />
+                <h3 className="mr-[10px]">همه</h3>
+              </div>
+              <div className="flex">
+                <input type="radio" className="border-none outline-none" />
+                <img
+                  src={airport}
+                  className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
+                />
+                <h3 className="mr-[10px]">مستقیم</h3>
+              </div>
+              <div className="flex">
+                <input type="radio" className="border-none outline-none" />
+                <img
+                  src={airport}
+                  className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
+                />
+                <h3 className="mr-[10px]">یک</h3>
+              </div>
+              <div className="flex">
+                <input type="radio" className="border-none outline-none" />
+                <img
+                  src={airport}
+                  className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
+                />
+                <h3 className="mr-[10px]">دو یا بیشتر</h3>
+              </div>
             </div>
             <hr className="mt-[16px] bg-gray-500 w-full h-[2px]" />
-          </div>
           </div>
         </div>
-        <div className=" flex ma ">
+        <div className="flex-auto">
           <div className="flex gap-4">
-            <div className="gap-2 py-2 px-4 flex flex-shrink-0 flex-col items-start border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 w-[745px] ">
+            <div className="gap-2 py-2 px-4 flex justify-between border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 w-[745px] ">
               <div className="flex justify-between items-center self-stretch ">
                 <p>تقویم قیمتی</p>
                 <IoIosArrowDown />
