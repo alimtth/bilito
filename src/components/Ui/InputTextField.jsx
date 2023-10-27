@@ -9,6 +9,7 @@ function InputTextField({children , placeholder, style, className}) {
                     <label className='label'>{children}</label>
             </div>
         </div>
+
     );
 }
 

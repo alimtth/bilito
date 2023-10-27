@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         gray:{
+          10:'#CBCBCB',
           100:'#ADADAD',
           200:'#F9F9F9',
           300: '#DFDFDF',
@@ -16,6 +17,10 @@ export default {
           500: '#868686',
           600: '#606060',
           650: '#ADADAD',
+        },
+        red:{
+          10:'#FFF2F2',
+          20:'#C30000',
         },
         blue: {
           100: '#E8F4FA',
