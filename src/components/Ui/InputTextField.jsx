@@ -5,7 +5,7 @@ function InputTextField({children , placeholder, style, className}) {
 
         <div>
             <div className="material-textfield">
-                <input className='input-text-field' placeholder={placeholder} type="text" />
+                <input className='input-text-field' type="text" />
                     <label className='label'>{children}</label>
             </div>
         </div>
