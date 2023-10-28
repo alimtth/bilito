@@ -6,12 +6,12 @@ import kish from "@/assets/Images/Icons/HomePageKish.jpg";
 
 function HomePageComponenets() {
   return (
-    <div className="grid grid-cols-3 w-full gap-4 ">
-      <div className="relative w-full ">
+    <div className="grid grid-cols-3 w-full gap-4  ">
+      <div className="relative w-full object-cover rounded-lg ">
         <div style={{ paddingBottom: "100%" }} />
         <img
           src={kish}
-          className="absolute top-0 left-0 h-full object-cover"
+          className="absolute top-0 left-0 h-full object-cover rounded-lg"
         />
         <div className="absolute bottom-0 ">
           <p className="pr-4 mr-2 mb-2 text-white text-xl font-bold ">
@@ -27,7 +27,7 @@ function HomePageComponenets() {
         <div style={{ paddingBottom: "100%" }} />
         <img
           src={turkey}
-          className="absolute top-0 left-0 w-full h-full object-cover "
+          className="absolute top-0 left-0 w-full h-full object-cover rounded-lg "
         />
         <div className="absolute bottom-0">
           <p className="pr-4 mr-2 mb-2 text-white text-xl font-bold ">
@@ -47,7 +47,7 @@ function HomePageComponenets() {
           <div style={{ paddingBottom: "50%" }} />
           <img
             src={shiraz}
-            className="absolute top-0 left-0 w-full h-full object-cover "
+            className="absolute top-0 left-0 w-full h-full object-cover rounded-lg "
           />
           <div className="absolute bottom-0">
             <p className="pr-4 mr-2 mb-2 text-white text-xl font-bold ">
@@ -63,7 +63,7 @@ function HomePageComponenets() {
           <div style={{ paddingBottom: "50%" }} />
           <img
             src={dubai}
-            className="absolute top-0 left-0 w-full h-full object-cover "
+            className="absolute top-0 left-0 w-full h-full object-cover rounded-lg "
           />
           <div className="absolute bottom-0">
             <p className="pr-4 mr-2 mb-2 text-white text-xl font-bold ">
