@@ -1,54 +1,85 @@
 import React from "react";
-import shiraz from "../../assets/Images/Icons/HomePageShiraz.jpg";
-import dubai from "../../assets/Images/Icons/HomePageDubai.jpg";
-import turkey from "../../assets/Images/Icons/HomePageTurkey.jpg";
-import kish from "../../assets/Images/Icons/HomePageKish.jpg";
+import shiraz from "@/assets/Images/Icons/HomePageShiraz.jpg";
+import dubai from "@/assets/Images/Icons/HomePageDubai.jpg";
+import turkey from "@/assets/Images/Icons/HomePageTurkey.jpg";
+import kish from "@/assets/Images/Icons/HomePageKish.jpg";
+
 function HomePageComponenets() {
   return (
-    <div className="flex justify-center gap-6 pt-48" id='container'>
-      <div className="relative flex justify-start items-end  ">
-        <img src={kish} className="rounded-md " />
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent to-slate-800 opacity-60 rounded-md"></div>
-        <p className="absolute pb-16 pr-4 mr-2 mb-2 text-white text-xl font-bold ">
-          بهترین فصل شنا
-        </p>
-        <button className="h-auto w-auto mr-6 mb-6 border-2 p-2 absolute border-solid border-white rounded-lg text-white text-sm">
-          خرید بلیط پرواز های کیش
-        </button>
+    <div className="grid grid-cols-3 w-full gap-4 ">
+      <div className="relative w-full ">
+        <div style={{ paddingBottom: "100%" }} />
+        <img
+          src={kish}
+          className="absolute top-0 left-0 h-full object-cover"
+        />
+        <div className="absolute bottom-0 ">
+          <p className="pr-4 mr-2 mb-2 text-white text-xl font-bold ">
+            بهترین فصل شنا
+          </p>
+          <button className="mr-6 mb-6 border p-2 border-white rounded-lg text-white text-sm">
+            خرید بلیط پرواز های کیش
+          </button>
+        </div>
       </div>
-      <div className="relative flex justify-start items-end">
-        <img src={turkey} className="rounded-md" />
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent to-slate-800 opacity-60 rounded-md"></div>
-        <p className="absolute pb-16 pr-4 mr-2 mb-2 text-white text-xl font-bold ">
+
+      <div className="relative w-full ">
+        <div style={{ paddingBottom: "100%" }} />
+        <img
+          src={turkey}
+          className="absolute top-0 left-0 w-full h-full object-cover "
+        />
+        <div className="absolute bottom-0">
+          <p className="pr-4 mr-2 mb-2 text-white text-xl font-bold ">
           سفر به ترکیه
-        </p>
-        <button className="h-auto w-auto mr-6 mb-6 border-2 p-2 absolute border-solid border-white rounded-lg text-white text-sm">
-          خرید بلیط پرواز های ترکیه
-        </button>
-      </div>
-      <div className="flex flex-col gap-6 ">
-        <div className="relative flex justify-start items-end">
-          <img src={dubai} className="rounded-md" />
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent to-slate-800 opacity-60 rounded-md"></div>
-          <p className="absolute pb-16 pr-4 mr-2 mb-2 text-white text-xl font-bold ">
-            شگفتی در صحرا
           </p>
-          <button className="h-auto w-auto mr-6 mb-6 border-2 p-2 absolute border-solid border-white rounded-lg text-white text-sm">
-            خرید بلیط پرواز های دبی
+          <button className="mr-6 mb-6 border p-2 border-white rounded-lg text-white text-sm">
+          خرید بلیط پرواز‌های ترکیه
           </button>
         </div>
-        <div className="relative flex justify-start items-end">
-          <img src={shiraz} className="rounded-md" />
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent to-slate-800 opacity-60 rounded-md"></div>
-          <p className="absolute pb-16 pr-4 mr-2 mb-2 text-white text-xl font-bold ">
+      </div>
+
+
+
+      <div className="grid gap-4">
+
+        <div className="relative w-full ">
+          <div style={{ paddingBottom: "50%" }} />
+          <img
+            src={shiraz}
+            className="absolute top-0 left-0 w-full h-full object-cover "
+          />
+          <div className="absolute bottom-0">
+            <p className="pr-4 mr-2 mb-2 text-white text-xl font-bold ">
             دنیایی از تاریخ و هنر
-          </p>
-          <button className="h-auto w-auto mr-6 mb-6 border-2 p-2 absolute border-solid border-white rounded-lg text-white text-sm">
-            خرید بلیط پرواز های شیراز
-          </button>
+            </p>
+            <button className=" mr-6 mb-6 border p-2 border-white rounded-lg text-white text-sm">
+            خرید بلیط پرواز‌های شیراز
+            </button>
+          </div>
+
+        </div>
+        <div className="relative w-full ">
+          <div style={{ paddingBottom: "50%" }} />
+          <img
+            src={dubai}
+            className="absolute top-0 left-0 w-full h-full object-cover "
+          />
+          <div className="absolute bottom-0">
+            <p className="pr-4 mr-2 mb-2 text-white text-xl font-bold ">
+              بهترین فصل شنا
+            </p>
+            <button className=" mr-6 mb-6 border p-2 border-white rounded-lg text-white text-sm">
+              خرید بلیط پرواز های کیش
+            </button>
+          </div>
+
         </div>
       </div>
+
     </div>
+
+
   );
 }
 
