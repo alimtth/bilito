@@ -1,6 +1,6 @@
 import React, { Children } from 'react';
 import './ui.css'
-function InputTextField({children , placeholder, style, className, onChange, type, register}) {
+function InputTextField({children , placeholder, style, className, onChange, type, register, value}) {
     return (
 
         <div>

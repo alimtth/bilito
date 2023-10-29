@@ -12,8 +12,6 @@ import airport from "@/assets/Images/Icons/Airport.png";
 import TicketList from "@/components/TicketList/index.jsx";
 
 
-
-
 function TickedList() {
     return (
         <div className=" flex flex-col items-center">
@@ -45,108 +43,6 @@ function TickedList() {
                     </Button>
                 </div>
             </section>
-
-          <div className="gap-2 flex items-center">
-            <img src={calendar} />
-            <p>اکونومی</p>
-          </div>
-          <Button variant="fill">
-            <img src={EditPen} />
-          </Button>
-        </div>
-      </section>
-
-    <div className="flex mt-20 ">
-      <div className=" w-[288px] bg-gray-400 rounded-[8px] basis-[25%] p-[24px] ml-[25px]">
-          <div className="flex justify-between">
-            <h3>تعداد نتایج: 121</h3>
-            <h3 className="text-blue-500 text-[13px]"> پاک کردن فیلتر‌ها</h3>
-          </div>
-          <hr className="mt-[16px] bg-gray-500 w-full h-[2px]" />
-          <div className="flex justify-between mt-[16px]">
-            <h4>قیمت</h4>
-            <IoIosArrowDown />
-          </div>
-          <div className="flex justify-between mt-[10px]">
-            <h4>تا 60.000.000</h4>
-            <h4>از 60.000.000</h4>
-          </div>
-          <div className="flex-col mt-[10px]">
-            <Slider
-              getAriaLabel={() => "Temperature range"}
-              valueLabelDisplay="auto"
-            />
-          </div>
-          <hr className="mt-[14px] bg-gray-500 w-full h-[2px]" />
-          <div className="flex justify-between mt-[16px]">
-            <h4>زمان حرکت</h4>
-            <IoIosArrowDown />
-          </div>
-          <div className="flex justify-between mt-[10px]">
-            <h4>24:00</h4>
-            <h4>00:00</h4>
-          </div>
-          <div className="flex-col mt-[10px]">
-            <Slider
-              getAriaLabel={() => "Temperature range"}
-              valueLabelDisplay="auto"
-            />
-          </div>
-          <hr className="mt-[14px] bg-gray-500 w-full h-[2px]" />
-          <div className="flex justify-between mt-[16px]">
-            <h4>شرکت هواپیمایی </h4>
-            <IoIosArrowDown />
-          </div>
-          <div className="flex flex-col gap-4 items-start mt-[17px]">
-            <div className="flex">
-              <input type="checkbox" className="border-none outline-none" />
-              <img
-                src={airport}
-                className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
-              />
-              <h3 className="mr-[10px]">Pegasus</h3>
-            </div>
-            <div className="flex">
-              <input type="checkbox" className="border-none outline-none" />
-              <img
-                src={airport}
-                className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
-              />
-              <h3 className="mr-[10px]">gulf</h3>
-            </div>
-            <div className="flex">
-              <input type="checkbox" className="border-none outline-none" />
-              <img
-                src={airport}
-                className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
-              />
-              <h3 className="mr-[10px]">emirates</h3>
-            </div>
-            <div className="flex">
-              <input type="checkbox" className="border-none outline-none" />
-              <img
-                src={airport}
-                className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
-              />
-              <h3 className="mr-[10px]">oman</h3>
-            </div>
-            <div className="flex">
-              <input type="checkbox" className="border-none outline-none" />
-              <img
-                src={airport}
-                className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
-              />
-              <h3 className="mr-[10px]">Qatar Airways</h3>
-            </div>
-            <div className="flex">
-              <input type="checkbox" className="border-none outline-none" />
-              <img
-                src={airport}
-                className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
-              />
-              <h3 className="mr-[10px]">Flydubai</h3>
-            </div>
-            <hr className="mt-[16px] bg-gray-500 w-full h-[2px]" />
 
             <div className="flex mt-20 gap-6 justify-center" id='container'>
                 <div className="md:block md:bg-gray-400 md:rounded-md md:basis-[25%] md:p-6 hidden">

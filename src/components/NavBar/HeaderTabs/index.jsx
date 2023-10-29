@@ -33,10 +33,12 @@ function HeaderTabs({onClick}) {
 
             <div className="flex justify-between items-center py-4" id='container'>
                 <div className="flex justify-between gap-16">
-                    <img src={bilitoIcon}/>
+                    <img src={bilitoIcon} />
                     <div className="flex justify-between gap-16">
                         <ul className="md:flex justify-between items-center gap-8 text-sm hidden">
+                            <Link to={"/"}>
                             <li className="cursor-pointer">صفحه اصلی</li>
+                            </Link>
                             <li className="cursor-pointer">سفرهای من</li>
                             <li className="flex justify-between gap-2 cursor-pointer">
                                 سایر موارد
