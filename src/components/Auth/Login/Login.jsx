@@ -9,6 +9,19 @@ import InputTextField from "@/components/Ui/InputTextField";
 import Button from "@/components/Ui/Button";
 function Login() {
   const [showModal, setShowModal] = useState(true);
+  const [loginForm, setLoginForm] = useState({
+    username: "",
+    password: "",
+  });
+
+  const handleChangeLoginForm = (e, key) => {
+    setLoginForm((s) => ({ ...s, [key]: e.target.value }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(loginForm);
+  };
 
   const openModal = () => {
     setShowModal(true);
@@ -34,28 +47,48 @@ function Login() {
                   کد تایید به شماره موبایلی که وارد می‌کنید، ارسال خواهد شد.
                 </h6>
                 <br />
-                <InputTextField placeholder={""}>نام کاربری</InputTextField>
-                <br />
-                <InputTextField placeholder={""}>پسورد</InputTextField>
+                <form
+                  onSubmit={handleSubmit} 
+                  className="flex flex-col justify-center items-center"
+                >
+                  <InputTextField
+                    placeholder={""}
+                    value={loginForm.username}
+                    onChange={(e) => handleChangeLoginForm(e, "username")}
+                  >
+                    نام کاربری
+                  </InputTextField>
+                  <br />
+                  <InputTextField
+                    placeholder={""}
+                    value={loginForm.password}
+                    onChange={(e) => handleChangeLoginForm(e, "password")}
+                  >
+                    پسورد
+                  </InputTextField>
 
-                <div>
-                  <div className="flex gap-4  mt-[40px] text-gray-600 mr-4">
-                    <input type="checkbox" name="" id="" />
-                    <h4>
-                      با ورود و ثبت‌نام در سایت، با{" "}
-                      <Link className="text-blue-650" to={"#"}>
-                        قوانین بیلیتو
-                      </Link>{" "}
-                      موافقت می‌کنم.
-                    </h4>
+                  <div>
+                    <div className="flex gap-4  mt-[40px] text-gray-600 mr-4">
+                      <input type="checkbox" name="" id="" />
+                      <h4>
+                        با ورود و ثبت‌نام در سایت، با{" "}
+                        <Link className="text-blue-650" to={"#"}>
+                          قوانین بیلیتو
+                        </Link>{" "}
+                        موافقت می‌کنم.
+                      </h4>
+                    </div>
+                    <button
+                      type="submit"
+                      className="bg-gray-650 text-gray-500 w-[536px] h-[48px] rounded-[8px] mt-4 mb-[32px]"
+                    >
+                      تایید و ادامه
+                    </button>
+                    <Link to={"/register"}>
+                      <Button> ثبت نام</Button>
+                    </Link>
                   </div>
-                  <button className="bg-gray-650 text-gray-500 w-[536px] h-[48px] rounded-[8px] mt-4 mb-[32px]">
-                    تایید و ادامه
-                  </button>
-                  <Link to={'/register'}>
-                    <Button> ثبت نام</Button>
-                  </Link>
-                </div>
+                </form>
               </div>
             </div>
           </div>

@@ -12,6 +12,8 @@ import airport from "@/assets/Images/Icons/Airport.png";
 import TicketList from "@/components/TicketList/index.jsx";
 
 
+
+
 function TickedList() {
   return (
         <div className=" flex flex-col items-center">
@@ -46,7 +48,7 @@ function TickedList() {
       </section>
 
     <div className="flex mt-20 ">
-      <div className="w-[288px] bg-gray-400 rounded-[8px] basis-[25%] p-[24px] ml-[25px]">
+      <div className=" w-[288px] bg-gray-400 rounded-[8px] basis-[25%] p-[24px] ml-[25px]">
           <div className="flex justify-between">
             <h3>تعداد نتایج: 121</h3>
             <h3 className="text-blue-500 text-[13px]"> پاک کردن فیلتر‌ها</h3>
