@@ -6,7 +6,7 @@ import kish from "@/assets/Images/Icons/HomePageKish.jpg";
 
 function HomePageComponenets() {
   return (
-    <div className="grid grid-cols-3 w-full gap-4  ">
+    <div className="grid grid-cols-3 w-full gap-4 mt-14 " id='container'>
       <div className="relative w-full object-cover rounded-lg ">
         <div style={{ paddingBottom: "100%" }} />
         <img

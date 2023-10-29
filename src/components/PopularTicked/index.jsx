@@ -9,20 +9,19 @@ import airplane from '../../assets/Images/Icons/airplane.svg'
 
 function Popular() {
     return (
-        <div className='flex-col justify-center items-end pt-24' id='container'>
+        <div className='flex flex-col justify-center items-center md:items-start pt-24' id='container'>
 
             <div>
-                <p className='text-xl pb-3' >پرطرفدار ترین پروازهای داخلی</p>
+                <p className='text-xl pb-3'>پرطرفدار ترین پروازهای داخلی</p>
             </div>
             <div className='flex gap-3'>
-                <button className='px-4 bg-blue-100 text-blue-500 border-gray-400 border-solid rounded' >تهران</button>
-                <button className='px-4 border-gray-400  border rounded' >مشهد</button>
-                <button className='px-4 border-gray-400  border rounded' >شیراز</button>
-                <button className='px-4 border-gray-400  border rounded' >کیش</button>
+                <button className='px-4 bg-blue-100 text-blue-500 border-gray-400 border-solid rounded'>تهران</button>
+                <button className='px-4 border-gray-400  border rounded'>مشهد</button>
+                <button className='px-4 border-gray-400  border rounded'>شیراز</button>
+                <button className='px-4 border-gray-400  border rounded'>کیش</button>
             </div>
 
-            <div className='pt-8 gap-6 flex items-start'>
-
+            <div className='pt-8 gap-6 flex items-start justify-center md:justify-start flex-wrap'>
                 <div>
                     <div className=' flex'>
                         <img src={azadi} alt="Photo of Square Azadi" />

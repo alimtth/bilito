@@ -1,13 +1,18 @@
 import React, { Children } from 'react';
 import './ui.css'
-function InputTextField({children , placeholder, style, className, onChange, type, register, value}) {
+const sizes = {
+    sm: "flex py-4 text-sm px-0 ",
+    md: "flex py-4 text-sm px-0 ",
+    lg: "flex py-4 text-sm px-0 ",
+    xl: "flex py-4 text-sm px-0 ",
+};
+function InputTextField({children , placeholder, style, className, onChange, type, register, value,size}) {
     return (
 
         <div>
             <div className="material-textfield">
-                <input className='input-text-field' type={type} onChange={onChange} {...register}/>
+                <input onChange={onChange} value={value} className={`input-text-field ${sizes[size]}`} type={type} {...register}/>
 
-                <input onChange={onChange} value={value} className='input-text-field' type={type} />
                     <label className='label'>{children}</label>
             </div>
         </div>
