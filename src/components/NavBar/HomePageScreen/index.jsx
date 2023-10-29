@@ -2,7 +2,7 @@ import React from "react";
 import titlePic from "@/assets/Images/titlePic.png";
 import "../style.css";
 
-function gitHomePageScreen() {
+function HomePageScreen() {
   return (
     <>
       <div className="flex flex-col relative w-full">
