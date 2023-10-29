@@ -22,6 +22,7 @@ import {PiAirplaneBold, PiAirplaneInFlightLight, PiAirplaneLight} from "react-ic
 import {TbUserSearch} from "react-icons/tb";
 import {BiUser} from "react-icons/bi";
 import {AiFillHome, AiOutlineHome} from "react-icons/ai";
+import HomePageScreen from "../HomePageScreen";
 
 function HeaderTabs({onClick}) {
     const [showMenu, setShowMenu] = useState(false)
@@ -105,6 +106,7 @@ function HeaderTabs({onClick}) {
                     </Link>
                 </div>
             </div>
+                <HomePageScreen />
         </>
     );
 }

@@ -6,6 +6,7 @@ import BaseLayout from "@/pages/BaseLayout/index.jsx";
 import Login from "@/components/Auth/Login/Login";
 import Register from "@/components/Auth/Register/Register"
 import TickedList from "@/pages/PageTicketList/TickedList";
+import StepShop from "@/pages/StepShop/StepShop";
 
 
 const routes =[
@@ -28,6 +29,10 @@ const routes =[
             {
                 path:'ticket',
                 element: <TickedList />
+            },
+            {
+                path:'stepshop',
+                element: <StepShop />
             }
         ]
     },
