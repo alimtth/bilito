@@ -2,6 +2,7 @@ import React from "react";
 import AirplanSelected from "@/assets/Images/Icons/AirplaneSelected.svg";
 import AirplanNotSelected from "@/assets/Images/Icons/AirplaneNotSelected.svg";
 import Button from "@/components/Ui/Button";
+import Input from "@/components/Ui/Input";
 import searchIcon from "@/assets/Images/Icons/search-normal.svg";
 import History from "../History";
 import InputTextField from "@/components/Ui/InputTextField";

@@ -1,0 +1,12 @@
+.sidebar {
+    background: white;
+    transition: all 1s cubic-bezier(0.4, 0, 0, 1);
+    left: -100%;
+    position: fixed;
+    z-index: 100;
+    margin-top:500px;
+    width: 50%;
+}
+.open {
+   left: 0%!important;
+}
