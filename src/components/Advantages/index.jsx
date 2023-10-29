@@ -11,28 +11,28 @@ function Advantages(props) {
 
 
             <div className='flex justify-around' id='container'>
-                <div className='flex flex-col justify-between items-center gap-[32px]'>
+                <div className='flex flex-col justify-between items-center gap-8'>
                     <div
                         className='inline-flex justify-start items-center bg-white border border-blue-300 rounded-2xl p-[19px]'>
                         <img alt={''} src={Monitor}/>
                     </div>
                     <span className='text-xl font-bold leading-7'>دسترسی آسان و راحت</span>
                 </div>
-                <div className='flex flex-col justify-between items-center gap-[32px]'>
+                <div className='flex flex-col justify-between items-center gap-8'>
                     <div
                         className='inline-flex justify-start items-center bg-white border border-blue-300 rounded-2xl p-[19px]'>
                         <img alt={''} src={HeadPhone}/>
                     </div>
                     <span className='text-xl font-bold leading-7'>پاسخگویی 24 ساعته</span>
                 </div>
-                <div className='flex flex-col justify-between items-center gap-[32px]'>
+                <div className='flex flex-col justify-between items-center gap-8'>
                     <div
                         className='inline-flex justify-start items-center bg-white border border-blue-300 rounded-2xl p-[19px]'>
                         <img alt={''} src={GlobalSearch}/>
                     </div>
                     <span className='text-xl font-bold leading-7'>خدمات آنلاین</span>
                 </div>
-                <div className='flex flex-col justify-between items-center gap-[32px]'>
+                <div className='flex flex-col justify-between items-center gap-8'>
                     <div
                         className='inline-flex justify-start items-center bg-white border border-blue-300 rounded-2xl p-[19px]'>
                         <img alt={''} src={CardPos}/>
