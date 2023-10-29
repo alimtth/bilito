@@ -1,9 +1,11 @@
 .contact-us-button{
     display: flex;
-    height: 66px;
+    height: 60px;
+    width: 100%;
     justify-content: space-between;
+    gap: 15px;
     align-items: center;
-    flex-shrink: 0;
+    padding:12px 8px;
     border-radius: 4px;
     background: var(--primary-shade-2, #11577A);
     flex-direction: row-reverse;
@@ -16,11 +18,12 @@
 .label {
     position: absolute;
     font-size: 1rem;
-    right: 5%;
+    right: 1%;
     top: 50%;
     transform: translateY(-50%);
     background-color: white;
     color: gray;
+    padding: 0 0.3rem;
     margin: 0 0.5rem;
     transition: .1s ease-out;
     transform-origin: left top;
@@ -34,6 +37,7 @@
     padding: 1rem 0.7rem;
     color: gray;
     transition: 0.1s ease-out;
+    width: 536px;
 }
 .input-text-field:focus {
     border-color: #1D91CC;
@@ -42,4 +46,12 @@
     color: #1D91CC;
     top: 0;
     transform: translateY(-50%) scale(.9);
+}
+/*.input-text-field:not(:placeholder-shown) + label {*/
+/*    top: 0;*/
+/*    transform: translateY(-50%) scale(.9);*/
+/*}*/
+.line{
+    margin-top: 15px;
+    border-top: 1px solid #F9F9F9;
 }

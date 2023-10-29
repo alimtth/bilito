@@ -11,6 +11,7 @@ function HomePageComponenets() {
         <div style={{ paddingBottom: "100%" }} />
         <img
           src={kish}
+          alt="Photo of kish island"
           className="absolute top-0 left-0 h-full object-cover rounded-lg"
         />
         <div className="absolute bottom-0 ">
@@ -27,6 +28,7 @@ function HomePageComponenets() {
         <div style={{ paddingBottom: "100%" }} />
         <img
           src={turkey}
+          alt="Photo of city turkiye"
           className="absolute top-0 left-0 w-full h-full object-cover rounded-lg "
         />
         <div className="absolute bottom-0">
@@ -47,6 +49,7 @@ function HomePageComponenets() {
           <div style={{ paddingBottom: "50%" }} />
           <img
             src={shiraz}
+            alt="Photo of takht jamshid shiraz"
             className="absolute top-0 left-0 w-full h-full object-cover rounded-lg "
           />
           <div className="absolute bottom-0">
@@ -63,14 +66,15 @@ function HomePageComponenets() {
           <div style={{ paddingBottom: "50%" }} />
           <img
             src={dubai}
+            alt="Photo of city dubai"
             className="absolute top-0 left-0 w-full h-full object-cover rounded-lg "
           />
           <div className="absolute bottom-0">
             <p className="pr-4 mr-2 mb-2 text-white text-xl font-bold ">
-              بهترین فصل شنا
+            شگفتی در صحرا
             </p>
             <button className=" mr-6 mb-6 border p-2 border-white rounded-lg text-white text-sm">
-              خرید بلیط پرواز های کیش
+             خرید بلیط پرواز های دبی
             </button>
           </div>
 

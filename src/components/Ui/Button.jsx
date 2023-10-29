@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import tickSquareButton from "/src/assets/tick-square-light-button.svg"
+import arrowDownButton from "/src/assets/arrow-down-button.svg"
 
 const variants = {
   fill: "rounded-lg px-4 py-2 bg-blue-500 text-white hover:bg-blue-600 w-fit",
@@ -33,6 +35,5 @@ Button.propTypes = {
   type: PropTypes.string
 
 };
-
 
 export default Button;
