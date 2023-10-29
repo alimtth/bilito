@@ -17,7 +17,6 @@ input {
   cursor: pointer;
 }
 footer hr {
-  margin: 32px auto;
   width: 1224px;
   height: 3px;
   background-color: #ededed;

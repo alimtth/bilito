@@ -7,7 +7,7 @@ import Button from "@/components/Ui/Button";
 
 function History() {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 ">
       <div className="flex justify-between">
         <div className="flex justify-between gap-4">
           <img src={HistoryIcon} />
