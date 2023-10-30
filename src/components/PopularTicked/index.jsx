@@ -9,7 +9,7 @@ import airplane from '../../assets/Images/Icons/airplane.svg'
 
 function Popular() {
     return (
-        <div className='flex flex-col justify-center items-center md:items-start pt-24' id='container'>
+        <div className='flex flex-col justify-center items-center lg:items-start pt-24' id='container'>
 
             <div>
                 <p className='text-xl pb-3'>پرطرفدار ترین پروازهای داخلی</p>
@@ -21,7 +21,7 @@ function Popular() {
                 <button className='px-4 border-gray-400  border rounded'>کیش</button>
             </div>
 
-            <div className='pt-8 gap-6 flex items-start justify-center md:justify-start flex-wrap'>
+            <div className='pt-8 gap-6 flex items-start justify-center lg:justify-start flex-wrap'>
                 <div>
                     <div className=' flex'>
                         <img src={azadi} alt="Photo of Square Azadi" />

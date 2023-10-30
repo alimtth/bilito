@@ -10,8 +10,8 @@ import InputTextField from "@/components/Ui/InputTextField";
 function SearchBox() {
     return (
         <>
-            <div className="md:z-10 md:-m-28 shadow-2xl rounded md:w-fit m-auto" id="container">
-                <div className="bg-white flex flex-col md:items-start items-center rounded-lg p-6" id="container">
+            <div className="lg:z-10 lg:-m-28 shadow-2xl rounded lg:w-fit m-auto" id="container">
+                <div className="bg-white flex flex-col lg:items-start items-center rounded-lg p-6" id="container">
                     <div>
                         <ul className="flex justify-around gap-10 text-base ">
                             <li className="flex gap-2 text-blue-500">
@@ -36,7 +36,7 @@ function SearchBox() {
                             چند مسیره
                         </Button>
                     </div>
-                    <div className="flex flex-col gap-2 md:flex md:flex-row md:gap-8 w-full md:w-auto flex-wrap items-center">
+                    <div className="flex flex-col gap-2 lg:flex lg:flex-row lg:gap-8 w-full lg:w-auto flex-wrap items-center">
                         <InputTextField size="sm">مبدا</InputTextField>
                         <InputTextField size="sm">مقصد</InputTextField>
                         <InputTextField size="sm">تاریخ رفت و برگشت</InputTextField>

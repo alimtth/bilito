@@ -5,7 +5,7 @@ function SingleTicket(props) {
     return (
         <>
             <div className='flex border-gray-10 border rounded-lg flex-col gap-4 mt-6 justify-evenly py-6'>
-                <div className='flex justify-between items-center px-4 md:flex-row flex-col gap-4'>
+                <div className='flex justify-between items-center px-4 lg:flex-row flex-col gap-4'>
                     <div className='flex justify-center items-center gap-2'>
                         <div
                             className='bg-red-10 text-red-20 flex justify-center items-center gap-1 py-[2px] px-2 h-6 border rounded-md'>5
@@ -25,7 +25,7 @@ function SingleTicket(props) {
                         </div>
                     </div>
                 </div>
-                <div className='flex justify-between items-end gap-[64px] px-4 md:flex-row flex-col'>
+                <div className='flex justify-between items-end gap-[64px] px-4 lg:flex-row flex-col'>
                     <div className='flex justify-center items-center gap-[24px]'>
                         <div className='flex flex-col gap-[16px] items-center'>
                             <img alt={''} src={''}/>
@@ -45,7 +45,7 @@ function SingleTicket(props) {
                             <span>دبی(DXB)</span>
                         </div>
                     </div>
-                    <div className='flex md:justify-center md:items-end gap-2 items-center self-center'>
+                    <div className='flex lg:justify-center lg:items-end gap-2 items-center self-center'>
                         <div>23,333,231 تومان</div>
                         <div>
                             <Button size='lg'>جزئیات بلیط</Button>

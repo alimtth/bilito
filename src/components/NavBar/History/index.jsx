@@ -17,7 +17,7 @@ function History() {
                 <p className="text-blue-500 cursor-pointer">پاک کردن همه</p>
             </div>
             <div className="flex flex-row gap-9 justify-between flex-wrap">
-                <Button className='hidden md:flex' variant="grayBTN">
+                <Button className='hidden lg:flex' variant="grayBTN">
                     <img src={ArrowRight}/>
                 </Button>
                 <div className="flex flex-row gap-4 flex-wrap">
@@ -46,7 +46,7 @@ function History() {
                         شیراز به اصفهان
                     </Button>
                 </div>
-                <Button className='hidden md:flex' variant="grayBTN">
+                <Button className='hidden lg:flex' variant="grayBTN">
                     <img src={ArrowLeft}/>
                 </Button>
             </div>

@@ -17,23 +17,23 @@ function TickedList() {
         <div className=" flex flex-col items-center">
             <section className="flex flex-col relative items-center">
             </section>
-            <section className="-m-2 md:-m-12 z-10 bg-white flex flex-col items-center rounded-lg shadow-2xl" id='container'>
+            <section className="-m-2 lg:-m-12 z-10 bg-white flex flex-col items-center rounded-lg shadow-2xl" id='container'>
                 <div className="p-6 gap-8 flex justify-center items-center font-bold">
-                    <div className="gap-2 flex items-center md:text-xl md:font-bold text-sm font-light">
+                    <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
                         <img src={airplane}/>
                         <p>بلیط همواپیما استانبول به دبی</p>
                     </div>
-                    <div className="gap-2 flex items-center md:text-xl md:font-bold text-sm font-light">
+                    <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
                         <img src={calendar}/>
                         <p>دوشنبه 6 شهریور</p>
                     </div>
 
-                    <div className="gap-2 flex items-center md:text-xl md:font-bold text-sm font-light">
+                    <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
                         <img src={profileAdd}/>
                         <p>3 مسافر</p>
                     </div>
 
-                    <div className="gap-2 flex items-center md:text-xl md:font-bold text-sm font-light">
+                    <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
                         <img src={calendar}/>
                         <p>اکونومی</p>
                     </div>
@@ -44,7 +44,7 @@ function TickedList() {
             </section>
 
             <div className="flex mt-20 gap-6 justify-center" id='container'>
-                <div className="md:block md:bg-gray-400 md:rounded-md md:basis-[25%] md:p-6 hidden">
+                <div className="lg:block lg:bg-gray-400 lg:rounded-md lg:basis-[25%] lg:p-6 hidden">
                     <div className="flex justify-between">
                         <h3>تعداد نتایج: 121</h3>
                         <h3 className="text-blue-500 text-[13px]"> پاک کردن فیلتر‌ها</h3>
@@ -177,7 +177,7 @@ function TickedList() {
                         <hr className="mt-[16px] bg-gray-500 w-full h-[2px]"/>
                     </div>
                 </div>
-                <div className="md:flex-auto md:basis-[75%]">
+                <div className="lg:flex-auto lg:basis-[75%]">
                     <div className="flex gap-4 justify-between">
                         <div
                             className="flex justify-between items-center border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 basis-3/4 py-2 px-4 ">

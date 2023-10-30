@@ -8,7 +8,7 @@ function StepShop(props) {
             <h3 className='text-[36px] font-semibold p-5 mr-3'>مراحل خرید آنلاین بلیط هواپیما</h3>
             <div className="flex">
                 <img src={stepper} alt=""  className='p-8'/>
-                <div className="mt-9 max-w-xl md:max-w-max md:mr-7">
+                <div className="mt-9 max-w-xl lg:max-w-max lg:mr-7">
                     <h3><Search /> جستجوی بلیط <p className='font-extralight'>در بخش جستجو، نوع سفر ‏(یکطرفه یا رفت و برگشت)‏ و مبدأ و مقصد خود را وارد کنید، تاریخ سفر را انتخاب کنید و تعداد مسافران را مشخص ر ‏(یکطرفه یا رفت و برگشت)‏ و مبدأ و مقصد خود را وارد کنید، تاریخ سفر را انتخاب کنید و تعداد مسافران را مشخص در بخش جستجو، نوع سفر ‏(یکطرفه یا رفت و برگشت)‏ و مبدأ و مقصد خود را وارد کنید، تاریخ سفر را انتخاب کنید و تعداد مسافران را مشخص کنید.</p></h3>
                     <br />
                     <br />
