@@ -104,7 +104,7 @@ function HeaderTabs({onClick}) {
                             <div> ورود/ ثبت نام</div>
                         </Button>
                     </Link>
-                    <Link>
+                    <Link to={"ticket"}>
                         <Button>
                             salam
                         </Button>
