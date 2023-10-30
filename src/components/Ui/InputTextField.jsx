@@ -11,7 +11,7 @@ function InputTextField({children , placeholder, style, className, onChange, typ
 
         <div>
             <div className="material-textfield">
-                <input onChange={onChange} value={value} className={`input-text-field ${sizes[size]}`} type={type} {...register}/>
+                <input onChange={onChange} value={value} className={`input-text-field ${sizes[size]} ${className}`} type={type} {...register}/>
 
                     <label className='label'>{children}</label>
             </div>

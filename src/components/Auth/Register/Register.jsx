@@ -6,6 +6,7 @@ import bilitoIcon from "@/assets/Images/Icons/BilitoIcone.png";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import Buttons from "@/components/Ui/Button";
 
 const schema = yup.object().shape({
   username: yup.string().required("فیلد نام کاربری اجباری است"),
@@ -49,7 +50,8 @@ function Register() {
                 onSubmit={handleSubmit(onFormSubmit)}
               >
                 <InputTextField
-                    size='sm' type={"text"} register={register("username")}>
+                  size='sm' type={"text"} register={register("username")} className="w-[530px]"
+                >
                   {" "}
                   نام کاربری
                 </InputTextField>
@@ -58,7 +60,8 @@ function Register() {
                 )}
                 <br />
                 <InputTextField
-                    size='sm'
+                  size='sm'
+                  className="w-[530px]"
                   placeholder={""}
                   register={register("password")}
                 >
@@ -69,7 +72,8 @@ function Register() {
                 )}
                 <br />
                 <InputTextField
-                    size='sm'
+                  size='sm'
+                  className="w-[530px]"
                   placeholder={""}
                   register={register("confirmPassword")}
                 >
@@ -96,8 +100,8 @@ function Register() {
                   >
                     تایید و ادامه
                   </button>
-                  <Link to={"/login"}>
-                    <Button> ورود</Button>
+                  <Link to={"/login "} className="flex justify-center mb-1">
+                    <Buttons> ورود</Buttons>
                   </Link>
                 </div>
               </form>

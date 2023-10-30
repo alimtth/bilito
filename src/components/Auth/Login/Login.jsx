@@ -31,6 +31,7 @@ function Login() {
     setShowModal(true);
   };
 
+  
   return (
     <div>
       {showModal && (
@@ -56,9 +57,10 @@ function Login() {
                   className="flex flex-col justify-start items-start px-6"
                 >
                   <InputTextField
-                      size='md'
+                    size='xl'
                     placeholder={""}
                     register={register("username")}
+                    className="w-[530px]"
                   >
                     نام کاربری
                   </InputTextField>
@@ -67,9 +69,10 @@ function Login() {
                   )}
                   <br />
                   <InputTextField
-                      size='md'
+                    size='md'
                     placeholder={""}
                     register={register("password")}
+                    className="w-[530px]"
                   >
                     پسورد
 
@@ -95,7 +98,7 @@ function Login() {
                     >
                       تایید و ادامه
                     </button>
-                    <Link to={"/register"}>
+                    <Link to={"/register"} className="flex justify-center mb-1">
                       <Button> ثبت نام</Button>
                     </Link>
                   </div>

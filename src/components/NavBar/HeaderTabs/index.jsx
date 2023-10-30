@@ -109,7 +109,7 @@ function HeaderTabs({onClick}) {
                         </div>
                     </div>
                 </div>
-
+                
                 <div className="lg:flex justify-between gap-8 hidden">
                     <div className="inline-flex items-center gap-2 opacity-80">
                         <p>4045_021</p>
