@@ -103,11 +103,7 @@ function HeaderTabs({onClick}) {
                             <img src={userIconLog}/>
                             <div> ورود/ ثبت نام</div>
                         </Button>
-                    </Link>
-                    <Link to={"ticket"}>
-                        <Button>
-                            salam
-                        </Button>
+                        
                     </Link>
                 </div>
             </div>
