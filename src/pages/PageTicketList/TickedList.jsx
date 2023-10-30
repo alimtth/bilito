@@ -16,7 +16,6 @@ function TickedList() {
     return (
         <div className=" flex flex-col items-center">
             <section className="flex flex-col relative items-center">
-                <img src={titlePic}/>
             </section>
             <section className="-m-2 md:-m-12 z-10 bg-white flex flex-col items-center rounded-lg shadow-2xl" id='container'>
                 <div className="p-6 gap-8 flex justify-center items-center font-bold">

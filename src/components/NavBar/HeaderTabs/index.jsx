@@ -106,7 +106,7 @@ function HeaderTabs({onClick}) {
                     </Link>
                 </div>
             </div>
-                {/* <HomePageScreen /> */}
+                <HomePageScreen />
         </>
     );
 }
