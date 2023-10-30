@@ -53,9 +53,10 @@ function Login() {
                 <br />
                 <form
                   onSubmit={handleSubmit(onFormSubmit)}
-                  className="flex flex-col justify-center items-center"
+                  className="flex flex-col justify-start items-start px-6"
                 >
                   <InputTextField
+                      size='md'
                     placeholder={""}
                     register={register("username")}
                   >
@@ -66,6 +67,7 @@ function Login() {
                   )}
                   <br />
                   <InputTextField
+                      size='md'
                     placeholder={""}
                     register={register("password")}
                   >

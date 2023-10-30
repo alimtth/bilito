@@ -45,10 +45,11 @@ function Register() {
                 کد تایید به شماره موبایلی که وارد می‌کنید، ارسال خواهد شد.
               </h6>
               <form
-                className="flex flex-col justify-center items-center"
+                className="flex flex-col justify-start items-start px-6"
                 onSubmit={handleSubmit(onFormSubmit)}
               >
-                <InputTextField type={"text"} register={register("username")}>
+                <InputTextField
+                    size='sm' type={"text"} register={register("username")}>
                   {" "}
                   نام کاربری
                 </InputTextField>
@@ -57,6 +58,7 @@ function Register() {
                 )}
                 <br />
                 <InputTextField
+                    size='sm'
                   placeholder={""}
                   register={register("password")}
                 >
@@ -67,6 +69,7 @@ function Register() {
                 )}
                 <br />
                 <InputTextField
+                    size='sm'
                   placeholder={""}
                   register={register("confirmPassword")}
                 >

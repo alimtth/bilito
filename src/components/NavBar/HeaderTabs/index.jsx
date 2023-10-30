@@ -23,6 +23,7 @@ import {TbUserSearch} from "react-icons/tb";
 import {BiUser} from "react-icons/bi";
 import {AiFillHome, AiOutlineHome} from "react-icons/ai";
 import HomePageScreen from "../HomePageScreen";
+import {RiMenu3Line} from "react-icons/ri";
 
 function HeaderTabs({onClick}) {
     const [showMenu, setShowMenu] = useState(false)
@@ -32,8 +33,8 @@ function HeaderTabs({onClick}) {
     return (
         <>
 
-            <div className="flex justify-between items-center py-4" id='container'>
-                <div className="flex justify-between gap-16">
+            <div className="flex justify-between items-center py-4 flex-row-reverse md:flex-row" id='container'>
+                <div className="flex justify-between flex-row-reverse md:flex-row gap-16">
                     <img src={bilitoIcon} />
                     <div className="flex justify-between gap-16">
                         <ul className="md:flex justify-between items-center gap-8 text-sm hidden">
@@ -48,13 +49,14 @@ function HeaderTabs({onClick}) {
                         </ul>
                     </div>
                 </div>
-                <GiHamburgerMenu onClick={handleToggle} className='md:hidden block'/>
+                <RiMenu3Line
+                    style={{backgroundColor:'#77BDE0',fontSize:'45px',border:'1px solid #1D99CC',color:' #fff',borderRadius:'5px',padding:'5px',cursor:'pointer'}} onClick={handleToggle} className='md:hidden block'/>
 
                 <div className={`sidebar shadow-2xl border rounded p-5 ${showMenu ? 'open' : ''}`}>
                     <div className='flex flex-col h-full'>
-                        <div className='flex justify-start gap-28'>
-                            <Close onClick={handleToggle}>close</Close>
-                            <img className='w-12 h-auto' src={bilitoIcon}/>
+                        <div className='flex justify-end gap-32'>
+                            <img className='w-14 h-auto' src={bilitoIcon}/>
+                            <Close  style={{cursor:'pointer',fontSize:'35px',border:'1px solid #ADADAD',borderRadius:'10px',padding:'5px'}} onClick={handleToggle}>close</Close>
                         </div>
                         <div className='line'></div>
                         <div className='flex flex-col py-12'>

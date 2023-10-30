@@ -1,10 +1,10 @@
 import React, { Children } from 'react';
 import './ui.css'
 const sizes = {
-    sm: "flex py-4 text-sm px-0 ",
-    md: "flex py-4 text-sm px-0 ",
-    lg: "flex py-4 text-sm px-0 ",
-    xl: "flex py-4 text-sm px-0 ",
+    sm: "flex py-4 text-sm px-1 ",
+    md: "flex py-4 text-sm px-1 ",
+    lg: "flex py-4 text-sm px-1 ",
+    xl: "flex py-4 text-sm px-1 ",
 };
 function InputTextField({children , placeholder, style, className, onChange, type, register, value,size}) {
     return (
