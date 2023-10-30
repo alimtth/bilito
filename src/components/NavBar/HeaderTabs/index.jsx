@@ -104,6 +104,11 @@ function HeaderTabs({onClick}) {
                             <div> ورود/ ثبت نام</div>
                         </Button>
                     </Link>
+                    <Link>
+                        <Button>
+                            salam
+                        </Button>
+                    </Link>
                 </div>
             </div>
                 <HomePageScreen />
