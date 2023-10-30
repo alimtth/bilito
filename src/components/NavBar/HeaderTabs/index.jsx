@@ -35,11 +35,11 @@ function HeaderTabs({onClick}) {
 
             <div className="flex justify-between items-center py-4 flex-row-reverse lg:flex-row" id='container'>
                 <div className="flex justify-between flex-row-reverse lg:flex-row gap-16">
-                    <img src={bilitoIcon} />
+                    <img src={bilitoIcon}/>
                     <div className="flex justify-between gap-16">
                         <ul className="lg:flex justify-between items-center gap-8 text-sm hidden">
                             <Link to={"/"}>
-                            <li className="cursor-pointer">صفحه اصلی</li>
+                                <li className="cursor-pointer">صفحه اصلی</li>
                             </Link>
                             <li className="cursor-pointer">سفرهای من</li>
                             <li className="flex justify-between gap-2 cursor-pointer">
@@ -50,13 +50,27 @@ function HeaderTabs({onClick}) {
                     </div>
                 </div>
                 <RiMenu3Line
-                    style={{backgroundColor:'#77BDE0',fontSize:'45px',border:'1px solid #1D99CC',color:' #fff',borderRadius:'5px',padding:'5px',cursor:'pointer'}} onClick={handleToggle} className='lg:hidden block'/>
+                    style={{
+                        backgroundColor: '#77BDE0',
+                        fontSize: '45px',
+                        border: '1px solid #1D99CC',
+                        color: ' #fff',
+                        borderRadius: '5px',
+                        padding: '5px',
+                        cursor: 'pointer'
+                    }} onClick={handleToggle} className='lg:hidden block'/>
 
                 <div className={`sidebar shadow-2xl border rounded p-5 ${showMenu ? 'open' : ''}`}>
                     <div className='flex flex-col h-full'>
                         <div className='flex justify-end gap-32'>
                             <img className='w-14 h-auto' src={bilitoIcon}/>
-                            <Close  style={{cursor:'pointer',fontSize:'35px',border:'1px solid #ADADAD',borderRadius:'10px',padding:'5px'}} onClick={handleToggle}>close</Close>
+                            <Close style={{
+                                cursor: 'pointer',
+                                fontSize: '35px',
+                                border: '1px solid #ADADAD',
+                                borderRadius: '10px',
+                                padding: '5px'
+                            }} onClick={handleToggle}>close</Close>
                         </div>
                         <div className='line'></div>
                         <div className='flex flex-col py-12'>
@@ -85,10 +99,12 @@ function HeaderTabs({onClick}) {
                                 <BsTelephone/>
                             </div>
                             <div className='flex justify-center gap-3 py-4 text-gray-20 font-light'>
-                                <Button variant="fill">
-                                    <img src={userIconLog}/>
-                                    <div> ورود/ ثبت نام</div>
-                                </Button>
+                                <Link to={"/login"}>
+                                    <Button variant="fill">
+                                        <img src={userIconLog}/>
+                                        <div> ورود/ ثبت نام</div>
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -105,11 +121,11 @@ function HeaderTabs({onClick}) {
                             <img src={userIconLog}/>
                             <div> ورود/ ثبت نام</div>
                         </Button>
-                        
+
                     </Link>
                 </div>
             </div>
-                <HomePageScreen />
+            <HomePageScreen/>
         </>
     );
 }
