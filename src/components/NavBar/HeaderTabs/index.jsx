@@ -100,7 +100,7 @@ function HeaderTabs({onClick}) {
                             </div>
                             <div className='flex justify-center gap-3 py-4 text-gray-20 font-light'>
                                 <Link to={"/login"}>
-                                    <Button variant="fill">
+                                    <Button variant="fill" onClick={handleToggle}>
                                         <img src={userIconLog}/>
                                         <div> ورود/ ثبت نام</div>
                                     </Button>
