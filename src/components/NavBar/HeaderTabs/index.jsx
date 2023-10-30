@@ -33,11 +33,11 @@ function HeaderTabs({onClick}) {
     return (
         <>
 
-            <div className="flex justify-between items-center py-4 flex-row-reverse md:flex-row" id='container'>
-                <div className="flex justify-between flex-row-reverse md:flex-row gap-16">
+            <div className="flex justify-between items-center py-4 flex-row-reverse lg:flex-row" id='container'>
+                <div className="flex justify-between flex-row-reverse lg:flex-row gap-16">
                     <img src={bilitoIcon} />
                     <div className="flex justify-between gap-16">
-                        <ul className="md:flex justify-between items-center gap-8 text-sm hidden">
+                        <ul className="lg:flex justify-between items-center gap-8 text-sm hidden">
                             <Link to={"/"}>
                             <li className="cursor-pointer">صفحه اصلی</li>
                             </Link>
@@ -50,7 +50,7 @@ function HeaderTabs({onClick}) {
                     </div>
                 </div>
                 <RiMenu3Line
-                    style={{backgroundColor:'#77BDE0',fontSize:'45px',border:'1px solid #1D99CC',color:' #fff',borderRadius:'5px',padding:'5px',cursor:'pointer'}} onClick={handleToggle} className='md:hidden block'/>
+                    style={{backgroundColor:'#77BDE0',fontSize:'45px',border:'1px solid #1D99CC',color:' #fff',borderRadius:'5px',padding:'5px',cursor:'pointer'}} onClick={handleToggle} className='lg:hidden block'/>
 
                 <div className={`sidebar shadow-2xl border rounded p-5 ${showMenu ? 'open' : ''}`}>
                     <div className='flex flex-col h-full'>
