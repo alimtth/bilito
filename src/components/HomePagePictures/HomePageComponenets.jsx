@@ -43,7 +43,7 @@ function HomePageComponenets() {
             <img
               src={kish}
               alt="Photo of kish island"
-              className="absolute top-0 left-0 h-auto  rounded-lg object-cover"
+              className="absolute top-0 left-0 h-auto rounded-lg object-cover"
               />
             <div className="absolute bottom-0 ">
               <p className="pr-4 mr-2 mb-2 text-white font-bold ">
@@ -61,7 +61,7 @@ function HomePageComponenets() {
             <div style={{ paddingBottom: "45%" }} />
             <img
               src={turkey}
-              alt="Photo of city turkiye"
+              alt="Photo of City turkiye"
               className="absolute top-0 left-0 w-full h-auto rounded-lg object-cover "
             />
             <div className="absolute bottom-0">
