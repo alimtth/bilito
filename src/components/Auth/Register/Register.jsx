@@ -16,6 +16,7 @@ const schema = yup.object().shape({
     .oneOf([yup.ref("password")], "تکرار پسورد اشتباه است")
     .required(),
 });
+
 function Register() {
   const {
     register,
@@ -50,9 +51,8 @@ function Register() {
                 onSubmit={handleSubmit(onFormSubmit)}
               >
                 <InputTextField
-                  size='sm' type={"text"} register={register("username")} className="w-[530px]"
+                  size='sm' type={"text"} register={register("username")} className="w-[530px] " value={"sa"}
                 >
-                  {" "}
                   نام کاربری
                 </InputTextField>
                 {errors.username && (
@@ -75,6 +75,7 @@ function Register() {
                   size='sm'
                   className="w-[530px]"
                   placeholder={""}
+                  
                   register={register("confirmPassword")}
                 >
                   تکرار رمز عبور
