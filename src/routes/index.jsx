@@ -7,6 +7,7 @@ import Login from "@/components/Auth/Login/Login";
 import Register from "@/components/Auth/Register/Register"
 import TickedList from "@/pages/PageTicketList/TickedList";
 import StepShop from "@/pages/StepShop/StepShop";
+import AuthPage from "@/pages/Auth";
 
 
 const routes =[
@@ -33,6 +34,10 @@ const routes =[
             {
                 path:'stepshop',
                 element: <StepShop />
+            },
+            {
+                path:'test',
+                element: <AuthPage />
             }
         ]
     },
