@@ -14,6 +14,7 @@ const sizes = {
   md: "flex py-2 text-md px-4 text-center",
   lg: "flex py-2 text-lg px-5 text-center",
   xl: "flex py-3 text-xl px-6 text-center",
+  xxl: "flex py-4 text-xl px-7 text-center"
 };
 
 function Button({ children, variant = "outline", size = "lg", type = "button", className, onClick,...props }) {
