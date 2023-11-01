@@ -19,14 +19,7 @@ const routes =[
                 index: true,
                 element: <HomePage/>,
             },
-            {
-                path:'login',
-                element: <Login/>,
-            },
-            {
-                path:'register',
-                element: <Register />
-            },
+            
             {
                 path:'ticket',
                 element: <TickedList />
@@ -40,6 +33,15 @@ const routes =[
                 element: <AuthPage />
             }
         ]
+        
+    },
+    {
+        path:'login',
+        element: <Login/>,
+    },
+    {
+        path:'register',
+        element: <Register />
     },
     {
         path: "*",
