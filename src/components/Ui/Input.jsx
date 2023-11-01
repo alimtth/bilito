@@ -1,5 +1,4 @@
 import React from "react";
-import tickSquareButton from "/src/assets/tick-square-dark-button.svg";
 
 function Input({ size = "lg", placeholder }) {
   const sizes = {

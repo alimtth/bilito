@@ -1,10 +1,6 @@
-import HeaderTabs from "@/components/NavBar/HeaderTabs";
-import { TextField } from "@mui/material";
 import React, { useState } from "react";
 import bilitoIcon from "@/assets/Images/Icons/BilitoIcone.png";
-import tick from "@/assets/Images/Icons/Tick.png";
 import { Link } from "react-router-dom";
-import HomePageScreen from "@/components/NavBar/HomePageScreen";
 import InputTextField from "@/components/Ui/InputTextField";
 import Button from "@/components/Ui/Button";
 import * as yup from "yup";
