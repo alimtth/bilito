@@ -43,7 +43,7 @@ function Popular() {
 
                 <div>
                     <div className=' flex shrink-0'>
-                        <img src={keshti} alt="Ship photo" />
+                        <img src={haram} alt="Ship photo" />
                         <div className='flex flex-col justify-center items-end flex-2 border-gray-400 border-l border-b border-t rounded-l '>
                             <div className='py-2 px-4 gap-2 flex justify-center items-center self-stretch '>
                                 <p className='text-blue-500'>تهران</p>
@@ -62,7 +62,7 @@ function Popular() {
 
                 <div>
                     <div className=' flex shrink-0'>
-                        <img src={haram} alt="Photo of mashhad shine" />
+                        <img src={keshti} alt="Photo of mashhad shine" />
                         <div className='flex flex-col justify-center items-end flex-2 border-gray-400 border-l border-b border-t rounded-l '>
                             <div className='py-2 px-4 gap-2 flex justify-center items-center self-stretch '>
                                 <p className='text-blue-500'>تهران</p>
