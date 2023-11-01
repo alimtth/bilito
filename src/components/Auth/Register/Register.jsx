@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Buttons from "@/components/Ui/Button";
+import axios from "axios";
 
 const schema = yup.object().shape({
   username: yup.string().required("فیلد نام کاربری اجباری است"),
@@ -24,8 +25,18 @@ function Register() {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
-  const onFormSubmit = (data) => {
+  const onFormSubmit = async (data) => {
     console.log(data);
+
+    try {
+      const result = await axios.post(
+        "http://demo2578450.mockable.io/auth/register",
+        data
+      );
+      console.log(result);
+    }catch (error) {
+      console.log(error);
+    }
   };
 
   return (
