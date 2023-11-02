@@ -64,8 +64,8 @@ function Register() {
 
   return (
     <div>
-      {/* <div className="fixed inset-0 bg-blue-650 bg-opacity-10 backdrop-blur-[0.5px] flex justify-center items-center">
-        <ToastContainer
+      <div className="fixed inset-0 bg-blue-650 bg-opacity-10 backdrop-blur-[0.5px] flex justify-center items-center">
+        {/* <ToastContainer
         position="top-right"
         autoClose={5000}
         hideProgressBar={false}
