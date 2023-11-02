@@ -6,6 +6,8 @@ import Button from "@/components/Ui/Button";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
+import bilitoIconsss from "@/assets/Images/Icons/AirplaneSelected.svg";
+import bilitoIcons from "@/assets/Images/Icons/FavIconBilito.png";
 
 const schema = yup.object().shape({
   username: yup.string().required("فیلد نام کاربری اجباری است"),
@@ -21,19 +23,19 @@ function Login() {
 
   const onFormSubmit = (d) => {
     console.log(d);
-    
+
   }
 
   const openModal = () => {
     setShowModal(true);
   };
 
-  
+
   return (
     <div>
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-10 backdrop-blur-[0.5px] flex justify-center items-center">
-          <div className="w-[600px]">
+        <div className="fixed inset-0 bg-blue-650 bg-opacity-10 backdrop-blur-[0.5px] flex justify-center items-center">
+          <div className="w-[600px] opacity-75">
             <div className="bg-white p-2 rounded-[8px]">
               <div className="flex flex-col items-center">
                 <img
@@ -106,6 +108,8 @@ function Login() {
           </div>
         </div>
       )}
+      <img src={bilitoIcons} alt="" className="lg:w-96 z-0 blur-md relative right-[50px] transform rotate-12 animate-bounce inline-block " />
+      <img src={bilitoIconsss} alt="" className="lg:w-96 z-10	 blur-md relative right-[1300px] rotate-12 animate-bounce inline-block" />
     </div>
   );
 }

@@ -6,28 +6,13 @@ function SingleTicket(props) {
 
     setTimeout(() => {
         setIsloding(false)
-    }, 10000);
+    }, 5000);
     const ticetListItem = [
         {
             num: 1,
             price: 2000,
 
         },
-        // {
-        //     num: 2,
-        //     price: 4300,
-
-        // },
-        // {
-        //     num: 3,
-        //     price: 5000,
-
-        // },
-        // {
-        //     num: 4,
-        //     price: 2400,
-
-        // }
     ]
     return (
         <>
