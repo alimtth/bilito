@@ -1,5 +1,5 @@
 import InputTextField from "@/components/Ui/InputTextField";
-import { Button } from "@mui/material";
+import { Alert, AlertTitle, Button } from "@mui/material";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import bilitoIcon from "@/assets/Images/Icons/BilitoIcone.png";
@@ -10,8 +10,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Buttons from "@/components/Ui/Button";
 import axios from "axios";
 import { useAuthContext } from "@/providers/AuthProvider";
-import { ToastContainer } from "react-toastify";
-import  bilitoIconsss   from "@/assets/Images/Icons/AirplaneSelected.svg";
+import bilitoIconsss from "@/assets/Images/Icons/AirplaneSelected.svg";
 
 const schema = yup.object().shape({
   username: yup.string().required("فیلد نام کاربری اجباری است"),
@@ -31,7 +30,8 @@ function Register() {
   const [isloding, setIsloding] = useState(false);
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
   const [error, setError] = useState(null);
-  const {baseURL} = useAuthContext()
+  const { baseURL } = useAuthContext()
+  const [errMsg, setErrMsg] = useState("");
 
   const navigate = useNavigate();
 
@@ -46,6 +46,7 @@ function Register() {
     if (isloding) return;
 
     try {
+      setErrMsg("");
       setIsloding(true)
       const result = await axios.post(
         `${baseURL}auth/register`,
@@ -57,7 +58,7 @@ function Register() {
 
       console.log(result);
     } catch (err) {
-      console.log(err);
+      setErrMsg(err.toJSON().message);
     } finally {
       setIsloding(false);
     }
@@ -65,24 +66,10 @@ function Register() {
   };
 
 
-  {/* <ToastContainer
-  position="top-right"
-  autoClose={5000}
-  hideProgressBar={false}
-  newestOnTop={false}
-  closeOnClick
-  rtl={false}
-    pauseOnFocusLoss
-    draggable
-    pauseOnHover
-    theme="light" 
-    >
-    {error }
-  </ToastContainer> */}
   return (
     <div>
       <div className="fixed inset-0 bg-blue-650 bg-opacity-10 backdrop-blur-[0.5px] flex justify-center items-center">
-        
+
         <div className="w-[600px] fixed z-20 mt-[100px] opacity-75">
           <div className="bg-white p-2 rounded-[8px]">
             <div className="flex flex-col items-center">
@@ -163,12 +150,18 @@ function Register() {
                 </div>
               </form>
             </div>
-           
+
           </div>
         </div>
-      <img src={bilitoIcons} alt="" className="lg:w-96 z-0 blur-md relative right-[500px] bottom-[300px]  animate-spin transform rotate-3 " />
-      <img src={bilitoIconsss} alt="" className="lg:w-96 z-10	 blur-md relative -right-[700px] rotate-12 animate-pulse inline-block transition-transform duration-75" />
+        <img src={bilitoIcons} alt="" className="lg:w-96 z-0 blur-md relative right-[500px] bottom-[300px]  animate-spin transform rotate-3 " />
+        <img src={bilitoIconsss} alt="" className="lg:w-96 z-10	 blur-md relative -right-[700px] rotate-12 animate-pulse inline-block transition-transform duration-75" />
       </div>
+      {error && (
+        <Alert severity="error" variant="filled" className="w-60 m-6 rounded-3xl animate-bounce " onClose={() => setError(false)}>
+          <AlertTitle>Error</AlertTitle>
+          <strong>{errMsg}</strong>
+        </Alert>
+      )}
     </div>
   );
 }
