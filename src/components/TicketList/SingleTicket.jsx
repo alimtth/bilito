@@ -16,7 +16,7 @@ function SingleTicket(props) {
     ]
     return (
         <>
-            <div className='flex border-gray-10 border rounded-lg flex-col gap-4 mt-6 justify-evenly '>
+            <div className='flex border-gray-10 border rounded-lg flex-col gap-4 mt-6 justify-evenly py-6 '>
                 {isloding ? (
                     <div className="flex w-[100%] h-[200px] mx-auto overflow-hidden bg-white rounded-lg shadow-lg animate-pulse dark:bg-gray-800">
                         <div className="w-1/4 bg-gray-300 dark:bg-gray-600"></div>
