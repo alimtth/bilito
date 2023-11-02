@@ -9,6 +9,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Buttons from "@/components/Ui/Button";
 import axios from "axios";
 import { useAuthContext } from "@/providers/AuthProvider";
+import { ToastContainer } from "react-toastify";
 
 const schema = yup.object().shape({
   username: yup.string().required("فیلد نام کاربری اجباری است"),
@@ -27,6 +28,7 @@ function Register() {
   } = useForm({ resolver: yupResolver(schema) });
   const [isloding, setIsloding] = useState(false);
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
+  const [error, setError] = useState(null);
 
   const navigate = useNavigate();
 
@@ -51,16 +53,33 @@ function Register() {
       navigate("/")
 
       console.log(result);
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.log(err);
     } finally {
       setIsloding(false);
     }
+    setError("مشکل سرور");
   };
+
 
   return (
     <div>
       <div className="fixed inset-0 bg-blue-650 bg-opacity-10 backdrop-blur-[0.5px] flex justify-center items-center">
+        {/* <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light" 
+        >
+          {error }
+
+        </ToastContainer> */}
         <div className="w-[600px]">
           <div className="bg-white p-2 rounded-[8px]">
             <div className="flex flex-col items-center">
