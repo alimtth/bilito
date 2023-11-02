@@ -3,6 +3,7 @@ import { Button } from "@mui/material";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import bilitoIcon from "@/assets/Images/Icons/BilitoIcone.png";
+import bilitoIcons from "@/assets/Images/Icons/FavIconBilito.png";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -10,6 +11,7 @@ import Buttons from "@/components/Ui/Button";
 import axios from "axios";
 import { useAuthContext } from "@/providers/AuthProvider";
 import { ToastContainer } from "react-toastify";
+import  bilitoIconsss   from "@/assets/Images/Icons/AirplaneSelected.svg";
 
 const schema = yup.object().shape({
   username: yup.string().required("فیلد نام کاربری اجباری است"),
@@ -29,6 +31,7 @@ function Register() {
   const [isloding, setIsloding] = useState(false);
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
   const [error, setError] = useState(null);
+  const {baseURL} = useAuthContext()
 
   const navigate = useNavigate();
 
@@ -45,7 +48,7 @@ function Register() {
     try {
       setIsloding(true)
       const result = await axios.post(
-        "http://demo2578450.mockable.io/auth/register",
+        `${baseURL}auth/register`,
         data
       );
 
@@ -62,24 +65,25 @@ function Register() {
   };
 
 
+  {/* <ToastContainer
+  position="top-right"
+  autoClose={5000}
+  hideProgressBar={false}
+  newestOnTop={false}
+  closeOnClick
+  rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+    theme="light" 
+    >
+    {error }
+  </ToastContainer> */}
   return (
     <div>
       <div className="fixed inset-0 bg-blue-650 bg-opacity-10 backdrop-blur-[0.5px] flex justify-center items-center">
-        {/* <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light" 
-          >
-          {error }
-        </ToastContainer> */}
-        <div className="w-[600px]">
+        
+        <div className="w-[600px] fixed z-20 mt-[100px] opacity-75">
           <div className="bg-white p-2 rounded-[8px]">
             <div className="flex flex-col items-center">
               <img
@@ -99,7 +103,7 @@ function Register() {
                 onSubmit={handleSubmit(onFormSubmit)}
               >
                 <InputTextField
-                  size='sm' type={"text"} register={register("username")} className="w-[530px] " 
+                  size='sm' type={"text"} register={register("username")} className="w-[530px] "
                 >
                   شماره موبایل
                 </InputTextField>
@@ -159,8 +163,11 @@ function Register() {
                 </div>
               </form>
             </div>
+           
           </div>
         </div>
+      <img src={bilitoIcons} alt="" className="lg:w-96 z-0 blur-md relative right-[500px] bottom-[300px]  animate-spin transform rotate-3 " />
+      <img src={bilitoIconsss} alt="" className="lg:w-96 z-10	 blur-md relative -right-[700px] rotate-12 animate-pulse inline-block transition-transform duration-75" />
       </div>
     </div>
   );

@@ -12,6 +12,7 @@ const useAuthContext = () => {
 const AuthProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(null)
     const [isloding, setIsloding] = useState(false);
+    const [baseURL, setBaseURL] = useState("http://demo2578450.mockable.io/")
     const [accessToken, setAccessToken] = useState(() =>
         localStorage.getItem("accessToken")
     );
@@ -28,9 +29,9 @@ const AuthProvider = ({ children }) => {
     }
 
     const currentUsers = async () => {
-        if(isloding) return;
+        if (isloding) return;
         setIsloding(true)
-        const result = await axios.get("http://demo2578450.mockable.io/auth/me", {
+        const result = await axios.get(`${baseURL}/auth/me`, {
             headers: {
                 Authorization: `Bearer ${accessToken}`,
             }
@@ -43,7 +44,7 @@ const AuthProvider = ({ children }) => {
         if (isLoggedIn) {
             currentUsers();
         }
-    },[isLoggedIn]);
+    }, [isLoggedIn]);
 
 
     const values = {
@@ -52,6 +53,7 @@ const AuthProvider = ({ children }) => {
         logout,
         currentUser,
         isloding,
+        baseURL,
 
     };
 
