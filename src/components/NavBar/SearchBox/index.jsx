@@ -6,6 +6,7 @@ import Input from "@/components/Ui/Input";
 import searchIcon from "@/assets/Images/Icons/search-normal.svg";
 import History from "../History";
 import InputTextField from "@/components/Ui/InputTextField";
+import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports';
 
 function SearchBox() {
     return (
@@ -39,6 +40,7 @@ function SearchBox() {
                     </div>
                     <div className="flex flex-col gap-1 lg:flex lg:flex-row lg:gap-6 w-full lg:w-auto flex-wrap items-center sm:gap-8 ">
                         <InputTextField size="sm" className={"sm:px-44 lg:px-0 "}>مبدا</InputTextField>
+                        <ConnectingAirportsIcon />
                         <InputTextField size="sm" className={"sm:px-44 lg:px-0"}>مقصد</InputTextField>
                         <InputTextField size="sm" className={"sm:px-44 lg:px-0"}>تاریخ رفت و برگشت</InputTextField>
                         <InputTextField size="sm" className={"sm:px-44 lg:px-0"}>تعداد مسافر</InputTextField>

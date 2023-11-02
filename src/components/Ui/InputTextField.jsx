@@ -5,6 +5,7 @@ const sizes = {
     md: "flex py-4 text-sm px-1 ",
     lg: "flex py-4 text-sm px-1 ",
     xl: "flex py-4 text-sm px-1 ",
+    ssl: "flex py-3 text-sm px-3 ",
 };
 function InputTextField({children , placeholder, style, className, onChange, type, register, value,size}) {
     return (
