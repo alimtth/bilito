@@ -72,13 +72,12 @@ function Register() {
         newestOnTop={false}
         closeOnClick
         rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light" 
-        >
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light" 
+          >
           {error }
-
         </ToastContainer> */}
         <div className="w-[600px]">
           <div className="bg-white p-2 rounded-[8px]">

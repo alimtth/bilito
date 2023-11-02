@@ -3,6 +3,10 @@ import Button from "@/components/Ui/Button.jsx";
 
 function SingleTicket(props) {
     const [isloding, setIsloding] = useState(true);
+
+    setTimeout(() => {
+        setIsloding(false)
+    }, 10000);
     const ticetListItem = [
         {
             num: 1,
