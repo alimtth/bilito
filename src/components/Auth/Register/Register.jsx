@@ -145,7 +145,7 @@ function Register() {
                     ثبت نام
                   </Buttons>
                   <Link to={"/login "} className="flex justify-center mb-1">
-                    <Buttons l > ورود</Buttons>
+                    <Buttons > ورود</Buttons>
                   </Link>
                 </div>
               </form>

@@ -17,7 +17,7 @@ import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports';
 
 function TickedList() {
     const [trySearch, setTrySearch] = useState(false)
-    const [currentTicket, setCurrentTicket] = useState(false);
+    const [currentTicket, setCurrentTicket] = useState(true);
 
 
     const handlSelectTrySearch = () => {
