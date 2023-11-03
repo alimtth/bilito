@@ -37,7 +37,7 @@ function HomePageComponenets() {
         
         <SwiperSlide>
           <div className="relative ">
-            <div style={{ paddingBottom: "45%" }} />
+            <div style={{ paddingBottom: "40%" }} />
             <img
               src={kish}
               alt="Photo of kish island"
@@ -56,7 +56,7 @@ function HomePageComponenets() {
 
         <SwiperSlide>
           <div className="relative w-full ">
-            <div style={{ paddingBottom: "45%" }} />
+            <div style={{ paddingBottom: "40%" }} />
             <img
               src={turkey}
               alt="Photo of City turkiye"
@@ -77,7 +77,7 @@ function HomePageComponenets() {
 
         <SwiperSlide>
           <div className="relative w-full ">
-            <div style={{ paddingBottom: "45%" }} />
+            <div style={{ paddingBottom: "40%" }} />
             <img
               src={shiraz}
               alt="Photo of takht jamshid shiraz"
@@ -96,7 +96,7 @@ function HomePageComponenets() {
 
         <SwiperSlide>
           <div className="relative w-full ">
-            <div style={{ paddingBottom: "45%" }} />
+            <div style={{ paddingBottom: "40%" }} />
             <img
               src={dubai}
               alt="Photo of city dubai"
