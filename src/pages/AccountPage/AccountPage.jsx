@@ -55,7 +55,7 @@ const AccountPage = () => {
                             <div className="outline p-5 outline-gray-400 rounded-lg mt-7  ">
                                 <div className="flex justify-between">
                                     <InputTextField size={"xsl"}>
-                                    نام و نام خانوداگی
+                                    نام و نام خانوادگی
                                     </InputTextField>
                                     <InputTextField size={"xsl"}>
                                     جنسیت
