@@ -153,7 +153,6 @@ function Register() {
 
           </div>
         </div>
-        <img src={bilitoIcons} alt="" className="lg:w-96 z-0 blur-md relative right-[500px] bottom-[300px]  animate-spin transform rotate-3 " />
         <img src={bilitoIconsss} alt="" className="lg:w-96 z-10	 blur-md relative -right-[700px] rotate-12 animate-pulse inline-block transition-transform duration-75" />
       </div>
       {error && (
