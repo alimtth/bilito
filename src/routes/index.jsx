@@ -8,6 +8,7 @@ import Register from "@/components/Auth/Register/Register"
 import TickedList from "@/pages/PageTicketList/TickedList";
 import StepShop from "@/pages/StepShop/StepShop";
 import AuthPage from "@/pages/Auth";
+import AccountPage from "@/pages/AccountPage/AccountPage";
 
 
 const routes =[
@@ -42,6 +43,10 @@ const routes =[
     {
         path:'register',
         element: <Register />
+    },
+    {
+        path: 'account',
+        element: <AccountPage />
     },
     {
         path: "*",
