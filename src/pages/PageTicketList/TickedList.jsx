@@ -48,6 +48,7 @@ function TickedList() {
                         <InputTextField size={"ssl"} className={"rounded-full"}>
                             کلاس پرواز
                         </InputTextField>
+                        
                         <Button variant="fill" >
                             جستجو
                         </Button>
