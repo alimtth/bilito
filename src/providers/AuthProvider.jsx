@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import axios from "axios";
 import { apiClient } from "@/api/request";
 import { apiGetCurrentUser } from "@/api/user";
 
@@ -13,7 +12,6 @@ const useAuthContext = () => {
 const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [baseURL, setBaseURL] = useState("http://demo2578450.mockable.io/");
   const [accessToken, setAccessToken] = useState(() =>
     localStorage.getItem("accessToken")
   );
@@ -50,7 +48,6 @@ const AuthProvider = ({ children }) => {
     logout,
     currentUser,
     isLoading,
-    baseURL,
   };
 
   return <authContext.Provider value={values}>{children}</authContext.Provider>;
