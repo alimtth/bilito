@@ -11,6 +11,7 @@ import Buttons from "@/components/Ui/Button";
 import axios from "axios";
 import { useAuthContext } from "@/providers/AuthProvider";
 import bilitoIconsss from "@/assets/Images/Icons/AirplaneSelected.svg";
+import { apiRegisterUser } from "@/api/user";
 
 const schema = yup.object().shape({
   username: yup.string().required("فیلد نام کاربری اجباری است"),
@@ -30,7 +31,7 @@ function Register() {
   const [isloding, setIsloding] = useState(false);
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
   const [error, setError] = useState(null);
-  const { baseURL } = useAuthContext()
+  const { baseURL } = useAuthContext();
   const [errMsg, setErrMsg] = useState("");
 
   const navigate = useNavigate();
@@ -39,7 +40,7 @@ function Register() {
 
   const handleCheckboxChange = () => {
     setIsButtonEnabled(true);
-  }
+  };
 
   const onFormSubmit = async (data) => {
     console.log(data);
@@ -47,14 +48,11 @@ function Register() {
 
     try {
       setErrMsg("");
-      setIsloding(true)
-      const result = await axios.post(
-        `${baseURL}auth/register`,
-        data
-      );
+      setIsloding(true);
+      const result = await apiRegisterUser(data);
 
-      saveAccess(result.data.token.accessToken)
-      navigate("/")
+      saveAccess(result.data.token.accessToken);
+      navigate("/");
 
       console.log(result);
     } catch (err) {
@@ -65,11 +63,9 @@ function Register() {
     setError("مشکل سرور");
   };
 
-
   return (
     <div>
       <div className="fixed inset-0 bg-blue-650 bg-opacity-10 backdrop-blur-[0.5px] flex justify-center items-center">
-
         <div className="w-[600px] fixed z-20 mt-[100px] opacity-75">
           <div className="bg-white p-2 rounded-[8px]">
             <div className="flex flex-col items-center">
@@ -90,16 +86,21 @@ function Register() {
                 onSubmit={handleSubmit(onFormSubmit)}
               >
                 <InputTextField
-                  size='sm' type={"text"} register={register("username")} className="w-[530px] "
+                  size="sm"
+                  type={"text"}
+                  register={register("username")}
+                  className="w-[530px] "
                 >
                   شماره موبایل
                 </InputTextField>
                 {errors.username && (
-                  <p className="text-red-500 text-sm mt-1">{errors.username?.message}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.username?.message}
+                  </p>
                 )}
                 <br />
                 <InputTextField
-                  size='sm'
+                  size="sm"
                   className="w-[530px]"
                   placeholder={""}
                   register={register("password")}
@@ -107,11 +108,14 @@ function Register() {
                   پسورد
                 </InputTextField>
                 {errors.password && (
-                  <p className="text-red-500 text-sm mt-1"> {errors.password?.message}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {" "}
+                    {errors.password?.message}
+                  </p>
                 )}
                 <br />
                 <InputTextField
-                  size='sm'
+                  size="sm"
                   className="w-[530px]"
                   placeholder={""}
                   register={register("confirmPassword")}
@@ -119,12 +123,19 @@ function Register() {
                   تکرار رمز عبور
                 </InputTextField>
                 {errors.confirmPassword && (
-                  <p className="text-red-500 text-sm mt-1">{errors.confirmPassword?.message}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.confirmPassword?.message}
+                  </p>
                 )}
 
                 <div>
                   <div className="flex gap-4  mt-[40px] text-gray-600 mr-4">
-                    <input type="checkbox" name="" id="" onChange={handleCheckboxChange} />
+                    <input
+                      type="checkbox"
+                      name=""
+                      id=""
+                      onChange={handleCheckboxChange}
+                    />
                     <h4>
                       با ورود و ثبت‌نام در سایت، با{" "}
                       <Link className="text-blue-650" to={"#"}>
@@ -138,25 +149,33 @@ function Register() {
                     type="submit"
                     loading={isloding}
                     styles={{
-                      backgroundColor: isButtonEnabled ? '#1D91CC' : '',
+                      backgroundColor: isButtonEnabled ? "#1D91CC" : "",
                     }}
                     disabled={!isButtonEnabled}
                   >
                     ثبت نام
                   </Buttons>
                   <Link to={"/login "} className="flex justify-center mb-1">
-                    <Buttons > ورود</Buttons>
+                    <Buttons> ورود</Buttons>
                   </Link>
                 </div>
               </form>
             </div>
-
           </div>
         </div>
-        <img src={bilitoIconsss} alt="" className="lg:w-96 z-10	 blur-md relative -right-[700px] rotate-12 animate-pulse inline-block transition-transform duration-75" />
+        <img
+          src={bilitoIconsss}
+          alt=""
+          className="lg:w-96 z-10	 blur-md relative -right-[700px] rotate-12 animate-pulse inline-block transition-transform duration-75"
+        />
       </div>
       {error && (
-        <Alert severity="error" variant="filled" className="w-60 m-6 rounded-3xl animate-bounce " onClose={() => setError(false)}>
+        <Alert
+          severity="error"
+          variant="filled"
+          className="w-60 m-6 rounded-3xl animate-bounce "
+          onClose={() => setError(false)}
+        >
           <AlertTitle>Error</AlertTitle>
           <strong>{errMsg}</strong>
         </Alert>
