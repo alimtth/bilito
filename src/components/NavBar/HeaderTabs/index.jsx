@@ -29,7 +29,7 @@ function HeaderTabs({ onClick }) {
     }
  
 
-    const { isLoggedIn, logout, currentUser, isloding } = useAuthContext();
+    const { isLoggedIn, logout, currentUser, isLoading } = useAuthContext();
 
     console.log(currentUser);
     return (
@@ -122,7 +122,7 @@ function HeaderTabs({ onClick }) {
                     {isLoggedIn ? (
 
                         <div className="flex justify-center items-center gap-4">
-                            {isloding ? (
+                            {isLoading ? (
                                 <div className="animate-pulse flex space-x-4">
                                     <div className="rounded-full bg-gray-650 h-10 w-10"></div>
                                 </div>
