@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import titlePic from "@/assets/Images/titlePic.png";
 import { IoIosArrowDown } from "react-icons/io";
 import airplane from "@/assets/Images/Icons/airplaneBorder.svg";
 import calendar from "@/assets/Images/Icons/calendar.svg";
 import profileAdd from "@/assets/Images/Icons/profile-add.svg";
 import EditPen from "@/assets/Images/Icons/edit.svg";
 import Button from "@/components/Ui/Button";
-import { ArrowUpward } from "@mui/icons-material";
 import { Slider } from "@mui/material";
 import airport from "@/assets/Images/Icons/Airport.png";
 import TicketList from "@/components/TicketList/index.jsx";
