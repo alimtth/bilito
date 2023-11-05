@@ -30,8 +30,6 @@ function HeaderTabs({ onClick }) {
  
 
     const { isLoggedIn, logout, currentUser, isLoading } = useAuthContext();
-
-    console.log(currentUser);
     return (
         <>
 

@@ -51,7 +51,6 @@ const steps = ['انتخاب بلیط', 'مشخصات', 'تایید بلیط و 
       return newSkipped;
     });
   };
-
   const handleReset = () => {
     setActiveStep(0);
   };

@@ -61,3 +61,13 @@ footer hr {
   }
 }
 
+.hidden-mobile{
+  width: 100%;
+  
+}
+@media (max-width: 1024px) {
+  .hidden-mobile {
+    display: none;
+  }
+}
+
