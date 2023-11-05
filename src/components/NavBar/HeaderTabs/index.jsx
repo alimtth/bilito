@@ -16,14 +16,26 @@ import { RiMenu3Line } from "react-icons/ri";
 import { useAuthContext } from "@/providers/AuthProvider";
 import { BiExit } from "react-icons/bi"
 
-
+// const navItem = [
+//     {
+//         name: "صفحه اصلی",
+//         path: "/"
+//     },
+//     {
+//         name: "سفر های من",
+//         path: "ticket"
+//     },
+//     {
+//         name: "لیست تیکت",
+//         path: "ticket"
+//     },
+// ]
 function HeaderTabs({ onClick }) {
     const [showMenu, setShowMenu] = useState(false)
     const [hover, setHover] = useState(false);
     const handleToggle = () => {
         setShowMenu(!showMenu)
     }
-
     const handlHoverd = () => {
         setHover(!hover);
     }

@@ -31,7 +31,6 @@ function Register() {
   const [isloding, setIsloding] = useState(false);
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
   const [error, setError] = useState(null);
-  const { baseURL } = useAuthContext();
   const [errMsg, setErrMsg] = useState("");
 
   const navigate = useNavigate();

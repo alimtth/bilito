@@ -11,9 +11,9 @@ import dislike from "@/assets/Images/Icons/dislike.png"
 import profile from "@/assets/Images/Icons/profile-add.svg"
 import { useAuthContext } from '@/providers/AuthProvider';
 import InputTextField from '@/components/Ui/InputTextField';
+import BaseLayout from './BaseLayouts/BaseLayout';
 
 const AccountPage = () => {
-    const { currentUser, logout } = useAuthContext();
     const [selected, setSelected] = useState(false);
     const [editUser, setEditUser] = useState(false);
 
@@ -30,22 +30,10 @@ const AccountPage = () => {
             <HeaderTabs />
             <div id='container'>
                 <div className="flex gap-7">
-                    <div className="outline  outline-gray-400 rounded-lg mt-28">
-                        <div className="flex flex-col gap-1 items-center px-28 py-5">
-                            <img src={currentUser?.avatar} alt="" className='rounded-full w-48' />
-                            <h4 className='mt-4 font-bold text-gray-500'>علی مطهری</h4>
-                            <p className='text-gray-500'>۰۹‍۱۲۱۱۱۰۱۱۰</p>
-                        </div>
-                        <div className="flex flex-col items-start gap-7 w-full mr-2">
-                            <hr className='w-full bg-gray-20' />
-                            <p className={`flex items-center text-gray-600 gap-3 cursor-pointer w-72 h-12 rounded-md ${selected === true ? 'bg-blue-100' : ''}`} onClick={handlChangSelected}><img src={profile} alt="" />اطلاعات حساب کاربری</p>
+                    <div className='flex'>
 
-                            <p className={`flex items-center text-gray-600 gap-3 cursor-pointer w-72 h-12 rounded-md ${selected === 1 ? 'bg-blue-100' : ''}`} onClick={handlChangSelected}><img src={profile} alt="" />سفرهای من</p>
-                            <p className={`flex items-center text-gray-600 gap-3 cursor-pointer w-72 h-12 rounded-md ${selected === 2 ? 'bg-blue-100' : ''}`} onClick={handlChangSelected}><img src={profile} alt="" />تیکت‌های من</p>
-                            <p className={`flex items-center text-gray-600 gap-3 cursor-pointer w-72 h-12 rounded-md ${selected === 3 ? 'bg-blue-100' : ''}`} onClick={handlChangSelected}><img src={profile} alt="" />کیف پول</p>
-                            <p className={`flex items-center text-red-600 gap-3 mb-6 cursor-pointer w-72 h-12 rounded-md ${selected === 4 ? 'bg-blue-100' : ''}`} onClick={logout}><img src={profile} alt="" />خروج از حساب کاربری</p>
-                        </div>
-                    </div>
+                        </div> 
+                        <BaseLayout />
                     {selected ? (
                         editUser ? (
                             <div className='flex flex-col w-full mt-16 '>
