@@ -6,7 +6,7 @@ import Buttons from '@/components/Ui/Button'
 function EditUserData() {
     return (
         <div>
-            <div id="container">
+            <div id="container" className='flex basis-1/4'>
                     <div className='flex flex-col w-full mt-16 '>
                             <div className="flex justify-between items-center ">
                                 <h3 className="font-bold">ویرایش اطلاعات</h3>

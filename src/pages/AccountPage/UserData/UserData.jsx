@@ -6,9 +6,8 @@ import { Link, Outlet } from 'react-router-dom';
 
 function UserData() {
     return (
-        <div>
-            <div id="container">
-                    <div className='flex flex-col mt-16 ]'>
+            <>
+                    <div className='flex flex-col mt-16 ] '>
                         <div className="flex justify-between items-center ">
                             <h3 className="font-bold">اطلاعات حساب کاربری</h3>
                         </div>
@@ -29,8 +28,7 @@ function UserData() {
                     <main>
                         <Outlet />
                     </main>
-            </div>
-        </div>
+            </>
     );
 }
 

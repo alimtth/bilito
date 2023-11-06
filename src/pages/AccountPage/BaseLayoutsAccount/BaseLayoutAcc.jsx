@@ -7,10 +7,9 @@ import profile from "@/assets/Images/Icons/profile-add.svg"
 function BaseLayoutAcc() {
     const { currentUser, logout } = useAuthContext();
     return (
-        <div>
+        <>
             <HeaderTabs />
-            <div id="container">
-                <div className="flex">
+                <div className="flex gap-7 mb-8" id='container'>
                     <div className="outline  outline-gray-400 rounded-lg mt-28">
                         <div className="flex flex-col gap-1 items-center px-28 py-5">
                             <img src={currentUser?.avatar} alt="" className='rounded-full w-48' />
@@ -31,12 +30,11 @@ function BaseLayoutAcc() {
                         </div>
 
                     </div>
-                </div>
-            </div>
             <main>
                 <Outlet/>
             </main>
-        </div>
+                </div>
+            </>
     );
 }
 
