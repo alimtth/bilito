@@ -8,6 +8,12 @@ import Register from "@/components/Auth/Register/Register"
 import TickedList from "@/pages/PageTicketList/TickedList";
 import StepShop from "@/pages/StepShop/StepShop";
 import AuthPage from "@/pages/Auth";
+import About from "@/pages/about/About";
+import BaseLayoutAcc from "@/pages/AccountPage/BaseLayoutsAccount/BaseLayoutAcc";
+import UserData from "@/pages/AccountPage/UserData/UserData";
+import EditUser from "@/pages/AccountPage/EditUser/EditUser";
+import EditUserData from "@/pages/AccountPage/EditUserData/EditUserData";
+import MyTicket from "@/pages/AccountPage/MyTicket/MyTicket";
 
 
 const routes =[
@@ -31,7 +37,11 @@ const routes =[
             {
                 path:'test',
                 element: <AuthPage />
-            }
+            },
+            {
+                path: 'about',
+                element: <About />
+            },
         ]
         
     },
@@ -42,6 +52,33 @@ const routes =[
     {
         path:'register',
         element: <Register />
+    },
+    {
+        path: 'account',
+        element: <BaseLayoutAcc />,
+        children: [
+            {
+                path: 'datauser',
+                element: <UserData />,
+                children: [
+                    {
+                path: 'edituser',
+                element: <EditUserData />
+            },
+                ]
+            },
+            
+            {
+                path: 'myticket',
+                element: <MyTicket />
+            },
+        ]
+    },
+    
+   
+    {
+        path: 'about',
+        element: <About />
     },
     {
         path: "*",

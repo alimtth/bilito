@@ -108,8 +108,7 @@ function Login() {
           </div>
         </div>
       )}
-      <img src={bilitoIcons} alt="" className="lg:w-96 z-0 blur-md relative right-[50px] transform rotate-12 animate-bounce inline-block " />
-      <img src={bilitoIconsss} alt="" className="lg:w-96 z-10	 blur-md relative right-[1300px] rotate-12 animate-bounce inline-block" />
+      <img src={bilitoIconsss} alt="" className="lg:w-96 z-10	 blur-md relative right-[1290px] rotate-12 animate-pulse inline-block" />
     </div>
   );
 }

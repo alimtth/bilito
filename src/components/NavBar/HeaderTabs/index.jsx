@@ -6,7 +6,6 @@ import arrowDown from "@/assets/Images/Icons/arrow-down.svg";
 import Button from "@/components/Ui/Button";
 import "../style.css";
 import { Link } from "react-router-dom";
-import { CgProfile } from "react-icons/cg"
 import { Close } from "@mui/icons-material";
 import { BsAirplane, BsTelephone } from "react-icons/bs";
 import { TbUserSearch } from "react-icons/tb";
@@ -17,14 +16,32 @@ import { RiMenu3Line } from "react-icons/ri";
 import { useAuthContext } from "@/providers/AuthProvider";
 import { BiExit } from "react-icons/bi"
 
-
+// const navItem = [
+//     {
+//         name: "صفحه اصلی",
+//         path: "/"
+//     },
+//     {
+//         name: "سفر های من",
+//         path: "ticket"
+//     },
+//     {
+//         name: "لیست تیکت",
+//         path: "ticket"
+//     },
+// ]
 function HeaderTabs({ onClick }) {
     const [showMenu, setShowMenu] = useState(false)
+    const [hover, setHover] = useState(false);
     const handleToggle = () => {
         setShowMenu(!showMenu)
     }
+    const handlHoverd = () => {
+        setHover(!hover);
+    }
+ 
 
-    const { isLoggedIn, logout, currentUser, isloding } = useAuthContext();
+    const { isLoggedIn, logout, currentUser, isLoading } = useAuthContext();
 
     console.log(currentUser);
     return (
@@ -117,12 +134,23 @@ function HeaderTabs({ onClick }) {
                     {isLoggedIn ? (
 
                         <div className="flex justify-center items-center gap-4">
-                            {isloding ? (
+                            {isLoading ? (
                                 <div className="animate-pulse flex space-x-4">
                                     <div className="rounded-full bg-gray-650 h-10 w-10"></div>
                                 </div>
                             ) : (
-                                <img src={currentUser?.avatar} className="w-10 h-10 rounded-full" />
+                                <div>
+                                    <img src={currentUser?.avatar} className="w-10 h-10 rounded-full" onClick={handlHoverd} />
+                                    {hover && (
+                                        <div className={"p-[20px] bg-white mt-11 -mr-10 rounded-lg flex flex-col items-center justify-center absolute top-[25px] gap-[20px] w-100 z-30"}>
+                                       <Link to={"account"}>
+                                       <div className="nested-item text-[13px] text-[#080808BF] opacity-75">حساب کاربری</div>
+                                       </Link> 
+                                        
+                                    </div>
+                                    )}
+                                    </div>
+
                             )}
                             <BiExit className="w-9 h-9 cursor-pointer	" onClick={() => logout()} />
                         </div>
@@ -139,7 +167,6 @@ function HeaderTabs({ onClick }) {
 
                 </div>
             </div>
-            <HomePageScreen />
         </>
     );
 }

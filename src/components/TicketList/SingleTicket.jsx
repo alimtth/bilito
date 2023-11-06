@@ -16,9 +16,9 @@ function SingleTicket(props) {
     ]
     return (
         <>
-            <div className='flex border-gray-10 border rounded-lg flex-col gap-4 mt-6 justify-evenly py-6 '>
+            <div className='flex border-gray-10 border rounded-lg flex-col gap-4 mt-6 justify-evenly  '>
                 {isloding ? (
-                    <div className="flex w-[100%] h-[200px] mx-auto overflow-hidden bg-white rounded-lg shadow-lg animate-pulse dark:bg-gray-800">
+                    <div className="flex w-[100%] h-[150px] mx-auto overflow-hidden bg-white rounded-lg shadow-lg animate-pulse dark:bg-gray-800 py-0">
                         <div className="w-1/4 bg-gray-300 dark:bg-gray-600"></div>
                         <div className=" p-4 md:p-4">
                             <h1 className="w-40 h-2 bg-gray-300 rounded-lg dark:bg-gray-700"></h1>
@@ -44,7 +44,7 @@ function SingleTicket(props) {
                 ) : (
                     ticetListItem.map((item, index) => (
                         <div key={index}>
-                            <div className='flex justify-between items-center px-4 lg:flex-row flex-col gap-4'>
+                            <div className='flex justify-between items-center px-4 lg:flex-row flex-col gap-4 py-6'>
                                 <div className='flex justify-center items-center gap-2' >
                                     <div
                                         className='bg-red-10 text-red-20 flex justify-center items-center gap-1 py-[2px] px-2 h-6 border rounded-md'>{item.num}

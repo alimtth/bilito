@@ -12,6 +12,7 @@ import HeaderTabs from '@/components/NavBar/HeaderTabs/index.jsx';
 function HomePage() {
     return (
         <div className='flex items-center flex-col w-full'>
+            <HomePageScreen />
             <SearchBox />
             <HomePageComponents />
             <Popular />

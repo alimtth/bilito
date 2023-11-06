@@ -13,11 +13,12 @@ import TicketList from "@/components/TicketList/index.jsx";
 import NotTicket from "@/assets/Images/Icons/notticket.png"
 import InputTextField from "@/components/Ui/InputTextField";
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports';
+import HomePageScreen from "@/components/NavBar/HomePageScreen";
 
 
 function TickedList() {
     const [trySearch, setTrySearch] = useState(false)
-    const [currentTicket, setCurrentTicket] = useState(false);
+    const [currentTicket, setCurrentTicket] = useState(true);
 
 
     const handlSelectTrySearch = () => {
@@ -25,6 +26,7 @@ function TickedList() {
     }
     return (
         <div className=" flex flex-col items-center">
+            <HomePageScreen />
             <section className="flex flex-col relative items-center">
             </section>
             <section className="-m-2 lg:-m-12 z-10 bg-white flex flex-col items-center rounded-lg shadow-2xl" id='container'>
@@ -48,6 +50,7 @@ function TickedList() {
                         <InputTextField size={"ssl"} className={"rounded-full"}>
                             کلاس پرواز
                         </InputTextField>
+                        
                         <Button variant="fill" >
                             جستجو
                         </Button>

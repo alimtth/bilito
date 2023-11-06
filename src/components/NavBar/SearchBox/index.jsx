@@ -7,6 +7,7 @@ import searchIcon from "@/assets/Images/Icons/search-normal.svg";
 import History from "../History";
 import InputTextField from "@/components/Ui/InputTextField";
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports';
+import { Link } from "react-router-dom";
 
 function SearchBox() {
     return (
@@ -45,10 +46,12 @@ function SearchBox() {
                         <InputTextField size="sm" className={"sm:px-44 lg:px-0"}>تاریخ رفت و برگشت</InputTextField>
                         <InputTextField size="sm" className={"sm:px-44 lg:px-0"}>تعداد مسافر</InputTextField>
                         <InputTextField size="sm" className={"sm:px-44 lg:px-0"}>کلاس پرواز</InputTextField>
+                        <Link to={"ticket"}>
                         <Button variant="fill" size="xl" className={"sm:px-56 lg:px-3"}>
                             <img src={searchIcon}/>
                             جستجو
                         </Button>
+                        </Link>
                     </div>
                 </div>
             </div>
