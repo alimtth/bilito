@@ -10,6 +10,9 @@ import StepShop from "@/pages/StepShop/StepShop";
 import AuthPage from "@/pages/Auth";
 import AccountPage from "@/pages/AccountPage/AccountPage";
 import About from "@/pages/about/About";
+import FormListe from "@/pages/PageFormList/FormList";
+
+
 
 
 const routes =[
@@ -21,7 +24,6 @@ const routes =[
                 index: true,
                 element: <HomePage/>,
             },
-            
             {
                 path:'ticket',
                 element: <TickedList />
@@ -40,6 +42,10 @@ const routes =[
             },
         ]
         
+    },
+    {
+        path:'form',
+        element: <FormListe />
     },
     {
         path:'login',
