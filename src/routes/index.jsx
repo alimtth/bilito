@@ -10,6 +10,7 @@ import StepShop from "@/pages/StepShop/StepShop";
 import AuthPage from "@/pages/Auth";
 import AccountPage from "@/pages/AccountPage/AccountPage";
 import About from "@/pages/about/About";
+import BaseLayoutAcc from "@/pages/AccountPage/BaseLayoutsAccount/BaseLayoutAcc";
 
 
 const routes =[
@@ -51,7 +52,7 @@ const routes =[
     },
     {
         path: 'account',
-        element: <AccountPage />
+        element: <BaseLayoutAcc />
     },
     {
         path: 'about',

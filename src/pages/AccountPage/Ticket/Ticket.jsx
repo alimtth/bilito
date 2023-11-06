@@ -1,6 +1,4 @@
-import NavBar from '@/components/NavBar';
-import HeaderTabs from '@/components/NavBar/HeaderTabs';
-import React, { useState } from 'react';
+import React from 'react';
 import Buttons from '@/components/Ui/Button'
 import deletesss from "@/assets/Images/Icons/delete.png";
 import undo from "@/assets/Images/Icons/undo.png"
@@ -8,34 +6,11 @@ import arrowdown from "@/assets/Images/Icons/arrow-down.svg"
 import calendar from "@/assets/Images/Icons/calendar.svg"
 import like from "@/assets/Images/Icons/like.png"
 import dislike from "@/assets/Images/Icons/dislike.png"
-import profile from "@/assets/Images/Icons/profile-add.svg"
-import { useAuthContext } from '@/providers/AuthProvider';
-import InputTextField from '@/components/Ui/InputTextField';
-// import BaseLayoutAcc from './BaseLayoutsAccount/BaseLayoutAcc';
 
-const AccountPage = () => {
-    const [selected, setSelected] = useState(false);
-    const [editUser, setEditUser] = useState(false);
-
-    const handlChangSelected = () => {
-        setSelected(!selected)
-    }
-
-    const handlEdit = () => {
-        setEditUser(true);
-    }
-    console.log(editUser);
+function Ticket() {
     return (
         <div>
-            <HeaderTabs />
-            <div id='container'>
-                <div className="flex gap-7">
-                    <div className='flex'>
-
-                        </div> 
-                        {/* <BaseLayoutAcc /> */}
-                    
-                        <div className='flex flex-col w-full mt-11 '>
+            <div className='flex flex-col w-full mt-11 '>
                             <div className="flex justify-between items-center ">
                                 <h3 className="font-bold">  تیکت‌های من</h3>
                                 <Buttons variant='grayBTN'>
@@ -59,16 +34,8 @@ const AccountPage = () => {
                                 </div>
                             </div>
                         </div>
-            
-
-                </div>
-
-
-
-            </div>
-
         </div>
     );
-};
+}
 
-export default AccountPage;
+export default Ticket;
