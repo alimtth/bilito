@@ -52,7 +52,7 @@ const routes =[
     },
     {
         path: 'account',
-        element: <BaseLayoutAcc />
+        element: <AccountPage />
     },
     {
         path: 'about',
