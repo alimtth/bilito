@@ -63,7 +63,7 @@ const steps = ['انتخاب بلیط', 'مشخصات', 'تایید بلیط و 
           const labelProps = {};
           if (isStepOptional(index)) {
             labelProps.optional = (
-              <Typography variant="caption">Optional</Typography>
+              <Typography variant="caption"></Typography>
             );
           }
           if (isStepSkipped(index)) {

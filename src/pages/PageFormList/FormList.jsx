@@ -56,7 +56,7 @@ function FormListe() {
             <div>
               <div className='pl-8 gap-2 flex flex-col items-center'>
                 <p>02:50</p>
-                <p>استانبول(SAW)</p>
+                <p className='text-gray-600'>استانبول(SAW)</p>
               </div>
             </div>
 
@@ -82,14 +82,14 @@ function FormListe() {
 
             <div className='pr-8 gap-2 flex flex-col items-center'>
               <p>21:50</p>
-              <p>دبی(DXB)</p>
+              <p className='text-gray-600'>دبی(DXB)</p>
             </div>
             <div className='pr-6 flex items-center'>
               <p >  دوشنبه 6 شهریور</p>
             </div>
           </div>
           <div className='pt-4 flex items-start '>
-            <Buttons className={`text-blue-500 border-none`}>
+            <Buttons className={`gap-0 text-blue-500 border-none`}>
               جزییات قیمت
               <IoIosArrowDown />
             </Buttons>
@@ -121,13 +121,14 @@ function FormListe() {
       </div>
 
 
-
+<div className='pt-10 lg:pt-0'>
       <div className='px-2 py-[10px] w-full flex justify-between border border-gray-100 rounded-lg '>
         <p>مشخصات مسافران</p>
         <div className='flex gap-2' >
           <p>زمان باقی مانده:</p>
           <p className='text-orange-600'> {minutes}:{seconds}</p>
         </div>
+      </div>
       </div>
 
 
