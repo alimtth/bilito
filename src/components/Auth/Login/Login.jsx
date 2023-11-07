@@ -7,7 +7,6 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import bilitoIconsss from "@/assets/Images/Icons/AirplaneSelected.svg";
-import bilitoIcons from "@/assets/Images/Icons/FavIconBilito.png";
 
 const schema = yup.object().shape({
   username: yup.string().required("فیلد نام کاربری اجباری است"),
