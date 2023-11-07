@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import airplane from "@/assets/Images/Icons/airplaneBorder.svg";
 import calendar from "@/assets/Images/Icons/calendar.svg";
@@ -12,16 +12,42 @@ import NotTicket from "@/assets/Images/Icons/notticket.png"
 import InputTextField from "@/components/Ui/InputTextField";
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports';
 import HomePageScreen from "@/components/NavBar/HomePageScreen";
+import SingleTicket from "@/components/TicketList/SingleTicket";
+import { apiSearch } from "@/api/search";
+import { useSearchParams } from "react-router-dom";
 
 
 function TickedList() {
     const [trySearch, setTrySearch] = useState(false)
     const [currentTicket, setCurrentTicket] = useState(true);
+    const [searchParams] = useSearchParams();
+    const [isLoading, setIsLoading] = useState(false);
+    const [searchData, setSearchData] = useState([]);
 
 
     const handlSelectTrySearch = () => {
         setTrySearch(true);
     }
+
+    const q = searchParams.get("q");
+
+    const getSearchData = async () => {
+        try {
+            setIsLoading(true);
+            const data = await apiSearch({ q });
+            setSearchData(data);
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        getSearchData();
+    }, [q]);
+
+
     return (
         <div className=" flex flex-col items-center">
             <HomePageScreen />
@@ -48,7 +74,7 @@ function TickedList() {
                         <InputTextField size={"ssl"} className={"rounded-full"}>
                             کلاس پرواز
                         </InputTextField>
-                        
+
                         <Button variant="fill" >
                             جستجو
                         </Button>
@@ -228,7 +254,7 @@ function TickedList() {
                             <IoIosArrowDown />
                         </div>
                     </div>
-                    {currentTicket ? (
+                    {/* {currentTicket ? (
                         <div className="">
                             <TicketList />
                             <TicketList />
@@ -242,7 +268,18 @@ function TickedList() {
                                 <h3 className="font-light text-gray-100 mt-4 text-lg">در تاریخ دیگری جستجو کنید</h3>
                             </div>
                         </div>
-                    )}
+                    )} */}
+                    {isLoading
+                        ? "در حال دریافت اطلاعات ..."
+                        : searchData.length === 0
+                            ? "چیزی یافت نشد."
+                            : searchData.map((product) => (
+                                <SingleTicket 
+                                key={product.id}
+                                forth={product.forth}
+                                back={product.back}
+                                 />
+                            ))}
                 </div>
             </div>
         </div>

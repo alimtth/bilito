@@ -5,20 +5,14 @@ import iconetimer from '@/assets/Images/Icons/timer.svg'
 import iconeairplan from '@/assets/Images/Icons/airplaneblue.svg'
 import iconbag from '@/assets/Images/Icons/bag.svg'
 import line from '@/assets/Images/Icons/Line.svg'
-
-function SingleTicket(props) {
+import propTypes from "prop-types";
+function SingleTicket({forth, back, children}) {
     const [isloding, setIsloding] = useState(true);
 
     setTimeout(() => {
         setIsloding(false)
     }, 5000);
-    const ticetListItem = [
-        {
-            num: 1,
-            price: 2000,
-
-        },
-    ]
+    
     return (
         <>
             <div className='flex border-gray-10 border rounded-lg flex-col gap-4 mt-6 justify-evenly  '>
@@ -47,12 +41,12 @@ function SingleTicket(props) {
                         </div>
                     </div>
                 ) : (
-                    ticetListItem.map((item, index) => (
-                        <div key={index}>
+                    // forth.map((item , forth, back) => (
+                        <div>
                             <div className='flex justify-between items-center px-4 lg:flex-row flex-col gap-4 py-6'>
                                 <div className='flex justify-center items-center gap-2' >
                                     <div
-                                        className='bg-red-10 text-red-20 flex justify-center items-center gap-1 py-[2px] px-2 h-6 border rounded-md'>{item.num}
+                                        className='bg-red-10 text-red-20 flex justify-center items-center gap-1 py-[2px] px-2 h-6 border rounded-md'>
                                         صندلی باقی مانده
                                     </div>
                                     <div
@@ -75,7 +69,7 @@ function SingleTicket(props) {
                                     <div>
                                         <div className='pl-8 gap-2 flex flex-col items-center'>
                                             <p>02:50</p>
-                                            <p className='text-gray-600'>استانبول(SAW)</p>
+                                            <p className='text-gray-600'>{forth}(SAW)</p>
                                         </div>
                                     </div>
 
@@ -101,23 +95,29 @@ function SingleTicket(props) {
 
                                     <div className='pr-8 gap-2 flex flex-col items-center'>
                                         <p>21:50</p>
-                                        <p className='text-gray-600'>دبی(DXB)</p>
+                                        <p className='text-gray-600'>{back}(DXB)</p>
                                     </div>
                                 </div>
                                 <div className='flex lg:justify-center lg:items-end gap-6 items-center self-center'>
-                                    <div className='text-blue-500'>{item.price} تومان</div>
+                                    <div className='text-blue-500'> تومان</div>
                                     <div>
                                         <Button size='lg'>جزئیات بلیط</Button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    ))
+                    // ))
                 )}
             </div>
         </>
 
     );
+}
+
+SingleTicket.propTypes = {
+    children: propTypes.node,
+    forth: propTypes.string,
+    back: propTypes.string,
 }
 
 export default SingleTicket;
