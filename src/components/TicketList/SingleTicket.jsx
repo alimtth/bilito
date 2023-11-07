@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import Button from "@/components/Ui/Button.jsx";
+import omanAir from '@/assets/Images/Icons/airlinelogoweb.svg'
+import iconetimer from '@/assets/Images/Icons/timer.svg'
+import iconeairplan from '@/assets/Images/Icons/airplaneblue.svg'
+import iconbag from '@/assets/Images/Icons/bag.svg'
+import line from '@/assets/Images/Icons/Line.svg'
 
 function SingleTicket(props) {
     const [isloding, setIsloding] = useState(true);
@@ -65,27 +70,43 @@ function SingleTicket(props) {
                                 </div>
                             </div>
                             <div className='flex justify-between items-end gap-[64px] px-4 lg:flex-row flex-col'>
-                                <div className='flex justify-center items-center gap-[24px]'>
-                                    <div className='flex flex-col gap-[16px] items-center'>
-                                        <img alt={''} src={''} />
-                                        <span>Gulf Air</span>
-                                    </div>
-                                    <div className='flex flex-col gap-4 items-center'>
-                                        <span>02:50</span>
-                                        <span>استانبول(SAW)</span>
-                                    </div>
-                                    <div className='flex flex-col gap-4 items-center'>
-                                        <span>19:00</span>
-                                        <span><img alt={''} src={''} /></span>
-                                        <span>20kg</span>
-                                    </div>
-                                    <div className='flex flex-col gap-4 items-center'>
-                                        <span>21:50</span>
-                                        <span>دبی(DXB)</span>
-                                    </div>
-                                </div>
-                                <div className='flex lg:justify-center lg:items-end gap-2 items-center self-center'>
-                                    <div>{item.price} تومان</div>
+                               
+          <div className='pb-5 gap-6 w-[575px] flex items-center '>
+            <img src={omanAir} />
+            <div>
+              <div className='pl-8 gap-2 flex flex-col items-center'>
+                <p>02:50</p>
+                <p className='text-gray-600'>استانبول(SAW)</p>
+              </div>
+            </div>
+
+            <div className='flex items-center justify-center'>
+              <div className='gap-6 flex flex-col'>
+                <div className='gap-[2px] flex items-center justify-center'>
+                  <img src={iconetimer} />
+                  <p className='text-gray-500 '>19:00</p>
+                </div>
+                <div className='relative flex items-center justify-center '>
+                  <img className='z-20' src={iconeairplan} />
+                  <span className='absolute w-[142px] h-[1px] fill-none z-10'>
+                    <img src={line} />
+                  </span>
+
+                </div>
+                <div className='gap-[2px] flex items-center justify-center'>
+                  <img src={iconbag} />
+                  <p className='text-gray-500'>20Kg</p>
+                </div>
+              </div>
+            </div>
+
+            <div className='pr-8 gap-2 flex flex-col items-center'>
+              <p>21:50</p>
+              <p className='text-gray-600'>دبی(DXB)</p>
+            </div>
+          </div>
+                                <div className='flex lg:justify-center lg:items-end gap-6 items-center self-center'>
+                                    <div className='text-blue-500'>{item.price} تومان</div>
                                     <div>
                                         <Button size='lg'>جزئیات بلیط</Button>
                                     </div>

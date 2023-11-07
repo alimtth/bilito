@@ -8,7 +8,16 @@ import Typography from '@mui/material/Typography';
 import "@/components/Stepper/stepper.css"
 
 
+
 const steps = ['انتخاب بلیط', 'مشخصات', 'تایید بلیط و پرداخت','صدور بلیط'];
+
+const stepStyle = {
+  padding:3,
+  
+"& .Mui-completed" :{
+  
+}
+}
 
  function HorizontalLinearStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
@@ -57,7 +66,7 @@ const steps = ['انتخاب بلیط', 'مشخصات', 'تایید بلیط و 
 
   return (
     <Box sx={{ width: '100%' }}>
-      <Stepper activeStep={activeStep} >
+      <Stepper activeStep={activeStep} sx={stepStyle}>
         {steps.map((label, index) => {
           const stepProps = {};
           const labelProps = {};
@@ -88,7 +97,7 @@ const steps = ['انتخاب بلیط', 'مشخصات', 'تایید بلیط و 
         </React.Fragment>
       ) : (
         <React.Fragment>
-          {/* <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
+          <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
             <Button
               color="inherit"
@@ -108,7 +117,7 @@ const steps = ['انتخاب بلیط', 'مشخصات', 'تایید بلیط و 
             <Button onClick={handleNext}>
               {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
             </Button>
-          </Box> */}
+          </Box>
         </React.Fragment>
       )}
     </Box>
