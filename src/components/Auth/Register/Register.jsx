@@ -1,14 +1,12 @@
 import InputTextField from "@/components/Ui/InputTextField";
-import { Alert, AlertTitle, Button } from "@mui/material";
+import { Alert, AlertTitle} from "@mui/material";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import bilitoIcon from "@/assets/Images/Icons/BilitoIcone.png";
-import bilitoIcons from "@/assets/Images/Icons/FavIconBilito.png";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Buttons from "@/components/Ui/Button";
-import axios from "axios";
 import { useAuthContext } from "@/providers/AuthProvider";
 import bilitoIconsss from "@/assets/Images/Icons/AirplaneSelected.svg";
 import { apiRegisterUser } from "@/api/user";
