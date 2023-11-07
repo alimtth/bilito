@@ -70,41 +70,40 @@ function SingleTicket(props) {
                                 </div>
                             </div>
                             <div className='flex justify-between items-end gap-[64px] px-4 lg:flex-row flex-col'>
-                               
-          <div className='pb-5 gap-6 w-[575px] flex items-center '>
-            <img src={omanAir} />
-            <div>
-              <div className='pl-8 gap-2 flex flex-col items-center'>
-                <p>02:50</p>
-                <p className='text-gray-600'>استانبول(SAW)</p>
-              </div>
-            </div>
+                                <div className='pb-5 gap-6 w-[575px] flex items-center '>
+                                    <img src={omanAir} />
+                                    <div>
+                                        <div className='pl-8 gap-2 flex flex-col items-center'>
+                                            <p>02:50</p>
+                                            <p className='text-gray-600'>استانبول(SAW)</p>
+                                        </div>
+                                    </div>
 
-            <div className='flex items-center justify-center'>
-              <div className='gap-6 flex flex-col'>
-                <div className='gap-[2px] flex items-center justify-center'>
-                  <img src={iconetimer} />
-                  <p className='text-gray-500 '>19:00</p>
-                </div>
-                <div className='relative flex items-center justify-center '>
-                  <img className='z-20' src={iconeairplan} />
-                  <span className='absolute w-[142px] h-[1px] fill-none z-10'>
-                    <img src={line} />
-                  </span>
+                                    <div className='flex items-center justify-center'>
+                                        <div className='gap-6 flex flex-col'>
+                                            <div className='gap-[2px] flex items-center justify-center'>
+                                                <img src={iconetimer} />
+                                                <p className='text-gray-500 '>19:00</p>
+                                            </div>
+                                            <div className='relative flex items-center justify-center '>
+                                                <img className='z-20' src={iconeairplan} />
+                                                <span className='absolute w-[142px] h-[1px] fill-none z-10'>
+                                                    <img src={line} />
+                                                </span>
 
-                </div>
-                <div className='gap-[2px] flex items-center justify-center'>
-                  <img src={iconbag} />
-                  <p className='text-gray-500'>20Kg</p>
-                </div>
-              </div>
-            </div>
+                                            </div>
+                                            <div className='gap-[2px] flex items-center justify-center'>
+                                                <img src={iconbag} />
+                                                <p className='text-gray-500'>20Kg</p>
+                                            </div>
+                                        </div>
+                                    </div>
 
-            <div className='pr-8 gap-2 flex flex-col items-center'>
-              <p>21:50</p>
-              <p className='text-gray-600'>دبی(DXB)</p>
-            </div>
-          </div>
+                                    <div className='pr-8 gap-2 flex flex-col items-center'>
+                                        <p>21:50</p>
+                                        <p className='text-gray-600'>دبی(DXB)</p>
+                                    </div>
+                                </div>
                                 <div className='flex lg:justify-center lg:items-end gap-6 items-center self-center'>
                                     <div className='text-blue-500'>{item.price} تومان</div>
                                     <div>
