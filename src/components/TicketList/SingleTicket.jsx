@@ -6,6 +6,7 @@ import iconeairplan from '@/assets/Images/Icons/airplaneblue.svg'
 import iconbag from '@/assets/Images/Icons/bag.svg'
 import line from '@/assets/Images/Icons/Line.svg'
 import propTypes from "prop-types";
+import { Link } from 'react-router-dom';
 function SingleTicket({forth, back, children}) {
     const [isloding, setIsloding] = useState(true);
 
@@ -101,7 +102,9 @@ function SingleTicket({forth, back, children}) {
                                 <div className='flex lg:justify-center lg:items-end gap-6 items-center self-center'>
                                     <div className='text-blue-500'> تومان</div>
                                     <div>
+                                        <Link to={"/form"}>
                                         <Button size='lg'>جزئیات بلیط</Button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
