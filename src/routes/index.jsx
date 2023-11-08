@@ -11,6 +11,9 @@ import AuthPage from "@/pages/Auth";
 import AccountPage from "@/pages/AccountPage/AccountPage";
 import About from "@/pages/about/About";
 import FormListe from "@/pages/PageFormList/FormList";
+import Rule from "@/components/TicketList/Rules/Rule";
+import GeneralRules from "@/components/TicketList/GeneralRules/GeneralRules";
+import LoadRules from "@/components/TicketList/LoadRules/LoadRules";
 
 
 
@@ -26,7 +29,26 @@ const routes =[
             },
             {
                 path:'ticket',
-                element: <TickedList />
+                element: <TickedList />,
+                children: [
+                    {
+                        path:'rule',
+                        element: <Rule />,
+                        children: [
+                            {
+                                path:'grule',
+                                element: <GeneralRules />,
+                                children: [
+                                    {
+                                        path: 'loadrules',
+                                        element: <LoadRules />
+                                    }
+                                ]
+                            },
+                        ]
+                    },
+                    
+                ]
             },
             {
                 path:'stepshop',
