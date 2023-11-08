@@ -109,13 +109,29 @@ function MyTravels() {
                                     <ul className='flex flex-col'>کلاس پرواز <p>کوانومی</p></ul>
                                     <ul className='flex flex-col'>وضعیت<p className='text-green-500'>تایید شده</p></ul>
                                 </div>
+
                             </div>
-                            <div onClick={toggleDetails} className='flex justify-end'>
-                                <Buttons className={"border-none"}>
-                                     بستن
-                                    <img src={arrowdown} alt="" />
-                                </Buttons>
+                            <div className='flex flex-col gap-8 mt-8 '>
+                                <div className="flex text-gray-600 gap-11">
+                                    <p>نام مسافر</p>
+                                    <p>نام مسافر به لاتین</p>
+                                    <p>تاریخ تولد</p>
+                                    <p>کدملی/شماره گذرنامه</p>
+                                </div>
+                                <div className="flex text-black gap-11">
+                                    <p> سید علی مطهری</p>
+                                    <p>ali motahari</p>
+                                    <p>1375/04/25</p>
+                                    <p>123456789987</p>
+                                </div>
                             </div>
+                                <div onClick={toggleDetails} className='flex justify-end'>
+                                    <Buttons className={"border-none"}>
+                                        بستن
+                                        <img src={arrowdown} alt="" />
+                                    </Buttons>
+                                </div>
+
                         </div>
                     ) : (
                         <div>
