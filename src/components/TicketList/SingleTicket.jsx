@@ -120,7 +120,7 @@ function SingleTicket({forth, back, children}) {
                         </div>
                     </div>
                 
-                )};
+                )}
                 {isShow && (
                     <div className="fixed inset-0 flex items-center justify-center z-50 bg-gray-600 bg-opacity-70">
                         <div className=" bg-white  w-[900px] rounded-lg  shadow-lg z-50 py-5 px-5">
