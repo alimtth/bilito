@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 function SearchBox() {
     return (
         <>
-            <div className="lg:z-20 lg:-m-28 md:sm:shadow-2xl sm:shadow-none rounded lg:w-fit m-auto" id="container">
+            <div className="lg:z-20 lg:-m-28 md:sm:shadow-2xl sm:shadow-none rounded lg:w-fit m-auto" >
                 <div className="bg-white flex flex-col lg:items-start items-center rounded-lg p-6" id="container">
                     <div>
                         <ul className="flex justify-around gap-10 md:text-base sm:text-3xl ">
