@@ -10,6 +10,11 @@ import StepShop from "@/pages/StepShop/StepShop";
 import AuthPage from "@/pages/Auth";
 import AccountPage from "@/pages/AccountPage/AccountPage";
 import About from "@/pages/about/About";
+import BaseLayoutAcc from "@/pages/AccountPage/BaseLayoutsAccount/BaseLayoutAcc";
+import UserData from "@/pages/AccountPage/UserData/UserData";
+import EditUser from "@/pages/AccountPage/EditUser/EditUser";
+import EditUserData from "@/pages/AccountPage/EditUserData/EditUserData";
+import MyTicket from "@/pages/AccountPage/MyTicket/MyTicket";
 import FormListe from "@/pages/PageFormList/FormList";
 import Rule from "@/components/TicketList/Rules/Rule";
 import GeneralRules from "@/components/TicketList/GeneralRules/GeneralRules";
@@ -27,6 +32,7 @@ const routes =[
                 index: true,
                 element: <HomePage/>,
             },
+            
             {
                 path:'ticket',
                 element: <TickedList />,
@@ -47,7 +53,7 @@ const routes =[
                             },
                         ]
                     },
-                    
+
                 ]
             },
             {
@@ -79,7 +85,24 @@ const routes =[
     },
     {
         path: 'account',
-        element: <AccountPage />
+        element: <BaseLayoutAcc />,
+        children: [
+            {
+                path: 'datauser',
+                element: <UserData />,
+                children: [
+                    {
+                path: 'edituser',
+                element: <EditUserData />
+            },
+                ]
+            },
+
+            {
+                path: 'myticket',
+                element: <MyTicket />
+            },
+        ]
     },
     {
         path: 'about',
