@@ -6,7 +6,6 @@ import SearchBox from "@/components/NavBar/SearchBox/index";
 import HomePageComponents from '@/components/HomePagePictures/HomePageComponenets';
 import './style.css'
 import HomePageScreen from '@/components/NavBar/HomePageScreen';
-import HeaderTabs from '@/components/NavBar/HeaderTabs/index.jsx';
 
 
 function HomePage() {

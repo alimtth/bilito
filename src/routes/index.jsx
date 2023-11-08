@@ -15,6 +15,13 @@ import EditUser from "@/pages/AccountPage/EditUser/EditUser";
 import EditUserData from "@/pages/AccountPage/EditUserData/EditUserData";
 import MyTicket from "@/pages/AccountPage/MyTicket/MyTicket";
 
+import FormListe from "@/pages/PageFormList/FormList";
+import Rule from "@/components/TicketList/Rules/Rule";
+import GeneralRules from "@/components/TicketList/GeneralRules/GeneralRules";
+import LoadRules from "@/components/TicketList/LoadRules/LoadRules";
+
+
+
 
 const routes =[
     {
@@ -28,7 +35,26 @@ const routes =[
             
             {
                 path:'ticket',
-                element: <TickedList />
+                element: <TickedList />,
+                children: [
+                    {
+                        path:'rule',
+                        element: <Rule />,
+                        children: [
+                            {
+                                path:'grule',
+                                element: <GeneralRules />,
+                                children: [
+                                    {
+                                        path: 'loadrules',
+                                        element: <LoadRules />
+                                    }
+                                ]
+                            },
+                        ]
+                    },
+
+                ]
             },
             {
                 path:'stepshop',
@@ -44,6 +70,10 @@ const routes =[
             },
         ]
         
+    },
+    {
+        path:'form',
+        element: <FormListe />
     },
     {
         path:'login',
@@ -67,7 +97,7 @@ const routes =[
             },
                 ]
             },
-            
+
             {
                 path: 'myticket',
                 element: <MyTicket />

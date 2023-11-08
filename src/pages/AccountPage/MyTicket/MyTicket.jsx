@@ -11,6 +11,7 @@ function MyTicket(props) {
     return (
         <>
 
+
             <div className='flex flex-col w-full mt-11 '>
                             <div className="flex justify-between items-center ">
                                 <h3 className="font-bold">  تیکت‌های من</h3>
@@ -37,6 +38,7 @@ function MyTicket(props) {
                         </div>
 
         </>
+           
     );
 }
 

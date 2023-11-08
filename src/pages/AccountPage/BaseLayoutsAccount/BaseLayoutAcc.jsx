@@ -4,6 +4,8 @@ import React from 'react';
 import { Link, Outlet, redirect } from 'react-router-dom';
 import profile from "@/assets/Images/Icons/profile-add.svg"
 
+import HomePageComponenets from '@/components/HomePagePictures/HomePageComponenets';
+
 function BaseLayoutAcc() {
     const { currentUser, logout } = useAuthContext();
     return (
@@ -59,6 +61,7 @@ function BaseLayoutAcc() {
 
             </div>
         </>
+
     );
 }
 

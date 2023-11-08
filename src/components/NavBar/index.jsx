@@ -1,13 +1,13 @@
-import React from "react";
-import HeaderTabs from "./HeaderTabs";
-import HomePageScreen from "./HomePageScreen";
+import React from 'react' 
+import HeaderTabs from './HeaderTabs';
+import HomePageScreen from './HomePageScreen';
 
 function NavBar() {
   return (
     <>
-      
+
     </>
   );
 }
 
-export default NavBar;
+export default NavBar

@@ -7,11 +7,10 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import bilitoIconsss from "@/assets/Images/Icons/AirplaneSelected.svg";
-import bilitoIcons from "@/assets/Images/Icons/FavIconBilito.png";
 
 const schema = yup.object().shape({
   username: yup.string().required("فیلد نام کاربری اجباری است"),
-  password: yup.string().min(4).max(8).required("فیلد پسورد اجباری است"),
+  password: yup.string().min(6).max(12).required("فیلد پسورد اجباری است"),
 })
 function Login() {
   const {
