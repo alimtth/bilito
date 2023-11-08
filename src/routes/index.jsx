@@ -8,7 +8,6 @@ import Register from "@/components/Auth/Register/Register"
 import TickedList from "@/pages/PageTicketList/TickedList";
 import StepShop from "@/pages/StepShop/StepShop";
 import AuthPage from "@/pages/Auth";
-import AccountPage from "@/pages/AccountPage/AccountPage";
 import About from "@/pages/about/About";
 import BaseLayoutAcc from "@/pages/AccountPage/BaseLayoutsAccount/BaseLayoutAcc";
 import UserData from "@/pages/AccountPage/UserData/UserData";
