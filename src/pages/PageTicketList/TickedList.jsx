@@ -254,31 +254,22 @@ function TickedList() {
                             <IoIosArrowDown />
                         </div>
                     </div>
-                    {/* {currentTicket ? (
-                        <div className="">
-                            <TicketList />
-                            <TicketList />
-                            <TicketList />
-                            <TicketList /></div>
-                    ) : (
-                        <div className="flex flex-col items-center mt-9">
-                            <img src={NotTicket} alt="" className="w-[170px]" />
-                            <div className="outline outline-gray-300 p-9 rounded-md text-center">
-                                <h4 className="text-gray-700 font-bold">در این تاریخ پروازی برای استانبول به دبی یافت نشد.</h4>
-                                <h3 className="font-light text-gray-100 mt-4 text-lg">در تاریخ دیگری جستجو کنید</h3>
-                            </div>
-                        </div>
-                    )} */}
                     {isLoading
                         ? "در حال دریافت اطلاعات ..."
                         : searchData.length === 0
-                            ? "چیزی یافت نشد."
+                            ? <div className="flex flex-col items-center mt-9">
+                                <img src={NotTicket} alt="" className="w-[170px]" />
+                                <div className="outline outline-gray-300 p-9 rounded-md text-center">
+                                    <h4 className="text-gray-700 font-bold">در این تاریخ پروازی برای استانبول به دبی یافت نشد.</h4>
+                                    <h3 className="font-light text-gray-100 mt-4 text-lg">در تاریخ دیگری جستجو کنید</h3>
+                                </div>
+                            </div>
                             : searchData.map((product) => (
-                                <SingleTicket 
-                                key={product.id}
-                                forth={product.forth}
-                                back={product.back}
-                                 />
+                                <SingleTicket
+                                    key={product.id}
+                                    forth={product.forth}
+                                    back={product.back}
+                                />
                             ))}
                 </div>
             </div>
