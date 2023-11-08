@@ -1,29 +1,52 @@
-import React, { useState } from "react";
-import titlePic from "@/assets/Images/titlePic.png";
+import React, { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import airplane from "@/assets/Images/Icons/airplaneBorder.svg";
 import calendar from "@/assets/Images/Icons/calendar.svg";
 import profileAdd from "@/assets/Images/Icons/profile-add.svg";
 import EditPen from "@/assets/Images/Icons/edit.svg";
 import Button from "@/components/Ui/Button";
-import { ArrowUpward } from "@mui/icons-material";
 import { Slider } from "@mui/material";
 import airport from "@/assets/Images/Icons/Airport.png";
-import TicketList from "@/components/TicketList/index.jsx";
 import NotTicket from "@/assets/Images/Icons/notticket.png"
 import InputTextField from "@/components/Ui/InputTextField";
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports';
 import HomePageScreen from "@/components/NavBar/HomePageScreen";
+import SingleTicket from "@/components/TicketList/SingleTicket";
+import { apiSearch } from "@/api/search";
+import { useSearchParams } from "react-router-dom";
 
 
 function TickedList() {
     const [trySearch, setTrySearch] = useState(false)
     const [currentTicket, setCurrentTicket] = useState(true);
+    const [searchParams] = useSearchParams();
+    const [isLoading, setIsLoading] = useState(false);
+    const [searchData, setSearchData] = useState([]);
 
 
     const handlSelectTrySearch = () => {
         setTrySearch(true);
     }
+
+    const q = searchParams.get("q");
+
+    const getSearchData = async () => {
+        try {
+            setIsLoading(true);
+            const data = await apiSearch({ q });
+            setSearchData(data);
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        getSearchData();
+    }, [q]);
+
+
     return (
         <div className=" flex flex-col items-center">
             <HomePageScreen />
@@ -50,7 +73,7 @@ function TickedList() {
                         <InputTextField size={"ssl"} className={"rounded-full"}>
                             کلاس پرواز
                         </InputTextField>
-                        
+
                         <Button variant="fill" >
                             جستجو
                         </Button>
@@ -230,21 +253,24 @@ function TickedList() {
                             <IoIosArrowDown />
                         </div>
                     </div>
-                    {currentTicket ? (
-                        <div className="">
-                            <TicketList />
-                            <TicketList />
-                            <TicketList />
-                            <TicketList /></div>
-                    ) : (
-                        <div className="flex flex-col items-center mt-9">
-                            <img src={NotTicket} alt="" className="w-[170px]" />
-                            <div className="outline outline-gray-300 p-9 rounded-md text-center">
-                                <h4 className="text-gray-700 font-bold">در این تاریخ پروازی برای استانبول به دبی یافت نشد.</h4>
-                                <h3 className="font-light text-gray-100 mt-4 text-lg">در تاریخ دیگری جستجو کنید</h3>
+
+                    {isLoading
+                        ? <div className=" flex justify-center items-center rounded-md h-12 w-12 border-4 border-t-4 border-blue-500 animate-spin  mr-[50%] mt-20"></div>
+                        : searchData.length === 0
+                            ? <div className="flex flex-col items-center mt-9">
+                                <img src={NotTicket} alt="" className="w-[170px]" />
+                                <div className="outline outline-gray-300 p-9 rounded-md text-center">
+                                    <h4 className="text-gray-700 font-bold">در این تاریخ پروازی برای استانبول به دبی یافت نشد.</h4>
+                                    <h3 className="font-light text-gray-100 mt-4 text-lg">در تاریخ دیگری جستجو کنید</h3>
+                                </div>
                             </div>
-                        </div>
-                    )}
+                            : searchData.map((product) => (
+                                <SingleTicket
+                                    key={product.id}
+                                    forth={product.forth}
+                                    back={product.back}
+                                />
+                            ))}
                 </div>
             </div>
         </div>

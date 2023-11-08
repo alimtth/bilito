@@ -1,15 +1,10 @@
-import React, {useState} from 'react';
-// import Select from 'react-select';
-import {TextField} from "@mui/material";
-import {styled} from '@mui/material/styles';
-import InputLabel from '@mui/material/InputLabel';
+import React, { useState } from 'react';
+import { styled } from '@mui/material/styles';
 import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import NativeSelect from '@mui/material/NativeSelect';
 import InputBase from '@mui/material/InputBase';
 
-const BootstrapInput = styled(InputBase)(({theme}) => ({
+const BootstrapInput = styled(InputBase)(({ theme }) => ({
     'label + &': {
         // marginTop: theme.spacing(3),
     },
@@ -46,7 +41,7 @@ const BootstrapInput = styled(InputBase)(({theme}) => ({
 
 function DatePickerComponent(props) {
     const daysOption =
-        Array.from({length: 31})
+        Array.from({ length: 31 })
             .map((_, i) => {
                 return {
                     label: i + 1 > 9 ? i + 1 : `0${i + 1}`,
@@ -57,20 +52,20 @@ function DatePickerComponent(props) {
     // const date = new Date(0,11);
     // const month
     const monthOption = [
-            {value: 1, label: 'January'},
-            {value: 2, label: 'February'},
-            {value: 3, label: 'March'},
-            {value: 4, label: 'April'},
-            {value: 5, label: 'May'},
-            {value: 6, label: 'June'},
-            {value: 7, label: 'July'},
-            {value: 8, label: 'August'},
-            {value: 9, label: 'September'},
-            {value: 10, label: 'October'},
-            {value: 11, label: 'November'},
-            {value: 12, label: 'December'},
-        ]
-    ;
+        { value: 1, label: 'January' },
+        { value: 2, label: 'February' },
+        { value: 3, label: 'March' },
+        { value: 4, label: 'April' },
+        { value: 5, label: 'May' },
+        { value: 6, label: 'June' },
+        { value: 7, label: 'July' },
+        { value: 8, label: 'August' },
+        { value: 9, label: 'September' },
+        { value: 10, label: 'October' },
+        { value: 11, label: 'November' },
+        { value: 12, label: 'December' },
+    ]
+        ;
 
     return (
         <div className='flex justify-center mt-96'>
@@ -79,7 +74,7 @@ function DatePickerComponent(props) {
                     labelId="demo-customized-select-label"
                     id="demo-customized-select"
                     autoWidth={true}
-                    input={<BootstrapInput/>}
+                    input={<BootstrapInput />}
                 >
                     {
                         daysOption.map((el) => {
@@ -91,11 +86,11 @@ function DatePickerComponent(props) {
 
                         })}
                 </Select>
-                <div className='w-px h-{100%} bg-gray-100'/>
+                <div className='w-px h-{100%} bg-gray-100' />
                 <Select
                     autoWidth={true}
                     id="demo-customized-select"
-                    input={<BootstrapInput/>}
+                    input={<BootstrapInput />}
                 >
                     {
                         monthOption.map((el) => {
@@ -107,8 +102,8 @@ function DatePickerComponent(props) {
 
                         })}
                 </Select>
-                <div className='w-px h-{100%} bg-gray-100'/>
-                <BootstrapInput id="demo-customized-textbox" placeholder='سال'/>
+                <div className='w-px h-{100%} bg-gray-100' />
+                <BootstrapInput id="demo-customized-textbox" placeholder='سال' />
             </div>
             {/*<div className='flex border-2 rounded gap-1 border-gray-100 justify-between pr-3'>*/}
             {/*    <input className='rounded-s-2xl focus:outline-none pl-1 '/>*/}

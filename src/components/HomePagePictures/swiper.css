@@ -1,6 +1,7 @@
-.swiper{
+.swiper {
     width: 85%;
     max-height: 500px;
     cursor: -webkit-grab;
     cursor: grab;
+    z-index: 999px;
 }

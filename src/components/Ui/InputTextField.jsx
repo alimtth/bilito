@@ -6,7 +6,7 @@ const sizes = {
     lg: "flex py-4 text-sm px-1 ",
     xl: "flex py-4 text-sm px-1 ",
     ssl: "flex py-3 text-sm px-3 ",
-    xsl: "flex py-3 text-sm px-32 "
+    xsl: "flex py-3 text-sm pl-32 "
 };
 function InputTextField({children , placeholder, style, className, onChange, type, register, value,size}) {
     return (
@@ -15,7 +15,7 @@ function InputTextField({children , placeholder, style, className, onChange, typ
             <div className="material-textfield">
                 <input onChange={onChange} value={value} className={`input-text-field ${sizes[size]} ${className}`} type={type} {...register}/>
 
-                    <label className='label px- '>{children}</label>
+                    <label className='label'>{children}</label>
             </div>
         </div>
 
