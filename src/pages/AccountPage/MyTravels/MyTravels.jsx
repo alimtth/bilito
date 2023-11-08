@@ -17,11 +17,18 @@ import iconbag from '@/assets/Images/Icons/bag.svg'
 import line from '@/assets/Images/Icons/Line.svg'
 function MyTravels() {
     const [showDetails, setShowDetails] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
 
 
     const toggleDetails = () => {
         setShowDetails(!showDetails)
     }
+
+    const toggleDropdown = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+    }
+
     console.log(showDetails);
     return (
         <>
@@ -29,17 +36,29 @@ function MyTravels() {
                 <div className="flex justify-between items-center ">
                     <h3 className="font-bold">  سفرهای من</h3>
                     <div className="flex items-center gap-5">
-                        <Buttons variant='grayBTN'>
+                        <div className="flex flex-col">
+                        <Buttons variant='grayBTN' onClick={toggleDropdown}>
                             مرتب سازی
                             <img src={arrowdown} alt="" />
                         </Buttons>
+                        {isDropdownOpen && (
+                            <div className='fixed flex flex-col z-30 bg-white shadow-lg gap-2 py-2 rounded-lg px-9 mt-11'>
+                                <ul>جدیدترین</ul>
+                                <ul>قدیمی‌ترین</ul>
+                                <ul>کنسلی‌ها</ul>
+                                <ul>باتاخیر</ul>
+                                <ul>تغییر مسیر</ul>
+                            </div>
+                        )}
+                        </div>
+
                         <div className="flex">
                             <div className="flex justify-center items-center bg-red-400 text-sm bg-opacity-75 rounded-full w-5 h-5 text-red-20 relative z-20 right-4 bottom-1">+9</div>
                             <img src={message} alt="" className='w-8 z-10' />
                         </div>
                     </div>
                 </div>
-                <div className=' bg-blue-50 flex justify-between px-10 py-2 rounded-lg mt-6'>
+                <div className=' bg-blue-50 flex justify-between px-10 py-2 rounded-lg mt-6 z-10'>
                     <h3 className="flex items-center gap-4 text-blue-650 font-bold"><img src={messageblue} alt="" />پرواز شماره 165 از استانبول به دبی در تاریخ  6شهریور 1402 در ساعت 21:50، به مدت 2 ساعت تاخیر دارد.</h3>
                     <img src={close} alt="" className='w-6' />
                 </div>
