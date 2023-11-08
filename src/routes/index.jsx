@@ -1,5 +1,5 @@
 import React, { Children } from "react";
-import {createBrowserRouter} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import HomePage from "@/pages/index.jsx";
 import NotFound from "@/pages/404/NotFound.jsx";
 import BaseLayout from "@/pages/BaseLayout/index.jsx";
@@ -23,26 +23,26 @@ import LoadRules from "@/components/TicketList/LoadRules/LoadRules";
 
 
 
-const routes =[
+const routes = [
     {
         path: '/',
-        element: <BaseLayout/>,
-        children :[
+        element: <BaseLayout />,
+        children: [
             {
                 index: true,
-                element: <HomePage/>,
+                element: <HomePage />,
             },
-            
+
             {
-                path:'ticket',
+                path: 'ticket',
                 element: <TickedList />,
                 children: [
                     {
-                        path:'rule',
+                        path: 'rule',
                         element: <Rule />,
                         children: [
                             {
-                                path:'grule',
+                                path: 'grule',
                                 element: <GeneralRules />,
                                 children: [
                                     {
@@ -57,11 +57,11 @@ const routes =[
                 ]
             },
             {
-                path:'stepshop',
+                path: 'stepshop',
                 element: <StepShop />
             },
             {
-                path:'test',
+                path: 'test',
                 element: <AuthPage />
             },
             {
@@ -69,18 +69,18 @@ const routes =[
                 element: <About />
             },
         ]
-        
+
     },
     {
-        path:'form',
+        path: 'form',
         element: <FormListe />
     },
     {
-        path:'login',
-        element: <Login/>,
+        path: 'login',
+        element: <Login />,
     },
     {
-        path:'register',
+        path: 'register',
         element: <Register />
     },
     {
@@ -88,33 +88,32 @@ const routes =[
         element: <BaseLayoutAcc />,
         children: [
             {
-                path: 'datauser',
+                path: 'data-user',
                 element: <UserData />,
-                children: [
-                    {
-                path: 'edituser',
-                element: <EditUserData />
-            },
-                ]
             },
 
             {
-                path: 'myticket',
+                path: 'edit-user',
+                element: <EditUser />
+            },
+
+            {
+                path: 'my-ticket',
                 element: <MyTicket />
             },
         ]
     },
-    
-   
+
+
     {
         path: 'about',
         element: <About />
     },
     {
         path: "*",
-        element: <NotFound/>
+        element: <NotFound />
     },
-    
+
 ];
-const router =  createBrowserRouter(routes)
+const router = createBrowserRouter(routes)
 export default router;
