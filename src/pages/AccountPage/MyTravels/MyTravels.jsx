@@ -20,6 +20,7 @@ function MyTravels() {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
 
+
     const toggleDetails = () => {
         setShowDetails(!showDetails)
     }
@@ -27,6 +28,7 @@ function MyTravels() {
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
     }
+
     console.log(showDetails);
     return (
         <>
@@ -49,6 +51,7 @@ function MyTravels() {
                             </div>
                         )}
                         </div>
+
                         <div className="flex">
                             <div className="flex justify-center items-center bg-red-400 text-sm bg-opacity-75 rounded-full w-5 h-5 text-red-20 relative z-20 right-4 bottom-1">+9</div>
                             <img src={message} alt="" className='w-8 z-10' />
