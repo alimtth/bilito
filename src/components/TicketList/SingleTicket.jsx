@@ -7,11 +7,14 @@ import iconbag from '@/assets/Images/Icons/bag.svg'
 import line from '@/assets/Images/Icons/Line.svg'
 import propTypes from "prop-types";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Link, Outlet } from 'react-router-dom';
 import close from "@/assets/Images/Icons/close-square.svg";
 import Buttons from "@/components/Ui/Button"
 function SingleTicket({ forth, back, children }) {
 =======
+=======
+>>>>>>> b7365c1aad6f3e4befec3bc3aef2dfc4405c5efe
 import { Link } from 'react-router-dom';
 function SingleTicket({forth, back, children}) {
 >>>>>>> 7d8b3265d858aab64433a2319001a00b78b4fa18
