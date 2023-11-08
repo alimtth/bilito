@@ -9,7 +9,8 @@ import dislike from "@/assets/Images/Icons/dislike.png"
 
 function Ticket() {
     return (
-        <div>
+        <>
+
             <div className='flex flex-col w-full mt-11 '>
                             <div className="flex justify-between items-center ">
                                 <h3 className="font-bold">  تیکت‌های من</h3>
@@ -34,7 +35,8 @@ function Ticket() {
                                 </div>
                             </div>
                         </div>
-        </div>
+        </>
+       
     );
 }
 

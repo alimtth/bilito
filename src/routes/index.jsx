@@ -14,6 +14,7 @@ import UserData from "@/pages/AccountPage/UserData/UserData";
 import EditUser from "@/pages/AccountPage/EditUser/EditUser";
 import EditUserData from "@/pages/AccountPage/EditUserData/EditUserData";
 import MyTicket from "@/pages/AccountPage/MyTicket/MyTicket";
+
 import FormListe from "@/pages/PageFormList/FormList";
 import Rule from "@/components/TicketList/Rules/Rule";
 import GeneralRules from "@/components/TicketList/GeneralRules/GeneralRules";
@@ -103,6 +104,8 @@ const routes =[
             },
         ]
     },
+    
+   
     {
         path: 'about',
         element: <About />

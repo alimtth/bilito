@@ -9,8 +9,9 @@ import dislike from "@/assets/Images/Icons/dislike.png"
 import BaseLayoutAcc from '../BaseLayoutsAccount/BaseLayoutAcc';
 function MyTicket(props) {
     return (
-        <div>
-            <div id="container">
+        <>
+
+
             <div className='flex flex-col w-full mt-11 '>
                             <div className="flex justify-between items-center ">
                                 <h3 className="font-bold">  تیکت‌های من</h3>
@@ -35,8 +36,9 @@ function MyTicket(props) {
                                 </div>
                             </div>
                         </div>
-            </div>
-        </div>
+
+        </>
+           
     );
 }
 
