@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
 import Buttons from '@/components/Ui/Button'
-import HeaderTabs from '@/components/NavBar/HeaderTabs';
-import BaseLayoutAcc from '../BaseLayoutsAccount/BaseLayoutAcc';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useUser } from '@/providers/UserDataProvider';
+
+
 
 function UserData() {
-    const [userData, setUserData] = useState({
-        fullName: 'شیوا ارغوان',
-        gender: 'زن',
-        nationalCode: '30892581782',
-        phoneNumber: '0918 592 3034',
-    });
+    const {userData, setUserData} = useUser();
     return (
         <>
             <div className='flex flex-col mt-16 ] '>
