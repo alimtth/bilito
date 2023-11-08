@@ -33,7 +33,7 @@ export default {
           650: '#1D91CC',
         },
         zard: {
-          100: '#A9791C',
+          100: '#E3E989',
         },
       },
           height: {
