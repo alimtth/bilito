@@ -6,7 +6,7 @@ import iconeairplan from '@/assets/Images/Icons/airplaneblue.svg'
 import iconbag from '@/assets/Images/Icons/bag.svg'
 import line from '@/assets/Images/Icons/Line.svg'
 import propTypes from "prop-types";
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import close from "@/assets/Images/Icons/close-square.svg";
 import Buttons from "@/components/Ui/Button"
 function SingleTicket({ forth, back, children }) {
@@ -213,6 +213,9 @@ function SingleTicket({ forth, back, children }) {
                                 </div>
 
                             </div>
+                            <main>
+                                <Outlet />
+                            </main>
                         </div>
                     </div>
                 )}

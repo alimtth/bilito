@@ -12,6 +12,7 @@ import AccountPage from "@/pages/AccountPage/AccountPage";
 import About from "@/pages/about/About";
 import FormListe from "@/pages/PageFormList/FormList";
 import Rule from "@/components/TicketList/Rules/Rule";
+import GeneralRules from "@/components/TicketList/GeneralRules/GeneralRules";
 
 
 
@@ -31,8 +32,15 @@ const routes =[
                 children: [
                     {
                         path:'rule',
-                        element: <Rule />
-                    }
+                        element: <Rule />,
+                        children: [
+                            {
+                                path:'grule',
+                                element: <GeneralRules />
+                            },
+                        ]
+                    },
+                    
                 ]
             },
             {
