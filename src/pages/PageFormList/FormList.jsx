@@ -11,9 +11,6 @@ import Buttons from '@/components/Ui/Button'
 import { IoIosArrowDown } from "react-icons/io";
 
 
-
-
-
 function FormListe() {
   const [seconds, setSeconds] = useState(0)
   const [minutes, setMinutes] = useState(10)
