@@ -1,5 +1,4 @@
 import React from 'react';
-import {Headphones} from "@mui/icons-material";
 import CardPos from '../../assets/Images/card-pos.png'
 import GlobalSearch from '../../assets/Images/global-search.png'
 import Monitor from '../../assets/Images/monitor.png'

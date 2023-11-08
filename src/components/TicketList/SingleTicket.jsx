@@ -6,10 +6,15 @@ import iconeairplan from '@/assets/Images/Icons/airplaneblue.svg'
 import iconbag from '@/assets/Images/Icons/bag.svg'
 import line from '@/assets/Images/Icons/Line.svg'
 import propTypes from "prop-types";
+<<<<<<< HEAD
 import { Link, Outlet } from 'react-router-dom';
 import close from "@/assets/Images/Icons/close-square.svg";
 import Buttons from "@/components/Ui/Button"
 function SingleTicket({ forth, back, children }) {
+=======
+import { Link } from 'react-router-dom';
+function SingleTicket({forth, back, children}) {
+>>>>>>> 7d8b3265d858aab64433a2319001a00b78b4fa18
     const [isloding, setIsloding] = useState(true);
     const [isShow, setIsShow] = useState(false);
 
@@ -22,8 +27,13 @@ function SingleTicket({ forth, back, children }) {
 
     setTimeout(() => {
         setIsloding(false)
+<<<<<<< HEAD
     }, 2000);
 
+=======
+    }, 5000);
+    
+>>>>>>> 7d8b3265d858aab64433a2319001a00b78b4fa18
     return (
         <>
             <div className='flex border-gray-10 border rounded-lg flex-col gap-4 mt-6 justify-evenly  '>
@@ -53,6 +63,7 @@ function SingleTicket({ forth, back, children }) {
                     </div>
                 ) : (
                     // forth.map((item , forth, back) => (
+<<<<<<< HEAD
                     <div>
                         <div className='flex justify-between items-center px-4 lg:flex-row flex-col gap-4 py-6'>
                             <div className='flex justify-center items-center gap-2' >
@@ -63,6 +74,19 @@ function SingleTicket({ forth, back, children }) {
                                 <div
                                     className='bg-red-10 text-red-20 flex justify-center items-center gap-1 py-[2px] px-2 h-6 border rounded-md'>غیر
                                     قابل استرداد
+=======
+                        <div>
+                            <div className='flex justify-between items-center px-4 lg:flex-row flex-col gap-4 py-6'>
+                                <div className='flex justify-center items-center gap-2' >
+                                    <div
+                                        className='bg-red-10 text-red-20 flex justify-center items-center gap-1 py-[2px] px-2 h-6 border rounded-md'>
+                                        صندلی باقی مانده
+                                    </div>
+                                    <div
+                                        className='bg-red-10 text-red-20 flex justify-center items-center gap-1 py-[2px] px-2 h-6 border rounded-md'>غیر
+                                        قابل استرداد
+                                    </div>
+>>>>>>> 7d8b3265d858aab64433a2319001a00b78b4fa18
                                 </div>
                             </div>
                             <div className='flex justify-center items-center gap-[8px]'>
@@ -108,6 +132,7 @@ function SingleTicket({ forth, back, children }) {
                                     <p className='text-gray-600'>{back}(DXB)</p>
                                 </div>
                             </div>
+<<<<<<< HEAD
                             <div className='flex lg:justify-center lg:items-end gap-6 items-center self-center'>
                                 <div className='text-blue-500'> تومان</div>
                                 <div>
@@ -145,6 +170,15 @@ function SingleTicket({ forth, back, children }) {
                                         <div
                                             className='bg-red-10 text-red-20 flex justify-center items-center gap-1 py-[2px] px-2 h-6 border rounded-md'>غیر
                                             قابل استرداد
+=======
+                            <div className='flex justify-between items-end gap-[64px] px-4 lg:flex-row flex-col'>
+                                <div className='pb-5 gap-6 w-[575px] flex items-center '>
+                                    <img src={omanAir} />
+                                    <div>
+                                        <div className='pl-8 gap-2 flex flex-col items-center'>
+                                            <p>02:50</p>
+                                            <p className='text-gray-600'>{forth}(SAW)</p>
+>>>>>>> 7d8b3265d858aab64433a2319001a00b78b4fa18
                                         </div>
                                     </div>
                                 </div>
@@ -162,6 +196,7 @@ function SingleTicket({ forth, back, children }) {
                                             className='bg-blue-100 text-blue-500  flex justify-center items-center gap-1 py-[2px] px-2 h-6 border rounded-md'>سیستمی
                                         </div>
                                     </div>
+<<<<<<< HEAD
                                 </div>
                                 <div className="flex items-center">
                                     <div className=' flex items-center justify-center rotate-90 mt-20'>
@@ -179,6 +214,20 @@ function SingleTicket({ forth, back, children }) {
                                         <h3>17:00</h3>
                                         <p>امان، فرودگاه Queen Alia</p>
                                         <p>دوشنبه 6 شهریور (شماره پرواز: 625)</p>
+=======
+
+                                    <div className='pr-8 gap-2 flex flex-col items-center'>
+                                        <p>21:50</p>
+                                        <p className='text-gray-600'>{back}(DXB)</p>
+                                    </div>
+                                </div>
+                                <div className='flex lg:justify-center lg:items-end gap-6 items-center self-center'>
+                                    <div className='text-blue-500'> تومان</div>
+                                    <div>
+                                        <Link to={"/form"}>
+                                        <Button size='lg'>جزئیات بلیط</Button>
+                                        </Link>
+>>>>>>> 7d8b3265d858aab64433a2319001a00b78b4fa18
                                     </div>
                                     <div className="flex gap-4">
                                         <h3>قیمت برای هر بزرگسال</h3>
@@ -217,7 +266,11 @@ function SingleTicket({ forth, back, children }) {
                                 <Outlet />
                             </main>
                         </div>
+<<<<<<< HEAD
                     </div>
+=======
+                    // ))
+>>>>>>> 7d8b3265d858aab64433a2319001a00b78b4fa18
                 )}
             </div>
         </>

@@ -8,8 +8,6 @@ import arrowdown from "@/assets/Images/Icons/arrow-down.svg"
 import calendar from "@/assets/Images/Icons/calendar.svg"
 import like from "@/assets/Images/Icons/like.png"
 import dislike from "@/assets/Images/Icons/dislike.png"
-import profile from "@/assets/Images/Icons/profile-add.svg"
-import { useAuthContext } from '@/providers/AuthProvider';
 import InputTextField from '@/components/Ui/InputTextField';
 import BaseLayout from './BaseLayouts/BaseLayout';
 
