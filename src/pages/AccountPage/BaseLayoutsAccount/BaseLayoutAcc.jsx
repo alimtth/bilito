@@ -24,8 +24,10 @@ function BaseLayoutAcc() {
                             <p className={`flex items-center text-gray-600 gap-3 cursor-pointer w-72 h-12 rounded-md `}>
                                 <img src={profile} alt=""/>اطلاعات حساب کاربری</p>
                         </Link>
+                        <Link to={"my-travels"}>
                         <p className={`flex items-center text-gray-600 gap-3 cursor-pointer w-72 h-12 rounded-md `}><img
                             src={profile} alt=""/>سفرهای من</p>
+                        </Link>
                         <Link to={"my-ticket"}>
                             <p className={`flex items-center text-gray-600 gap-3 cursor-pointer w-72 h-12 rounded-md `}>
                                 <img src={profile} alt=""/>تیکت‌های من</p>
