@@ -19,6 +19,7 @@ import FormListe from "@/pages/PageFormList/FormList";
 import Rule from "@/components/TicketList/Rules/Rule";
 import GeneralRules from "@/components/TicketList/GeneralRules/GeneralRules";
 import LoadRules from "@/components/TicketList/LoadRules/LoadRules";
+import MyTravels from "@/pages/AccountPage/MyTravels/MyTravels";
 
 
 
@@ -100,6 +101,10 @@ const routes = [
             {
                 path: 'my-ticket',
                 element: <MyTicket />
+            },
+            {
+                path: 'my-travels',
+                element: <MyTravels />
             },
         ]
     },

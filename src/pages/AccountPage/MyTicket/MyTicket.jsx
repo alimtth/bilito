@@ -6,12 +6,9 @@ import arrowdown from "@/assets/Images/Icons/arrow-down.svg"
 import calendar from "@/assets/Images/Icons/calendar.svg"
 import like from "@/assets/Images/Icons/like.png"
 import dislike from "@/assets/Images/Icons/dislike.png"
-import BaseLayoutAcc from '../BaseLayoutsAccount/BaseLayoutAcc';
-function MyTicket(props) {
+function MyTicket() {
     return (
         <>
-
-
             <div className='flex flex-col w-full mt-11 '>
                             <div className="flex justify-between items-center ">
                                 <h3 className="font-bold">  تیکت‌های من</h3>
@@ -36,7 +33,6 @@ function MyTicket(props) {
                                 </div>
                             </div>
                         </div>
-
         </>
            
     );
