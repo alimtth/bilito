@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import close from "@/assets/Images/Icons/close-square.svg";
 import Buttons from "@/components/Ui/Button"
 
@@ -31,7 +31,7 @@ function GeneralRules() {
                                         <p>34,410,462</p>
                                         <p>تومان</p>
                                     </div>
-                                    <Link to={"rule"}>
+                                    <Link to={"loadrules"}>
                                     <Buttons variant='fill' className={"w-[300px] justify-center"}>
                                             ادامه
                                     </Buttons>
@@ -39,6 +39,9 @@ function GeneralRules() {
                                 </div>
 
                             </div>
+                            <main>
+                                <Outlet />
+                            </main>
                         </div>
         </div>
     );

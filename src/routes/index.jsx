@@ -13,6 +13,7 @@ import About from "@/pages/about/About";
 import FormListe from "@/pages/PageFormList/FormList";
 import Rule from "@/components/TicketList/Rules/Rule";
 import GeneralRules from "@/components/TicketList/GeneralRules/GeneralRules";
+import LoadRules from "@/components/TicketList/LoadRules/LoadRules";
 
 
 
@@ -36,7 +37,13 @@ const routes =[
                         children: [
                             {
                                 path:'grule',
-                                element: <GeneralRules />
+                                element: <GeneralRules />,
+                                children: [
+                                    {
+                                        path: 'loadrules',
+                                        element: <LoadRules />
+                                    }
+                                ]
                             },
                         ]
                     },
