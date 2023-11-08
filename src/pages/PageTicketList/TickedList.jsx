@@ -7,7 +7,6 @@ import EditPen from "@/assets/Images/Icons/edit.svg";
 import Button from "@/components/Ui/Button";
 import { Slider } from "@mui/material";
 import airport from "@/assets/Images/Icons/Airport.png";
-import TicketList from "@/components/TicketList/index.jsx";
 import NotTicket from "@/assets/Images/Icons/notticket.png"
 import InputTextField from "@/components/Ui/InputTextField";
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports';
@@ -254,8 +253,9 @@ function TickedList() {
                             <IoIosArrowDown />
                         </div>
                     </div>
+
                     {isLoading
-                        ? "در حال دریافت اطلاعات ..."
+                        ? <div className=" flex justify-center items-center rounded-md h-12 w-12 border-4 border-t-4 border-blue-500 animate-spin  mr-[50%] mt-20"></div>
                         : searchData.length === 0
                             ? <div className="flex flex-col items-center mt-9">
                                 <img src={NotTicket} alt="" className="w-[170px]" />
