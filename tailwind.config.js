@@ -32,6 +32,9 @@ export default {
           600: '#11577A',
           650: '#1D91CC',
         },
+        zard: {
+          100: '#A9791C',
+        },
       },
           height: {
             'sm': '32px',
