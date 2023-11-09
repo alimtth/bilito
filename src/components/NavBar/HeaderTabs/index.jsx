@@ -16,20 +16,7 @@ import { RiMenu3Line } from "react-icons/ri";
 import { useAuthContext } from "@/providers/AuthProvider";
 import { BiExit } from "react-icons/bi"
 
-// const navItem = [
-//     {
-//         name: "صفحه اصلی",
-//         path: "/"
-//     },
-//     {
-//         name: "سفر های من",
-//         path: "ticket"
-//     },
-//     {
-//         name: "لیست تیکت",
-//         path: "ticket"
-//     },
-// ]
+
 function HeaderTabs({ onClick }) {
     const [showMenu, setShowMenu] = useState(false)
     const [hover, setHover] = useState(false);
@@ -138,9 +125,9 @@ function HeaderTabs({ onClick }) {
                                 </div>
                             ) : (
                                 <div>
-                                    <img src={currentUser?.avatar} className="w-10 h-10 rounded-full" onClick={handlHoverd} />
+                                    <img src={currentUser?.avatar} className="w-10 h-10 rounded-full z-50" onClick={handlHoverd} />
                                     {hover && (
-                                        <div className={"p-[20px] bg-white mt-11 -mr-10 rounded-lg flex flex-col items-center justify-center absolute top-[25px] gap-[20px] w-100 z-30"}>
+                                        <div className={"p-[20px] bg-white  -mr-10 rounded-lg flex flex-col items-center justify-center absolute top-[25px] gap-[20px] w-100 z-30 shadow-lg mt-7"}>
                                        <Link to={"account"}>
                                        <div className="nested-item text-[13px] text-[#080808BF] opacity-75">حساب کاربری</div>
                                        </Link> 

@@ -8,12 +8,12 @@ const sizes = {
     ssl: "flex py-3 text-sm px-3 ",
     xsl: "flex py-3 text-sm pl-32 "
 };
-function InputTextField({children , placeholder, style, className, onChange, type, register, value,size}) {
+function InputTextField({children , placeholder, style, className, onChange, type, register, value,size, disabled}) {
     return (
 
         <div>
             <div className="material-textfield">
-                <input onChange={onChange} value={value} className={`input-text-field ${sizes[size]} ${className}`} type={type} {...register}/>
+                <input onChange={onChange} value={value} className={`input-text-field ${sizes[size]} ${className}`} type={type} {...register} disabled={disabled}/>
 
                     <label className='label'>{children}</label>
             </div>

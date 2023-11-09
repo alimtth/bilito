@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Buttons from '@/components/Ui/Button'
-import HeaderTabs from '@/components/NavBar/HeaderTabs';
-import BaseLayoutAcc from '../BaseLayoutsAccount/BaseLayoutAcc';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useUser } from '@/providers/UserDataProvider';
+
+
 
 function UserData() {
+    const {userData, setUserData} = useUser();
     return (
         <>
             <div className='flex flex-col mt-16 ] '>
@@ -18,7 +20,7 @@ function UserData() {
                                 نام و نام خانوادگی
                             </span>
                             <span className='text-gray-20 font-bold'>
-                                شیوا ارغوان
+                                {userData.fullName}
                             </span>
                         </div>
                         <div className='flex flex-col gap-2'>
@@ -26,7 +28,7 @@ function UserData() {
                                 جنسیت
                             </span>
                             <span className='text-gray-20 font-bold'>
-                                زن
+                                {userData.gender}
                             </span>
                         </div>
                         <div className='flex flex-col gap-2'>
@@ -34,7 +36,7 @@ function UserData() {
                                 کدملی
                             </span>
                              <span className='text-gray-20 font-bold'>
-                                30892581782
+                                {userData.nationalCode}
                             </span>
                         </div>
                         <div className='flex flex-col gap-2'>
@@ -42,7 +44,7 @@ function UserData() {
                                 شماره تماس
                             </span>
                             <span className='text-gray-20 font-bold'>
-                                0918 592 3034
+                                {userData.phoneNumber}  
                             </span>
                         </div>
 
