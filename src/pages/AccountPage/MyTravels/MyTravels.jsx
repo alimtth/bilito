@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import Buttons from '@/components/Ui/Button'
-import deletesss from "@/assets/Images/Icons/delete.png";
-import undo from "@/assets/Images/Icons/undo.png"
 import arrowdown from "@/assets/Images/Icons/arrow-down.svg"
-import calendar from "@/assets/Images/Icons/calendar.svg"
-import like from "@/assets/Images/Icons/like.png"
-import dislike from "@/assets/Images/Icons/dislike.png"
 import message from "@/assets/Images/Icons/message.png"
 import messageblue from "@/assets/Images/Icons/messageblue.svg"
 import close from "@/assets/Images/Icons/close-square.svg"
@@ -19,16 +14,12 @@ function MyTravels() {
     const [showDetails, setShowDetails] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-
-
     const toggleDetails = () => {
         setShowDetails(!showDetails)
     }
-
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
     }
-
     console.log(showDetails);
     return (
         <>
@@ -51,7 +42,6 @@ function MyTravels() {
                             </div>
                         )}
                         </div>
-
                         <div className="flex">
                             <div className="flex justify-center items-center bg-red-400 text-sm bg-opacity-75 rounded-full w-5 h-5 text-red-20 relative z-20 right-4 bottom-1">+9</div>
                             <img src={message} alt="" className='w-8 z-10' />
