@@ -48,7 +48,6 @@ const sampleTicket = [
     back: "قزوین",
     price: 1000000,
   },
-  ,
   {
     id: 8,
     limit: 3,
