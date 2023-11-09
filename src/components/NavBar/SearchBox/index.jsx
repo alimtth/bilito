@@ -58,6 +58,7 @@ function SearchBox() {
                         <InputTextField size="sm" className={"sm:px-44 lg:px-0"}>کلاس پرواز</InputTextField>
                         {/* <Link to={"ticket"}> */}
                         <Button variant="fill" size="xl" className={"sm:px-56 lg:px-3"} type="submit" >
+
                             <img src={searchIcon}/>
                             جستجو
                         </Button>
