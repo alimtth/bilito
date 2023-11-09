@@ -278,6 +278,7 @@ function TickedList() {
                                     forth={product.forth}
                                     back={product.back}
                                     imagess={product.image}
+                                    price={product.price}
                                 />
                             ))}
                 </div>

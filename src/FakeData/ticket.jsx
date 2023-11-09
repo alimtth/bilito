@@ -1,6 +1,7 @@
 import airacon from "@/assets/Images/Icons/AiraIcon.png"
 import airlinelogoweb from "@/assets/Images/Icons/airlinelogoweb.svg"
 import airlinelogo from "@/assets/Images/Icons/Airlinelogo.svg"
+
 const sampleTicket = [
   {
     id: 1,

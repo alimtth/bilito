@@ -10,7 +10,7 @@ import propTypes from "prop-types";
 import { Link, Outlet } from 'react-router-dom';
 import close from "@/assets/Images/Icons/close-square.svg";
 import Buttons from "@/components/Ui/Button"
-function SingleTicket({forth, back, imagess, children}) {
+function SingleTicket({forth, back, imagess, price, children}) {
     const [isloding, setIsloding] = useState(true);
     const [isShow, setIsShow] = useState(false);
 
@@ -110,7 +110,7 @@ function SingleTicket({forth, back, imagess, children}) {
                                 </div>
                             </div>
                             <div className='flex lg:justify-center lg:items-end gap-6 items-center self-center'>
-                                <div className='text-blue-500'> تومان</div>
+                                <div className='text-blue-500'>{price} تومان</div>
                                 <div>
                                     {/* <Link to={"/form"}> */}
                                     <Button size='lg' onClick={handlShow}>جزئیات بلیط</Button>
