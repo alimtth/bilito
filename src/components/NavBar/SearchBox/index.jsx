@@ -6,37 +6,20 @@ import searchIcon from "@/assets/Images/Icons/search-normal.svg";
 import History from "../History";
 import InputTextField from "@/components/Ui/InputTextField";
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 // import { apiSearch } from "@/api/search"
 
 function SearchBox() {
-    // const navigate = useNavigate();
-    const [searchInputs, setSearchInputs] = useState({
-        forth: "",
-        back: "",
-        // price: "",
-    })
+    const [searchParams, setSearchParams] = useSearchParams();
+    const [query, setQuery] = useState(() => searchParams.get("q"))
+    const navigate = useNavigate();
 
-    // const handleSearch = async () => {
-    //     const filters = {
-    //         forth: searchInputs.forth,
-    //         back: searchInputs.back,
-    //         // price: searchInputs.price,
-    //     };
+    const hanldeSearch = (e) => {
+        e.preventDefault();
+        navigate("/ticket");
+        setSearchParams((s) => ({...s, q: query}));
 
-    //     try {
-    //         const searchRes = await apiSearch(filters);
-    //         console.log(searchRes);
-    //         navigate("/ticket", {
-    //             state: {
-    //                 forth: searchInputs.forth,
-    //                 back: searchInputs.back,
-    //             },
-    //         });
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-    // }
+    }
     return (
         <>
             <div className="lg:z-20 lg:-m-28 md:sm:shadow-2xl sm:shadow-none rounded lg:w-fit m-auto" >
@@ -66,20 +49,21 @@ function SearchBox() {
                             چند مسیره
                         </Button>
                     </div>
-                    <div className="flex flex-col gap-1 lg:flex lg:flex-row lg:gap-6 w-full lg:w-auto flex-wrap items-center sm:gap-8 ">
-                        <InputTextField size="sm" className={"sm:px-44 lg:px-0 "} value={searchInputs.forth} onChange={(e) => setSearchInputs({...searchInputs, forth: e.target.value})}>مبدا</InputTextField>
+                    <form className="flex flex-col gap-1 lg:flex lg:flex-row lg:gap-6 w-full lg:w-auto flex-wrap items-center sm:gap-8 " onSubmit={hanldeSearch}>
+                        <InputTextField size="sm" className={"sm:px-44 lg:px-0 "} value={query} onChange={(e) => setQuery(e.target.value)}>مبدا</InputTextField>
                         <ConnectingAirportsIcon />
-                        <InputTextField size="sm" className={"sm:px-44 lg:px-0"} value={searchInputs.back} onChange={(e) => setSearchInputs({...searchInputs, back: e.target.value})}>مقصد</InputTextField>
+                        <InputTextField size="sm" className={"sm:px-44 lg:px-0"} >مقصد</InputTextField>
                         <InputTextField size="sm" className={"sm:px-44 lg:px-0"}>تاریخ رفت و برگشت</InputTextField>
                         <InputTextField size="sm" className={"sm:px-44 lg:px-0"}>تعداد مسافر</InputTextField>
                         <InputTextField size="sm" className={"sm:px-44 lg:px-0"}>کلاس پرواز</InputTextField>
-                        <Link to={"ticket"}>
-                        <Button variant="fill" size="xl" className={"sm:px-56 lg:px-3"} >
+                        {/* <Link to={"ticket"}> */}
+                        <Button variant="fill" size="xl" className={"sm:px-56 lg:px-3"} type="submit" >
+
                             <img src={searchIcon}/>
                             جستجو
                         </Button>
-                        </Link>
-                    </div>
+                        {/* </Link> */}
+                    </form>
                 </div>
             </div>
             <History/>
@@ -88,3 +72,29 @@ function SearchBox() {
 }
 
 export default SearchBox;
+    // const navigate = useNavigate();
+    // const [searchInputs, setSearchInputs] = useState({
+    //     forth: "",
+    //     back: "",
+    //     // price: "",
+    // })
+    // const handleSearch = async () => {
+    //     const filters = {
+    //         forth: searchInputs.forth,
+    //         back: searchInputs.back,
+    //         // price: searchInputs.price,
+    //     };
+
+    //     try {
+    //         const searchRes = await apiSearch(filters);
+    //         console.log(searchRes);
+    //         navigate("/ticket", {
+    //             state: {
+    //                 forth: searchInputs.forth,
+    //                 back: searchInputs.back,
+    //             },
+    //         });
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    // }
