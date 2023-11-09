@@ -28,7 +28,7 @@ function TickedList() {
 
     const hanldeSearch = (e) => {
         e.preventDefault();
-        setSearchParams((s) => ({...s, q: query}));
+        setSearchParams((s) => ({ ...s, q: query }));
     }
 
 
@@ -89,10 +89,13 @@ function TickedList() {
 
                 ) : (
                     <div className="p-6 gap-8 flex justify-center items-center font-bold">
-                        <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
-                            <img src={airplane} />
-                            <p>بلیط همواپیما استانبول به دبی</p>
-                        </div>
+                            
+                                <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
+                                    <img src={airplane} />
+                                    <p>بلیط همواپیما {query} به دبی</p>
+                                </div>
+                            
+                    
                         <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
                             <img src={calendar} />
                             <p>دوشنبه 6 شهریور</p>
