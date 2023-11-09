@@ -5,12 +5,6 @@ FrontEnd
 React/js
 
 
-BackEnd
-
-Laravel/php
-
-
-
 ```sh
 #git clone repo
 
