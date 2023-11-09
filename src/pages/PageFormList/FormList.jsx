@@ -14,6 +14,18 @@ import { IoIosArrowDown } from "react-icons/io";
 function FormListe() {
   const [seconds, setSeconds] = useState(0)
   const [minutes, setMinutes] = useState(10)
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedDay, setSelectedDay] = useState(null);
+
+
+  const handleDay = () => {
+    console.log();
+  }
+
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen)
+  }
 
   function updateTime() {
     if (minutes == 0 && seconds == 0) {
@@ -138,8 +150,16 @@ function FormListe() {
           <InputTextField size={"sll"} >
             جنسیت
           </InputTextField>
-          <div className="flex rounded-lg ">
-            <div className="border border-gray-500 w-40 flex items-center px-4 rounded-r-lg justify-between">روز<IoIosArrowDown /></div>
+          <div className="flex space-x-1">
+            <div className="border border-gray-500 w-40 flex items-center px-4 rounded-r-lg justify-between" onClick={toggleDropdown} >روز<IoIosArrowDown /></div>
+            {isDropdownOpen && (
+              <div className='flex flex-wrap w-40 bg-white shadow-lg gap-2 py-2 rounded-lg px-3 absolute z-10 mt-14'>
+                {[...Array(30)].map((_, index) => (
+                  <ul key={index} onClick={handleDay} className={`w-4 h-8 flex-shrink-0 cursor-pointer ${selectedDay ? index === 'bg-blue-500 text-white' : ''}`}
+                  >{index + 1}</ul>
+                ))}
+              </div>
+            )}
             <div className="border border-gray-500 w-40 flex items-center px-4 justify-between">ماه<IoIosArrowDown /></div>
             <div className="border border-gray-500 w-40 flex items-center px-4 rounded-l-lg justify-between">سال<IoIosArrowDown /></div>
           </div>
