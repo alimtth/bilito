@@ -5,9 +5,11 @@ import { Link, Outlet, redirect } from 'react-router-dom';
 import profile from "@/assets/Images/Icons/profile-add.svg"
 
 import HomePageComponenets from '@/components/HomePagePictures/HomePageComponenets';
+import { useUser } from '@/providers/UserDataProvider';
 
 function BaseLayoutAcc() {
     const { currentUser, logout } = useAuthContext();
+    const { userData, setUserData} = useUser();
     return (
         <>
             <HeaderTabs/>
@@ -15,8 +17,8 @@ function BaseLayoutAcc() {
                 <div className=" lg:outline lg:outline-gray-400 lg:rounded-lg mt-28 basis-1/4">
                     <div className="flex flex-col gap-1 items-center pt-5">
                         <img src={currentUser?.avatar} alt="" className='rounded-full w-[75%] h-[75%] lg:w-[50%] lg:h-[50%]'/>
-                        <h4 className='mt-4 font-bold text-gray-500'>علی مطهری</h4>
-                        <p className='text-gray-500'>۰۹‍۱۲۱۱۱۰۱۱۰</p>
+                        <h4 className='mt-4 font-bold text-gray-500'>{userData.fullName}</h4>
+                        <p className='text-gray-500'>{userData.phoneNumber}</p>
                     </div>
                     <div className="lg:flex hidden flex-col items-start gap-7 w-full px-4">
                         <div className='line w-full'/>

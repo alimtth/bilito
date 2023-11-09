@@ -1,13 +1,19 @@
 import InputTextField from '@/components/Ui/InputTextField';
 import Buttons from '@/components/Ui/Button'
-import React from 'react';
+import React, { useState } from 'react';
 import { useUser } from '@/providers/UserDataProvider';
 
 function EditUser() {
     const {userData, setUserData, savaUserData} = useUser();
+    const [isSaving, setIsSaving] = useState(false);
 
     const handleSaveChanges = () => {
-        savaUserData(userData);
+        setIsSaving(true); 
+        
+        setTimeout(() => {
+            savaUserData(userData);
+            setIsSaving(false)
+        }, 1000)
     }
     return (
         <>
@@ -33,12 +39,10 @@ function EditUser() {
 
                     </div>
                     <div className='justify-end flex'>
-                        <Buttons variant='fill' className={"w-full lg:w-1/4 flex justify-center items-end"} onClick={handleSaveChanges}>ویرایش
-                            اطلاعات</Buttons>
+                        <Buttons variant='fill' className={"w-full lg:w-1/4 flex justify-center items-end"} onClick={handleSaveChanges} disabled={isSaving}>
+                            {isSaving  ? "در حال ارسال" : "ویرایش" }
+                      </Buttons>
                     </div>
-
-
-
                 </div>
             </div>
         </>
