@@ -19,9 +19,16 @@ import { useSearchParams } from "react-router-dom";
 function TickedList() {
     const [trySearch, setTrySearch] = useState(false)
     const [currentTicket, setCurrentTicket] = useState(true);
-    const [searchParams] = useSearchParams();
     const [isLoading, setIsLoading] = useState(false);
     const [searchData, setSearchData] = useState([]);
+    const [searchParams, setSearchParams] = useSearchParams();
+    const [query, setQuery] = useState(() => searchParams.get("q"))
+
+
+    const hanldeSearch = (e) => {
+        e.preventDefault();
+        setSearchParams((s) => ({...s, q: query}));
+    }
 
 
     const handlSelectTrySearch = () => {
@@ -54,8 +61,8 @@ function TickedList() {
             </section>
             <section className="-m-2 lg:-m-12 z-10 bg-white flex flex-col items-center rounded-lg shadow-2xl" id='container'>
                 {trySearch ? (
-                    <div className="p-6 px-0 gap-3 flex justify-center items-center ">
-                        <InputTextField size={"ssl"} >
+                    <form className="p-6 px-0 gap-3 flex justify-center items-center " onSubmit={hanldeSearch}>
+                        <InputTextField size={"ssl"} value={query} onChange={(e) => setQuery(e.target.value)}>
                             مبدا
                         </InputTextField>
                         <div className="">
@@ -74,10 +81,10 @@ function TickedList() {
                             کلاس پرواز
                         </InputTextField>
 
-                        <Button variant="fill" >
+                        <Button variant="fill" type="submit" >
                             جستجو
                         </Button>
-                    </div>
+                    </form>
 
                 ) : (
                     <div className="p-6 gap-8 flex justify-center items-center font-bold">
