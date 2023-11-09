@@ -6,30 +6,37 @@ import searchIcon from "@/assets/Images/Icons/search-normal.svg";
 import History from "../History";
 import InputTextField from "@/components/Ui/InputTextField";
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports';
-import { Link } from "react-router-dom";
-import { apiSearch } from "@/api/search"
+import { Link, useNavigate } from "react-router-dom";
+// import { apiSearch } from "@/api/search"
 
 function SearchBox() {
+    // const navigate = useNavigate();
     const [searchInputs, setSearchInputs] = useState({
         forth: "",
         back: "",
         // price: "",
     })
 
-    const handleSearch = async () => {
-        const filters = {
-            forth: searchInputs.forth,
-            back: searchInputs.back,
-            // price: searchInputs.price,
-        };
+    // const handleSearch = async () => {
+    //     const filters = {
+    //         forth: searchInputs.forth,
+    //         back: searchInputs.back,
+    //         // price: searchInputs.price,
+    //     };
 
-        try {
-            const searchRes = await apiSearch(filters);
-            console.log(searchRes);
-        } catch (err) {
-            console.log(err);
-        }
-    }
+    //     try {
+    //         const searchRes = await apiSearch(filters);
+    //         console.log(searchRes);
+    //         navigate("/ticket", {
+    //             state: {
+    //                 forth: searchInputs.forth,
+    //                 back: searchInputs.back,
+    //             },
+    //         });
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    // }
     return (
         <>
             <div className="lg:z-20 lg:-m-28 md:sm:shadow-2xl sm:shadow-none rounded lg:w-fit m-auto" >
@@ -67,7 +74,7 @@ function SearchBox() {
                         <InputTextField size="sm" className={"sm:px-44 lg:px-0"}>تعداد مسافر</InputTextField>
                         <InputTextField size="sm" className={"sm:px-44 lg:px-0"}>کلاس پرواز</InputTextField>
                         <Link to={"ticket"}>
-                        <Button variant="fill" size="xl" className={"sm:px-56 lg:px-3"} onClick={handleSearch}>
+                        <Button variant="fill" size="xl" className={"sm:px-56 lg:px-3"} >
                             <img src={searchIcon}/>
                             جستجو
                         </Button>

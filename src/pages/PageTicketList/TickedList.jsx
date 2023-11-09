@@ -22,6 +22,14 @@ function TickedList() {
     const [searchParams] = useSearchParams();
     const [isLoading, setIsLoading] = useState(false);
     const [searchData, setSearchData] = useState([]);
+    const [searchParams, setSearchParams] = useSearchParams();
+    const [query. setQuery] = useState(() => searchParams.get("q"))
+
+
+    const hanldeSearch = (e) => {
+        e.preventDefault();
+        setSearchParams((s) => ({...s, q: query}));
+    }
 
 
     const handlSelectTrySearch = () => {
@@ -55,7 +63,7 @@ function TickedList() {
             <section className="-m-2 lg:-m-12 z-10 bg-white flex flex-col items-center rounded-lg shadow-2xl" id='container'>
                 {trySearch ? (
                     <div className="p-6 px-0 gap-3 flex justify-center items-center ">
-                        <InputTextField size={"ssl"} >
+                        <InputTextField size={"ssl"} value={query} onChange={(e) => setQuery(e.target.value)}>
                             مبدا
                         </InputTextField>
                         <div className="">
