@@ -112,9 +112,7 @@ function SingleTicket({forth, back, imagess, price, children}) {
                             <div className='flex lg:justify-center lg:items-end gap-6 items-center self-center'>
                                 <div className='text-blue-500'>{price} تومان</div>
                                 <div>
-                                    {/* <Link to={"/form"}> */}
                                     <Button size='lg' onClick={handlShow}>جزئیات بلیط</Button>
-                                    {/* </Link> */}
                                 </div>
                             </div>
                         </div>
