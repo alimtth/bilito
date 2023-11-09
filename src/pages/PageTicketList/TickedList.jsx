@@ -14,6 +14,7 @@ import HomePageScreen from "@/components/NavBar/HomePageScreen";
 import SingleTicket from "@/components/TicketList/SingleTicket";
 import { apiSearch } from "@/api/search";
 import { useSearchParams } from "react-router-dom";
+import { sampleTicket } from "@/FakeData/ticket";
 
 
 function TickedList() {
@@ -276,6 +277,7 @@ function TickedList() {
                                     key={product.id}
                                     forth={product.forth}
                                     back={product.back}
+                                    imagess={product.image}
                                 />
                             ))}
                 </div>

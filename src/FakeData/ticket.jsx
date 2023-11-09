@@ -1,3 +1,6 @@
+import airacon from "@/assets/Images/Icons/AiraIcon.png"
+import airlinelogoweb from "@/assets/Images/Icons/airlinelogoweb.svg"
+import airlinelogo from "@/assets/Images/Icons/Airlinelogo.svg"
 const sampleTicket = [
   {
     id: 1,
@@ -5,6 +8,7 @@ const sampleTicket = [
     forth: "استانبول",
     back: "دبی",
     price: 2000000,
+    image: airlinelogo
   },
   {
     id: 2,
@@ -12,6 +16,8 @@ const sampleTicket = [
     forth: "تهران",
     back: "امارات",
     price: 3000000,
+    image: airlinelogoweb
+
   },
   {
     id: 3,
@@ -19,6 +25,8 @@ const sampleTicket = [
     forth: "قم",
     back: "نیروگاه",
     price: 66000000,
+    image: airacon
+
   },
   {
     id: 4,
@@ -26,6 +34,8 @@ const sampleTicket = [
     forth: "عمان",
     back: "کانادا",
     price: 100000,
+    image: airlinelogoweb
+
   },
   {
     id: 5,
@@ -33,6 +43,8 @@ const sampleTicket = [
     forth: "قم",
     back: "عراق",
     price: 3000000,
+    image: airacon
+
   },
   {
     id: 6,
@@ -40,6 +52,8 @@ const sampleTicket = [
     forth: "اسپانیا",
     back: "دبی",
     price: 20000,
+    image: airacon
+
   },
   {
     id: 7,
@@ -47,6 +61,7 @@ const sampleTicket = [
     forth: "تهران",
     back: "قزوین",
     price: 1000000,
+    image: airlinelogoweb
   },
   {
     id: 8,
@@ -54,6 +69,8 @@ const sampleTicket = [
     forth: "آمریکا",
     back: "آلمان",
     price: 90000000000,
+    image: airlinelogo
+
   },
   {
     id: 9,
@@ -61,6 +78,8 @@ const sampleTicket = [
     forth: "ایتالیا",
     back: "افغانستان",
     price: 30000000,
+    image: airlinelogoweb
+
   },
   {
     id: 10,
@@ -68,6 +87,8 @@ const sampleTicket = [
     forth: "عربستان",
     back: "برزیل",
     price: 556000,
+    image: airlinelogoweb
+
   },
   {
     id: 11,
@@ -75,6 +96,8 @@ const sampleTicket = [
     forth: "ترکیه",
     back: "بلژیک",
     price: 650000,
+    image: airlinelogoweb
+
   },
   {
     id: 12,
@@ -82,6 +105,8 @@ const sampleTicket = [
     forth: "تهران",
     back: "کیش",
     price: 76100,
+    image: airlinelogo
+
   },
   {
     id: 13,
@@ -89,6 +114,8 @@ const sampleTicket = [
     forth: "یزد",
     back: "اردبیل",
     price: 62100,
+    image: airlinelogoweb
+
   },
   {
     id: 14,
@@ -96,6 +123,8 @@ const sampleTicket = [
     forth: "کاشان",
     back: "تهران",
     price: 76100,
+    image: airacon
+
   },
   {
     id: 15,
@@ -103,6 +132,8 @@ const sampleTicket = [
     forth: "کاشان",
     back: "مشهد",
     price: 9300,
+    image: airlinelogoweb
+
   },
   {
     id: 16,
@@ -110,6 +141,8 @@ const sampleTicket = [
     forth: "شیراز",
     back: "اصفهان",
     price: 40200,
+    image: airlinelogo
+
   },
   {
     id: 17,
@@ -117,6 +150,8 @@ const sampleTicket = [
     forth: "دبی",
     back: "قم",
     price: 40200,
+    image: airlinelogo
+
   },
   {
     id: 18,
@@ -124,6 +159,8 @@ const sampleTicket = [
     forth: "کرمان",
     back: "اصفهان",
     price: 40200,
+    image: airlinelogo
+
   },
   {
     id: 19,
@@ -131,13 +168,18 @@ const sampleTicket = [
     forth: "قم",
     back: "اصفهان",
     price: 40200,
+    image: airlinelogo
+
   },
+
   {
     id: 20,
     limit: 3,
     forth: "شاغالو",
     back: "اصفهان",
     price: 40200,
+    image: airlinelogoweb
+
   },
   {
     id: 21,
@@ -145,6 +187,8 @@ const sampleTicket = [
     forth: "ایران",
     back: "اصفهان",
     price: 40200,
+    image: airlinelogo
+
   },
   {
     id: 22,
@@ -152,6 +196,8 @@ const sampleTicket = [
     forth: "بلوارامین",
     back: "اصفهان",
     price: 40200,
+    image: airlinelogoweb
+
   },
   {
     id: 23,
@@ -159,6 +205,8 @@ const sampleTicket = [
     forth: "صفاییه",
     back: "اصفهان",
     price: 40200,
+    image: airlinelogo
+
   },
   {
     id: 24,
@@ -166,6 +214,8 @@ const sampleTicket = [
     forth: "canada",
     back: "اصفهان",
     price: 40200,
+    image: airlinelogo
+
   },
   {
     id: 25,
@@ -173,6 +223,8 @@ const sampleTicket = [
     forth: "iran",
     back: "اصفهان",
     price: 40200,
+    image: airlinelogoweb
+
   },
   {
     id: 26,
@@ -180,6 +232,8 @@ const sampleTicket = [
     forth: "فلسطین",
     back: "اسرییل",
     price: 40200,
+    image: airlinelogo
+
   },
   {
     id: 27,
@@ -187,6 +241,8 @@ const sampleTicket = [
     forth: "غزه",
     back: "اصفهان",
     price: 40200,
+    image: airlinelogoweb
+
   },
   {
     id: 28,
@@ -194,6 +250,8 @@ const sampleTicket = [
     forth: "کرانه",
     back: "اصفهان",
     price: 40200,
+    image: airlinelogo
+
   },
   {
     id: 29,
@@ -201,6 +259,8 @@ const sampleTicket = [
     forth: "ارومیه",
     back: "اصفهان",
     price: 40200,
+    image: airacon
+
   },
   {
     id: 30,
@@ -208,6 +268,8 @@ const sampleTicket = [
     forth: "نمک آبرود",
     back: "اصفهان",
     price: 40200,
+    image: airlinelogo
+
   },
   {
     id: 31,
@@ -215,6 +277,8 @@ const sampleTicket = [
     forth: "qom",
     back: "اصفهان",
     price: 40200,
+    image: airacon
+
   },
   {
     id: 32,
@@ -222,6 +286,8 @@ const sampleTicket = [
     forth: "کربلا",
     back: "اصفهان",
     price: 40200,
+    image: airacon
+
   },
   {
     id: 33,
@@ -229,6 +295,8 @@ const sampleTicket = [
     forth: "نجف ",
     back: "قم",
     price: 40200,
+    image: airlinelogo
+
   },
   {
     id: 34,
@@ -236,6 +304,8 @@ const sampleTicket = [
     forth: "شاهرود",
     back: "قم",
     price: 40200,
+    image: airacon
+
   },
   {
     id: 35,
@@ -243,6 +313,8 @@ const sampleTicket = [
     forth: "قم ",
     back: "شاهرود",
     price: 40200,
+    image: airlinelogoweb
+
   },
   {
     id: 36,
@@ -250,6 +322,8 @@ const sampleTicket = [
     forth: "مشهد",
     back: "قم",
     price: 40200,
+    image: airlinelogo
+
   },
   {
     id: 37,
@@ -257,6 +331,8 @@ const sampleTicket = [
     forth: "قم ",
     back: "مشهد",
     price: 40200,
+    image: airlinelogoweb
+
   },
   {
     id: 38,
@@ -264,6 +340,8 @@ const sampleTicket = [
     forth: "تهران ",
     back: "مشهد",
     price: 40200,
+    image: airlinelogoweb
+
   },
   {
     id: 39,
@@ -271,6 +349,8 @@ const sampleTicket = [
     forth: "مشهد ",
     back: "تهران",
     price: 40200,
+    image: airlinelogo
+
   },
   {
     id: 40,
@@ -278,6 +358,8 @@ const sampleTicket = [
     forth: "مزار شریف",
     back: "قم",
     price: 40200,
+    image: airlinelogo
+
   },
 ];
 

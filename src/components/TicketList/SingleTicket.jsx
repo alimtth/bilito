@@ -10,7 +10,7 @@ import propTypes from "prop-types";
 import { Link, Outlet } from 'react-router-dom';
 import close from "@/assets/Images/Icons/close-square.svg";
 import Buttons from "@/components/Ui/Button"
-function SingleTicket({forth, back, children}) {
+function SingleTicket({forth, back, imagess, children}) {
     const [isloding, setIsloding] = useState(true);
     const [isShow, setIsShow] = useState(false);
 
@@ -77,7 +77,7 @@ function SingleTicket({forth, back, children}) {
                         </div>
                         <div className='flex justify-between items-end gap-[64px] px-4 lg:flex-row flex-col'>
                             <div className='pb-5 gap-6 w-[575px] flex items-center '>
-                                <img src={omanAir} />
+                                <img src={imagess} />
                                 <div>
                                     <div className='pl-8 gap-2 flex flex-col items-center'>
                                         <p>02:50</p>
