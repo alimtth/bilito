@@ -2,7 +2,7 @@ import React, { Children } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "@/pages/index.jsx";
 import NotFound from "@/pages/404/NotFound.jsx";
-import BaseLayout from "@/pages/BaseLayout/index.jsx";
+import BaseLayout from "@/layouts/index.jsx";
 import Login from "@/components/Auth/Login/Login";
 import Register from "@/components/Auth/Register/Register"
 import TickedList from "@/pages/PageTicketList/TickedList";
@@ -12,7 +12,6 @@ import About from "@/pages/about/About";
 import BaseLayoutAcc from "@/pages/AccountPage/BaseLayoutsAccount/BaseLayoutAcc";
 import UserData from "@/pages/AccountPage/UserData/UserData";
 import EditUser from "@/pages/AccountPage/EditUser/EditUser";
-import EditUserData from "@/pages/AccountPage/EditUserData/EditUserData";
 import MyTicket from "@/pages/AccountPage/MyTicket/MyTicket";
 
 import FormListe from "@/pages/PageFormList/FormList";
