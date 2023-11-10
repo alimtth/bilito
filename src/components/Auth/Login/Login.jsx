@@ -1,33 +1,28 @@
-import React, { useState } from "react";
-import bilitoIcon from "@/assets/Images/Icons/BilitoIcone.png";
-import { Link } from "react-router-dom";
-import InputTextField from "@/components/Ui/InputTextField";
-import Button from "@/components/Ui/Button";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
-import bilitoIconsss from "@/assets/Images/Icons/AirplaneSelected.svg";
+import React, {useState} from 'react'
+import bilitoIcon from '@/assets/Images/Icons/BilitoIcone.png'
+import {Link} from 'react-router-dom'
+import InputTextField from '@/components/Ui/InputTextField'
+import Button from '@/components/Ui/Button'
+import * as yup from 'yup'
+import {yupResolver} from '@hookform/resolvers/yup'
+import {useForm} from 'react-hook-form'
+import bilitoIconsss from '@/assets/Images/Icons/AirplaneSelected.svg'
 
 const schema = yup.object().shape({
-  username: yup.string().required("فیلد نام کاربری اجباری است"),
-  password: yup.string().min(6).max(12).required("فیلد پسورد اجباری است"),
+  username: yup.string().required('فیلد نام کاربری اجباری است'),
+  password: yup.string().min(6).max(12).required('فیلد پسورد اجباری است'),
 })
 function Login() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
-  } = useForm({ resolver: yupResolver(schema) })
-  const [showModal, setShowModal] = useState(true);
+    formState: {errors},
+  } = useForm({resolver: yupResolver(schema)})
+  const [showModal, setShowModal] = useState(true)
 
   const onFormSubmit = (d) => {
-    console.log(d);
-
+    console.log(d)
   }
-
-  const openModal = () => {
-    setShowModal(true);
-  };
 
 
   return (
@@ -55,38 +50,42 @@ function Login() {
                   className="flex flex-col justify-start items-start px-6"
                 >
                   <InputTextField
-                    size='xl'
-                    placeholder={""}
-                    register={register("username")}
+                    size="xl"
+                    placeholder={''}
+                    register={register('username')}
                     className="w-[530px]"
                   >
                     نام کاربری
                   </InputTextField>
                   {errors.username && (
-                    <p className="text-red-500 text-sm mt-1">{errors.username?.message}</p>
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.username?.message}
+                    </p>
                   )}
                   <br />
                   <InputTextField
-                    size='md'
-                    placeholder={""}
-                    register={register("password")}
+                    size="md"
+                    placeholder={''}
+                    register={register('password')}
                     className="w-[530px]"
                   >
                     پسورد
-
                   </InputTextField>
                   {errors.password && (
-                    <p className="text-red-500 text-sm mt-1"> {errors.password?.message}</p>
+                    <p className="text-red-500 text-sm mt-1">
+                      {' '}
+                      {errors.password?.message}
+                    </p>
                   )}
 
                   <div>
                     <div className="flex gap-4  mt-[40px] text-gray-600 mr-4">
                       <input type="checkbox" name="" id="" />
                       <h4>
-                        با ورود و ثبت‌نام در سایت، با{" "}
-                        <Link className="text-blue-650" to={"#"}>
+                        با ورود و ثبت‌نام در سایت، با{' '}
+                        <Link className="text-blue-650" to={'#'}>
                           قوانین بیلیتو
-                        </Link>{" "}
+                        </Link>{' '}
                         موافقت می‌کنم.
                       </h4>
                     </div>
@@ -96,21 +95,23 @@ function Login() {
                     >
                       تایید و ادامه
                     </button>
-                    <Link to={"/register"} className="flex justify-center mb-1">
+                    <Link to={'/register'} className="flex justify-center mb-1">
                       <Button> ثبت نام</Button>
                     </Link>
                   </div>
                 </form>
               </div>
-
             </div>
           </div>
         </div>
       )}
-      <img src={bilitoIconsss} alt="" className="lg:w-96 z-10	 blur-md relative right-[1290px] rotate-12 animate-pulse inline-block" />
+      <img
+        src={bilitoIconsss}
+        alt=""
+        className="lg:w-96 z-10	 blur-md relative right-[1290px] rotate-12 animate-pulse inline-block"
+      />
     </div>
-  );
+  )
 }
 
-
-export default Login;
+export default Login

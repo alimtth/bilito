@@ -1,13 +1,12 @@
-import React from 'react';
-import SingleTicket from "@/components/TicketList/SingleTicket.jsx";
+import React from 'react'
+import SingleTicket from '@/components/TicketList/SingleTicket.jsx'
 
-function Index(props) {
-    return (
+function Index() {
+  return (
     <>
-        <SingleTicket/>
+      <SingleTicket />
     </>
-
-    );
+  )
 }
 
-export default Index;
+export default Index

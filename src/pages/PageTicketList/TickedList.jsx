@@ -49,7 +49,7 @@ function TickedList() {
 
   useEffect(() => {
     getSearchData()
-  }, [getSearchData, q])
+  }, [q])
 
   return (
     <div className=" flex flex-col items-center">
