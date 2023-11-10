@@ -44,7 +44,7 @@ function MyTravels() {
               )}
             </div>
             <div className="flex">
-              <div className="flex justify-center items-center bg-red-400 text-sm bg-opacity-75 rounded-full w-5 h-5 text-red-20 relative z-20 right-4 bottom-1">
+              <div className="flex justify-center items-center bg-red-400 text-sm bg-opacity-75 rounded-full w-5 h-5 text-red-20 relative z-20 right-4 bottom-1 animate-pulse">
                 +9
               </div>
               <img src={message} alt="" className="w-8 z-10" />
