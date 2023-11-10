@@ -1,4 +1,3 @@
-import React from 'react'
 import Buttons from '@/components/Ui/Button'
 import deletesss from '@/assets/Images/Icons/delete.png'
 import undo from '@/assets/Images/Icons/undo.png'

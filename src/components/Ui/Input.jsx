@@ -1,5 +1,4 @@
-import React from 'react'
-
+// eslint-disable-next-line react/prop-types
 function Input({size = 'lg', placeholder}) {
   const sizes = {
     sm: 'flex py-2 text-sm px-4 h-sm text-center w-auto',

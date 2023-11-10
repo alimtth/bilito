@@ -1,4 +1,3 @@
-import React from 'react'
 import azadi from '../../assets/Images/pictureAzadi.svg'
 import keshti from '../../assets/Images/pictureHaram.svg'
 import haram from '../../assets/Images/pictureKeshti.svg'

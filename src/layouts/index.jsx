@@ -1,6 +1,5 @@
 import Footer from '@/components/Footer'
 import HeaderTabs from '@/components/NavBar/HeaderTabs'
-import React from 'react'
 import {Outlet} from 'react-router-dom'
 
 function BaseLayout() {

@@ -14,10 +14,11 @@
         "requirePragma": false,
         "semi": false,
         "singleQuote": true,
-        "tabWidth": 2,
+        "tabWidth": 4,
         "trailingComma": "es5",
         "useTabs": false,
         "embeddedLanguageFormatting": "auto",
         "vueIndentScriptAndStyle": false,
         "parser": "typescript"
     }
+

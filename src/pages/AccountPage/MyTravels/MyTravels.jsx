@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, {useState} from 'react'
 import Buttons from '@/components/Ui/Button'
 import arrowdown from '@/assets/Images/Icons/arrow-down.svg'

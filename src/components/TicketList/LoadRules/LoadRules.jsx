@@ -1,4 +1,3 @@
-import React from 'react'
 import close from '@/assets/Images/Icons/close-square.svg'
 import Buttons from '@/components/Ui/Button'
 import {Link} from 'react-router-dom'

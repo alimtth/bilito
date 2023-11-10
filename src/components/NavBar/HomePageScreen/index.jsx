@@ -1,4 +1,3 @@
-import React from 'react'
 import titlePic from '@/assets/Images/titlePic.png'
 import titlePic2 from '@/assets/Images/titelePic2.png'
 import titlePic4 from '@/assets/Images/titelePic4.png'

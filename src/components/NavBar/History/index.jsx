@@ -1,4 +1,3 @@
-import React from 'react'
 import ArrowLeft from '@/assets/Images/Icons/arrow-left.svg'
 import ArrowRight from '@/assets/Images/Icons/arrow-right.svg'
 import HistoryIcon from '@/assets/Images/Icons/History.svg'

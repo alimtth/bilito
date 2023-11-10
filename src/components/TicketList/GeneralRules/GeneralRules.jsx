@@ -1,4 +1,3 @@
-import React from 'react'
 import {Link, Outlet} from 'react-router-dom'
 import close from '@/assets/Images/Icons/close-square.svg'
 import Buttons from '@/components/Ui/Button'

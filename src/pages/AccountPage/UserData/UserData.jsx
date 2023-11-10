@@ -1,10 +1,9 @@
-import React, {useState} from 'react'
 import Buttons from '@/components/Ui/Button'
 import {Link} from 'react-router-dom'
 import {useUser} from '@/providers/UserDataProvider'
 
 function UserData() {
-  const {userData, setUserData} = useUser()
+  const {userData} = useUser()
   return (
     <>
       <div className="flex flex-col mt-16 ] ">

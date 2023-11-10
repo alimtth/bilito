@@ -1,15 +1,12 @@
 import HeaderTabs from '@/components/NavBar/HeaderTabs'
 import {useAuthContext} from '@/providers/AuthProvider'
-import React from 'react'
-import {Link, Outlet, redirect} from 'react-router-dom'
+import {Link, Outlet} from 'react-router-dom'
 import profile from '@/assets/Images/Icons/profile-add.svg'
-
-import HomePageComponenets from '@/components/HomePagePictures/HomePageComponenets'
 import {useUser} from '@/providers/UserDataProvider'
 
 function BaseLayoutAcc() {
   const {currentUser, logout} = useAuthContext()
-  const {userData, setUserData} = useUser()
+  const {userData} = useUser()
   return (
     <>
       <HeaderTabs />

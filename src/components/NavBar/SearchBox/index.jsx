@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, {useState} from 'react'
 import AirplanSelected from '@/assets/Images/Icons/AirplaneSelected.svg'
 import AirplanNotSelected from '@/assets/Images/Icons/AirplaneNotSelected.svg'

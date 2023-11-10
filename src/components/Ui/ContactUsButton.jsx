@@ -1,4 +1,3 @@
-import React from 'react'
 import './ui.css'
 // eslint-disable-next-line react/prop-types
 function ContactUsButton({children, icon}) {
