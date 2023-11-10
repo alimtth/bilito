@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import Button from '../components/Ui/Button';
 
 
-function ProfilePage(props) {
+function ProfilePage() {
     return (
         <div>
             <h1>Profile page</h1>

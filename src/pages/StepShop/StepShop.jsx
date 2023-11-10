@@ -1,7 +1,9 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import stepper from '@/assets/Images/Icons/levels.png'
 import { Search } from '@mui/icons-material';
 
+// eslint-disable-next-line no-unused-vars
 function StepShop(props) {
     return (
         <div className='py-7'>
