@@ -37,6 +37,7 @@ function TickedList() {
 
     const q = searchParams.get("q");
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const getSearchData = async () => {
         try {
             setIsLoading(true);
@@ -51,7 +52,7 @@ function TickedList() {
 
     useEffect(() => {
         getSearchData();
-    }, [q]);
+    }, [getSearchData, q]);
 
 
     return (
