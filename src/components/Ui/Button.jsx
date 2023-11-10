@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types";
 
 const variants = {
@@ -15,6 +14,7 @@ const sizes = {
   xxl: "flex py-4 text-xl px-7 text-center"
 };
 
+// eslint-disable-next-line react/prop-types
 function Button({ children, variant = "outline", size = "lg", type = "button", className, onClick, loading = false, styles, disabled, ...props }) {
   return (
     <button

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+// eslint-disable-next-line no-unused-vars
 import bilitoIcon from '@/assets/Images/Icons/BilitoIcone.png'
 import {Link} from 'react-router-dom'
 import InputTextField from '@/components/Ui/InputTextField'
@@ -18,7 +18,6 @@ function Login() {
     handleSubmit,
     formState: {errors},
   } = useForm({resolver: yupResolver(schema)})
-  const [showModal, setShowModal] = useState(true)
 
   const onFormSubmit = (d) => {
     console.log(d)
@@ -27,7 +26,6 @@ function Login() {
 
   return (
     <div>
-      {showModal && (
         <div className="fixed inset-0 bg-blue-650 bg-opacity-10 backdrop-blur-[0.5px] flex justify-center items-center">
           <div className="w-[600px] opacity-75">
             <div className="bg-white p-2 rounded-[8px]">
@@ -104,7 +102,6 @@ function Login() {
             </div>
           </div>
         </div>
-      )}
       <img
         src={bilitoIconsss}
         alt=""

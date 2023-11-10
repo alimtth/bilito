@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, {useState} from 'react'
 import bilitoIcon from '@/assets/Images/Icons/BilitoIcone.png'
 import userIconLog from '@/assets/Images/Icons/UserIconLog.svg'
@@ -11,12 +12,11 @@ import {BsAirplane, BsTelephone} from 'react-icons/bs'
 import {TbUserSearch} from 'react-icons/tb'
 import {BiUser} from 'react-icons/bi'
 import {AiOutlineHome} from 'react-icons/ai'
-import HomePageScreen from '../HomePageScreen'
 import {RiMenu3Line} from 'react-icons/ri'
 import {useAuthContext} from '@/providers/AuthProvider'
 import {BiExit} from 'react-icons/bi'
 
-function HeaderTabs({onClick}) {
+function HeaderTabs() {
   const [showMenu, setShowMenu] = useState(false)
   const [hover, setHover] = useState(false)
   const handleToggle = () => {

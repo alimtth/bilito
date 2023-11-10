@@ -49,6 +49,7 @@ function TickedList() {
 
   useEffect(() => {
     getSearchData()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [q])
 
   return (

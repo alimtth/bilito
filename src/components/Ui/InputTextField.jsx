@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+// eslint-disable-next-line no-unused-vars
 import React, {Children} from 'react'
 import './ui.css'
 const sizes = {
@@ -11,9 +13,8 @@ const sizes = {
   xsl: 'flex py-3 text-sm pl-32 ',
 }
 function InputTextField({
+  // eslint-disable-next-line react/prop-types
   children,
-  placeholder,
-  style,
   className,
   onChange,
   type,

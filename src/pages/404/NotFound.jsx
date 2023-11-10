@@ -1,4 +1,3 @@
-import React from 'react'
 import Notf from '@/assets/Images/Icons/Component 137.png'
 import {ArrowBackIos} from '@mui/icons-material'
 import {Link} from 'react-router-dom'

@@ -56,11 +56,12 @@ export default function CustomizedAccordions() {
       <h1 className="text-xl font-bold mb-8">سوالات متداول</h1>
       {accordionData.map((e) => {
         return (
+          <div key={e.id}>
           <Accordion expanded={expanded === e.id} onChange={handleChange(e.id)}>
             <AccordionSummary
               aria-controls={`${e.id}d-content`}
               id={`${e.id}d-header`}
-            >
+              >
               <div className={`${expanded === e.id ? 'text-blue-500' : ''}`}>
                 <Typography className="font1">{e.title}</Typography>
               </div>
@@ -69,6 +70,7 @@ export default function CustomizedAccordions() {
               <Typography className="font1">{e.description}</Typography>
             </AccordionDetails>
           </Accordion>
+              </div>
         )
       })}
     </div>

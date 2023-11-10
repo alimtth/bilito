@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import Button from '@/components/Ui/Button.jsx'
 import omanAir from '@/assets/Images/Icons/airlinelogoweb.svg'
 import iconetimer from '@/assets/Images/Icons/timer.svg'
@@ -10,6 +10,7 @@ import propTypes from 'prop-types'
 import {Link, Outlet} from 'react-router-dom'
 import close from '@/assets/Images/Icons/close-square.svg'
 import Buttons from '@/components/Ui/Button'
+// eslint-disable-next-line react/prop-types, no-unused-vars
 function SingleTicket({forth, back, imagess, price, children}) {
   const [isloding, setIsloding] = useState(true)
   const [isShow, setIsShow] = useState(false)

@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import shiraz from '@/assets/Images/Icons/HomePageShiraz.jpg'
 import dubai from '@/assets/Images/Icons/HomePageDubai.jpg'
