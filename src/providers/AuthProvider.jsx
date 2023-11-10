@@ -26,7 +26,6 @@ const AuthProvider = ({ children }) => {
     localStorage.removeItem("accessToken");
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const currentUsers = async () => {
     if (isLoading) return;
     setIsLoading(true);
@@ -40,7 +39,7 @@ const AuthProvider = ({ children }) => {
     if (isLoggedIn) {
       currentUsers();
     }
-  }, [currentUsers, isLoggedIn]);
+  }, [isLoggedIn]);
 
   const values = {
     isLoggedIn,
@@ -57,5 +56,4 @@ AuthProvider.propTypes = {
   children: PropTypes.node,
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
 export { AuthProvider, useAuthContext };

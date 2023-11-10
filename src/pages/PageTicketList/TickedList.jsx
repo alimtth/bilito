@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import airplane from "@/assets/Images/Icons/airplaneBorder.svg";
@@ -15,10 +14,12 @@ import HomePageScreen from "@/components/NavBar/HomePageScreen";
 import SingleTicket from "@/components/TicketList/SingleTicket";
 import { apiSearch } from "@/api/search";
 import { useSearchParams } from "react-router-dom";
+import { sampleTicket } from "@/FakeData/ticket";
 
 
 function TickedList() {
     const [trySearch, setTrySearch] = useState(false)
+    const [currentTicket, setCurrentTicket] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
     const [searchData, setSearchData] = useState([]);
     const [searchParams, setSearchParams] = useSearchParams();
@@ -37,7 +38,6 @@ function TickedList() {
 
     const q = searchParams.get("q");
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     const getSearchData = async () => {
         try {
             setIsLoading(true);
@@ -52,7 +52,7 @@ function TickedList() {
 
     useEffect(() => {
         getSearchData();
-    }, [getSearchData, q]);
+    }, [q]);
 
 
     return (
