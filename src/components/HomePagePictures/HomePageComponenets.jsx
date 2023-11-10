@@ -1,25 +1,19 @@
-import React from "react";
-import shiraz from "@/assets/Images/Icons/HomePageShiraz.jpg";
-import dubai from "@/assets/Images/Icons/HomePageDubai.jpg";
-import turkey from "@/assets/Images/Icons/HomePageTurkey.jpg";
-import kish from "@/assets/Images/Icons/HomePageKish.jpg";
-import "@/components/HomePagePictures/swiper.css"
-
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination,Navigation } from "swiper/modules";
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-
-
-
-
+import React from 'react'
+import shiraz from '@/assets/Images/Icons/HomePageShiraz.jpg'
+import dubai from '@/assets/Images/Icons/HomePageDubai.jpg'
+import turkey from '@/assets/Images/Icons/HomePageTurkey.jpg'
+import kish from '@/assets/Images/Icons/HomePageKish.jpg'
+import '@/components/HomePagePictures/swiper.css'
+import {Swiper, SwiperSlide} from 'swiper/react'
+import {Autoplay, Pagination, Navigation} from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
 
 function HomePageComponenets() {
   return (
-    <div className=" mt-14" id='container'>
+    <div className=" mt-14" id="container">
       <Swiper
         spaceBetween={10}
         slidesPerView={1}
@@ -32,17 +26,16 @@ function HomePageComponenets() {
           clickable: true,
         }}
         loop={true}
-        modules={[Autoplay ,Pagination ,Navigation ]}
+        modules={[Autoplay, Pagination, Navigation]}
       >
-        
         <SwiperSlide>
           <div className="relative ">
-            <div style={{ paddingBottom: "40%" }} />
+            <div style={{paddingBottom: '40%'}} />
             <img
               src={kish}
               alt="Photo of kish island"
               className="absolute top-0 left-0 h-auto rounded-lg object-cover"
-              />
+            />
             <div className="absolute bottom-0 ">
               <p className="pr-4 mr-2 mb-2 text-white font-bold ">
                 بهترین فصل شنا
@@ -56,7 +49,7 @@ function HomePageComponenets() {
 
         <SwiperSlide>
           <div className="relative w-full ">
-            <div style={{ paddingBottom: "40%" }} />
+            <div style={{paddingBottom: '40%'}} />
             <img
               src={turkey}
               alt="Photo of City turkiye"
@@ -73,11 +66,9 @@ function HomePageComponenets() {
           </div>
         </SwiperSlide>
 
-
-
         <SwiperSlide>
           <div className="relative w-full ">
-            <div style={{ paddingBottom: "40%" }} />
+            <div style={{paddingBottom: '40%'}} />
             <img
               src={shiraz}
               alt="Photo of takht jamshid shiraz"
@@ -96,7 +87,7 @@ function HomePageComponenets() {
 
         <SwiperSlide>
           <div className="relative w-full ">
-            <div style={{ paddingBottom: "40%" }} />
+            <div style={{paddingBottom: '40%'}} />
             <img
               src={dubai}
               alt="Photo of city dubai"
@@ -110,15 +101,11 @@ function HomePageComponenets() {
                 خرید بلیط پرواز های دبی
               </button>
             </div>
-
           </div>
         </SwiperSlide>
       </Swiper>
     </div>
-
-
-
-  );
+  )
 }
 
-export default HomePageComponenets;
+export default HomePageComponenets

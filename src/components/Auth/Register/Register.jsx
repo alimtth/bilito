@@ -1,64 +1,64 @@
-import InputTextField from "@/components/Ui/InputTextField";
-import { Alert, AlertTitle} from "@mui/material";
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import bilitoIcon from "@/assets/Images/Icons/BilitoIcone.png";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import Buttons from "@/components/Ui/Button";
-import { useAuthContext } from "@/providers/AuthProvider";
-import bilitoIconsss from "@/assets/Images/Icons/AirplaneSelected.svg";
-import { apiRegisterUser } from "@/api/user";
+import InputTextField from '@/components/Ui/InputTextField'
+import {Alert, AlertTitle} from '@mui/material'
+import React, {useState} from 'react'
+import {Link, useNavigate} from 'react-router-dom'
+import bilitoIcon from '@/assets/Images/Icons/BilitoIcone.png'
+import {useForm} from 'react-hook-form'
+import * as yup from 'yup'
+import {yupResolver} from '@hookform/resolvers/yup'
+import Buttons from '@/components/Ui/Button'
+import {useAuthContext} from '@/providers/AuthProvider'
+import bilitoIconsss from '@/assets/Images/Icons/AirplaneSelected.svg'
+import {apiRegisterUser} from '@/api/user'
 
 const schema = yup.object().shape({
-  username: yup.string().required("فیلد نام کاربری اجباری است"),
-  password: yup.string().min(4).max(8).required("فیلد پسورد اجباری است"),
+  username: yup.string().required('فیلد نام کاربری اجباری است'),
+  password: yup.string().min(4).max(8).required('فیلد پسورد اجباری است'),
   confirmPassword: yup
     .string()
-    .oneOf([yup.ref("password")], "تکرار پسورد اشتباه است")
+    .oneOf([yup.ref('password')], 'تکرار پسورد اشتباه است')
     .required(),
-});
+})
 
 function Register() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
-  } = useForm({ resolver: yupResolver(schema) });
-  const [isloding, setIsloding] = useState(false);
-  const [isButtonEnabled, setIsButtonEnabled] = useState(false);
-  const [error, setError] = useState(null);
-  const [errMsg, setErrMsg] = useState("");
+    formState: {errors},
+  } = useForm({resolver: yupResolver(schema)})
+  const [isloding, setIsloding] = useState(false)
+  const [isButtonEnabled, setIsButtonEnabled] = useState(false)
+  const [error, setError] = useState(null)
+  const [errMsg, setErrMsg] = useState('')
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  const { saveAccess } = useAuthContext();
+  const {saveAccess} = useAuthContext()
 
   const handleCheckboxChange = () => {
-    setIsButtonEnabled(true);
-  };
+    setIsButtonEnabled(true)
+  }
 
   const onFormSubmit = async (data) => {
-    console.log(data);
-    if (isloding) return;
+    console.log(data)
+    if (isloding) return
 
     try {
-      setErrMsg("");
-      setIsloding(true);
-      const result = await apiRegisterUser(data);
+      setErrMsg('')
+      setIsloding(true)
+      const result = await apiRegisterUser(data)
 
-      saveAccess(result.data.token.accessToken);
-      navigate("/");
+      saveAccess(result.data.token.accessToken)
+      navigate('/')
 
-      console.log(result);
+      console.log(result)
     } catch (err) {
-      setErrMsg(err.toJSON().message);
+      setErrMsg(err.toJSON().message)
     } finally {
-      setIsloding(false);
+      setIsloding(false)
     }
-    setError("مشکل سرور");
-  };
+    setError('مشکل سرور')
+  }
 
   return (
     <div>
@@ -84,8 +84,8 @@ function Register() {
               >
                 <InputTextField
                   size="sm"
-                  type={"text"}
-                  register={register("username")}
+                  type={'text'}
+                  register={register('username')}
                   className="w-[530px] "
                 >
                   شماره موبایل
@@ -99,23 +99,22 @@ function Register() {
                 <InputTextField
                   size="sm"
                   className="w-[530px]"
-                  placeholder={""}
-                  register={register("password")}
+                  placeholder={''}
+                  register={register('password')}
                 >
                   پسورد
                 </InputTextField>
                 {errors.password && (
                   <p className="text-red-500 text-sm mt-1">
-                    {" "}
-                    {errors.password?.message}
+                    ; {errors.password?.message}
                   </p>
                 )}
                 <br />
                 <InputTextField
                   size="sm"
                   className="w-[530px]"
-                  placeholder={""}
-                  register={register("confirmPassword")}
+                  placeholder={''}
+                  register={register('confirmPassword')}
                 >
                   تکرار رمز عبور
                 </InputTextField>
@@ -134,10 +133,10 @@ function Register() {
                       onChange={handleCheckboxChange}
                     />
                     <h4>
-                      با ورود و ثبت‌نام در سایت، با{" "}
-                      <Link className="text-blue-650" to={"#"}>
+                      با ورود و ثبت‌نام در سایت، با{' '}
+                      <Link className="text-blue-650" to={'#'}>
                         قوانین بیلیتو
-                      </Link>{" "}
+                      </Link>{' '}
                       موافقت می‌کنم.
                     </h4>
                   </div>
@@ -146,13 +145,13 @@ function Register() {
                     type="submit"
                     loading={isloding}
                     styles={{
-                      backgroundColor: isButtonEnabled ? "#1D91CC" : "",
+                      backgroundColor: isButtonEnabled ? '#1D91CC' : '',
                     }}
                     disabled={!isButtonEnabled}
                   >
                     ثبت نام
                   </Buttons>
-                  <Link to={"/login "} className="flex justify-center mb-1">
+                  <Link to={'/login '} className="flex justify-center mb-1">
                     <Buttons> ورود</Buttons>
                   </Link>
                 </div>
@@ -178,7 +177,7 @@ function Register() {
         </Alert>
       )}
     </div>
-  );
+  )
 }
 
-export default Register;
+export default Register

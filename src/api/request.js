@@ -1,24 +1,23 @@
-import axios from "axios";
+import axios from 'axios'
 
 const createRequest = (baseUrl) => {
   const instance = axios.create({
     baseURL: baseUrl,
     timeout: 15000,
-  });
+  })
 
   instance.interceptors.request.use(function (config) {
-    const accessToken = localStorage.getItem("accessToken");
+    const accessToken = localStorage.getItem('accessToken')
 
     if (accessToken) {
-      config.headers["Authorization"] = `Bearer ${accessToken}`;
+      config.headers['Authorization'] = `Bearer ${accessToken}`
     }
+    return config
+  })
 
-    return config;
-  });
+  return instance
+}
 
-  return instance;
-};
+const apiClient = createRequest(import.meta.env.VITE_API_BASE_URL)
 
-const apiClient = createRequest(import.meta.env.VITE_API_BASE_URL);
-
-export { apiClient };
+export {apiClient}
