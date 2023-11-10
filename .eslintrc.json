@@ -19,6 +19,6 @@
         "no-empty-function":"error",
         "react-hooks/rules-of-hooks":"off",
         "react-hooks/exhaustive-deps": "error"
-
+        "no-empty-function":"error"
     }
 }

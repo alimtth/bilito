@@ -26,6 +26,7 @@ const AuthProvider = ({ children }) => {
     localStorage.removeItem("accessToken");
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const currentUsers = async () => {
     if (isLoading) return;
     setIsLoading(true);
@@ -41,6 +42,7 @@ const AuthProvider = ({ children }) => {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoggedIn]);
+
 
   const values = {
     isLoggedIn,
