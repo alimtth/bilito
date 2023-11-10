@@ -40,7 +40,9 @@ const AuthProvider = ({ children }) => {
     if (isLoggedIn) {
       currentUsers();
     }
-  }, [currentUsers, isLoggedIn]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoggedIn]);
+
 
   const values = {
     isLoggedIn,
