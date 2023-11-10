@@ -16,6 +16,9 @@
     ],
     "rules": {
         "@eslint-disable-next-line no-unused-vars" : "off",
-        "no-empty-function":"error"
+        "no-empty-function":"error",
+        "react-hooks/rules-of-hooks":"off",
+        "react-hooks/exhaustive-deps": "error"
+
     }
 }

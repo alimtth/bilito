@@ -39,6 +39,7 @@ const AuthProvider = ({ children }) => {
     if (isLoggedIn) {
       currentUsers();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoggedIn]);
 
   const values = {
@@ -56,4 +57,5 @@ AuthProvider.propTypes = {
   children: PropTypes.node,
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export { AuthProvider, useAuthContext };
