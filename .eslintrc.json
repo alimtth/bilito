@@ -15,5 +15,7 @@
         "react"
     ],
     "rules": {
+        "@eslint-disable-next-line no-unused-vars" : "off",
+        "no-empty-function":"error"
     }
 }
