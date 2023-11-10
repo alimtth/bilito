@@ -1,4 +1,5 @@
-import React, { Children } from "react";
+// eslint-disable-next-line no-unused-vars
+import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "@/pages/index.jsx";
 import NotFound from "@/pages/404/NotFound.jsx";
@@ -13,7 +14,6 @@ import BaseLayoutAcc from "@/pages/AccountPage/BaseLayoutsAccount/BaseLayoutAcc"
 import UserData from "@/pages/AccountPage/UserData/UserData";
 import EditUser from "@/pages/AccountPage/EditUser/EditUser";
 import MyTicket from "@/pages/AccountPage/MyTicket/MyTicket";
-
 import FormListe from "@/pages/PageFormList/FormList";
 import Rule from "@/components/TicketList/Rules/Rule";
 import GeneralRules from "@/components/TicketList/GeneralRules/GeneralRules";

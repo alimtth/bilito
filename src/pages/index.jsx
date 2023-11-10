@@ -1,4 +1,3 @@
-import React from 'react';
 import Popular from '@/components/PopularTicked';
 import CustomizedAccordions from '@/components/Ui/Accordion';
 import Advantages from "../components/Advantages/index.jsx";
