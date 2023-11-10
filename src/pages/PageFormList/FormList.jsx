@@ -14,6 +14,18 @@ import { IoIosArrowDown } from "react-icons/io";
 function FormListe() {
   const [seconds, setSeconds] = useState(0)
   const [minutes, setMinutes] = useState(10)
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedDay, setSelectedDay] = useState(null);
+
+
+  const handleDay = () => {
+    console.log();
+  }
+
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen)
+  }
 
   function updateTime() {
     if (minutes == 0 && seconds == 0) {
@@ -118,57 +130,79 @@ function FormListe() {
       </div>
 
 
-<div className='pt-10 lg:pt-0'>
-      <div className='px-2 py-[10px] w-full flex justify-between border border-gray-100 rounded-lg '>
-        <p>مشخصات مسافران</p>
-        <div className='flex gap-2' >
-          <p>زمان باقی مانده:</p>
-          <p className='text-orange-600'> {minutes}:{seconds}</p>
+      <div className="outline p-5 outline-gray-400 rounded-lg mt-7 mb-9  ">
+        <div className='px-2 py-[10px] w-full flex justify-between '>
+          <p className='font-bold'>مشخصات مسافران</p>
+          <div className='flex gap-2' >
+            <p>زمان باقی مانده:</p>
+            <p className='text-orange-600'> {minutes}:{seconds}</p>
+          </div>
+        </div>
+        <hr className='w-full bg-gray-400 h-0.5 mt-3 mb-5' />
+        <p className='mt-10'>بزرگسال</p>
+        <div className="p-6 px-0 w-full gap-3 flex flex-col lg:flex lg:flex-row ">
+          <InputTextField size={"sll"} >
+            نام لاتین
+          </InputTextField>
+          <InputTextField size={"sll"} >
+            نام خانوادگی
+          </InputTextField>
+          <InputTextField size={"sll"} >
+            جنسیت
+          </InputTextField>
+          <div className="flex space-x-1">
+            <div className="border border-gray-500 w-40 flex items-center px-4 rounded-r-lg justify-between" onClick={toggleDropdown} >روز<IoIosArrowDown /></div>
+            {isDropdownOpen && (
+              <div className='flex flex-wrap w-40 bg-white shadow-lg gap-2 py-2 rounded-lg px-3 absolute z-10 mt-14'>
+                {[...Array(30)].map((_, index) => (
+                  <ul key={index} onClick={handleDay} className={`w-4 h-8 flex-shrink-0 cursor-pointer ${selectedDay ? index === 'bg-blue-500 text-white' : ''}`}
+                  >{index + 1}</ul>
+                ))}
+              </div>
+            )}
+            <div className="border border-gray-500 w-40 flex items-center px-4 justify-between">ماه<IoIosArrowDown /></div>
+            <div className="border border-gray-500 w-40 flex items-center px-4 rounded-l-lg justify-between">سال<IoIosArrowDown /></div>
+          </div>
+        </div>
+
+
+        <div className="p-6 px-0 w-full gap-3  flex flex-col lg:flex lg:flex-row">
+          <InputTextField size={"sll"} >
+            ملیت
+          </InputTextField>
+          <InputTextField size={"sll"} >
+            کد ملی
+          </InputTextField>
+          <InputTextField size={"sll"} >
+            شماره یا پاسپورت
+          </InputTextField>
+          <div className="flex rounded-lg ">
+            <div className="border border-gray-500 w-40 flex items-center px-4 rounded-r-lg justify-between">روز<IoIosArrowDown /></div>
+            <div className="border border-gray-500 w-40 flex items-center px-4 justify-between">ماه<IoIosArrowDown /></div>
+            <div className="border border-gray-500 w-40 flex items-center px-4 rounded-l-lg justify-between">سال<IoIosArrowDown /></div>
+          </div>
+        </div>
+        <hr />
+        <p className='mt-10'>کودک</p>
+        <div className="p-6 px-0 w-full gap-3 flex flex-col lg:flex lg:flex-row ">
+          <InputTextField size={"sll"} >
+            نام لاتین
+          </InputTextField>
+          <InputTextField size={"sll"} >
+            نام خانوادگی
+          </InputTextField>
+          <InputTextField size={"sll"} >
+            جنسیت
+          </InputTextField>
+          <div className="flex rounded-lg ">
+            <div className="border border-gray-500 w-40 flex items-center px-4 rounded-r-lg justify-between">روز<IoIosArrowDown /></div>
+            <div className="border border-gray-500 w-40 flex items-center px-4 justify-between">ماه<IoIosArrowDown /></div>
+            <div className="border border-gray-500 w-40 flex items-center px-4 rounded-l-lg justify-between">سال<IoIosArrowDown /></div>
+          </div>
         </div>
       </div>
-      </div>
 
 
-      <p className='mt-10'>بزرگسال</p>
-      <div className="p-6 px-0 w-full gap-3 flex flex-col lg:flex lg:flex-row ">
-        <InputTextField size={"xsl"} >
-          نام لاتین
-        </InputTextField>
-        <InputTextField size={"xsl"} >
-          نام خانوادگی
-        </InputTextField>
-        <InputTextField size={"xsl"} >
-          جنسیت
-        </InputTextField>
-      </div>
-
-
-      <div className="p-6 px-0 w-full gap-3  flex flex-col lg:flex lg:flex-row">
-        <InputTextField size={"xsl"} >
-          ملیت
-        </InputTextField>
-        <InputTextField size={"xsl"} >
-          کد ملی
-        </InputTextField>
-        <InputTextField size={"xsl"} >
-          شماره یا پاسپورت
-        </InputTextField>
-      </div>
-      <hr />
-
-
-      <p className='mt-10'>کودک</p>
-      <div className="p-6 px-0 w-full gap-3 flex flex-col lg:flex lg:flex-row ">
-        <InputTextField size={"xsl"} >
-          نام لاتین
-        </InputTextField>
-        <InputTextField size={"xsl"} >
-          نام خانوادگی
-        </InputTextField>
-        <InputTextField size={"xsl"} >
-          جنسیت
-        </InputTextField>
-      </div>
 
     </div>
   )
