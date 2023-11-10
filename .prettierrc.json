@@ -14,11 +14,19 @@
         "requirePragma": false,
         "semi": false,
         "singleQuote": true,
+<<<<<<< HEAD
         "tabWidth": 4,
+=======
+        "tabWidth": 2,
+>>>>>>> master
         "trailingComma": "es5",
         "useTabs": false,
         "embeddedLanguageFormatting": "auto",
         "vueIndentScriptAndStyle": false,
         "parser": "typescript"
+<<<<<<< HEAD
     }
 
+=======
+    }
+>>>>>>> master
