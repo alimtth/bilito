@@ -103,7 +103,9 @@ function HeaderTabs() {
               </div>
               <div className="flex justify-start gap-3 py-4 text-gray-20 font-light">
                 <BiUser />
+                <Link to={"account"}>
                 حساب کاربری
+                </Link>
               </div>
               <div className="flex justify-start gap-3 py-4 text-gray-20 font-light">
                 4045_021 پشتیبانی
