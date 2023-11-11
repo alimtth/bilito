@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, {useEffect, useState} from 'react';
 import InputTextField from "@/components/Ui/InputTextField.jsx";
 import {IoIosArrowDown} from "react-icons/io";
@@ -44,16 +45,18 @@ const months = [
     {title: 'اسفند',
         value: '12',},
 ]
+// eslint-disable-next-line no-unused-vars
 const monthTest = [
     {title:'mmd' , id:1}
 ]
 
+// eslint-disable-next-line react/prop-types
 function Index({isAdult}) {
     const [adult, setAdult] = useState(true)
     const [dayDropdown, setDayDropdown] = useState(false)
     const [monthDropdown, setMonthDropdown] = useState(false)
     const [yearDropdown, setYearDropdown] = useState(false)
-    const [selectedDay, setSelectedDay] = useState(null)
+    const [selectedDay, ] = useState(null)
     const [dayBirthValue, setDayValue] = useState('روز')
     const [monthValue, setMonthValue] = useState('ماه')
     const [yearValue, setYearValue] = useState('سال')
@@ -70,6 +73,7 @@ function Index({isAdult}) {
         }else {
             setAdult(false)
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     // }
