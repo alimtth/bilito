@@ -33,7 +33,6 @@ function HomePageComponenets() {
               </button>
             </div>
           </div>
-
           <div className="relative w-full ">
             <div style={{ paddingBottom: "100%" }} />
             <img
