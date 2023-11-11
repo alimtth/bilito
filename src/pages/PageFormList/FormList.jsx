@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import HorizontalLinearStepper from '@/components/Stepper/LinearStepper'
 import HeaderTabs from '@/components/NavBar/HeaderTabs'
 import InputTextField from '@/components/Ui/InputTextField'
 import omanAir from '@/assets/Images/Icons/airlinelogoweb.svg'
@@ -70,7 +69,6 @@ function FormList() {
         <div id="container">
             <HeaderTabs/>
             <hr/>
-            <HorizontalLinearStepper/>
 
             <div className="my-8 border border-gray-100 rounded-lg hidden-mobile">
                 <div className="p-6 flex justify-between">
