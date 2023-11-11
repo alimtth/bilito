@@ -19,6 +19,7 @@ import Rule from '@/components/TicketList/Rules/Rule'
 import GeneralRules from '@/components/TicketList/GeneralRules/GeneralRules'
 import LoadRules from '@/components/TicketList/LoadRules/LoadRules'
 import MyTravels from '@/pages/AccountPage/MyTravels/MyTravels'
+import FormList from "@/pages/PageFormList/FormList";
 
 const routes = [
   {
@@ -68,7 +69,7 @@ const routes = [
   },
   {
     path: 'form',
-    element: <FormListe />,
+    element: <FormList />,
   },
   {
     path: 'login',
