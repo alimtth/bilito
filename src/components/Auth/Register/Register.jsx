@@ -37,7 +37,7 @@ function Register() {
   const {saveAccess} = useAuthContext()
 
   const handleCheckboxChange = () => {
-    setIsButtonEnabled(true)
+    setIsButtonEnabled(!isButtonEnabled)
   }
 
   const onFormSubmit = async (data) => {
@@ -107,7 +107,7 @@ function Register() {
                 </InputTextField>
                 {errors.password && (
                   <p className="text-red-500 text-sm mt-1">
-                    ; {errors.password?.message}
+                     {errors.password?.message}
                   </p>
                 )}
                 <br />
