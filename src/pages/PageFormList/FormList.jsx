@@ -1,5 +1,5 @@
-// eslint-disable-next-line no-unused-vars
 import React, {useEffect, useState} from 'react'
+
 import HeaderTabs from '@/components/NavBar/HeaderTabs'
 import InputTextField from '@/components/Ui/InputTextField'
 import omanAir from '@/assets/Images/Icons/airlinelogoweb.svg'
@@ -70,7 +70,6 @@ function FormList() {
         <div id="container">
             <HeaderTabs/>
             <hr/>
-
             <div className="my-8 border border-gray-100 rounded-lg hidden-mobile">
                 <div className="p-6 flex justify-between">
                     <div className="pt-6 gap-6 w-[575px] flex items-center ">

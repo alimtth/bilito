@@ -43,6 +43,7 @@
     color: #1D91CC;
     top: 0;
     transform: translateY(-50%) scale(.9);
+
 }
 /*.input-text-field:not(:placeholder-shown) + label {*/
 /*    top: 0;*/
