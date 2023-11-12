@@ -11,10 +11,13 @@ import {Link, Outlet} from 'react-router-dom'
 import close from '@/assets/Images/Icons/close-square.svg'
 import Buttons from '@/components/Ui/Button'
 // eslint-disable-next-line react/prop-types, no-unused-vars
-function SingleTicket({forth, back, imagess, price, children}) {
+function SingleTicket({forth, back, imagess, price, id, children}) {
   const [isloding, setIsloding] = useState(true)
   const [isShow, setIsShow] = useState(false)
+  const [ticketUrl, setTicketUrl] = useState(`rule/${id}`)
 
+    // const ticketUrle = `ticket/${id}`
+  
   const handlShow = () => {
     setIsShow(true)
   }
@@ -79,7 +82,7 @@ function SingleTicket({forth, back, imagess, price, children}) {
                 <img src={imagess} />
                 <div>
                   <div className="pl-8 gap-2 flex flex-col items-center">
-                    <p>02:50</p>
+                    <p>02:{id}</p>
                     <p className="text-gray-600">{forth}(SAW)</p>
                   </div>
                 </div>
@@ -111,9 +114,11 @@ function SingleTicket({forth, back, imagess, price, children}) {
               <div className="flex lg:justify-center lg:items-end gap-6 items-center self-center">
                 <div className="text-blue-500">{price} تومان</div>
                 <div>
+                  <Link to={ticketUrl}>  
                   <Button size="lg" onClick={handlShow}>
                     جزئیات بلیط
                   </Button>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -20,14 +20,18 @@ function TickedList() {
   const [trySearch, setTrySearch] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [searchData, setSearchData] = useState([])
+  const [recentSearches, setRecentSearches] = useState([])
   const [searchParams, setSearchParams] = useSearchParams()
   const [query, setQuery] = useState(() => searchParams.get('q'))
 
   const hanldeSearch = (e) => {
     e.preventDefault()
     setSearchParams((s) => ({...s, q: query}))
+
+    setRecentSearches((p) => [query, ...p.slice(0,3)])
   }
 
+  console.log(recentSearches);
   const handlSelectTrySearch = () => {
     setTrySearch(true)
   }
@@ -284,6 +288,7 @@ function TickedList() {
                 back={product.back}
                 imagess={product.image}
                 price={product.price}
+                id={product.id }
               />
             ))
           )}
