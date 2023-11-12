@@ -49,7 +49,7 @@ function TickedList() {
 
   useEffect(() => {
     getSearchData()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [q])
 
   return (
@@ -62,10 +62,11 @@ function TickedList() {
       >
         {trySearch ? (
           <form
-            className="p-6 px-0 gap-3 flex justify-center items-center "
+            className="p-6 px-0 gap-3 flex justify-center flex-col lg:flex lg:flex-row lg:gap-6 w-full lg:w-auto flex-wrap items-center sm:gap-8 "
             onSubmit={hanldeSearch}
           >
             <InputTextField
+              className={'sm:px-44 lg:px-0 '}
               size={'ssl'}
               value={query}
               onChange={(e) => setQuery(e.target.value)}
@@ -75,10 +76,19 @@ function TickedList() {
             <div className="">
               <ConnectingAirportsIcon />
             </div>
-            <InputTextField size={'ssl'}>مقصد</InputTextField>
-            <InputTextField size={'ssl'}>تاریخ رفت و برگشت</InputTextField>
-            <InputTextField size={'ssl'}>تعداد مسافر</InputTextField>
-            <InputTextField size={'ssl'} className={'rounded-full'}>
+            <InputTextField className={'sm:px-44 lg:px-0 '} size={'ssl'}>
+              مقصد
+            </InputTextField>
+            <InputTextField className={'sm:px-44 lg:px-0 '} size={'ssl'}>
+              تاریخ رفت و برگشت
+            </InputTextField>
+            <InputTextField className={'sm:px-44 lg:px-0 '} size={'ssl'}>
+              تعداد مسافر
+            </InputTextField>
+            <InputTextField
+              className={'sm:px-44 lg:px-0 '}
+              size={'ssl'}
+            >
               کلاس پرواز
             </InputTextField>
 

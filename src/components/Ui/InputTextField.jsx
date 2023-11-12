@@ -2,6 +2,8 @@
 // eslint-disable-next-line no-unused-vars
 import React, {Children} from 'react'
 import './ui.css'
+import PropTypes from "prop-types";
+
 const sizes = {
   sm: 'flex py-4 text-sm px-1 ',
   md: 'flex py-4 text-sm px-1 ',
@@ -13,7 +15,6 @@ const sizes = {
   xsl: 'flex py-3 text-sm pl-32 ',
 }
 function InputTextField({
-  // eslint-disable-next-line react/prop-types
   children,
   className,
   onChange,
@@ -29,16 +30,25 @@ function InputTextField({
         <input
           onChange={onChange}
           value={value}
-          className={`input-text-field ${sizes[size]} ${className}`}
+          className={`${value?.length === 0 ? "input-text-field" : "mmd"} ${sizes[size]} ${className}`}
           type={type}
           {...register}
           disabled={disabled}
         />
 
-        <label className="label px">{children}</label>
+        <label className="label">{children}</label>
       </div>
     </div>
   )
 }
+  InputTextField.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  onChange: PropTypes.func,
+  type: PropTypes.string,
+  value: PropTypes.string,
+  size: PropTypes.oneOf(Object.keys(sizes)),
+};
+
 
 export default InputTextField
