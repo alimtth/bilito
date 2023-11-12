@@ -75,10 +75,10 @@ function HomePageComponenets() {
               />
               <div className="absolute bottom-0">
                 <p className="pr-4 mr-2 mb-2 text-white text-xl font-bold ">
-                  بهترین فصل شنا
+                  شگفتی های دیدنی
                 </p>
                 <button className=" mr-6 mb-6 border p-2 border-white rounded-lg text-white text-sm">
-                  خرید بلیط پرواز های کیش
+                  خرید بلیط پرواز های دبی
                 </button>
               </div>
 
