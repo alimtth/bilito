@@ -299,7 +299,9 @@ function TickedList() {
                 imagess={product.image}
                 price={product.price}
                 id={product.id }
-              />
+              >
+                hjghjghj
+                </SingleTicket>
             ))
           )}
         </div>
