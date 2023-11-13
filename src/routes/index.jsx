@@ -31,12 +31,6 @@ const routes = [
       {
         path: 'ticket',
         element: <TickedList />,
-        children: [
-          {
-            path: 'rule',
-            element: <Rule />,
-          },
-        ],
       },
       {
         path: 'stepshop',
