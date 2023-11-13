@@ -68,7 +68,7 @@ function SearchBox() {
             <InputTextField
               size="sm"
               value={""}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={console.log("empty")}
               className={'sm:px-44 lg:px-0'}
             >
               مقصد
@@ -76,7 +76,7 @@ function SearchBox() {
             <InputTextField
               size="sm"
               value={""}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={console.log("empty")}
               className={'sm:px-44 lg:px-0'}
             >
               تاریخ رفت و برگشت
@@ -84,7 +84,7 @@ function SearchBox() {
             <InputTextField
               size="sm"
               value={""}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={console.log("empty")}
               className={'sm:px-44 lg:px-0'}
             >
               تعداد مسافر
@@ -92,7 +92,7 @@ function SearchBox() {
             <InputTextField
               size="sm"
               value={""}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={console.log("empty")}
               className={'sm:px-44 lg:px-0'}
             >
               کلاس پرواز

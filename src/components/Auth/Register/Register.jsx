@@ -85,6 +85,7 @@ function Register() {
               >
                 <InputTextField
                   size="sm"
+                  value={''}
                   type={'text'}
                   register={register('username')}
                   className="w-[530px] "
@@ -99,6 +100,7 @@ function Register() {
                 <br />
                 <InputTextField
                   size="sm"
+                  value={''}
                   className="w-[530px]"
                   placeholder={''}
                   register={register('password')}
@@ -113,6 +115,7 @@ function Register() {
                 <br />
                 <InputTextField
                   size="sm"
+                  value={''}
                   className="w-[530px]"
                   placeholder={''}
                   register={register('confirmPassword')}

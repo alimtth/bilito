@@ -78,6 +78,7 @@ function Login() {
               >
                 <InputTextField
                   size="xl"
+                  value={''}
                   placeholder={''}
                   register={register('username')}
                   className="w-[530px]"
@@ -92,6 +93,7 @@ function Login() {
                 <br />
                 <InputTextField
                   size="md"
+                  value={''}
                   placeholder={''}
                   register={register('password')}
                   className="w-[530px]"
