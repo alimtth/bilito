@@ -10,11 +10,9 @@
     background: var(--primary-shade-2, #11577A);
     flex-direction: row-reverse;
 }
-
 .material-textfield {
     position: relative;
 }
-
 .label {
     position: absolute;
     font-size: 1rem;
@@ -30,6 +28,7 @@
     pointer-events: none;
 }
 .input-text-field {
+    padding-right: 10px;
     outline: none;
     border: 1px solid gray;
     border-radius: 8px;
@@ -43,12 +42,26 @@
     color: #1D91CC;
     top: 0;
     transform: translateY(-50%) scale(.9);
-
 }
-/*.input-text-field:not(:placeholder-shown) + label {*/
-/*    top: 0;*/
-/*    transform: translateY(-50%) scale(.9);*/
-/*}*/
+.selected-input-text-field{
+    border:1px solid gray;
+    border-radius: 8px;
+    padding-right: 10px;
+}
+.selected-input-text-field + label{
+    color: gray;
+    top: 0;
+    transform: translateY(-50%) scale(.9);
+    outline: none;
+    transition: 0.1s ease-out;
+}
+.selected-input-text-field:focus {
+    outline: none;
+    border-color:#1D91CC;
+}
+.selected-input-text-field:focus + label{
+    color: #1D91CC;
+}
 .line{
     margin-top: 15px;
     border-top: 1px solid #F9F9F9;

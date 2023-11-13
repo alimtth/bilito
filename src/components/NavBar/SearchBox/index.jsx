@@ -7,7 +7,7 @@ import searchIcon from '@/assets/Images/Icons/search-normal.svg'
 import History from '../History'
 import InputTextField from '@/components/Ui/InputTextField'
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports'
-import { useNavigate, useSearchParams} from 'react-router-dom'
+import {useNavigate, useSearchParams} from 'react-router-dom'
 // import { apiSearch } from "@/api/search"
 
 function SearchBox() {
@@ -59,22 +59,42 @@ function SearchBox() {
             <InputTextField
               size="sm"
               className={'sm:px-44 lg:px-0 '}
-              value={query}
+              value={query ? query:''}
               onChange={(e) => setQuery(e.target.value)}
             >
               مبدا
             </InputTextField>
             <ConnectingAirportsIcon />
-            <InputTextField size="sm" className={'sm:px-44 lg:px-0'}>
+            <InputTextField
+              size="sm"
+              value={""}
+              onChange={(e) => setQuery(e.target.value)}
+              className={'sm:px-44 lg:px-0'}
+            >
               مقصد
             </InputTextField>
-            <InputTextField size="sm" className={'sm:px-44 lg:px-0'}>
+            <InputTextField
+              size="sm"
+              value={""}
+              onChange={(e) => setQuery(e.target.value)}
+              className={'sm:px-44 lg:px-0'}
+            >
               تاریخ رفت و برگشت
             </InputTextField>
-            <InputTextField size="sm" className={'sm:px-44 lg:px-0'}>
+            <InputTextField
+              size="sm"
+              value={""}
+              onChange={(e) => setQuery(e.target.value)}
+              className={'sm:px-44 lg:px-0'}
+            >
               تعداد مسافر
             </InputTextField>
-            <InputTextField size="sm" className={'sm:px-44 lg:px-0'}>
+            <InputTextField
+              size="sm"
+              value={""}
+              onChange={(e) => setQuery(e.target.value)}
+              className={'sm:px-44 lg:px-0'}
+            >
               کلاس پرواز
             </InputTextField>
             {/* <Link to={"ticket"}> */}

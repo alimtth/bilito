@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 
 import HeaderTabs from '@/components/NavBar/HeaderTabs'
 import InputTextField from '@/components/Ui/InputTextField'

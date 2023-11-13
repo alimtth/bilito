@@ -14,8 +14,8 @@ function About() {
       <img src={PageScreenAbout} alt="" className="w-full" />
       <div id="container">
         <div className="flex justify-start gap-6 mt-12">
-          <h2 className="text-blue-650">درباره ما</h2>
-          <h2 className="text-gray-500" onClick={handlSelect}>
+          <h2 className="text-blue-650 cursor-pointer">درباره ما</h2>
+          <h2 className="text-gray-500 cursor-pointer" onClick={handlSelect}>
             تماس با ما
           </h2>
         </div>
