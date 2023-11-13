@@ -43,22 +43,23 @@
     top: 0;
     transform: translateY(-50%) scale(.9);
 }
-.mmd{
+.selected-input-text-field{
     border:1px solid gray;
     border-radius: 8px;
     padding-right: 10px;
 }
-.mmd + label{
+.selected-input-text-field + label{
     color: gray;
     top: 0;
     transform: translateY(-50%) scale(.9);
     outline: none;
     transition: 0.1s ease-out;
 }
-.mmd:focus {
+.selected-input-text-field:focus {
+    outline: none;
     border-color:#1D91CC;
 }
-.mmd:focus + label{
+.selected-input-text-field:focus + label{
     color: #1D91CC;
 }
 .line{

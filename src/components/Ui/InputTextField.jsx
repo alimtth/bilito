@@ -30,7 +30,7 @@ function InputTextField({
         <input
           onChange={onChange}
           value={value}
-          className={`${value?.length === 0 ? "input-text-field" : "mmd"} ${sizes[size]} ${className}`}
+          className={`${value?.length === 0 ? "input-text-field" : "selected-input-text-field"} ${sizes[size]} ${className}`}
           type={type}
           {...register}
           disabled={disabled}
