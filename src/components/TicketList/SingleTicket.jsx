@@ -1,6 +1,5 @@
 import {useState} from 'react'
 import Button from '@/components/Ui/Button.jsx'
-import omanAir from '@/assets/Images/Icons/airlinelogoweb.svg'
 import iconetimer from '@/assets/Images/Icons/timer.svg'
 import iconeairplan from '@/assets/Images/Icons/airplaneblue.svg'
 import iconbag from '@/assets/Images/Icons/bag.svg'
@@ -108,7 +107,7 @@ function SingleTicket({forth, back, imagess, price, id, children}) {
                   <Button size="lg" onClick={() => setIsShow(true)}>
                     جزئیات بلیط
                   </Button>
-                  <ModalRules showModal={isShow} setIsShow={setIsShow} />
+                  <ModalRules showModal={isShow} setIsShow={setIsShow} forth={forth} back={back} imagess={imagess} />
                   {/* </Link> */}
 
                 </div>

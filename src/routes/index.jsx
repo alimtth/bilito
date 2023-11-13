@@ -14,7 +14,6 @@ import BaseLayoutAcc from '@/pages/AccountPage/BaseLayoutsAccount/BaseLayoutAcc'
 import UserData from '@/pages/AccountPage/UserData/UserData'
 import EditUser from '@/pages/AccountPage/EditUser/EditUser'
 import MyTicket from '@/pages/AccountPage/MyTicket/MyTicket'
-import Rule from '@/components/TicketList/Rules/Rule'
 import MyTravels from '@/pages/AccountPage/MyTravels/MyTravels'
 import FormList from "@/pages/PageFormList/FormList";
 

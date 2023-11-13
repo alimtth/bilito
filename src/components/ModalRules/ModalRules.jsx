@@ -8,7 +8,7 @@ import iconeairplan from '@/assets/Images/Icons/airplaneblue.svg'
 import line from '@/assets/Images/Icons/Line.svg'
 
 // eslint-disable-next-line react/prop-types
-export const ModalRules = ({showModal, setIsShow}) => {
+export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
   const [activeTab, setActiveTab] = useState(0)
 
   const handleTapClick = (tabIndex) => {
@@ -36,7 +36,7 @@ export const ModalRules = ({showModal, setIsShow}) => {
                 <div className="flex flex-col">
                   <div className="flex justify-between items-center">
                     <h3 className="flex justify-center ">
-                      <img src={omanAir} alt="" className="w-7" />
+                      <img src={imagess} alt="" className="w-7" />
                       gulf air
                     </h3>
                     <p>مجموعا 19:00 ساعت</p>
@@ -52,7 +52,7 @@ export const ModalRules = ({showModal, setIsShow}) => {
                   <div className="flex justify-between items-center mt-6">
                     <div className="flex gap-3">
                       <h3>02:50</h3>
-                      <p>استانبول، فرودگاه استانبول</p>
+                      <p>{forth} فرودگاه استانبول</p>
                       <p>دوشنبه 6 شهریور (شماره پرواز: 615)</p>
                     </div>
                     <div className="flex gap-2">
@@ -80,7 +80,7 @@ export const ModalRules = ({showModal, setIsShow}) => {
                   <div className="flex justify-between mt-16">
                     <div className="flex gap-3">
                       <h3>17:00</h3>
-                      <p>امان، فرودگاه Queen Alia</p>
+                      <p>{back} فرودگاه Queen Alia</p>
                       <p>دوشنبه 6 شهریور (شماره پرواز: 625)</p>
                     </div>
                     <div className="flex gap-4">
