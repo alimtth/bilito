@@ -14,7 +14,7 @@ import Buttons from '@/components/Ui/Button'
 function SingleTicket({forth, back, imagess, price, id, children}) {
   const [isloding, setIsloding] = useState(true)
   const [isShow, setIsShow] = useState(false)
-  const [ticketUrl, setTicketUrl] = useState(`rule/${id}`)
+  // const [ticketUrl, setTicketUrl] = useState(`rule/${id}`)
 
     // const ticketUrle = `ticket/${id}`
   
@@ -114,11 +114,11 @@ function SingleTicket({forth, back, imagess, price, id, children}) {
               <div className="flex lg:justify-center lg:items-end gap-6 items-center self-center">
                 <div className="text-blue-500">{price} تومان</div>
                 <div>
-                  <Link to={ticketUrl}>  
+                  {/* <Link to={ticketUrl}>   */}
                   <Button size="lg" onClick={handlShow}>
                     جزئیات بلیط
                   </Button>
-                  </Link>
+                  {/* </Link> */}
                 </div>
               </div>
             </div>
