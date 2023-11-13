@@ -1,9 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React, {useState} from 'react'
-import {Link, Outlet} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import close from '@/assets/Images/Icons/close-square.svg'
 import Buttons from '@/components/Ui/Button'
-import omanAir from '@/assets/Images/Icons/airlinelogoweb.svg'
 import iconeairplan from '@/assets/Images/Icons/airplaneblue.svg'
 import line from '@/assets/Images/Icons/Line.svg'
 
@@ -13,6 +12,11 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
 
   const handleTapClick = (tabIndex) => {
     setActiveTab(tabIndex)
+  }
+
+  const handleStepTab = () => {
+    setActiveTab((s) => s + 1)
+    console.log(activeTab);
   }
   return (
     <div>
@@ -111,6 +115,7 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
                     <Buttons
                       variant="fill"
                       className={'w-[300px] justify-center'}
+                      onClick={handleStepTab}
                     >
                       ادامه
                     </Buttons>
@@ -139,14 +144,13 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
                     <p>34,410,462</p>
                     <p>تومان</p>
                   </div>
-                  <Link to={'loadrules'}>
                     <Buttons
                       variant="fill"
                       className={'w-[300px] justify-center'}
+                      onClick={handleStepTab}
                     >
                       ادامه
                     </Buttons>
-                  </Link>
                 </div>
               </div>
             )}
@@ -187,14 +191,13 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
                     <p>34,410,462</p>
                     <p>تومان</p>
                   </div>
-                  <Link to={'grule'}>
                     <Buttons
                       variant="fill"
                       className={'w-[300px] justify-center'}
+                      onClick={handleStepTab}
                     >
                       ادامه
                     </Buttons>
-                  </Link>
                 </div>
               </div>
             )}
