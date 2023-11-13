@@ -1,3 +1,5 @@
+import ArrowLeft from '@/assets/Images/Icons/arrow-left.svg'
+import ArrowRight from '@/assets/Images/Icons/arrow-right.svg'
 import HistoryIcon from '@/assets/Images/Icons/History.svg'
 import CloseSquare from '@/assets/Images/Icons/close-square.svg'
 import Button from '@/components/Ui/Button'
@@ -7,7 +9,6 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/scrollbar'
-import { ArrowLeft, ArrowRight } from '@mui/icons-material'
 
 function History() {
   return (
