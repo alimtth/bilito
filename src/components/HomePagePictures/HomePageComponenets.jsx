@@ -4,7 +4,8 @@ import shiraz from '@/assets/Images/Icons/HomePageShiraz.jpg'
 import dubai from '@/assets/Images/Icons/HomePageDubai.jpg'
 import turkey from '@/assets/Images/Icons/HomePageTurkey.jpg'
 import kish from '@/assets/Images/Icons/HomePageKish.jpg'
-import '@/components/HomePagePictures/swiper.css'
+import '@/components/HomePagePictures/style.css'
+
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 import 'swiper/css'
@@ -55,7 +56,7 @@ function HomePageComponenets() {
               <div style={{ paddingBottom: "50%" }} />
               <img
                 src={shiraz}
-                className="absolute top-0 left-0 w-full h-full object-cover rounded-lg"
+                className="absolute top-0 left-0 w-full h-full object-cover rounded-lg bg-gradient-to-l from-blue-950"
               />
               <div className="absolute bottom-0">
                 <p className="pr-4 mr-2 mb-2 text-white text-xl font-bold ">
