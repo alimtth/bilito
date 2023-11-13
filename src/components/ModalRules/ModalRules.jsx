@@ -5,6 +5,7 @@ import close from '@/assets/Images/Icons/close-square.svg'
 import Buttons from '@/components/Ui/Button'
 import iconeairplan from '@/assets/Images/Icons/airplaneblue.svg'
 import line from '@/assets/Images/Icons/Line.svg'
+import FormList from '@/pages/PageFormList/FormList'
 
 // eslint-disable-next-line react/prop-types
 export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
@@ -235,6 +236,7 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
                   </Link>
                 </div>
               </div>
+              
             )}
           </div>
         </div>

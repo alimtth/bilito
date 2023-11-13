@@ -6,14 +6,15 @@ import iconbag from '@/assets/Images/Icons/bag.svg'
 import line from '@/assets/Images/Icons/Line.svg'
 import propTypes from 'prop-types'
 
-
-import { ModalRules } from '../ModalRules/ModalRules'
+import {ModalRules} from '../ModalRules/ModalRules'
+import FormList from '@/pages/PageFormList/FormList'
+import {Route, Router, Routes} from 'react-router-dom'
+import {BilitForm} from '../BilitForm/BilitForm'
 // eslint-disable-next-line react/prop-types, no-unused-vars
 function SingleTicket({forth, back, imagess, price, id, children}) {
   const [isloding, setIsloding] = useState(true)
   const [isShow, setIsShow] = useState(false)
-  
- 
+
   setTimeout(() => {
     setIsloding(false)
   }, 1000)
@@ -46,7 +47,6 @@ function SingleTicket({forth, back, imagess, price, id, children}) {
             </div>
           </div>
         ) : (
-          // forth.map((item , forth, back) => (
           <div>
             <div className="flex justify-between items-center px-4 lg:flex-row flex-col gap-4 py-6">
               <div className="flex justify-center items-center gap-2">
@@ -103,19 +103,21 @@ function SingleTicket({forth, back, imagess, price, id, children}) {
               <div className="flex lg:justify-center lg:items-end gap-6 items-center self-center">
                 <div className="text-blue-500">{price} تومان</div>
                 <div>
-                  {/* <Link to={ticketUrl}>   */}
                   <Button size="lg" onClick={() => setIsShow(true)}>
                     جزئیات بلیط
                   </Button>
-                  <ModalRules showModal={isShow} setIsShow={setIsShow} forth={forth} back={back} imagess={imagess} />
-                  {/* </Link> */}
-
+                  <ModalRules
+                    showModal={isShow}
+                    setIsShow={setIsShow}
+                    forth={forth}
+                    back={back}
+                    imagess={imagess}
+                  />
                 </div>
               </div>
             </div>
           </div>
         )}
-       
       </div>
     </>
   )
