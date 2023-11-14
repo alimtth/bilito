@@ -4,6 +4,7 @@ import HeaderTabs from '@/components/NavBar/HeaderTabs'
 
 import {useEffect, useState} from 'react'
 import { Outlet } from 'react-router-dom'
+import { BilitForm } from '@/components/BilitForm/BilitForm'
 
 export const BaseLayoutsForm = () => {
   const [seconds, setSeconds] = useState(0)
@@ -36,6 +37,7 @@ export const BaseLayoutsForm = () => {
         <HeaderTabs />
         <hr />
         <div className="my-8 border border-gray-100 rounded-lg hidden-mobile">
+            <BilitForm />
           <div className="p-8 flex items-start justify-between">
             <div className="flex justify-center items-center gap-[8px]">
               <div className="bg-blue-100 text-blue-500  flex justify-center items-center gap-1 py-[2px] px-2 h-8 border rounded-md">

@@ -227,7 +227,7 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
                     <p>34,410,462</p>
                     <p>تومان</p>
                   </div>
-                  <Link to={'/form'}>
+                  <Link to={'/form/confirm-buy'}>
                     <Buttons
                       variant="fill"
                       className={'w-[300px] justify-center'}

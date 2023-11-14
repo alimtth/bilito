@@ -17,6 +17,7 @@ import MyTicket from '@/pages/AccountPage/MyTicket/MyTicket'
 import MyTravels from '@/pages/AccountPage/MyTravels/MyTravels'
 import FormList from "@/pages/PageFormList/FormList";
 import { BaseLayoutsForm } from '@/pages/PageFormList/BaseLayoutsForm/BaseLayoutsForm'
+import { ConfirmBuy } from '@/pages/PageFormList/ConfirmBuy'
 
 const routes = [
   {
@@ -54,6 +55,10 @@ const routes = [
         path: 'data-form',
         element: <FormList />
       },
+      {
+        path: 'confirm-buy',
+        element: <ConfirmBuy />
+      }
       
     ]
   },

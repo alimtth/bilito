@@ -15,7 +15,7 @@ function SingleTicket({forth, back, imagess, price, id, length, children}) {
 
   setTimeout(() => {
     setIsloding(false)
-  }, 1000)
+  }, 500)
 
   return (
     <>
