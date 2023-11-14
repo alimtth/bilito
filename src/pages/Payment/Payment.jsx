@@ -1,7 +1,8 @@
 import HeaderTabs from '@/components/NavBar/HeaderTabs'
 // eslint-disable-next-line no-unused-vars
 import paymant from '@/assets/Images/Icons/paymant.svg'
-import React, {useState} from 'react'
+// eslint-disable-next-line no-unused-vars
+import React, {useRef, useState} from 'react'
 import Buttons from '@/components/Ui/Button'
 import arrowdown from '@/assets/Images/Icons/arrow-down.svg'
 import airplane from '@/assets/Images/Icons/airplane-square.svg'
@@ -10,26 +11,45 @@ import iconetimer from '@/assets/Images/Icons/timer.svg'
 import iconeairplan from '@/assets/Images/Icons/airplaneblue.svg'
 import iconbag from '@/assets/Images/Icons/bag.svg'
 import line from '@/assets/Images/Icons/Line.svg'
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
+import html2canvas from 'html2canvas'
+import jsPDF from 'jspdf'
 export const Payment = () => {
+  const pdfRef = useRef()
+  const downloadPDF = () => {
+    const input = pdfRef.current
+    html2canvas(input).then((canvas) => {
+      const imgData = canvas.toDataURL('image/png')
+      const pdf = new jsPDF('p', 'mm', 'a4', true)
+      const pdfWidth = pdf.internal.pageSize.getWidth()
+      const pdfHeight = pdf.internal.pageSize.getHeight()
+      const imgWidth = canvas.width
+      const imgHeight = canvas.height
+      const ratio = Math.min(pdfWidth / imgWidth / pdfHeight /imgHeight)
+      const imgX = (pdfWidth - imgWidth * ratio) / 2
+      const imgY = 30
+      pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio)
+      pdf.save('Bilit.pdf')
+    })
+  }
   const [showDetails, setShowDetails] = useState(false)
 
   const toggleDetails = () => {
     setShowDetails(!showDetails)
   }
- 
+
   return (
     <div>
       <HeaderTabs />
       <div id="container">
-        <div className="flex flex-col">
+        <div className="flex flex-col" >
           <div className="flex flex-col justify-center items-center">
             <div className="w-3/4 bg-green-50 h-7 flex justify-center items-center py-8 gap-4 text-green-700 rounded-lg">
-              <img src={paymant} alt="" className='animate-pulse' />
+              <img src={paymant} alt="" className="animate-pulse" />
               پرداخت شما با موفقیت انجام شد.
             </div>
           </div>
-          <div className="outline p-5 outline-gray-400 rounded-lg mt-7  ">
+          <div className="outline p-5 outline-gray-400 rounded-lg mt-7  " ref={pdfRef}>
             <div className="flex justify-between">
               <h3 className="flex gap-4">
                 <img src={airplane} alt="" />
@@ -107,7 +127,6 @@ export const Payment = () => {
                     <ul className="flex flex-col">
                       کلاس پرواز <p>کوانومی</p>
                     </ul>
-                    
                   </div>
                 </div>
                 <div className="flex flex-col gap-8 mt-8 ">
@@ -137,10 +156,12 @@ export const Payment = () => {
           </div>
         </div>
         <div className="flex justify-center mt-9 gap-8">
-            <Buttons variant='fill'>دانلود بیلیط</Buttons>
-            <Link to={"/"}>
+          <Buttons variant="fill" onClick={downloadPDF}>
+            دانلود بیلیط
+          </Buttons>
+          <Link to={'/'}>
             <Buttons>بازگشت به صفحه اصلی</Buttons>
-            </Link>
+          </Link>
         </div>
       </div>
     </div>
