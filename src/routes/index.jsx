@@ -18,6 +18,7 @@ import MyTravels from '@/pages/AccountPage/MyTravels/MyTravels'
 import FormList from "@/pages/PageFormList/FormList";
 import { BaseLayoutsForm } from '@/pages/PageFormList/BaseLayoutsForm/BaseLayoutsForm'
 import { ConfirmBuy } from '@/pages/PageFormList/ConfirmBuy'
+import { Payment } from '@/pages/Payment/Payment'
 
 const routes = [
   {
@@ -61,6 +62,10 @@ const routes = [
       }
       
     ]
+  },
+  {
+    path: 'payment',
+    element: <Payment />
   },
   {
     path: 'login',

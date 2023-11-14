@@ -97,7 +97,9 @@ export const ConfirmBuy = () => {
             </Link>
 
             <h3 className='flex gap-8 items-center text-blue-500'>مجموع پرداختی شما 11٬470٬1543 تومان
+            <Link to={"/payment"}>
                 <Buttons  variant='fill' size='lg'>پرداخت</Buttons>
+            </Link>
             </h3>
         </div>
       </div>
