@@ -4,12 +4,13 @@ import airport from '@/assets/Images/Icons/Airport.png'
 import {IoIosArrowDown} from 'react-icons/io'
 import {Slider} from '@mui/material'
 
-export const SideBarForm = () => {
+// eslint-disable-next-line react/prop-types
+export const SideBarForm = ({searchData}) => {
   return (
     <div>
         <div className="lg:block lg:bg-gray-400 lg:rounded-md lg:basis-[25%] lg:p-6 hidden">
           <div className="flex justify-between">
-            <h3>تعداد نتایج: 121</h3>
+            <h3>تعداد نتایج: {searchData.length}</h3>
             <h3 className="text-blue-500 text-[13px]"> پاک کردن فیلتر‌ها</h3>
           </div>
           <hr className="mt-[16px] bg-gray-500 w-full h-[2px]" />

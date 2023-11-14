@@ -123,9 +123,8 @@ function TickedList() {
           </div>
         )}
       </section>
-
       <div className="flex mt-20 gap-6 justify-center" id="container">
-        <SideBarForm />
+        <SideBarForm searchData={searchData}/>
         <div className="lg:flex-auto lg:basis-[75%]">
           <div className="flex gap-4 justify-between">
             <div className="flex justify-between items-center border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 basis-3/4 py-2 px-4 ">
@@ -163,7 +162,9 @@ function TickedList() {
                 imagess={product.image}
                 price={product.price}
                 id={product.id}
-              ></SingleTicket>
+                length={product.length}
+              >
+              </SingleTicket>
             ))
           )}
         </div>
