@@ -5,7 +5,6 @@ import iconeairplan from '@/assets/Images/Icons/airplaneblue.svg'
 import iconbag from '@/assets/Images/Icons/bag.svg'
 import line from '@/assets/Images/Icons/Line.svg'
 import propTypes from 'prop-types'
-
 import {ModalRules} from '../ModalRules/ModalRules'
 
 

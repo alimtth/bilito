@@ -19,29 +19,40 @@ function TickedList() {
   const [trySearch, setTrySearch] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [searchData, setSearchData] = useState([])
-  const [recentSearches, setRecentSearches] = useState([])
   const [searchParams, setSearchParams] = useSearchParams()
   const [query, setQuery] = useState(() => searchParams.get('q'))
+  const [destination, setDestination] = useState('')
+  const [travelDate, setTravelDate] = useState('')
+  const [passengerCount, setPassengerCount] = useState('')
+  const [flightClass, setFlightClass] = useState('')
 
   const hanldeSearch = (e) => {
     e.preventDefault()
-    setSearchParams((s) => ({...s, q: query}))
+    setSearchParams((s) => ({
+      ...s,
+      q: query,
+      destination,
+      travelDate,
+      passengerCount,
+      flightClass,
+    }))
 
-    setRecentSearches((p) => [query, ...p.slice(0, 3)])
-  }
-
-  console.log(recentSearches)
-  const handlSelectTrySearch = () => {
     setTrySearch(true)
   }
 
-  const q = searchParams.get('q')
+  console.log(searchData)
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const getSearchData = async () => {
     try {
       setIsLoading(true)
-      const data = await apiSearch({q})
+      const data = await apiSearch({
+        q: query,
+        destination,
+        travelDate,
+        passengerCount,
+        flightClass,
+      })
       setSearchData(data)
     } catch (error) {
       console.log(error)
@@ -53,10 +64,10 @@ function TickedList() {
   useEffect(() => {
     getSearchData()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [q])
+  }, [query, destination, travelDate, passengerCount, flightClass])
 
   return (
-    <div className=" flex flex-col items-center">
+    <div className="flex flex-col items-center">
       <HomePageScreen />
       <section className="flex flex-col relative items-center"></section>
       <section
@@ -79,16 +90,36 @@ function TickedList() {
             <div className="">
               <ConnectingAirportsIcon />
             </div>
-            <InputTextField className={'sm:px-44 lg:px-0 '} size={'ssl'}>
+            <InputTextField
+              className={'sm:px-44 lg:px-0 '}
+              size={'ssl'}
+              value={destination}
+              onChange={(e) => setDestination(e.target.value)}
+            >
               مقصد
             </InputTextField>
-            <InputTextField className={'sm:px-44 lg:px-0 '} size={'ssl'}>
+            <InputTextField
+              className={'sm:px-44 lg:px-0 '}
+              size={'ssl'}
+              value={travelDate}
+              onChange={(e) => setTravelDate(e.target.value)}
+            >
               تاریخ رفت و برگشت
             </InputTextField>
-            <InputTextField className={'sm:px-44 lg:px-0 '} size={'ssl'}>
+            <InputTextField
+              className={'sm:px-44 lg:px-0 '}
+              size={'ssl'}
+              value={passengerCount}
+              onChange={(e) => setPassengerCount(e.target.value)}
+            >
               تعداد مسافر
             </InputTextField>
-            <InputTextField className={'sm:px-44 lg:px-0 '} size={'ssl'}>
+            <InputTextField
+              className={'sm:px-44 lg:px-0 '}
+              size={'ssl'}
+              value={flightClass}
+              onChange={(e) => setFlightClass(e.target.value)}
+            >
               کلاس پرواز
             </InputTextField>
 
@@ -99,32 +130,32 @@ function TickedList() {
         ) : (
           <div className="p-6 gap-8 flex justify-center items-center font-bold">
             <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
-              <img src={airplane} />
+              <img src={airplane} alt="airplane" />
               <p>بلیط همواپیما {query} به دبی</p>
             </div>
 
             <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
-              <img src={calendar} />
+              <img src={calendar} alt="calendar" />
               <p>دوشنبه 6 شهریور</p>
             </div>
 
             <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
-              <img src={profileAdd} />
+              <img src={profileAdd} alt="profile-add" />
               <p>3 مسافر</p>
             </div>
 
             <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
-              <img src={calendar} />
+              <img src={calendar} alt="calendar" />
               <p>اکونومی</p>
             </div>
-            <Button variant="fill" onClick={handlSelectTrySearch}>
-              <img src={EditPen} />
+            <Button variant="fill" onClick={() => setTrySearch(true)}>
+              <img src={EditPen} alt="edit-pen" />
             </Button>
           </div>
         )}
       </section>
       <div className="flex mt-20 gap-6 justify-center" id="container">
-        <SideBarForm searchData={searchData}/>
+        <SideBarForm searchData={searchData} />
         <div className="lg:flex-auto lg:basis-[75%]">
           <div className="flex gap-4 justify-between">
             <div className="flex justify-between items-center border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 basis-3/4 py-2 px-4 ">
@@ -140,10 +171,10 @@ function TickedList() {
           </div>
 
           {isLoading ? (
-            <div className=" flex justify-center items-center rounded-md h-12 w-12 border-4 border-t-4 border-blue-500 animate-spin  mr-[50%] mt-20"></div>
+            <div className="flex justify-center items-center rounded-md h-12 w-12 border-4 border-t-4 border-blue-500 animate-spin  mr-[50%] mt-20"></div>
           ) : searchData.length === 0 ? (
             <div className="flex flex-col items-center mt-9">
-              <img src={NotTicket} alt="" className="w-[170px]" />
+              <img src={NotTicket} alt="not-ticket" className="w-[170px]" />
               <div className="outline outline-gray-300 p-9 rounded-md text-center">
                 <h4 className="text-gray-700 font-bold">
                   در این تاریخ پروازی برای استانبول به دبی یافت نشد.
@@ -163,8 +194,7 @@ function TickedList() {
                 price={product.price}
                 id={product.id}
                 length={product.length}
-              >
-              </SingleTicket>
+              ></SingleTicket>
             ))
           )}
         </div>

@@ -13,12 +13,26 @@ import {useNavigate, useSearchParams} from 'react-router-dom'
 function SearchBox() {
   const [searchParams, setSearchParams] = useSearchParams()
   const [query, setQuery] = useState(() => searchParams.get('q'))
+  const [originValue, setOriginValue] = useState('');
+  const [destinationValue, setDestinationValue] = useState('');
+  const [travelDateValue, setTravelDateValue] = useState('');
+  const [passengerCountValue, setPassengerCountValue] = useState('');
+  const [flightClassValue, setFlightClassValue] = useState('');
+
   const navigate = useNavigate()
 
   const hanldeSearch = (e) => {
     e.preventDefault()
     navigate('/ticket')
-    setSearchParams((s) => ({...s, q: query}))
+    setSearchParams((s) => ({
+      ...s,
+      q: query,
+      origin: originValue,
+      destination: destinationValue,
+      travelDate: travelDateValue,
+      passengerCount: passengerCountValue,
+      flightClass: flightClassValue,
+    }))
   }
   return (
     <>
@@ -59,7 +73,7 @@ function SearchBox() {
             <InputTextField
               size="sm"
               className={'sm:px-44 lg:px-0 '}
-              value={query ? query:''}
+              value={query ? query : ''}
               onChange={(e) => setQuery(e.target.value)}
             >
               مبدا
@@ -67,32 +81,32 @@ function SearchBox() {
             <ConnectingAirportsIcon />
             <InputTextField
               size="sm"
-              value={""}
-              onChange={console.log("empty")}
+              value={destinationValue}
+              onChange={(e) => setDestinationValue(e.target.value)}
               className={'sm:px-44 lg:px-0'}
             >
               مقصد
             </InputTextField>
             <InputTextField
               size="sm"
-              value={""}
-              onChange={console.log("empty")}
+              value={travelDateValue ? travelDateValue : ''}
+              onChange={(e) => setTravelDateValue(e.target.value)}
               className={'sm:px-44 lg:px-0'}
             >
               تاریخ رفت و برگشت
             </InputTextField>
             <InputTextField
               size="sm"
-              value={""}
-              onChange={console.log("empty")}
+              value={passengerCountValue}
+              onChange={(e) => setPassengerCountValue(e.target.value)}
               className={'sm:px-44 lg:px-0'}
             >
               تعداد مسافر
             </InputTextField>
             <InputTextField
               size="sm"
-              value={""}
-              onChange={console.log("empty")}
+              value={flightClassValue}
+              onChange={(e) => setFlightClassValue(e.target.value)}
               className={'sm:px-44 lg:px-0'}
             >
               کلاس پرواز
@@ -117,29 +131,3 @@ function SearchBox() {
 }
 
 export default SearchBox
-// const navigate = useNavigate();
-// const [searchInputs, setSearchInputs] = useState({
-//     forth: "",
-//     back: "",
-//     // price: "",
-// })
-// const handleSearch = async () => {
-//     const filters = {
-//         forth: searchInputs.forth,
-//         back: searchInputs.back,
-//         // price: searchInputs.price,
-//     };
-
-//     try {
-//         const searchRes = await apiSearch(filters);
-//         console.log(searchRes);
-//         navigate("/ticket", {
-//             state: {
-//                 forth: searchInputs.forth,
-//                 back: searchInputs.back,
-//             },
-//         });
-//     } catch (err) {
-//         console.log(err);
-//     }
-// }
