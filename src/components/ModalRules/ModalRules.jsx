@@ -5,8 +5,6 @@ import close from '@/assets/Images/Icons/close-square.svg'
 import Buttons from '@/components/Ui/Button'
 import iconeairplan from '@/assets/Images/Icons/airplaneblue.svg'
 import line from '@/assets/Images/Icons/Line.svg'
-import FormList from '@/pages/PageFormList/FormList'
-import {BilitForm} from '../BilitForm/BilitForm'
 
 // eslint-disable-next-line react/prop-types
 export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
@@ -227,7 +225,7 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
                     <p>34,410,462</p>
                     <p>تومان</p>
                   </div>
-                  <Link to={'/form/confirm-buy'}>
+                  <Link to={'/form/data-form'}>
                     <Buttons
                       variant="fill"
                       className={'w-[300px] justify-center'}

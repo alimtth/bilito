@@ -293,7 +293,7 @@ export const Payment = () => {
               </div>
             </div>
             <div className="flex justify-center mt-9 gap-8">
-              <Link to={"form/confirm-buy"}>
+              <Link to={"/form/confirm-buy"}>
                 <Buttons variant="fill" size="xxls">
                   <img src={wallet} alt="" />
                   پرداخت مجدد
