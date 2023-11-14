@@ -7,7 +7,6 @@ import profileAdd from '@/assets/Images/Icons/profile-add.svg'
 import EditPen from '@/assets/Images/Icons/edit.svg'
 import Button from '@/components/Ui/Button'
 import {Slider} from '@mui/material'
-import airport from '@/assets/Images/Icons/Airport.png'
 import NotTicket from '@/assets/Images/Icons/notticket.png'
 import InputTextField from '@/components/Ui/InputTextField'
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports'
@@ -15,6 +14,7 @@ import HomePageScreen from '@/components/NavBar/HomePageScreen'
 import SingleTicket from '@/components/TicketList/SingleTicket'
 import {apiSearch} from '@/api/search'
 import {useSearchParams} from 'react-router-dom'
+import { SideBarForm } from '@/components/SideBarForm/SideBarForm'
 
 function TickedList() {
   const [trySearch, setTrySearch] = useState(false)
@@ -129,139 +129,7 @@ function TickedList() {
       </section>
 
       <div className="flex mt-20 gap-6 justify-center" id="container">
-        <div className="lg:block lg:bg-gray-400 lg:rounded-md lg:basis-[25%] lg:p-6 hidden">
-          <div className="flex justify-between">
-            <h3>تعداد نتایج: 121</h3>
-            <h3 className="text-blue-500 text-[13px]"> پاک کردن فیلتر‌ها</h3>
-          </div>
-          <hr className="mt-[16px] bg-gray-500 w-full h-[2px]" />
-          <div className="flex justify-between mt-[16px]">
-            <h4>قیمت</h4>
-            <IoIosArrowDown />
-          </div>
-          <div className="flex justify-between mt-[10px]">
-            <h4>تا 60.000.000</h4>
-            <h4>از 60.000.000</h4>
-          </div>
-          <div className="flex-col mt-[10px]">
-            <Slider
-              getAriaLabel={() => 'Temperature range'}
-              valueLabelDisplay="auto"
-            />
-          </div>
-          <hr className="mt-[14px] bg-gray-500 w-full h-[2px]" />
-          <div className="flex justify-between mt-[16px]">
-            <h4>زمان حرکت</h4>
-            <IoIosArrowDown />
-          </div>
-          <div className="flex justify-between mt-[10px]">
-            <h4>24:00</h4>
-            <h4>00:00</h4>
-          </div>
-          <div className="flex-col mt-[10px]">
-            <Slider
-              getAriaLabel={() => 'Temperature range'}
-              valueLabelDisplay="auto"
-            />
-          </div>
-          <hr className="mt-[14px] bg-gray-500 w-full h-[2px]" />
-          <div className="flex justify-between mt-[16px]">
-            <h4>شرکت هواپیمایی </h4>
-            <IoIosArrowDown />
-          </div>
-          <div className="flex flex-col gap-4 items-start mt-[17px]">
-            <div className="flex">
-              <input type="checkbox" className="border-none outline-none" />
-              <img
-                src={airport}
-                className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
-              />
-              <h3 className="mr-[10px]">Pegasus</h3>
-            </div>
-            <div className="flex">
-              <input type="checkbox" className="border-none outline-none" />
-              <img
-                src={airport}
-                className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
-              />
-              <h3 className="mr-[10px]">gulf</h3>
-            </div>
-            <div className="flex">
-              <input type="checkbox" className="border-none outline-none" />
-              <img
-                src={airport}
-                className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
-              />
-              <h3 className="mr-[10px]">emirates</h3>
-            </div>
-            <div className="flex">
-              <input type="checkbox" className="border-none outline-none" />
-              <img
-                src={airport}
-                className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
-              />
-              <h3 className="mr-[10px]">oman</h3>
-            </div>
-            <div className="flex">
-              <input type="checkbox" className="border-none outline-none" />
-              <img
-                src={airport}
-                className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
-              />
-              <h3 className="mr-[10px]">Qatar Airways</h3>
-            </div>
-            <div className="flex">
-              <input type="checkbox" className="border-none outline-none" />
-              <img
-                src={airport}
-                className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
-              />
-              <h3 className="mr-[10px]">Fly dubai</h3>
-            </div>
-            <hr className="mt-[16px] bg-gray-500 w-full h-[2px]" />
-
-            {/* //////////////////////////////////////////////////////////////////// */}
-            <div className="flex justify-between">
-              <h4>تعداد توقف</h4>
-              <IoIosArrowDown />
-            </div>
-            <div className="flex flex-col gap-4 items-start mt-[17px]">
-              <div className="flex">
-                <input type="radio" className="border-none outline-none" />
-                <img
-                  src={airport}
-                  className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
-                />
-                <h3 className="mr-[10px]">همه</h3>
-              </div>
-              <div className="flex">
-                <input type="radio" className="border-none outline-none" />
-                <img
-                  src={airport}
-                  className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
-                />
-                <h3 className="mr-[10px]">مستقیم</h3>
-              </div>
-              <div className="flex">
-                <input type="radio" className="border-none outline-none" />
-                <img
-                  src={airport}
-                  className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
-                />
-                <h3 className="mr-[10px]">یک</h3>
-              </div>
-              <div className="flex">
-                <input type="radio" className="border-none outline-none" />
-                <img
-                  src={airport}
-                  className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
-                />
-                <h3 className="mr-[10px]">دو یا بیشتر</h3>
-              </div>
-            </div>
-            <hr className="mt-[16px] bg-gray-500 w-full h-[2px]" />
-          </div>
-        </div>
+        <SideBarForm />
         <div className="lg:flex-auto lg:basis-[75%]">
           <div className="flex gap-4 justify-between">
             <div className="flex justify-between items-center border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 basis-3/4 py-2 px-4 ">
@@ -300,7 +168,6 @@ function TickedList() {
                 price={product.price}
                 id={product.id }
               >
-                hjghjghj
                 </SingleTicket>
             ))
           )}
