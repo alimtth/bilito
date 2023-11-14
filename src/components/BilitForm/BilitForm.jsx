@@ -7,7 +7,6 @@ import {IoIosArrowDown} from 'react-icons/io'
 
 // eslint-disable-next-line react/prop-types
 export const BilitForm = ({forth, back, imagess}) => {
-    
   return (
     <div className="p-6 flex justify-between">
       <div className="pt-6 gap-6 w-[575px] flex items-center ">

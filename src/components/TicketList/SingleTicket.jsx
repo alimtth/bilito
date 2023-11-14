@@ -7,17 +7,16 @@ import line from '@/assets/Images/Icons/Line.svg'
 import propTypes from 'prop-types'
 
 import {ModalRules} from '../ModalRules/ModalRules'
-import FormList from '@/pages/PageFormList/FormList'
-import {Route, Router, Routes} from 'react-router-dom'
-import {BilitForm} from '../BilitForm/BilitForm'
+
+
 // eslint-disable-next-line react/prop-types, no-unused-vars
-function SingleTicket({forth, back, imagess, price, id, children}) {
+function SingleTicket({forth, back, imagess, price, id, length, children}) {
   const [isloding, setIsloding] = useState(true)
   const [isShow, setIsShow] = useState(false)
 
   setTimeout(() => {
     setIsloding(false)
-  }, 1000)
+  }, 500)
 
   return (
     <>

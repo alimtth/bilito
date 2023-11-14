@@ -17,7 +17,7 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
 
   const handleStepTab = () => {
     setActiveTab((s) => s + 1)
-    console.log(activeTab);
+    console.log(activeTab)
   }
   return (
     <div>
@@ -145,13 +145,13 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
                     <p>34,410,462</p>
                     <p>تومان</p>
                   </div>
-                    <Buttons
-                      variant="fill"
-                      className={'w-[300px] justify-center'}
-                      onClick={handleStepTab}
-                    >
-                      ادامه
-                    </Buttons>
+                  <Buttons
+                    variant="fill"
+                    className={'w-[300px] justify-center'}
+                    onClick={handleStepTab}
+                  >
+                    ادامه
+                  </Buttons>
                 </div>
               </div>
             )}
@@ -192,13 +192,13 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
                     <p>34,410,462</p>
                     <p>تومان</p>
                   </div>
-                    <Buttons
-                      variant="fill"
-                      className={'w-[300px] justify-center'}
-                      onClick={handleStepTab}
-                    >
-                      ادامه
-                    </Buttons>
+                  <Buttons
+                    variant="fill"
+                    className={'w-[300px] justify-center'}
+                    onClick={handleStepTab}
+                  >
+                    ادامه
+                  </Buttons>
                 </div>
               </div>
             )}
@@ -226,7 +226,7 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
                     <p>34,410,462</p>
                     <p>تومان</p>
                   </div>
-                  <Link to={'/form'}>
+                  <Link to={'/form/data-form'}>
                     <Buttons
                       variant="fill"
                       className={'w-[300px] justify-center'}

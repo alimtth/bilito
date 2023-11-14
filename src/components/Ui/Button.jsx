@@ -11,14 +11,15 @@ const sizes = {
   md: "flex py-2 text-md px-4 text-center",
   lg: "flex py-2 text-lg px-5 text-center",
   xl: "flex py-3 text-xl px-6 text-center",
-  xxl: "flex py-4 text-xl px-7 text-center"
+  xxl: "flex py-4 text-xl px-7 text-center",
+  xxls: "flex py-4 text-xl px-60 text-center"
 };
 
 // eslint-disable-next-line react/prop-types
 function Button({ children, variant = "outline", size = "lg", type = "button", className, onClick, loading = false, styles, disabled, ...props }) {
   return (
     <button
-      className={`rounded-lg flex items-center gap-4  ${variants[variant]} ${sizes[size]} ${className}`}
+      className={`rounded-lg flex items-center gap-4   ${variants[variant]} ${sizes[size]} ${className}`}
       {...props} type={type} onClick={onClick} style={styles} disabled={disabled}
     >
       {loading ? <div role="status">
