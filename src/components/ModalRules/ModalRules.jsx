@@ -6,6 +6,7 @@ import Buttons from '@/components/Ui/Button'
 import iconeairplan from '@/assets/Images/Icons/airplaneblue.svg'
 import line from '@/assets/Images/Icons/Line.svg'
 import FormList from '@/pages/PageFormList/FormList'
+import {BilitForm} from '../BilitForm/BilitForm'
 
 // eslint-disable-next-line react/prop-types
 export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
@@ -17,7 +18,7 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
 
   const handleStepTab = () => {
     setActiveTab((s) => s + 1)
-    console.log(activeTab);
+    console.log(activeTab)
   }
   return (
     <div>
@@ -145,13 +146,13 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
                     <p>34,410,462</p>
                     <p>تومان</p>
                   </div>
-                    <Buttons
-                      variant="fill"
-                      className={'w-[300px] justify-center'}
-                      onClick={handleStepTab}
-                    >
-                      ادامه
-                    </Buttons>
+                  <Buttons
+                    variant="fill"
+                    className={'w-[300px] justify-center'}
+                    onClick={handleStepTab}
+                  >
+                    ادامه
+                  </Buttons>
                 </div>
               </div>
             )}
@@ -192,13 +193,13 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
                     <p>34,410,462</p>
                     <p>تومان</p>
                   </div>
-                    <Buttons
-                      variant="fill"
-                      className={'w-[300px] justify-center'}
-                      onClick={handleStepTab}
-                    >
-                      ادامه
-                    </Buttons>
+                  <Buttons
+                    variant="fill"
+                    className={'w-[300px] justify-center'}
+                    onClick={handleStepTab}
+                  >
+                    ادامه
+                  </Buttons>
                 </div>
               </div>
             )}
@@ -236,7 +237,6 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
                   </Link>
                 </div>
               </div>
-              
             )}
           </div>
         </div>

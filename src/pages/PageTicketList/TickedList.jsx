@@ -6,7 +6,6 @@ import calendar from '@/assets/Images/Icons/calendar.svg'
 import profileAdd from '@/assets/Images/Icons/profile-add.svg'
 import EditPen from '@/assets/Images/Icons/edit.svg'
 import Button from '@/components/Ui/Button'
-import {Slider} from '@mui/material'
 import NotTicket from '@/assets/Images/Icons/notticket.png'
 import InputTextField from '@/components/Ui/InputTextField'
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports'
@@ -14,7 +13,7 @@ import HomePageScreen from '@/components/NavBar/HomePageScreen'
 import SingleTicket from '@/components/TicketList/SingleTicket'
 import {apiSearch} from '@/api/search'
 import {useSearchParams} from 'react-router-dom'
-import { SideBarForm } from '@/components/SideBarForm/SideBarForm'
+import {SideBarForm} from '@/components/SideBarForm/SideBarForm'
 
 function TickedList() {
   const [trySearch, setTrySearch] = useState(false)
@@ -28,10 +27,10 @@ function TickedList() {
     e.preventDefault()
     setSearchParams((s) => ({...s, q: query}))
 
-    setRecentSearches((p) => [query, ...p.slice(0,3)])
+    setRecentSearches((p) => [query, ...p.slice(0, 3)])
   }
 
-  console.log(recentSearches);
+  console.log(recentSearches)
   const handlSelectTrySearch = () => {
     setTrySearch(true)
   }
@@ -89,10 +88,7 @@ function TickedList() {
             <InputTextField className={'sm:px-44 lg:px-0 '} size={'ssl'}>
               تعداد مسافر
             </InputTextField>
-            <InputTextField
-              className={'sm:px-44 lg:px-0 '}
-              size={'ssl'}
-            >
+            <InputTextField className={'sm:px-44 lg:px-0 '} size={'ssl'}>
               کلاس پرواز
             </InputTextField>
 
@@ -166,9 +162,8 @@ function TickedList() {
                 back={product.back}
                 imagess={product.image}
                 price={product.price}
-                id={product.id }
-              >
-                </SingleTicket>
+                id={product.id}
+              ></SingleTicket>
             ))
           )}
         </div>

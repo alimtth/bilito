@@ -1,17 +1,11 @@
 import {useEffect, useState} from 'react'
 import HeaderTabs from '@/components/NavBar/HeaderTabs'
 import InputTextField from '@/components/Ui/InputTextField'
-import iconTimer from '@/assets/Images/Icons/timer.svg'
-import iconAirPlan from '@/assets/Images/Icons/airplaneblue.svg'
-import iconBag from '@/assets/Images/Icons/bag.svg'
-import line from '@/assets/Images/Icons/Line.svg'
 import Buttons from '@/components/Ui/Button'
-import {IoIosArrowDown} from 'react-icons/io'
 import FormListInputs from "@/components/Ui/FormListInputs/index.jsx";
-import { BilitForm } from '@/components/BilitForm/BilitForm'
 
 // eslint-disable-next-line react/prop-types
-function FormList({forth, back, imagess}) {
+function FormList() {
     const [seconds, setSeconds] = useState(0)
     const [minutes, setMinutes] = useState(10)
 
@@ -42,8 +36,6 @@ function FormList({forth, back, imagess}) {
             <HeaderTabs/>
             <hr/>
             <div className="my-8 border border-gray-100 rounded-lg hidden-mobile">
-                <BilitForm />
-                <div></div>
 
                 <div className="p-8 flex items-start justify-between">
                     <div className="flex justify-center items-center gap-[8px]">
