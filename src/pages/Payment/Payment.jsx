@@ -36,6 +36,10 @@ export const Payment = () => {
   const [showDetails, setShowDetails] = useState(false)
   const [payments, setPayments] = useState(false)
 
+  const hanldTest = () => {
+    setPayments(!payments)
+  }
+
   const toggleDetails = () => {
     setShowDetails(!showDetails)
   }
@@ -302,6 +306,9 @@ export const Payment = () => {
             </div>
           </div>
         )}
+              <Buttons onClick={hanldTest} variant='fill'>
+                  <img src={wallet} alt="" />
+                </Buttons>
       </div>
     </div>
   )
