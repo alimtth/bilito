@@ -30,6 +30,7 @@ function FormList() {
           </div>
         </div>
 
+
         <div className="flex justify-center items-center pb-14">
           <Link to={'/form/confirm-buy'}>
             <Buttons className={'w-1/4 justify-center'} size={'xl '} variant='fill'>

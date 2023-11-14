@@ -8,6 +8,7 @@ import propTypes from 'prop-types'
 
 import {ModalRules} from '../ModalRules/ModalRules'
 
+
 // eslint-disable-next-line react/prop-types, no-unused-vars
 function SingleTicket({forth, back, imagess, price, id, length, children}) {
   const [isloding, setIsloding] = useState(true)
