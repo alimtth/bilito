@@ -103,9 +103,7 @@ function HeaderTabs() {
               </div>
               <div className="flex justify-start gap-3 py-4 text-gray-20 font-light">
                 <BiUser />
-                <Link to={"account"}>
-                حساب کاربری
-                </Link>
+                <Link to={'account'}>حساب کاربری</Link>
               </div>
               <div className="flex justify-start gap-3 py-4 text-gray-20 font-light">
                 4045_021 پشتیبانی
@@ -148,7 +146,7 @@ function HeaderTabs() {
                         'p-[20px] bg-white  -mr-10 rounded-lg flex flex-col items-center justify-center absolute top-[25px] gap-[20px] w-100 z-30 shadow-lg mt-7'
                       }
                     >
-                      <Link to={'account'}>
+                      <Link to={'/account'}>
                         <div className="nested-item text-[13px] text-[#080808BF] opacity-75">
                           حساب کاربری
                         </div>

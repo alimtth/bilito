@@ -16,6 +16,7 @@ import EditUser from '@/pages/AccountPage/EditUser/EditUser'
 import MyTicket from '@/pages/AccountPage/MyTicket/MyTicket'
 import MyTravels from '@/pages/AccountPage/MyTravels/MyTravels'
 import FormList from "@/pages/PageFormList/FormList";
+import { BaseLayoutsForm } from '@/pages/PageFormList/BaseLayoutsForm/BaseLayoutsForm'
 
 const routes = [
   {
@@ -47,7 +48,14 @@ const routes = [
   },
   {
     path: 'form',
-    element: <FormList />,
+    element: <BaseLayoutsForm />,
+    children: [
+      {
+        path: 'data-form',
+        element: <FormList />
+      },
+      
+    ]
   },
   {
     path: 'login',
