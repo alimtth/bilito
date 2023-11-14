@@ -22,8 +22,9 @@ function HomePageComponenets() {
             <div style={{ paddingBottom: "100%" }} />
             <img
               src={kish}
-              className="absolute top-0 left-0 h-full object-cover rounded-lg"
+              className="absolute top-0 left-0 h-full object-cover rounded-lg  "
             />
+
             <div className="absolute bottom-0 ">
               <p className="pr-4 mr-2 mb-2 text-white text-xl font-bold ">
                 بهترین فصل شنا
