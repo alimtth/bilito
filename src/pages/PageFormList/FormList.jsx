@@ -70,7 +70,6 @@ function FormList() {
                     </div>
                 </div>
                 <hr className="w-full bg-gray-400 h-0.5 mt-3 mb-5"/>
-
                 <FormListInputs isAdult={true}/>
                 <FormListInputs isAdult={false}/>
                 <FormListInputs isAdult={false}/>
