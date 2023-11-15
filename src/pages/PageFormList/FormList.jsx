@@ -2,15 +2,28 @@ import InputTextField from '@/components/Ui/InputTextField'
 import Buttons from '@/components/Ui/Button'
 import FormListInputs from '@/components/Ui/FormListInputs/index.jsx'
 import {Link} from 'react-router-dom'
+import {useState} from 'react'
 
 // eslint-disable-next-line react/prop-types
 function FormList() {
+  const [passengers, setPassengers] = useState([{}, {}, {}])
+
+  const handleUpdatePassenger = (data, index) => {
+    setPassengers((oldData) => oldData.map((p, i) => (i === index ? data : p)))
+  }
+
+  console.log(passengers)
+
   return (
     <>
       <div className="flex flex-col">
-        <FormListInputs isAdult={true} />
-        <FormListInputs isAdult={false} />
-        <FormListInputs isAdult={false} />
+        {passengers.map((passenger, i) => (
+          <FormListInputs
+            key={i}
+            passenger={passenger}
+            onUpdate={(data) => handleUpdatePassenger(data, i)}
+          />
+        ))}
       </div>
 
       <div>
@@ -30,10 +43,13 @@ function FormList() {
           </div>
         </div>
 
-
         <div className="flex justify-center items-center pb-14">
           <Link to={'/form/confirm-buy'}>
-            <Buttons className={'w-1/4 justify-center'} size={'xl '} variant='fill'>
+            <Buttons
+              className={'w-1/4 justify-center'}
+              size={'xl '}
+              variant="fill"
+            >
               ادامه
             </Buttons>
           </Link>
@@ -44,4 +60,3 @@ function FormList() {
 }
 
 export default FormList
-

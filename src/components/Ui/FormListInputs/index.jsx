@@ -6,7 +6,6 @@ import * as yup from 'yup'
 import {useForm} from 'react-hook-form'
 import {yupResolver} from '@hookform/resolvers/yup'
 
-
 let birthYears = []
 for (let i = 1300; i < 1403; i++) {
   let year = {
@@ -46,7 +45,7 @@ const schema = yup.object().shape({
   lastName: yup.string().required('نام  خانوادگی را وارد کنید'),
 })
 // eslint-disable-next-line react/prop-types
-function Index({isAdult}) {
+function FormListInputs({isAdult, passenger, onUpdate}) {
   const {
     handleSubmit,
     formState: {errors},
@@ -129,6 +128,13 @@ function Index({isAdult}) {
   const toggleDropdownExpireYear = () => {
     setExpireYearDropdown(!expireYearDropdown)
   }
+
+  const handleChange = (e) => {
+    onUpdate({
+      ...passenger,
+      [e.target.name]: e.target.value,
+    })
+  }
   return (
     <>
       <div className="flex mt-10">
@@ -136,7 +142,13 @@ function Index({isAdult}) {
       </div>
       <form onSubmit={handleSubmit(onFormSubmit)}>
         <div className="px-0 w-full gap-3 flex flex-col lg:flex lg:flex-row items-end">
-          <InputTextField size={'sll'} type="text">
+          <InputTextField
+            name="latin_name"
+            size={'sll'}
+            type="text"
+            value={passenger.latin_name || ''}
+            onChange={handleChange}
+          >
             نام لاتین
           </InputTextField>
           {errors.firstName && (
@@ -144,7 +156,15 @@ function Index({isAdult}) {
               {errors.firstName.message}
             </p>
           )}
-          <InputTextField size={'sll'}>نام خانوادگی</InputTextField>
+          <InputTextField
+            size={'sll'}
+            name="latin_last_name"
+            type="text"
+            value={passenger.latin_last_name || ''}
+            onChange={handleChange}
+          >
+            نام خانوادگی
+          </InputTextField>
           <InputTextField size={'sll'}>جنسیت</InputTextField>
           <div className="flex flex-col rounded-lg gap-2">
             <div>تاریخ تولد (شمسی)</div>
@@ -361,4 +381,4 @@ function Index({isAdult}) {
   )
 }
 
-export default Index
+export default FormListInputs

@@ -23,6 +23,7 @@ function InputTextField({
   value,
   size,
   disabled,
+  name,
 }) {
   return (
     <div>
@@ -32,6 +33,7 @@ function InputTextField({
           value={value}
           className={`${value?.length === 0 ? "input-text-field" : "selected-input-text-field"} ${sizes[size]} ${className}`}
           type={type}
+          name={name}
           {...register}
           disabled={disabled}
         />
@@ -48,6 +50,7 @@ function InputTextField({
   type: PropTypes.string,
   value: PropTypes.string,
   size: PropTypes.oneOf(Object.keys(sizes)),
+  name: PropTypes.string
 };
 
 

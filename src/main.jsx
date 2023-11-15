@@ -8,10 +8,10 @@ import {UserDataProvider} from './providers/UserDataProvider'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <UserDataProvider>
-            <AuthProvider>
-                <RouterProvider router={router} />
-            </AuthProvider>
-        </UserDataProvider>
+      <UserDataProvider>
+        <AuthProvider>
+          <RouterProvider router={router} />
+        </AuthProvider>
+      </UserDataProvider>
     </React.StrictMode>
 )

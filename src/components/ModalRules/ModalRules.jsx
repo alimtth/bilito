@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 import close from '@/assets/Images/Icons/close-square.svg'
 import Buttons from '@/components/Ui/Button'
 import iconeairplan from '@/assets/Images/Icons/airplaneblue.svg'
@@ -10,6 +10,7 @@ import FormList from '@/pages/PageFormList/FormList'
 // eslint-disable-next-line react/prop-types
 export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
   const [activeTab, setActiveTab] = useState(0)
+  // const {forth} = useParams()
 
   const handleTapClick = (tabIndex) => {
     setActiveTab(tabIndex)
@@ -236,7 +237,6 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
                   </Link>
                 </div>
               </div>
-              
             )}
           </div>
         </div>
