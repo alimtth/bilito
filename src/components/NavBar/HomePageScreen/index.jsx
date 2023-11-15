@@ -6,12 +6,16 @@ import airr from '@/assets/gif/airplane-joypixels.gif'
 
 function HomePageScreen() {
   return (
-    <div className="w-full px-8 rounded-lg ">
+    <div className="">
       <div className="flex flex-col relative w-full">
-        <img alt={'airplane'} src={titlePic2} className="w-full rounded-2xl" />
-        
+        <img alt={'airplane'} src={titlePic2} className="w-full rounded-xl" />
+        <img
+          src={airr}
+          alt=""
+          className="w-40 absolute rotate-45 mr-[500px]  hidden md:block"
+        />
         <Fade right>
-          <p className="absolute text-white font-extrabold text-lg lg:text-4xl p-5 lg:p-20 pb-0">
+          <p className="absolute text-white font-extrabold text-lg lg:text-3xl p-5 lg:p-20 pb-0">
             <Typed
               strings={[
                 'سلاااااااااااااااام',
