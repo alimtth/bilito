@@ -9,11 +9,7 @@ function HomePageScreen() {
     <div className="w-full px-8 rounded-lg ">
       <div className="flex flex-col relative w-full">
         <img alt={'airplane'} src={titlePic2} className="w-full rounded-2xl" />
-        <img
-          src={airr}
-          alt=""
-          className="w-40 absolute rotate-45 mr-[1500px]  hidden md:block"
-        />
+        
         <Fade right>
           <p className="absolute text-white font-extrabold text-lg lg:text-4xl p-5 lg:p-20 pb-0">
             <Typed

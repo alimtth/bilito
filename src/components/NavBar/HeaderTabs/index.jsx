@@ -17,20 +17,20 @@ import '../style.css';
 
 function HeaderTabs() {
   const [showMenu, setShowMenu] = useState(false);
-  const [isHeaderSticky, setIsHeaderSticky] = useState(false);
+  // const [isHeaderSticky, setIsHeaderSticky] = useState(false);
   const [hover, setHover] = useState(false);
 
   const handleToggle = () => {
     setShowMenu(!showMenu);
   };
 
-  const handleScroll = () => {
-    if (window.scrollY > 600) {
-      setIsHeaderSticky(true);
-    } else {
-      setIsHeaderSticky(false);
-    }
-  };
+  // const handleScroll = () => {
+  //   if (window.scrollY > 600) {
+  //     setIsHeaderSticky(true);
+  //   } else {
+  //     setIsHeaderSticky(false);
+  //   }
+  // };
 
   const handlHoverd = () => {
     setHover(!hover);
@@ -38,19 +38,17 @@ function HeaderTabs() {
 
   const { isLoggedIn, logout, currentUser, isLoading } = useAuthContext();
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
 
   return (
     <>
       <div
-        className={` flex justify-between  items-center py-4 flex-row-reverse  lg:flex-row z-50 bg-white rounded-lg shadow-lg bg-opacity-100 ${
-          isHeaderSticky ? 'fixed top-6 w-full left-1/2 transform -translate-x-1/2 transition-all duration-700 ease-linear' : ''
-        }`}
+        className={'flex justify-between  items-center py-4 flex-row-reverse  lg:flex-row z-50 bg-white rounded-lg shadow-lg bg-opacity-100'}
         id="container"
       >
          <div className="flex justify-between flex-row-reverse lg:flex-row gap-16">
