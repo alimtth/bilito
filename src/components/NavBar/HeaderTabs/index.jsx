@@ -1,39 +1,59 @@
 // eslint-disable-next-line no-unused-vars
-import React, {useState} from 'react'
-import bilitoIcon from '@/assets/Images/Icons/BilitoIcone.png'
-import userIconLog from '@/assets/Images/Icons/UserIconLog.svg'
-import CallIcon from '@/assets/Images/Icons/CallIcon.svg'
-import arrowDown from '@/assets/Images/Icons/arrow-down.svg'
-import Button from '@/components/Ui/Button'
-import '../style.css'
-import {Link} from 'react-router-dom'
-import {Close} from '@mui/icons-material'
-import {BsAirplane, BsTelephone} from 'react-icons/bs'
-import {TbUserSearch} from 'react-icons/tb'
-import {BiUser} from 'react-icons/bi'
-import {AiOutlineHome} from 'react-icons/ai'
-import {RiMenu3Line} from 'react-icons/ri'
-import {useAuthContext} from '@/providers/AuthProvider'
-import {BiExit} from 'react-icons/bi'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { RiMenu3Line } from 'react-icons/ri';
+import { AiOutlineHome } from 'react-icons/ai';
+import { BsAirplane, BsTelephone } from 'react-icons/bs';
+import { TbUserSearch } from 'react-icons/tb';
+import { BiUser, BiExit } from 'react-icons/bi';
+import { Close } from '@mui/icons-material';
+import { useAuthContext } from '@/providers/AuthProvider';
+import Button from '@/components/Ui/Button';
+import bilitoIcon from '@/assets/Images/Icons/BilitoIcone.png';
+import arrowDown from '@/assets/Images/Icons/arrow-down.svg';
+import userIconLog from '@/assets/Images/Icons/UserIconLog.svg';
+import CallIcon from '@/assets/Images/Icons/CallIcon.svg';
+import '../style.css';
 
 function HeaderTabs() {
-  const [showMenu, setShowMenu] = useState(false)
-  const [hover, setHover] = useState(false)
-  const handleToggle = () => {
-    setShowMenu(!showMenu)
-  }
-  const handlHoverd = () => {
-    setHover(!hover)
-  }
+  const [showMenu, setShowMenu] = useState(false);
+  const [isHeaderSticky, setIsHeaderSticky] = useState(false);
+  const [hover, setHover] = useState(false);
 
-  const {isLoggedIn, logout, currentUser, isLoading} = useAuthContext()
+  const handleToggle = () => {
+    setShowMenu(!showMenu);
+  };
+
+  const handleScroll = () => {
+    if (window.scrollY > 600) {
+      setIsHeaderSticky(true);
+    } else {
+      setIsHeaderSticky(false);
+    }
+  };
+
+  const handlHoverd = () => {
+    setHover(!hover);
+  };
+
+  const { isLoggedIn, logout, currentUser, isLoading } = useAuthContext();
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <div
-        className="flex justify-between items-center py-4 flex-row-reverse lg:flex-row"
+        className={` flex justify-between  items-center py-4 flex-row-reverse  lg:flex-row z-50 bg-white rounded-lg shadow-lg bg-opacity-100 ${
+          isHeaderSticky ? 'fixed top-6 w-full left-1/2 transform -translate-x-1/2 transition-all duration-700 ease-linear' : ''
+        }`}
         id="container"
       >
-        <div className="flex justify-between flex-row-reverse lg:flex-row gap-16">
+         <div className="flex justify-between flex-row-reverse lg:flex-row gap-16">
           <img src={bilitoIcon} />
           <div className="flex justify-between gap-16">
             <ul className="lg:flex justify-between items-center gap-8 text-sm hidden">
@@ -174,4 +194,6 @@ function HeaderTabs() {
   )
 }
 
-export default HeaderTabs
+
+
+export default HeaderTabs;
