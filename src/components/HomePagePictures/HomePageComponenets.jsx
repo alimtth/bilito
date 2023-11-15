@@ -91,7 +91,8 @@ function HomePageComponenets() {
 
       <div className='mobile-slide'>
         <Swiper
-          spaceBetween={10}
+          style={{ borderRadius: '10px' }}
+          spaceBetween={5}
           slidesPerView={1}
           autoplay={{
             delay: 2000,
@@ -104,8 +105,8 @@ function HomePageComponenets() {
           modules={[Autoplay, Pagination]}
         >
           <SwiperSlide>
-            <div className="relative ">
-              <div style={{ paddingBottom: '50%' }} />
+            <div className="relative w-full">
+              <div style={{ paddingBottom: '55%' }} />
               <img
                 src={kish}
                 alt="Photo of kish island"
@@ -124,7 +125,7 @@ function HomePageComponenets() {
 
           <SwiperSlide>
             <div className="relative w-full ">
-              <div style={{ paddingBottom: '50%' }} />
+              <div style={{ paddingBottom: '55%' }} />
               <img
                 src={turkey}
                 alt="Photo of City turkiye"
@@ -143,7 +144,7 @@ function HomePageComponenets() {
 
           <SwiperSlide>
             <div className="relative w-full ">
-              <div style={{ paddingBottom: '50%' }} />
+              <div style={{ paddingBottom: '55%' }} />
               <img
                 src={shiraz}
                 alt="Photo of takht jamshid shiraz"
@@ -162,7 +163,7 @@ function HomePageComponenets() {
 
           <SwiperSlide>
             <div className="relative w-full ">
-              <div style={{ paddingBottom: '50%' }} />
+              <div style={{ paddingBottom: '55%' }} />
               <img
                 src={dubai}
                 alt="Photo of city dubai"

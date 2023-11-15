@@ -15,14 +15,9 @@
       display: none;
     }
   }
-  @media (min-width: 992px) {
-    .mobile-slide {
-      display: none;
-    }
-  }
 
 
-  @media (max-width: 992px) {
+  @media (max-width: 1200px) {
     .dextop-grid {
       display: none;
     }
