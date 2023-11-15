@@ -25,6 +25,7 @@ function HomePageScreen() {
               backSpeed={50}
               loop
             />
+            
           </p>
         </Fade>
       </div>
@@ -33,3 +34,6 @@ function HomePageScreen() {
 }
 
 export default HomePageScreen
+
+
+//commit 
