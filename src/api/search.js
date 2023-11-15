@@ -1,5 +1,6 @@
 import {sampleTicket} from '@/FakeData/ticket'
 import {fakeRequest} from '@/FakeData/utils'
+import {apiClient} from "@/api/request.js";
 
 const apiSearch = async (filters) => {
   var data = sampleTicket
@@ -15,5 +16,8 @@ const apiSearch = async (filters) => {
 
   return result
 }
+const searchInput = async (value)=>{
+  return apiClient.get(`/search?query=${value}`)
+}
 
-export {apiSearch}
+export {apiSearch,searchInput}
