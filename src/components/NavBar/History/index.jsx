@@ -6,24 +6,13 @@ import Button from '@/components/Ui/Button'
 import "@/components/NavBar/History/style.css"
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/scrollbar'
 
 function History() {
   return (
-    
+
     <div className="flex flex-col gap-4 mt-44 flex-wrap" id="container">
-
-      <div className="flex flex-row gap-9 justify-between flex-wrap">
-        <Button className="hidden lg:flex" variant="grayBTN">
-          <img src={ArrowRight} />
-        </Button>
-        <Button className="hidden lg:flex" variant="grayBTN">
-          <img src={ArrowLeft} />
-        </Button>
-      </div>
-
       <div className="flex justify-between">
         <div className="flex justify-between gap-4">
           <img src={HistoryIcon} />
@@ -33,11 +22,10 @@ function History() {
       </div>
 
       <Swiper
-        spaceBetween={0}
+        spaceBetween={40}
         slidesPerView={4}
-        navigation={true}
-        modules={[Autoplay, Navigation]}
       >
+
         <SwiperSlide>
           <Button variant="grayBTN">
             <img src={CloseSquare} />

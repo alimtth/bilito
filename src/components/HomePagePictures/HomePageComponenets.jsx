@@ -7,7 +7,7 @@ import kish from '@/assets/Images/Icons/HomePageKish.jpg'
 import '@/components/HomePagePictures/style.css'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Pagination, Navigation } from 'swiper/modules'
+import { Autoplay, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -96,12 +96,11 @@ function HomePageComponenets() {
             delay: 2000,
             disableOnInteraction: false,
           }}
-          navigation={true}
           pagination={{
             clickable: true,
           }}
           loop={true}
-          modules={[Autoplay, Pagination, Navigation]}
+          modules={[Autoplay, Pagination]}
         >
           <SwiperSlide>
             <div className="relative ">
