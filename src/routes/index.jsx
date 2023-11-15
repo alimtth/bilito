@@ -14,11 +14,11 @@ import BaseLayoutAcc from '@/pages/AccountPage/BaseLayoutsAccount/BaseLayoutAcc'
 import UserData from '@/pages/AccountPage/UserData/UserData'
 import EditUser from '@/pages/AccountPage/EditUser/EditUser'
 import MyTicket from '@/pages/AccountPage/MyTicket/MyTicket'
-import Rule from '@/components/TicketList/Rules/Rule'
-import GeneralRules from '@/components/TicketList/GeneralRules/GeneralRules'
-import LoadRules from '@/components/TicketList/LoadRules/LoadRules'
 import MyTravels from '@/pages/AccountPage/MyTravels/MyTravels'
 import FormList from "@/pages/PageFormList/FormList";
+import { BaseLayoutsForm } from '@/pages/PageFormList/BaseLayoutsForm/BaseLayoutsForm'
+import { ConfirmBuy } from '@/pages/PageFormList/ConfirmBuy'
+import { Payment } from '@/pages/Payment/Payment'
 
 const routes = [
   {
@@ -33,24 +33,6 @@ const routes = [
       {
         path: 'ticket',
         element: <TickedList />,
-        children: [
-          {
-            path: 'rule',
-            element: <Rule />,
-            children: [
-              {
-                path: 'grule',
-                element: <GeneralRules />,
-                children: [
-                  {
-                    path: 'loadrules',
-                    element: <LoadRules />,
-                  },
-                ],
-              },
-            ],
-          },
-        ],
       },
       {
         path: 'stepshop',
@@ -68,7 +50,22 @@ const routes = [
   },
   {
     path: 'form',
-    element: <FormList />,
+    element: <BaseLayoutsForm />,
+    children: [
+      {
+        path: 'data-form',
+        element: <FormList />
+      },
+      {
+        path: 'confirm-buy',
+        element: <ConfirmBuy />
+      }
+      
+    ]
+  },
+  {
+    path: 'payment',
+    element: <Payment />
   },
   {
     path: 'login',
