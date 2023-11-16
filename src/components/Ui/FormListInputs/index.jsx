@@ -382,3 +382,4 @@ function FormListInputs({isAdult, passenger, onUpdate}) {
 }
 
 export default FormListInputs
+  
