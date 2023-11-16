@@ -1,75 +1,89 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { RiMenu3Line } from 'react-icons/ri';
-import { AiOutlineHome } from 'react-icons/ai';
-import { BsAirplane, BsTelephone } from 'react-icons/bs';
-import { TbUserSearch } from 'react-icons/tb';
-import { BiUser, BiExit } from 'react-icons/bi';
-import { Close } from '@mui/icons-material';
-import { useAuthContext } from '@/providers/AuthProvider';
-import Button from '@/components/Ui/Button';
-import bilitoIcon from '@/assets/Images/Icons/BilitoIcone.png';
-import arrowDown from '@/assets/Images/Icons/arrow-down.svg';
-import userIconLog from '@/assets/Images/Icons/UserIconLog.svg';
-import CallIcon from '@/assets/Images/Icons/CallIcon.svg';
-import '../style.css';
+import React, {useState, useEffect} from 'react'
+import {Link} from 'react-router-dom'
+import {RiMenu3Line} from 'react-icons/ri'
+import {AiOutlineHome} from 'react-icons/ai'
+import {BsAirplane, BsTelephone} from 'react-icons/bs'
+import {TbUserSearch} from 'react-icons/tb'
+import {BiUser, BiExit} from 'react-icons/bi'
+import {Close} from '@mui/icons-material'
+import {useAuthContext} from '@/providers/AuthProvider'
+import Button from '@/components/Ui/Button'
+import bilitoIcon from '@/assets/Images/Icons/BilitoIcone.png'
+import arrowDown from '@/assets/Images/Icons/arrow-down.svg'
+import userIconLog from '@/assets/Images/Icons/UserIconLog.svg'
+import CallIcon from '@/assets/Images/Icons/CallIcon.svg'
+import '../style.css'
 
 function HeaderTabs() {
-  const [showMenu, setShowMenu] = useState(false);
-  const [isHeaderSticky, setIsHeaderSticky] = useState(false);
-  const [hover, setHover] = useState(false);
+  const [showMenu, setShowMenu] = useState(false)
+  const [isHeaderSticky, setIsHeaderSticky] = useState(false)
+  const [hover, setHover] = useState(false)
 
   const handleToggle = () => {
-    setShowMenu(!showMenu);
-  };
+    setShowMenu(!showMenu)
+  }
 
   const handleScroll = () => {
     if (window.scrollY > 600) {
-      setIsHeaderSticky(true);
+      setIsHeaderSticky(true)
     } else {
-      setIsHeaderSticky(false);
+      setIsHeaderSticky(false)
     }
-  };
+  }
 
   const handlHoverd = () => {
-    setHover(!hover);
-  };
+    setHover(!hover)
+  }
 
-  const { isLoggedIn, logout, currentUser, isLoading } = useAuthContext();
+  const {isLoggedIn, logout, currentUser, isLoading} = useAuthContext()
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll)
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
     <>
       <div
         className={` flex justify-between  items-center py-4 flex-row-reverse  lg:flex-row z-50 bg-white rounded-lg  bg-opacity-100 ${
-          isHeaderSticky ? 'fixed top-6 w-full left-1/2 transform -translate-x-1/2 transition-all duration-700 ease-linear' : ''
+          isHeaderSticky
+            ? 'fixed top-6 w-full left-1/2 transform -translate-x-1/2 transition-all duration-700 ease-linear'
+            : ''
         }`}
         id="container"
       >
-         <div className="flex justify-between flex-row-reverse lg:flex-row gap-16">
+        <div className="flex justify-between flex-row-reverse lg:flex-row gap-16">
           <img src={bilitoIcon} />
           <div className="flex justify-between gap-16">
             <ul className="lg:flex justify-between items-center gap-8 text-sm hidden">
               <Link to={'/'}>
-                <li className="cursor-pointer hover:text-blue-500 hover:rotate-2 hover:animate-pulse">صفحه اصلی</li>
+                <li className="cursor-pointer hover:text-blue-500 hover:rotate-2 hover:animate-pulse">
+                  صفحه اصلی
+                </li>
               </Link>
               <Link to={'/about'}>
-                <li className="cursor-pointer hover:text-blue-500 hover:rotate-2 hover:animate-pulse"> تماس با ما</li>
+                <li className="cursor-pointer hover:text-blue-500 hover:rotate-2 hover:animate-pulse">
+                  {' '}
+                  تماس با ما
+                </li>
               </Link>
               <Link to={'/about'}>
-                <li className="cursor-pointer hover:text-blue-500 hover:rotate-2 hover:animate-pulse"> درباره ما</li>
+                <li className="cursor-pointer hover:text-blue-500 hover:rotate-2 hover:animate-pulse">
+                  {' '}
+                  درباره ما
+                </li>
               </Link>
-              <li className="cursor-pointer hover:text-blue-500 hover:rotate-2 hover:animate-pulse">سفرهای من</li>
+              <Link to={'/account/my-travels'}>
+                <li className="cursor-pointer hover:text-blue-500 hover:rotate-2 hover:animate-pulse">
+                  سفرهای من
+                </li>
+              </Link>
               <li className="flex justify-between gap-2 cursor-pointer hover:text-blue-500 hover:rotate-2 hover:animate-pulse">
                 سایر موارد
-                <img src={arrowDown} className='' />
+                <img src={arrowDown} className="" />
               </li>
             </ul>
           </div>
@@ -149,7 +163,7 @@ function HeaderTabs() {
 
         <div className="lg:flex justify-between gap-8 hidden">
           <div className="inline-flex items-center gap-2 opacity-80">
-            <p className=''>4045_021</p>
+            <p className="">4045_021</p>
             <p>پشتیبانی</p>
             <img src={CallIcon} />
           </div>
@@ -200,6 +214,4 @@ function HeaderTabs() {
   )
 }
 
-
-
-export default HeaderTabs;
+export default HeaderTabs

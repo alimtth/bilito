@@ -11,7 +11,7 @@ function History() {
   return (
 
     <div className="flex flex-col gap-4 mt-44 flex-wrap" id="container">
-      <div className="flex justify-between">
+      <div className="flex justify-between px-9">
         <div className="flex justify-between gap-4">
           <img src={HistoryIcon} />
           <p>تاریخچه جستجو</p>
@@ -20,7 +20,7 @@ function History() {
       </div>
 
       <Swiper
-        spaceBetween={40}
+        // spaceBetween={}
         slidesPerView={4}
       >
 
