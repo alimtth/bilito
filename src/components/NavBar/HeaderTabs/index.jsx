@@ -14,7 +14,6 @@ import arrowDown from '@/assets/Images/Icons/arrow-down.svg'
 import userIconLog from '@/assets/Images/Icons/UserIconLog.svg'
 import CallIcon from '@/assets/Images/Icons/CallIcon.svg'
 import '../style.css'
-
 function HeaderTabs() {
   const [showMenu, setShowMenu] = useState(false)
   const [isHeaderSticky, setIsHeaderSticky] = useState(false)
@@ -31,7 +30,7 @@ function HeaderTabs() {
       setIsHeaderSticky(false)
     }
   }
-
+  //commit own in res ad req bla bla
   const handlHoverd = () => {
     setHover(!hover)
   }
