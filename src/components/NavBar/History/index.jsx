@@ -23,12 +23,15 @@ function History() {
         spaceBetween={10}
         breakpoints={{
           576: {
-            slidesPerView: 2,
-          },
-          768: {
+            width:600,
             slidesPerView: 3,
           },
+          768: {
+            width:785,
+            slidesPerView: 4,
+          },
           992: {
+            width:1000,
             slidesPerView: 4,
           },
           1200: {
