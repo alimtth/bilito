@@ -69,6 +69,7 @@ function BaseLayoutAcc() {
 
         <main className="basis-3/4">
           <Outlet />
+          
         </main>
         <div className="flex lg:hidden flex-col items-start gap-7 px-4 py-12">
           <div className="hidden line" />

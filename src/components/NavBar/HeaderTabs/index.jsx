@@ -58,12 +58,18 @@ function HeaderTabs() {
           <div className="flex justify-between gap-16">
             <ul className="lg:flex justify-between items-center gap-8 text-sm hidden">
               <Link to={'/'}>
-                <li className="cursor-pointer">صفحه اصلی</li>
+                <li className="cursor-pointer hover:text-blue-500 hover:rotate-2 hover:animate-pulse">صفحه اصلی</li>
               </Link>
-              <li className="cursor-pointer">سفرهای من</li>
-              <li className="flex justify-between gap-2 cursor-pointer">
+              <Link to={'/about'}>
+                <li className="cursor-pointer hover:text-blue-500 hover:rotate-2 hover:animate-pulse"> تماس با ما</li>
+              </Link>
+              <Link to={'/about'}>
+                <li className="cursor-pointer hover:text-blue-500 hover:rotate-2 hover:animate-pulse"> درباره ما</li>
+              </Link>
+              <li className="cursor-pointer hover:text-blue-500 hover:rotate-2 hover:animate-pulse">سفرهای من</li>
+              <li className="flex justify-between gap-2 cursor-pointer hover:text-blue-500 hover:rotate-2 hover:animate-pulse">
                 سایر موارد
-                <img src={arrowDown} />
+                <img src={arrowDown} className='' />
               </li>
             </ul>
           </div>
@@ -143,7 +149,7 @@ function HeaderTabs() {
 
         <div className="lg:flex justify-between gap-8 hidden">
           <div className="inline-flex items-center gap-2 opacity-80">
-            <p>4045_021</p>
+            <p className=''>4045_021</p>
             <p>پشتیبانی</p>
             <img src={CallIcon} />
           </div>
@@ -166,7 +172,7 @@ function HeaderTabs() {
                         'p-[20px] bg-white  -mr-10 rounded-lg flex flex-col items-center justify-center absolute top-[25px] gap-[20px] w-100 z-30 shadow-lg mt-7'
                       }
                     >
-                      <Link to={'/account'}>
+                      <Link to={'/account/data-user'}>
                         <div className="nested-item text-[13px] text-[#080808BF] opacity-75">
                           حساب کاربری
                         </div>
