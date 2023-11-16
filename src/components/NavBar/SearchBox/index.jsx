@@ -45,7 +45,7 @@ function SearchBox() {
       <Fade bottom>
         <div className="lg:z-20 lg:-m-28 md:sm:shadow-2xl sm:shadow-none rounded lg:w-fit m-auto">
           <div
-            className="bg-white flex flex-col lg:items-start items-center rounded-lg p-6"
+            className="bg-white flex flex-col lg:items-start items-center rounded-xl p-6"
           >
             <div>
               <ul className="flex justify-around gap-10 md:text-base sm:text-3xl ">
@@ -87,13 +87,13 @@ function SearchBox() {
             <hr className="" />
             <div className="line w-full" />
             <div className="flex py-6 gap-4 items-center justify-center">
-              <Button size="lg" variant="fill" className={'sm:py-4 px-8'}>
+              <Button size="lg" variant="fill" className={'lg:text-sm sm:py-4 px-8 '}>
                 یک طرفه
               </Button>
-              <Button variant="outline" className={'sm:py-4 px-8'}>
+              <Button variant="outline" className={'lg:text-sm sm:py-4 px-8'}>
                 رفت و برگشت
               </Button>
-              <Button size="lg" variant="outline" className={'sm:py-4 px-8 '}>
+              <Button size="lg" variant="outline" className={'lg:text-sm sm:py-4 px-8 '}>
                 چند مسیره
               </Button>
             </div>
@@ -146,7 +146,7 @@ function SearchBox() {
               <Button
                 variant="fill"
                 size="xl"
-                className={'sm:px-56 lg:px-3'}
+                className={' sm:px-56 lg:px-3'}
                 type="submit"
               >
                 <img src={searchIcon} />
