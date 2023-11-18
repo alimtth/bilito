@@ -7,7 +7,7 @@ import kish from '@/assets/Images/Icons/HomePageKish.jpg'
 import '@/components/HomePagePictures/style.css'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Pagination } from 'swiper/modules'
+import { Autoplay, EffectCoverflow, Pagination} from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -91,19 +91,42 @@ function HomePageComponenets() {
 
       <div className='mobile-slide'>
         <Swiper
-          style={{ borderRadius: '10px' }}
-          spaceBetween={5}
-          slidesPerView={1}
+          style={{ borderRadius: '10px'}}
+          loop={true}
+          speed={700}
           autoplay={{
-            delay: 2000,
-            disableOnInteraction: false,
+            delay: 2500,
+          }}
+          effect='coverflow'
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView='auto'
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 80,
+            depth: 200,
+            modifier: 1,
+            slideShadows: false,
           }}
           pagination={{
             clickable: true,
           }}
-          loop={true}
-          modules={[Autoplay, Pagination]}
-        >
+          modules={[Autoplay,Pagination,EffectCoverflow]}
+          breakpoints={{
+            576: {
+              width:540,
+              slidesPerView: 2,
+            },
+            768: {
+              width:750,
+              slidesPerView: 2,
+            },
+            992: {
+              width:970,
+              slidesPerView: 2,
+            },
+          }}
+        > 
           <SwiperSlide>
             <div className="relative w-full">
               <div style={{ paddingBottom: '55%' }} />
@@ -118,25 +141,6 @@ function HomePageComponenets() {
                 </p>
                 <button className="mr-6 mb-6 border p-2 border-white rounded-lg text-white ">
                   خرید بلیط پرواز های کیش
-                </button>
-              </div>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className="relative w-full ">
-              <div style={{ paddingBottom: '55%' }} />
-              <img
-                src={turkey}
-                alt="Photo of City turkiye"
-                className="absolute top-0 left-0 w-full h-auto rounded-lg object-cover "
-              />
-              <div className="absolute bottom-0">
-                <p className="pr-4 mr-2 mb-2 text-white font-bold ">
-                  سفر به ترکیه
-                </p>
-                <button className="mr-6 mb-6 border p-2 border-white rounded-lg text-white">
-                  خرید بلیط پرواز‌های ترکیه
                 </button>
               </div>
             </div>
@@ -179,6 +183,26 @@ function HomePageComponenets() {
               </div>
             </div>
           </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="relative w-full ">
+              <div style={{ paddingBottom: '55%' }} />
+              <img
+                src={turkey}
+                alt="Photo of City turkiye"
+                className="absolute top-0 left-0 w-full h-auto rounded-lg object-cover "
+              />
+              <div className="absolute bottom-0">
+                <p className="pr-4 mr-2 mb-2 text-white font-bold ">
+                  سفر به ترکیه
+                </p>
+                <button className="mr-6 mb-6 border p-2 border-white rounded-lg text-white">
+                  خرید بلیط پرواز‌های ترکیه
+                </button>
+              </div>
+            </div>
+          </SwiperSlide>
+          
         </Swiper>
       </div>
     </div>
