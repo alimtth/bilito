@@ -5,6 +5,7 @@ import paymant from '@/assets/Images/Icons/paymant.svg'
 import React, {useRef, useState} from 'react'
 import Buttons from '@/components/Ui/Button'
 import arrowdown from '@/assets/Images/Icons/arrow-down.svg'
+import arrowUp from '@/assets/Images/Icons/arowUp.svg'
 import airplane from '@/assets/Images/Icons/airplane-square.svg'
 import omanAir from '@/assets/Images/Icons/airlinelogoweb.svg'
 import iconetimer from '@/assets/Images/Icons/timer.svg'
@@ -286,7 +287,7 @@ export const Payment = () => {
                       <div onClick={toggleDetails} className="flex justify-end">
                         <Buttons className={'border-none'}>
                           بستن
-                          <img src={arrowdown} alt="" />
+                          <img src={arrowUp} alt="" />
                         </Buttons>
                       </div>
                     </div>

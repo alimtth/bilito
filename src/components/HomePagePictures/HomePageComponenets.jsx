@@ -7,7 +7,7 @@ import kish from '@/assets/Images/Icons/HomePageKish.jpg'
 import '@/components/HomePagePictures/style.css'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, EffectCoverflow, Pagination} from 'swiper/modules'
+import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -91,7 +91,7 @@ function HomePageComponenets() {
 
       <div className='mobile-slide'>
         <Swiper
-          style={{ borderRadius: '10px'}}
+          style={{ borderRadius: '10px' }}
           loop={true}
           speed={700}
           autoplay={{
@@ -111,30 +111,32 @@ function HomePageComponenets() {
           pagination={{
             clickable: true,
           }}
-          modules={[Autoplay,Pagination,EffectCoverflow]}
+          modules={[Autoplay, Pagination, EffectCoverflow]}
           breakpoints={{
             576: {
-              width:540,
+              width: 540,
               slidesPerView: 2,
             },
             768: {
-              width:750,
+              width: 750,
               slidesPerView: 2,
             },
             992: {
-              width:970,
+              width: 970,
               slidesPerView: 2,
             },
           }}
-        > 
+        >
           <SwiperSlide>
             <div className="relative w-full">
-              <div style={{ paddingBottom: '55%' }} />
-              <img
-                src={kish}
-                alt="Photo of kish island"
-                className="absolute top-0 left-0 h-auto rounded-lg object-cover"
-              />
+              <div className='box2'>
+                <div style={{ paddingBottom: '55%' }} />
+                <img
+                  src={kish}
+                  alt="Photo of kish island"
+                  className="absolute top-0 left-0 h-auto rounded-lg object-cover"
+                />
+              </div>
               <div className="absolute bottom-0 ">
                 <p className="pr-4 mr-2 mb-2 text-white font-bold ">
                   بهترین فصل شنا
@@ -148,12 +150,14 @@ function HomePageComponenets() {
 
           <SwiperSlide>
             <div className="relative w-full ">
-              <div style={{ paddingBottom: '55%' }} />
-              <img
-                src={shiraz}
-                alt="Photo of takht jamshid shiraz"
-                className="absolute top-0 left-0 h-auto rounded-lg object-cover "
-              />
+              <div className='box2'>
+                <div style={{ paddingBottom: '55%' }} />
+                <img
+                  src={shiraz}
+                  alt="Photo of takht jamshid shiraz"
+                  className="absolute top-0 left-0 h-auto rounded-lg object-cover "
+                />
+              </div>
               <div className="absolute bottom-0">
                 <p className="pr-4 mr-2 mb-2 text-white font-bold ">
                   دنیایی از تاریخ و هنر
@@ -167,12 +171,14 @@ function HomePageComponenets() {
 
           <SwiperSlide>
             <div className="relative w-full ">
-              <div style={{ paddingBottom: '55%' }} />
-              <img
-                src={dubai}
-                alt="Photo of city dubai"
-                className="absolute top-0 left-0 h-auto rounded-lg object-cover "
-              />
+              <div className='box2'>
+                <div style={{ paddingBottom: '55%' }} />
+                <img
+                  src={dubai}
+                  alt="Photo of city dubai"
+                  className="absolute top-0 left-0 h-auto rounded-lg object-cover "
+                />
+              </div>
               <div className="absolute bottom-0">
                 <p className="pr-4 mr-2 mb-2 text-white font-bold ">
                   شگفتی در صحرا
@@ -186,12 +192,14 @@ function HomePageComponenets() {
 
           <SwiperSlide>
             <div className="relative w-full ">
-              <div style={{ paddingBottom: '55%' }} />
-              <img
-                src={turkey}
-                alt="Photo of City turkiye"
-                className="absolute top-0 left-0 w-full h-auto rounded-lg object-cover "
-              />
+              <div className='box2'>
+                <div style={{ paddingBottom: '55%' }} />
+                <img
+                  src={turkey}
+                  alt="Photo of City turkiye"
+                  className="absolute top-0 left-0 w-full h-auto rounded-lg object-cover "
+                />
+              </div>
               <div className="absolute bottom-0">
                 <p className="pr-4 mr-2 mb-2 text-white font-bold ">
                   سفر به ترکیه
@@ -202,7 +210,7 @@ function HomePageComponenets() {
               </div>
             </div>
           </SwiperSlide>
-          
+
         </Swiper>
       </div>
     </div>
