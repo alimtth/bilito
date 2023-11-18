@@ -10,8 +10,8 @@ function About() {
     setSelect(!select)
   }
   return (
-    <div>
-      <img src={PageScreenAbout} alt="" className="w-full" />
+    <div className='px-7'>
+      <img src={PageScreenAbout} alt="" className="w-full  rounded-xl " />
       <div id="container">
         <div className="flex justify-start gap-6 mt-12">
           <h2 className="text-blue-650 cursor-pointer">درباره ما</h2>
