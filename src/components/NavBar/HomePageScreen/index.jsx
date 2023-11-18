@@ -18,14 +18,12 @@ function HomePageScreen() {
           <p className="absolute text-white font-extrabold text-lg lg:text-3xl p-5 lg:p-20 pb-0">
             <Typed
               strings={[
-                'سلاااااااااااااااام',
                 ' راحتی و سرعت در <br/><br/>رزرو بلیط هواپیما با بیلیتو',
               ]}
-              typeSpeed={40}
-              backSpeed={50}
+              typeSpeed={50}
+              backSpeed={60}
               loop
             />
-            
           </p>
         </Fade>
       </div>
@@ -35,5 +33,4 @@ function HomePageScreen() {
 
 export default HomePageScreen
 
-
-//commit 
+//commit

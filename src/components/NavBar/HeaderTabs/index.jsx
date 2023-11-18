@@ -49,7 +49,7 @@ function HeaderTabs() {
       <div
         className={` flex justify-between  items-center py-4 flex-row-reverse  lg:flex-row z-50 bg-white rounded-lg  bg-opacity-100 ${
           isHeaderSticky
-            ? 'fixed top-6 w-full left-1/2 transform -translate-x-1/2 transition-all duration-700 ease-linear'
+            ? 'fixed top-6 w-full left-1/2 transform -translate-x-1/2 transition-all duration-700 ease-linear shadow-2xl'
             : ''
         }`}
         id="container"

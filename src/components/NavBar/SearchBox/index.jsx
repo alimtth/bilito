@@ -11,7 +11,6 @@ import {useNavigate, useSearchParams} from 'react-router-dom'
 import {faArrowRightArrowLeft} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import Fade from 'react-reveal/Fade'
-// import { apiSearch } from "@/api/search"
 
 function SearchBox() {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -22,6 +21,7 @@ function SearchBox() {
   const [passengerCountValue, setPassengerCountValue] = useState('')
   const [flightClassValue, setFlightClassValue] = useState('')
   const [internationalFlights, setInternationalFlights] = useState(true)
+  // const [searchHistory, setSearchHistory] = useState([])
   const navigate = useNavigate()
 
   const handleFlight = () => {
@@ -39,14 +39,24 @@ function SearchBox() {
       passengerCount: passengerCountValue,
       flightClass: flightClassValue,
     }))
+    // setSearchHistory((prevHistory) => [
+    //   {
+    //     q: query,
+    //     origin: originValue,
+    //     destination: destinationValue,
+    //     travelDate: travelDateValue,
+    //     passengerCount: passengerCountValue,
+    //     flightClass: flightClassValue,
+    //   },
+    //   ...prevHistory.slice(0, 2),
+    // ])
   }
+
   return (
     <>
       <Fade bottom>
         <div className="lg:z-20 lg:-m-28 md:sm:shadow-2xl sm:shadow-none rounded lg:w-fit m-auto">
-          <div
-            className="bg-white flex flex-col lg:items-start items-center rounded-xl p-6"
-          >
+          <div className="bg-white flex flex-col lg:items-start items-center rounded-xl p-6">
             <div>
               <ul className="flex justify-around gap-10 md:text-base sm:text-3xl ">
                 <li
@@ -87,13 +97,21 @@ function SearchBox() {
             <hr className="" />
             <div className="line w-full" />
             <div className="flex py-6 gap-4 items-center justify-center">
-              <Button size="lg" variant="fill" className={'lg:text-sm sm:py-4 px-8 '}>
+              <Button
+                size="lg"
+                variant="fill"
+                className={'lg:text-sm sm:py-4 px-8 '}
+              >
                 یک طرفه
               </Button>
               <Button variant="outline" className={'lg:text-sm sm:py-4 px-8'}>
                 رفت و برگشت
               </Button>
-              <Button size="lg" variant="outline" className={'lg:text-sm sm:py-4 px-8 '}>
+              <Button
+                size="lg"
+                variant="outline"
+                className={'lg:text-sm sm:py-4 px-8 '}
+              >
                 چند مسیره
               </Button>
             </div>
@@ -142,7 +160,6 @@ function SearchBox() {
               >
                 کلاس پرواز
               </InputTextField>
-              {/* <Link to={"ticket"}> */}
               <Button
                 variant="fill"
                 size="xl"
@@ -152,7 +169,6 @@ function SearchBox() {
                 <img src={searchIcon} />
                 جستجو
               </Button>
-              {/* </Link> */}
             </form>
           </div>
         </div>
