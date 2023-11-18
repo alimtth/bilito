@@ -18,7 +18,7 @@ function HomePageScreen() {
           <p className="absolute text-white font-extrabold text-lg lg:text-3xl p-5 lg:p-20 pb-0">
             <Typed
               strings={[
-                ' راحتی و سرعت در <br/><br/>رزرو بلیط هواپیما با بیلیتو',
+                ' راحتی و سرعت در <br/><br/>رزرو بلیط هواپیما با بیلیتو...',
               ]}
               typeSpeed={50}
               backSpeed={60}
