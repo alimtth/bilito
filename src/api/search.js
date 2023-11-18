@@ -1,6 +1,6 @@
 import {sampleTicket} from '@/FakeData/ticket'
 import {fakeRequest} from '@/FakeData/utils'
-import {apiClient} from "@/api/request.js";
+import {apiClient} from '@/api/request.js'
 
 const apiSearch = async (filters) => {
   var data = sampleTicket
@@ -10,14 +10,24 @@ const apiSearch = async (filters) => {
   }
 
   if (filters?.destination) {
-    data = data.filter((post) => post.destination.includes(filters.destination))
+    data = data.filter((post) => post.back.includes(filters.destination))
   }
+
+  if (filters?.travelDate) {
+    data = data.filter((post) => post.limit.includes(filters.travelDate))
+  }
+
+  if (filters?.passengerCount) {
+    data = data.filter((post) => post.price.includes(filters.passengerCount))
+  }
+
   const result = await fakeRequest(data)
 
   return result
 }
-const searchInput = async (value)=>{
+
+const searchInput = async (value) => {
   return apiClient.get(`/search?query=${value}`)
 }
 
-export {apiSearch,searchInput}
+export {apiSearch, searchInput}

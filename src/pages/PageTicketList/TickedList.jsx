@@ -21,10 +21,18 @@ function TickedList() {
   const [searchData, setSearchData] = useState([])
   const [searchParams, setSearchParams] = useSearchParams()
   const [query, setQuery] = useState(() => searchParams.get('q'))
-  const [destination, setDestination] = useState('')
-  const [travelDate, setTravelDate] = useState('')
-  const [passengerCount, setPassengerCount] = useState('')
-  const [flightClass, setFlightClass] = useState('')
+  const [destination, setDestination] = useState(() =>
+    searchParams.get('destination')
+  )
+  const [travelDate, setTravelDate] = useState(() =>
+    searchParams.get('travelDate')
+  )
+  const [passengerCount, setPassengerCount] = useState(() =>
+    searchParams.get('passengerCount')
+  )
+  const [flightClass, setFlightClass] = useState(() =>
+    searchParams.get('flightClass')
+  )
 
   const hanldeSearch = (e) => {
     e.preventDefault()
@@ -131,7 +139,9 @@ function TickedList() {
           <div className="p-6 gap-8 flex justify-center items-center font-bold">
             <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
               <img src={airplane} alt="airplane" />
-              <p>بلیط همواپیما {query} به دبی</p>
+              <p>
+                بلیط همواپیما {query} به {destination}
+              </p>
             </div>
 
             <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">

@@ -15,7 +15,6 @@ import Fade from 'react-reveal/Fade'
 function SearchBox() {
   const [searchParams, setSearchParams] = useSearchParams()
   const [query, setQuery] = useState(() => searchParams.get('q'))
-  const [originValue, setOriginValue] = useState('')
   const [destinationValue, setDestinationValue] = useState('')
   const [travelDateValue, setTravelDateValue] = useState('')
   const [passengerCountValue, setPassengerCountValue] = useState('')
@@ -33,7 +32,6 @@ function SearchBox() {
     setSearchParams((s) => ({
       ...s,
       q: query,
-      origin: originValue,
       destination: destinationValue,
       travelDate: travelDateValue,
       passengerCount: passengerCountValue,

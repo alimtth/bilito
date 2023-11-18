@@ -15,10 +15,10 @@ import UserData from '@/pages/AccountPage/UserData/UserData'
 import EditUser from '@/pages/AccountPage/EditUser/EditUser'
 import MyTicket from '@/pages/AccountPage/MyTicket/MyTicket'
 import MyTravels from '@/pages/AccountPage/MyTravels/MyTravels'
-import FormList from "@/pages/PageFormList/FormList";
-import { BaseLayoutsForm } from '@/pages/PageFormList/BaseLayoutsForm/BaseLayoutsForm'
-import { ConfirmBuy } from '@/pages/PageFormList/ConfirmBuy'
-import { Payment } from '@/pages/Payment/Payment'
+import FormList from '@/pages/PageFormList/FormList'
+import {BaseLayoutsForm} from '@/pages/PageFormList/BaseLayoutsForm/BaseLayoutsForm'
+import {ConfirmBuy} from '@/pages/PageFormList/ConfirmBuy'
+import {Payment} from '@/pages/Payment/Payment'
 
 const routes = [
   {
@@ -54,18 +54,17 @@ const routes = [
     children: [
       {
         path: 'data-form',
-        element: <FormList />
+        element: <FormList />,
       },
       {
         path: 'confirm-buy',
-        element: <ConfirmBuy />
-      }
-      
-    ]
+        element: <ConfirmBuy />,
+      },
+    ],
   },
   {
     path: 'payment',
-    element: <Payment />
+    element: <Payment />,
   },
   {
     path: 'login',
