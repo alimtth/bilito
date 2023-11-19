@@ -14,6 +14,7 @@ import SingleTicket from '@/components/TicketList/SingleTicket'
 import {apiSearch} from '@/api/search'
 import {useSearchParams} from 'react-router-dom'
 import {SideBarForm} from '@/components/SideBarForm/SideBarForm'
+// import { useQuery } from 'react-query'
 
 function TickedList() {
   const [trySearch, setTrySearch] = useState(false)
@@ -49,6 +50,17 @@ function TickedList() {
   }
 
   console.log(searchData)
+
+  // const {data: searchData, isLoading} = useQuery(
+  //   'searchData',
+  //   () => apiSearch({
+  //     q: query,
+  //     destination,
+  //       travelDate,
+  //       passengerCount,
+  //       flightClass,
+  //   })
+  // )
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const getSearchData = async () => {
