@@ -16,7 +16,7 @@ function History() {
           <img src={HistoryIcon} />
           <p>تاریخچه جستجو</p>
         </div>
-        <p className="text-blue-500 cursor-pointer">پاک کردن همه</p>
+        <button className="text-blue-500 cursor-pointer">پاک کردن همه</button>
       </div>
 
       <Swiper
