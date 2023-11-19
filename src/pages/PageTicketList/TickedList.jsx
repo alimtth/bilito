@@ -14,7 +14,7 @@ import SingleTicket from '@/components/TicketList/SingleTicket'
 import {apiSearch} from '@/api/search'
 import {useSearchParams} from 'react-router-dom'
 import {SideBarForm} from '@/components/SideBarForm/SideBarForm'
-import { useQuery } from 'react-query'
+// import { useQuery } from 'react-query'
 
 function TickedList() {
   const [trySearch, setTrySearch] = useState(false)
