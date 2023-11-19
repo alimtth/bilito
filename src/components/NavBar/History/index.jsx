@@ -42,7 +42,7 @@ function History() {
           },
         }}
       >
-
+        
         <SwiperSlide>
           <Button variant="grayBTN">
             <img src={CloseSquare} />
