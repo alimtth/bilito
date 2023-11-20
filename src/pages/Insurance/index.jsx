@@ -1,3 +1,4 @@
+import * as React from 'react'
 import HomePageScreen from '@/components/NavBar/HomePageScreen'
 import Button from '@/components/Ui/Button'
 import InputTextField from '@/components/Ui/InputTextField'
@@ -6,14 +7,28 @@ import tableReportMedical from '@/assets/Images/Icons/table_report-medical.svg'
 import tablerDental from '@/assets/Images/Icons/tabler_dental.svg'
 import plus from '@/assets/Images/Icons/iconoir_pharmacy-cross-square.svg'
 import airplan from '@/assets/Images/Icons/airplane.svg'
+import airplanTable from '@/assets/Images/Icons/passport-red-case-toy-plane 1.svg'
 import cardTick from '@/assets/Images/Icons/card-tick.svg'
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Typography,
+} from '@mui/material'
+import {insuraceAccordion} from '@/FakeData/insuraceAccordion'
+
 function Insurace() {
+  const [expanded, setExpanded] = React.useState('panel1')
+
+  const handleChange = (panel) => (event, newExpanded) => {
+    setExpanded(newExpanded ? panel : false)
+  }
+
   return (
     <>
       <HomePageScreen />
       <div className="p-8">
-        <p className="font-bold text-blue-500">بیمه مسافرتی</p>
-        <div className="w-full h-full flex flex-col justify-between gap-8 items-center">
+        <div className="w-full h-full flex flex-col lg:flex-row justify-between gap-8 items-center md:sm:shadow-2xl sm:shadow-none lg:w-fit m-auto bg-white lg:items-start rounded-xl p-6">
           <InputTextField value={''} size="sm" className={'sm:px-44 lg:px-0 '}>
             کشور مبدا
           </InputTextField>
@@ -21,7 +36,7 @@ function Insurace() {
             مدت سفر
           </InputTextField>
           <InputTextField value={''} size="sm" className={'sm:px-44 lg:px-0 '}>
-            مسافران
+            مسافران 
           </InputTextField>
           <Button
             variant="fill"
@@ -153,24 +168,68 @@ function Insurace() {
             </div>
           </div>
         </div>
-        <table className="table-auto border border-blue-300 ">
-          <tr>
-            <th>mmd</th>
-            <th>mmd</th>
-          </tr>
-          <tr>
-            <td>mmd</td>
-            <td>mmd</td>
-          </tr>
-          <tr>
-            <td>mmd</td>
-            <td>mmd</td>
-          </tr>
-          <tr>
-            <td>mmd</td>
-            <td>mmd</td>
-          </tr>
-        </table>
+        <div className="bg-blue-100 rounded-lg sm:p-8 flex flex-col md:flex-row">
+          <table className=" w-full h-full border border-blue-300 rounded-lg ">
+            <tr className="bg-blue-250 flex flex-row items-center p-3">
+              <th className="basis-2/12">عوامل موثر در تعیین قیمت</th>
+              <th className="basis-10/12">
+                نحوه محاسبه در فرمول تعیین حق بیمه
+              </th>
+            </tr>
+            <tr className="flex flex-row p-3 font-normal">
+              <td className="basis-2/12">سن مسافر</td>
+              <td className="basis-10/12">
+                تا ۱۲ سال/ ۱۳ تا ۶۵ سال/ 66 تا 70 سال/ ۷۱ تا ۷۵ سال/ ۷۶ تا ۸۰
+                سال
+              </td>
+            </tr>
+            <tr className="flex flex-row p-3 font-normal ">
+              <td className="basis-2/12">مدت سفر</td>
+              <td className="basis-10/12">
+                ۱ تا ۷ روز/ ۸ تا ۱۵ روز/ ۱۶ تا ۲۳ روز/ ۲۴ تا ۳۱ روز/ ۳۲ تا ۴۵
+                روز/ ۶۳ تا ۹۲ روز/ ۶ ماهه/ ۱ ساله
+              </td>
+            </tr>
+            <tr className="flex flex-row p-3 font-normal">
+              <td className="basis-2/12">مقصد سفر</td>
+              <td className="basis-10/12">بر اساس مناطق جغرافیایی مختلف</td>
+            </tr>
+          </table>
+          <div className="flex items-center justify-center">
+            <img src={airplanTable} alt="" />
+          </div>
+        </div>
+        <div className="py-8 w-full bg-white rounded-b-[80px]">
+          <h1 className="text-xl font-bold mb-8">سوالات متداول</h1>
+          {insuraceAccordion.map((items) => {
+            return (
+              <div key={items.id} className='border border-x-gray-10'>
+                <Accordion
+                  expanded={expanded === items.id}
+                  onChange={handleChange(items.id)}
+                >
+                  <AccordionSummary
+                    aria-controls={`${items.id}d-content`}
+                    id={`${items.id}d-header`}
+                  >
+                    <div
+                      className={`${
+                        expanded === items.id ? 'text-blue-500' : ''
+                      }`}
+                    >
+                      <Typography className="font1">{items.title}</Typography>
+                    </div>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography className="font1">
+                      {items.description}
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+              </div>
+            )
+          })}
+        </div>
       </div>
     </>
   )
