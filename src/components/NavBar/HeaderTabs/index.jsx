@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-unused-vars
 import React, {useState, useEffect} from 'react'
-import {Link} from 'react-router-dom'
 import {RiMenu3Line} from 'react-icons/ri'
 import {AiOutlineHome} from 'react-icons/ai'
 import {BsAirplane, BsTelephone} from 'react-icons/bs'
@@ -14,6 +13,7 @@ import arrowDown from '@/assets/Images/Icons/arrow-down.svg'
 import userIconLog from '@/assets/Images/Icons/UserIconLog.svg'
 import CallIcon from '@/assets/Images/Icons/CallIcon.svg'
 import '../style.css'
+import Link from 'next/link'
 function HeaderTabs() {
   const [showMenu, setShowMenu] = useState(false)
   const [isHeaderSticky, setIsHeaderSticky] = useState(false)
@@ -59,12 +59,12 @@ function HeaderTabs() {
             <img src={bilitoIcon} />
             <div className="flex justify-between gap-16">
               <ul className="lg:flex justify-between items-center gap-8 text-sm hidden">
-                <Link to={'/'}>
+                <Link href='/'>
                   <li className="cursor-pointer hover:text-blue-500 hover:rotate-2 hover:animate-pulse">
                     صفحه اصلی
                   </li>
                 </Link>
-                <Link to={'/account/my-travels'}>
+                <Link href='/account/my-travels'>
                   <li className="cursor-pointer hover:text-blue-500 hover:rotate-2 hover:animate-pulse">
                     سفرهای من
                   </li>
@@ -73,9 +73,9 @@ function HeaderTabs() {
                   <button className="dropButton">سایر موارد</button>
                   <img src={arrowDown} className="" />
                   <div className="dropdown-content">
-                    <Link to={'/insurance'}>بیمه مسافرتی</Link>
-                    <Link to={'/about'}> درباره ما</Link>
-                    <Link to={'/about '}> تماس با ما</Link>
+                    <Link href='/insurance'>بیمه مسافرتی</Link>
+                    <Link href='/about'> درباره ما</Link>
+                    <Link href='/about '> تماس با ما</Link>
                   </div>
                 </li>
               </ul>
@@ -136,14 +136,14 @@ function HeaderTabs() {
                 </div>
                 <div className="flex justify-start gap-3 py-4 text-gray-20 font-light">
                   <BiUser />
-                  <Link to={'account'}>حساب کاربری</Link>
+                  <Link href='account'>حساب کاربری</Link>
                 </div>
                 <div className="flex justify-start gap-3 py-4 text-gray-20 font-light">
                   4045_021 پشتیبانی
                   <BsTelephone />
                 </div>
                 <div className="flex justify-center gap-3 py-4 text-gray-20 font-light">
-                  <Link to={'/login'}>
+                  <Link href='/login'>
                     <Button variant="fill" onClick={handleToggle}>
                       <img src={userIconLog} />
                       <div> ورود/ ثبت نام</div>
@@ -179,7 +179,7 @@ function HeaderTabs() {
                           'p-[20px] bg-white  -mr-10 rounded-lg flex flex-col items-center justify-center absolute top-[25px] gap-[20px] w-100 z-30 shadow-lg mt-7'
                         }
                       >
-                        <Link to={'/account/data-user'}>
+                        <Link href='/account/data-user'>
                           <div className="nested-item text-[13px] text-[#080808BF] opacity-75">
                             حساب کاربری
                           </div>
@@ -194,7 +194,7 @@ function HeaderTabs() {
                 />
               </div>
             ) : (
-              <Link to={'/login'}>
+              <Link href='/login'>
                 <Button variant="fill">
                   <img src={userIconLog} />
                   <div> ورود/ ثبت نام</div>

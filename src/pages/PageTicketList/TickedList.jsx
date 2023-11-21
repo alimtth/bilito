@@ -13,9 +13,11 @@ import HomePageScreen from '@/components/NavBar/HomePageScreen'
 import SingleTicket from '@/components/TicketList/SingleTicket'
 import {apiSearch} from '@/api/search'
 import {SideBarForm} from '@/components/SideBarForm/SideBarForm'
+import { useRouter } from 'next/router'
 // import { useQuery } from 'react-query'
 
 function TickedList() {
+  const router = useRouter()
   const [trySearch, setTrySearch] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [searchData, setSearchData] = useState([])
@@ -37,7 +39,7 @@ function TickedList() {
     e.preventDefault()
     router.push({
       pathname: "/ticket",
-      search: {
+      query: {
         q: query,
         destination,
         travelDate,

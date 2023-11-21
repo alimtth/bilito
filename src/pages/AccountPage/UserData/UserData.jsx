@@ -1,6 +1,6 @@
 import Buttons from '@/components/Ui/Button'
-import {Link} from 'react-router-dom'
 import {useUser} from '@/providers/UserDataProvider'
+import Link from 'next/link'
 
 function UserData() {
   const {userData} = useUser()
@@ -40,7 +40,7 @@ function UserData() {
             </div>
           </div>
           <div className="flex justify-end  basis-1/2">
-            <Link to={'/account/edit-user'}>
+            <Link href='/account/edit-user'>
               <Buttons className={'outline-none border-none'}>
                 ویرایش اطلاعات
               </Buttons>

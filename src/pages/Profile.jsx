@@ -1,11 +1,11 @@
-import {Link} from 'react-router-dom'
+import Link from 'next/link'
 import Button from '../components/Ui/Button'
 
 function ProfilePage() {
   return (
     <div>
       <h1>Profile page</h1>
-      <Link to={'/'}>
+      <Link href='/'>
         <Button variant="fill" size="xl">
           FirstPage
         </Button>

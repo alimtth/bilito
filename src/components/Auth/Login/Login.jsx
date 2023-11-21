@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import bilitoIcon from '@/assets/Images/Icons/BilitoIcone.png'
-import {Link, useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import InputTextField from '@/components/Ui/InputTextField'
 import Button from '@/components/Ui/Button'
 import * as yup from 'yup'
@@ -12,6 +12,7 @@ import {apiLoginUser} from '@/api/user'
 import {useState} from 'react'
 import Buttons from '@/components/Ui/Button'
 import { Alert, AlertTitle } from '@mui/material'
+import Link from 'next/link'
 
 const schema = yup.object().shape({
   username: yup.string().required('فیلد نام کاربری اجباری است'),
@@ -117,7 +118,7 @@ function Login() {
                     />
                     <h4>
                       با ورود و ثبت‌نام در سایت، با{' '}
-                      <Link className="text-blue-650" to={'#'}>
+                      <Link className="text-blue-650" href='#'>
                         قوانین بیلیتو
                       </Link>{' '}
                       موافقت می‌کنم.
@@ -134,7 +135,7 @@ function Login() {
                   >
                     ورود
                   </Buttons>
-                  <Link to={'/register'} className="flex justify-center mb-1">
+                  <Link href='/register' className="flex justify-center mb-1">
                     <Button> ثبت نام</Button>
                   </Link>
                 </div>

@@ -1,8 +1,9 @@
 import HeaderTabs from '@/components/NavBar/HeaderTabs'
 import {useAuthContext} from '@/providers/AuthProvider'
-import {Link, Outlet} from 'react-router-dom'
+import {Outlet} from 'react-router-dom'
 import profile from '@/assets/Images/Icons/profile-add.svg'
 import {useUser} from '@/providers/UserDataProvider'
+import Link from 'next/link'
 
 function BaseLayoutAcc() {
   const {currentUser, logout} = useAuthContext()
@@ -28,7 +29,7 @@ function BaseLayoutAcc() {
           </div>
           <div className="lg:flex hidden flex-col items-start gap-5 w-full px-4">
             <div className="line w-full" />
-            <Link to={'data-user'}>
+            <Link href='data-user'>
               <p
                 className={`flex items-center text-gray-600 gap-3 cursor-pointer w-72 h-12 rounded-md `}
               >
@@ -36,7 +37,7 @@ function BaseLayoutAcc() {
                 اطلاعات حساب کاربری
               </p>
             </Link>
-            <Link to={'my-travels'}>
+            <Link href='my-travels'>
               <p
                 className={`flex items-center text-gray-600 gap-3 cursor-pointer w-72 h-12 rounded-md `}
               >
@@ -44,7 +45,7 @@ function BaseLayoutAcc() {
                 سفرهای من
               </p>
             </Link>
-            <Link to={'my-ticket'}>
+            <Link href='my-ticket'>
               <p
                 className={`flex items-center text-gray-600 gap-3 cursor-pointer w-72 h-12 rounded-md `}
               >
@@ -72,7 +73,7 @@ function BaseLayoutAcc() {
         </main>
         <div className="flex lg:hidden flex-col items-start gap-7 px-4 py-12">
           <div className="hidden line" />
-          <Link to={'data-user'}>
+          <Link href='data-user'>
             <p
               className={`flex items-center text-gray-600 gap-3 cursor-pointer w-72 h-12 rounded-md `}
             >
@@ -86,7 +87,7 @@ function BaseLayoutAcc() {
             <img src={profile} alt="" />
             سفرهای من
           </p>
-          <Link to={'my-ticket'}>
+          <Link href='my-ticket'>
             <p
               className={`flex items-center text-gray-600 gap-3 cursor-pointer w-72 h-12 rounded-md `}
             >
