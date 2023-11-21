@@ -12,7 +12,6 @@ import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports'
 import HomePageScreen from '@/components/NavBar/HomePageScreen'
 import SingleTicket from '@/components/TicketList/SingleTicket'
 import {apiSearch} from '@/api/search'
-import {useSearchParams} from 'react-router-dom'
 import {SideBarForm} from '@/components/SideBarForm/SideBarForm'
 // import { useQuery } from 'react-query'
 
@@ -21,7 +20,7 @@ function TickedList() {
   const [isLoading, setIsLoading] = useState(false)
   const [searchData, setSearchData] = useState([])
   const [searchParams, setSearchParams] = useSearchParams()
-  const [query, setQuery] = useState(() => searchParams.get('q'))
+  const [query, setQuery] = useState(() => router.query.q)
   const [destination, setDestination] = useState(() =>
     searchParams.get('destination')
   )

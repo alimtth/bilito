@@ -27,8 +27,8 @@ function SearchBox() {
     setInternationalFlights(!internationalFlights)
   }
 
-  const handleSearch = (event) => {
-    event.preventDefault()
+  const handleSearch = (e) => {
+    e.preventDefault()
     router.push({
       pathname: "/ticket",
       query: {
