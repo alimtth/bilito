@@ -31,7 +31,7 @@ function SearchBox() {
     e.preventDefault()
     router.push({
       pathname: "/ticket",
-      query: {
+      search: {
         q: query,
         destination: destinationValue,
         travelDate: travelDateValue,

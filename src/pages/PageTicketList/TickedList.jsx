@@ -19,32 +19,32 @@ function TickedList() {
   const [trySearch, setTrySearch] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [searchData, setSearchData] = useState([])
-  const [searchParams, setSearchParams] = useSearchParams()
   const [query, setQuery] = useState(() => router.query.q)
   const [destination, setDestination] = useState(() =>
-    searchParams.get('destination')
+  router.query.destination
   )
   const [travelDate, setTravelDate] = useState(() =>
-    searchParams.get('travelDate')
+  router.query.travelDate
   )
   const [passengerCount, setPassengerCount] = useState(() =>
-    searchParams.get('passengerCount')
+  router.query.passengerCount
   )
   const [flightClass, setFlightClass] = useState(() =>
-    searchParams.get('flightClass')
+  router.query.flightClass
   )
 
   const hanldeSearch = (e) => {
     e.preventDefault()
-    setSearchParams((s) => ({
-      ...s,
-      q: query,
-      destination,
-      travelDate,
-      passengerCount,
-      flightClass,
-    }))
-
+    router.push({
+      pathname: "/ticket",
+      search: {
+        q: query,
+        destination,
+        travelDate,
+        passengerCount,
+        flightClass,
+      }
+    })
     setTrySearch(true)
   }
 
