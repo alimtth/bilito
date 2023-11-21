@@ -1,5 +1,4 @@
 import titlePic2 from '@/assets/Images/titelePic2.png'
-import style from './style.module.css'
 import Fade from 'react-reveal/Fade'
 import Typed from 'react-typed'
 import airr from '@/assets/gif/airplane-joypixels.gif'

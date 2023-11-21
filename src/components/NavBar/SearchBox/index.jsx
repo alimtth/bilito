@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import AirplanSelected from '@/assets/Images/Icons/AirplaneSelected.svg'
 import AirplanNotSelected from '@/assets/Images/Icons/AirplaneNotSelected.svg'
 import Button from '@/components/Ui/Button'
@@ -7,36 +7,38 @@ import searchIcon from '@/assets/Images/Icons/search-normal.svg'
 import History from '../History'
 import InputTextField from '@/components/Ui/InputTextField'
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports'
-import {useNavigate, useSearchParams} from 'react-router-dom'
-import {faArrowRightArrowLeft} from '@fortawesome/free-solid-svg-icons'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { faArrowRightArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Fade from 'react-reveal/Fade'
 
+import { useRouter } from 'next/router'
+
 function SearchBox() {
-  const [searchParams, setSearchParams] = useSearchParams()
-  const [query, setQuery] = useState(() => searchParams.get('q'))
+  const [query, setQuery] = useState(() => router.query.q)
   const [destinationValue, setDestinationValue] = useState('')
   const [travelDateValue, setTravelDateValue] = useState('')
   const [passengerCountValue, setPassengerCountValue] = useState('')
   const [flightClassValue, setFlightClassValue] = useState('')
   const [internationalFlights, setInternationalFlights] = useState(true)
   // const [searchHistory, setSearchHistory] = useState([])
-  const navigate = useNavigate()
+  const router = useRouter()
 
   const handleFlight = () => {
     setInternationalFlights(!internationalFlights)
   }
   const handleSearch = (e) => {
     e.preventDefault()
-    navigate('/ticket')
-    setSearchParams((s) => ({
-      ...s,
-      q: query,
-      destination: destinationValue,
-      travelDate: travelDateValue,
-      passengerCount: passengerCountValue,
-      flightClass: flightClassValue,
-    }))
+    router.push({
+      pathname: '/ticket',
+      query: {
+        q: query,
+        destination: destinationValue,
+        travelDate: travelDateValue,
+        passengerCount: passengerCountValue,
+        flightClass: flightClassValue,
+      }
+    })
+
     // setSearchHistory((prevHistory) => [
     //   {
     //     q: query,
@@ -58,16 +60,14 @@ function SearchBox() {
             <div>
               <ul className="flex justify-around gap-10 md:text-base sm:text-3xl ">
                 <li
-                  className={`flex gap-2 ${
-                    internationalFlights ? 'text-blue-500 font-bold' : ''
-                  }`}
+                  className={`flex gap-2 ${internationalFlights ? 'text-blue-500 font-bold' : ''
+                    }`}
                 >
                   <img
-                    src={`${
-                      internationalFlights
+                    src={`${internationalFlights
                         ? AirplanSelected
                         : AirplanNotSelected
-                    }`}
+                      }`}
                     className="md:block w-full h-full object-cover hidden"
                   />
                   پروازخارجی
@@ -76,16 +76,14 @@ function SearchBox() {
                   <FontAwesomeIcon icon={faArrowRightArrowLeft} />
                 </li>
                 <li
-                  className={`flex gap-2 ${
-                    internationalFlights ? '' : 'text-blue-500 font-bold'
-                  }`}
+                  className={`flex gap-2 ${internationalFlights ? '' : 'text-blue-500 font-bold'
+                    }`}
                 >
                   <img
-                    src={`${
-                      internationalFlights
+                    src={`${internationalFlights
                         ? AirplanNotSelected
                         : AirplanSelected
-                    }`}
+                      }`}
                     className="md:block w-full h-full object-cover hidden"
                   />
                   <span className={'basis-full'}>پروازداخلی</span>

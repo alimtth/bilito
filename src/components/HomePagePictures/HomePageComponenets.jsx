@@ -4,7 +4,7 @@ import shiraz from '@/assets/Images/Icons/HomePageShiraz.jpg'
 import dubai from '@/assets/Images/Icons/HomePageDubai.jpg'
 import turkey from '@/assets/Images/Icons/HomePageTurkey.jpg'
 import kish from '@/assets/Images/Icons/HomePageKish.jpg'
-import '@/components/HomePagePictures/style.css'
+import styles from '@/components/HomePagePictures/style.module.css'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules'
@@ -17,9 +17,9 @@ import 'swiper/css/scrollbar'
 function HomePageComponenets() {
   return (
     <div className="mt-14" id="container">
-      <div className='dextop-grid'>
+      <div className={styles.dextop_grid}>
         <div className="grid grid-cols-3 w-full gap-4 ">
-          <div className="relative w-full box">
+          <div className={ styles.box + "relative w-full"}>
             <div style={{ paddingBottom: "100%" }} />
             <img
               src={kish}
@@ -35,7 +35,7 @@ function HomePageComponenets() {
               </button>
             </div>
           </div>
-          <div className="relative w-full box">
+          <div className={ styles.box + "relative w-full"}>
             <div style={{ paddingBottom: "100%" }} />
             <img
               src={turkey}
@@ -53,7 +53,7 @@ function HomePageComponenets() {
 
           <div className="grid gap-4">
 
-            <div className="relative w-full box">
+            <div className={ styles.box + "relative w-full"}>
               <div style={{ paddingBottom: "50%" }} />
               <img
                 src={shiraz}
@@ -69,7 +69,7 @@ function HomePageComponenets() {
               </div>
 
             </div>
-            <div className="relative w-full box">
+            <div className={ styles.box + "relative w-full"}>
               <div style={{ paddingBottom: "50%" }} />
               <img
                 src={dubai}
@@ -89,7 +89,7 @@ function HomePageComponenets() {
         </div>
       </div>
 
-      <div className='mobile-slide'>
+      <div className={styles.mobile_slide}>
         <Swiper
           style={{ borderRadius: '10px' }}
           loop={true}
@@ -129,7 +129,7 @@ function HomePageComponenets() {
         >
           <SwiperSlide>
             <div className="relative w-full">
-              <div className='box2'>
+              <div className={ styles.box2 }>
                 <div style={{ paddingBottom: '55%' }} />
                 <img
                   src={kish}
@@ -150,7 +150,7 @@ function HomePageComponenets() {
 
           <SwiperSlide>
             <div className="relative w-full ">
-              <div className='box2'>
+              <div className={ styles.box2 }>
                 <div style={{ paddingBottom: '55%' }} />
                 <img
                   src={shiraz}
@@ -171,7 +171,7 @@ function HomePageComponenets() {
 
           <SwiperSlide>
             <div className="relative w-full ">
-              <div className='box2'>
+              <div className={ styles.box2 }>
                 <div style={{ paddingBottom: '55%' }} />
                 <img
                   src={dubai}
@@ -192,7 +192,7 @@ function HomePageComponenets() {
 
           <SwiperSlide>
             <div className="relative w-full ">
-              <div className='box2'>
+              <div className={ styles.box2 }>
                 <div style={{ paddingBottom: '55%' }} />
                 <img
                   src={turkey}

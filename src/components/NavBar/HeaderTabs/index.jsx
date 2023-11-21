@@ -116,7 +116,7 @@ function HeaderTabs() {
                   close
                 </Close>
               </div>
-              <div className="line"></div>
+              <div className={ styles.line }></div>
               <div className="flex flex-col py-12">
                 <div className="flex justify-start gap-3 py-4 text-gray-20 font-light">
                   <AiOutlineHome />

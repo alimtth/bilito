@@ -18,6 +18,6 @@ const createRequest = (baseUrl) => {
   return instance
 }
 
-const apiClient = createRequest(import.meta.env.VITE_API_BASE_URL)
+const apiClient = createRequest(process.env.NEXT_PUBLIC_API_BASE_URL)
 
 export {apiClient}

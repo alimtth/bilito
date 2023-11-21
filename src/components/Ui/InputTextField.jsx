@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React, {Children} from 'react'
-import './ui.css'
+import styles from './ui.module.css'
 import PropTypes from "prop-types";
 
 const sizes = {
@@ -27,18 +27,18 @@ function InputTextField({
 }) {
   return (
     <div>
-      <div className="material-textfield">
+      <div className={ styles.material_textfield }>
         <input
           onChange={onChange}
           value={value}
-          className={`${value?.length === 0 ? "input-text-field" : "selected-input-text-field"} ${sizes[size]} ${className}`}
+          className={`${value?.length === 0 ? styles.input_text_field : styles.selected_input_text_field} ${sizes[size]} ${className}`}
           type={type}
           name={name}
           {...register}
           disabled={disabled}
         />
 
-        <label className="label">{children}</label>
+        <label className={ styles.label }>{children}</label>
       </div>
     </div>
   )

@@ -1,7 +1,6 @@
 import HistoryIcon from '@/assets/Images/Icons/History.svg'
 import CloseSquare from '@/assets/Images/Icons/close-square.svg'
 import Button from '@/components/Ui/Button'
-import '@/components/NavBar/History/style.css'
 
 import {Swiper, SwiperSlide} from 'swiper/react'
 import 'swiper/css'
@@ -20,6 +19,7 @@ function History() {
       </div>
 
       <Swiper
+      style={{ width: '100%', cursor: '-webkit-grab', cursor: 'grab'}}
         spaceBetween={10}
         breakpoints={{
           576: {

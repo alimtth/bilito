@@ -12,7 +12,7 @@ const AuthProvider = ({children}) => {
   const [currentUser, setCurrentUser] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const [accessToken, setAccessToken] = useState(() =>
-    localStorage.getItem('accessToken')
+    typeof window !== 'undefined' ? localStorage.getItem('accessToken') : null
   )
   const isLoggedIn = !!accessToken
 

@@ -1,16 +1,16 @@
 @media (min-width: 1400px) {
-    .mobile-slide {
+    .mobile_slide {
       display: none;
     }
   }
   @media (min-width: 1200px) {
-    .mobile-slide {
+    .mobile_slide {
       display: none;
     }
   }
 
   @media (max-width: 1200px) {
-    .dextop-grid {
+    .dextop_grid {
       display: none;
     }
   }

@@ -3,7 +3,7 @@ import CustomizedAccordions from '@/components/Ui/Accordion'
 import Advantages from '../components/Advantages/index.jsx'
 import SearchBox from '@/components/NavBar/SearchBox/index'
 import HomePageComponents from '@/components/HomePagePictures/HomePageComponenets'
-import style from './style.module.css'
+import styles from './style.module.css'
 import HomePageScreen from '@/components/NavBar/HomePageScreen'
 
 function HomePage() {

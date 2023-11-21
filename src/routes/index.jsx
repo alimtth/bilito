@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import {createBrowserRouter} from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom'
 import HomePage from '@/pages/index.jsx'
 import NotFound from '@/pages/404/NotFound.jsx'
 import BaseLayout from '@/layouts/index.jsx'
@@ -16,9 +16,9 @@ import EditUser from '@/pages/AccountPage/EditUser/EditUser'
 import MyTicket from '@/pages/AccountPage/MyTicket/MyTicket'
 import MyTravels from '@/pages/AccountPage/MyTravels/MyTravels'
 import FormList from '@/pages/PageFormList/FormList'
-import {BaseLayoutsForm} from '@/pages/PageFormList/BaseLayoutsForm/BaseLayoutsForm'
-import {ConfirmBuy} from '@/pages/PageFormList/ConfirmBuy'
-import {Payment} from '@/pages/Payment/Payment'
+import { BaseLayoutsForm } from '@/pages/PageFormList/BaseLayoutsForm/BaseLayoutsForm'
+import { ConfirmBuy } from '@/pages/PageFormList/ConfirmBuy'
+import { Payment } from '@/pages/Payment/Payment'
 
 const routes = [
   {

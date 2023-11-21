@@ -5,7 +5,7 @@ import MuiAccordion from '@mui/material/Accordion'
 import MuiAccordionSummary from '@mui/material/AccordionSummary'
 import MuiAccordionDetails from '@mui/material/AccordionDetails'
 import Typography from '@mui/material/Typography'
-import './accordion.css'
+import styles from './accordion.module.css'
 import {accordionData} from '@/FakeData/accordionData.js'
 
 const Accordion = styled((props) => (
@@ -70,11 +70,11 @@ export default function CustomizedAccordions() {
                     <div
                       className={`${expanded === e.id ? 'text-blue-500' : ''}`}
                     >
-                      <Typography className="font1">{e.title}</Typography>
+                      <Typography className={ styles.font1 }>{e.title}</Typography>
                     </div>
                   </AccordionSummary>
                   <AccordionDetails>
-                    <Typography className="font1">{e.description}</Typography>
+                    <Typography className={ styles.font1 }>{e.description}</Typography>
                   </AccordionDetails>
                 </Accordion>
               </div>

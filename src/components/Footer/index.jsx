@@ -16,7 +16,6 @@ import TweeterIcon from '../../assets/Images/Icons/TweeterIcon.png'
 import LinkedInIcon from '../../assets/Images/Icons/LinkedInIcon.png'
 import YouTubeIcon from '../../assets/Images/Icons/YouTubeIcon.png'
 import ArrowUp from '../../assets/Images/arrow-circle-up.png'
-import './style.css'
 import {Link} from 'react-router-dom'
 
 function Footer() {

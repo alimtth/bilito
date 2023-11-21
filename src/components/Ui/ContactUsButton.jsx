@@ -1,8 +1,8 @@
-import './ui.css'
+import styles from './ui.module.css'
 // eslint-disable-next-line react/prop-types
 function ContactUsButton({children, icon}) {
   return (
-    <button className="contact-us-button">
+    <button className={styles.contact_us_button}>
       <span>
         <img src={icon} />
       </span>
