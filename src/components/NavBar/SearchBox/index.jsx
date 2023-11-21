@@ -14,22 +14,23 @@ import Fade from 'react-reveal/Fade'
 import { useRouter } from 'next/router'
 
 function SearchBox() {
-  const [query, setQuery] = useState(() => router.query.q)
   const [destinationValue, setDestinationValue] = useState('')
   const [travelDateValue, setTravelDateValue] = useState('')
   const [passengerCountValue, setPassengerCountValue] = useState('')
   const [flightClassValue, setFlightClassValue] = useState('')
   const [internationalFlights, setInternationalFlights] = useState(true)
+  const [query, setQuery] = useState(() => router.query.q)
   // const [searchHistory, setSearchHistory] = useState([])
   const router = useRouter()
 
   const handleFlight = () => {
     setInternationalFlights(!internationalFlights)
   }
-  const handleSearch = (e) => {
-    e.preventDefault()
+
+  const handleSearch = (event) => {
+    event.preventDefault()
     router.push({
-      pathname: '/ticket',
+      pathname: "/ticket",
       query: {
         q: query,
         destination: destinationValue,

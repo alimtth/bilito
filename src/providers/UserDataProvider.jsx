@@ -3,7 +3,7 @@ import {createContext, useState, useContext, useEffect} from 'react'
 const UserContext = createContext()
 // eslint-disable-next-line react/prop-types
 export const UserDataProvider = ({children}) => {
-  const storedUserData = localStorage.getItem('userData')
+  const storedUserData = typeof window !== 'undefined' ? localStorage.getItem('userData'): null
   const initialUserData =
     storedUserData && storedUserData !== 'undefined'
       ? JSON.parse(storedUserData)
