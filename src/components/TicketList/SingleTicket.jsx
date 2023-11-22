@@ -6,6 +6,7 @@ import iconbag from '@/assets/Images/Icons/bag.svg'
 import line from '@/assets/Images/Icons/Line.svg'
 import propTypes from 'prop-types'
 import {ModalRules} from '../ModalRules/ModalRules'
+import Image from 'next/image'
 
 
 // eslint-disable-next-line react/prop-types, no-unused-vars
@@ -66,7 +67,7 @@ function SingleTicket({forth, back, imagess, price, id, length, children}) {
             </div>
             <div className="flex justify-between items-end gap-[64px] px-4 lg:flex-row flex-col">
               <div className="pb-5 gap-6 w-[575px] flex items-center ">
-                <img src={imagess} />
+                <Image src={imagess} />
                 <div>
                   <div className="pl-8 gap-2 flex flex-col items-center">
                     <p>02:{id}</p>
@@ -77,17 +78,17 @@ function SingleTicket({forth, back, imagess, price, id, length, children}) {
                 <div className="flex items-center justify-center">
                   <div className="gap-6 flex flex-col">
                     <div className="gap-[2px] flex items-center justify-center">
-                      <img src={iconetimer} />
+                      <Image src={iconetimer} />
                       <p className="text-gray-500 ">19:00</p>
                     </div>
                     <div className="relative flex items-center justify-center ">
-                      <img className="z-20" src={iconeairplan} />
+                      <Image className="z-20" src={iconeairplan} />
                       <span className="absolute w-[142px] h-[1px] fill-none z-10">
-                        <img src={line} />
+                        <Image src={line} />
                       </span>
                     </div>
                     <div className="gap-[2px] flex items-center justify-center">
-                      <img src={iconbag} />
+                      <Image src={iconbag} />
                       <p className="text-gray-500">20Kg</p>
                     </div>
                   </div>

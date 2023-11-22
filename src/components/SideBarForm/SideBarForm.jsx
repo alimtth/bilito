@@ -3,6 +3,7 @@ import React from 'react'
 import airport from '@/assets/Images/Icons/Airport.png'
 import {IoIosArrowDown} from 'react-icons/io'
 import {Slider} from '@mui/material'
+import Image from 'next/image'
 
 // eslint-disable-next-line react/prop-types
 export const SideBarForm = ({searchData}) => {
@@ -51,7 +52,7 @@ export const SideBarForm = ({searchData}) => {
           <div className="flex flex-col gap-4 items-start mt-[17px]">
             <div className="flex">
               <input type="checkbox" className="border-none outline-none" />
-              <img
+              <Image
                 src={airport}
                 className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
               />
@@ -59,7 +60,7 @@ export const SideBarForm = ({searchData}) => {
             </div>
             <div className="flex">
               <input type="checkbox" className="border-none outline-none" />
-              <img
+              <Image
                 src={airport}
                 className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
               />
@@ -67,7 +68,7 @@ export const SideBarForm = ({searchData}) => {
             </div>
             <div className="flex">
               <input type="checkbox" className="border-none outline-none" />
-              <img
+              <Image
                 src={airport}
                 className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
               />
@@ -75,7 +76,7 @@ export const SideBarForm = ({searchData}) => {
             </div>
             <div className="flex">
               <input type="checkbox" className="border-none outline-none" />
-              <img
+              <Image
                 src={airport}
                 className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
               />
@@ -83,7 +84,7 @@ export const SideBarForm = ({searchData}) => {
             </div>
             <div className="flex">
               <input type="checkbox" className="border-none outline-none" />
-              <img
+              <Image
                 src={airport}
                 className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
               />
@@ -91,7 +92,7 @@ export const SideBarForm = ({searchData}) => {
             </div>
             <div className="flex">
               <input type="checkbox" className="border-none outline-none" />
-              <img
+              <Image
                 src={airport}
                 className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
               />
@@ -106,7 +107,7 @@ export const SideBarForm = ({searchData}) => {
             <div className="flex flex-col gap-4 items-start mt-[17px]">
               <div className="flex">
                 <input type="radio" className="border-none outline-none" />
-                <img
+                <Image
                   src={airport}
                   className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
                 />
@@ -114,7 +115,7 @@ export const SideBarForm = ({searchData}) => {
               </div>
               <div className="flex">
                 <input type="radio" className="border-none outline-none" />
-                <img
+                <Image
                   src={airport}
                   className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
                 />
@@ -122,7 +123,7 @@ export const SideBarForm = ({searchData}) => {
               </div>
               <div className="flex">
                 <input type="radio" className="border-none outline-none" />
-                <img
+                <Image
                   src={airport}
                   className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
                 />
@@ -130,7 +131,7 @@ export const SideBarForm = ({searchData}) => {
               </div>
               <div className="flex">
                 <input type="radio" className="border-none outline-none" />
-                <img
+                <Image
                   src={airport}
                   className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
                 />

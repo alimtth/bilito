@@ -14,6 +14,7 @@ import SingleTicket from '@/components/TicketList/SingleTicket'
 import {apiSearch} from '@/api/search'
 import {SideBarForm} from '@/components/SideBarForm/SideBarForm'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 // import { useQuery } from 'react-query'
 
 function TickedList() {
@@ -151,28 +152,28 @@ function TickedList() {
         ) : (
           <div className="p-6 gap-8 flex justify-center items-center font-bold">
             <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
-              <img src={airplane} alt="airplane" />
+              <Image src={airplane} alt="airplane" />
               <p>
                 بلیط همواپیما {query} به {destination}
               </p>
             </div>
 
             <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
-              <img src={calendar} alt="calendar" />
+              <Image src={calendar} alt="calendar" />
               <p>دوشنبه 6 شهریور</p>
             </div>
 
             <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
-              <img src={profileAdd} alt="profile-add" />
+              <Image src={profileAdd} alt="profile-add" />
               <p>3 مسافر</p>
             </div>
 
             <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
-              <img src={calendar} alt="calendar" />
+              <Image src={calendar} alt="calendar" />
               <p>اکونومی</p>
             </div>
             <Button variant="fill" onClick={() => setTrySearch(true)}>
-              <img src={EditPen} alt="edit-pen" />
+              <Image src={EditPen} alt="edit-pen" />
             </Button>
           </div>
         )}
@@ -197,7 +198,7 @@ function TickedList() {
             <div className="flex justify-center items-center rounded-md h-12 w-12 border-4 border-t-4 border-blue-500 animate-spin  mr-[50%] mt-20"></div>
           ) : searchData.length === 0 ? (
             <div className="flex flex-col items-center mt-9">
-              <img src={NotTicket} alt="not-ticket" className="w-[170px]" />
+              <Image src={NotTicket} alt="not-ticket" className="w-[170px]" />
               <div className="outline outline-gray-300 p-9 rounded-md text-center">
                 <h4 className="text-gray-700 font-bold">
                   در این تاریخ پروازی برای استانبول به دبی یافت نشد.
