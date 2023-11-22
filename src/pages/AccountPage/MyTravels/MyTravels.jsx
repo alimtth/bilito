@@ -35,11 +35,11 @@ function MyTravels() {
               </Buttons>
               {isDropdownOpen && (
                 <div className="fixed flex flex-col z-30 bg-white shadow-lg gap-2 py-2 rounded-lg px-9 mt-11">
-                  <ul>جدیدترین</ul>
-                  <ul>قدیمی‌ترین</ul>
-                  <ul>کنسلی‌ها</ul>
-                  <ul>باتاخیر</ul>
-                  <ul>تغییر مسیر</ul>
+                  <ul className='cursor-pointer'>جدیدترین</ul>
+                  <ul className='cursor-pointer'>قدیمی‌ترین</ul>
+                  <ul className='cursor-pointer'>کنسلی‌ها</ul>
+                  <ul className='cursor-pointer'>باتاخیر</ul>
+                  <ul className='cursor-pointer'>تغییر مسیر</ul>
                 </div>
               )}
             </div>
@@ -51,7 +51,7 @@ function MyTravels() {
             </div>
           </div>
         </div>
-        <div className=" bg-blue-50 flex justify-between px-10 py-2 rounded-lg mt-6 z-10">
+        <div className=" bg-blue-50 flex justify-between px-10 py-2 rounded-lg mt-6">
           <h3 className="flex items-center gap-4 text-blue-650 font-bold">
             <img src={messageblue} alt="" />
             پرواز شماره 165 از استانبول به دبی در تاریخ 6شهریور 1402 در ساعت

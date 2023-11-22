@@ -10,7 +10,6 @@ function EditUser() {
 
     const handleSaveChanges = () => {
         setIsSaving(true)
-
         setTimeout(() => {
             savaUserData(userData)
             setIsSaving(false)

@@ -16,7 +16,7 @@ import 'swiper/css/scrollbar'
 
 function HomePageComponenets() {
   return (
-    <div className="mt-14" id="container">
+    <div className="mt-14 overflow-hidden rounded-[50px] lg:overflow-visible" id="container">
       <div className='dextop-grid'>
         <div className="grid grid-cols-3 w-full gap-4 ">
           <div className="relative w-full box">
