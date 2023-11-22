@@ -16,6 +16,7 @@ import {
   Typography,
 } from '@mui/material'
 import {insuraceAccordion} from '@/FakeData/insuraceAccordion'
+import Image from 'next/image'
 
 function Insurace() {
   const [expanded, setExpanded] = React.useState('panel1')
@@ -44,7 +45,7 @@ function Insurace() {
             className={' sm:px-56 lg:px-3'}
             type="submit"
           >
-            <img src={searchIcon} />
+            <Image src={searchIcon} />
             جستجو
           </Button>
         </div>
@@ -73,7 +74,7 @@ function Insurace() {
         </div>
         <div className="flex flex-col gap-3 pt-2">
           <div className="flex flex-row items-center gap-3">
-            <img src={tableReportMedical} alt="table" />
+            <Image src={tableReportMedical} alt="table" />
             <div>
               <span className="font-bold">هزینه های پزشکی:</span>
               <span>
@@ -84,7 +85,7 @@ function Insurace() {
           </div>
 
           <div className="flex flex-row items-center gap-3">
-            <img src={tablerDental} alt="tabler" />
+            <Image src={tablerDental} alt="tabler" />
             <div>
               <span className="font-bold">هزینه های دندانپزشکی:</span>
               <span>
@@ -93,7 +94,7 @@ function Insurace() {
             </div>
           </div>
           <div className="flex flex-row items-center gap-3">
-            <img src={plus} alt="airplan" />
+            <Image src={plus} alt="airplan" />
             <div>
               <span className="font-bold">جبران هزینه دارو:</span>
               <span>
@@ -103,7 +104,7 @@ function Insurace() {
             </div>
           </div>
           <div className="flex flex-row items-center gap-3">
-            <img src={airplan} alt="airplan" />
+            <Image src={airplan} alt="airplan" />
             <div>
               <span className="font-bold">هزینه‌های بازگشت: </span>
               <span>
@@ -113,7 +114,7 @@ function Insurace() {
             </div>
           </div>
           <div className="flex flex-row items-center gap-3">
-            <img src={cardTick} alt="cardtick" />
+            <Image src={cardTick} alt="cardtick" />
             <div>
               <span className="font-bold">جبران خسارت اموال:</span>
               <span>
@@ -196,7 +197,7 @@ function Insurace() {
             </tr>
           </table>
           <div className="flex items-center justify-center">
-            <img src={airplanTable} alt="" />
+            <Image src={airplanTable} alt="" />
           </div>
         </div>
         <div className="py-8 w-full bg-white rounded-b-[80px]">

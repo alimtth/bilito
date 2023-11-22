@@ -5,13 +5,14 @@ import {Swiper, SwiperSlide} from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/scrollbar'
 import {sampleTicket} from '@/FakeData/ticket'
+import Image from 'next/image'
 
 function History() {
   return (
     <div className="flex flex-col gap-4 mt-44 flex-wrap" id="container">
       <div className="flex justify-between px-9">
         <div className="flex justify-between gap-4">
-          <img src={HistoryIcon.src} />
+          <Image src={HistoryIcon} />
           <p>تاریخچه جستجو</p>
         </div>
         <button className="text-blue-500 cursor-pointer">پاک کردن همه</button>
@@ -46,7 +47,7 @@ function History() {
             <div key={items.id}>
               <SwiperSlide>
                 <Button variant="grayBTN">
-                  <img src={CloseSquare.src} />
+                  <Image src={CloseSquare} />
                   {items.forth} به {items.back}
                 </Button>
               </SwiperSlide>

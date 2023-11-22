@@ -12,12 +12,13 @@ import iconetimer from '@/assets/Images/Icons/timer.svg'
 import iconeairplan from '@/assets/Images/Icons/airplaneblue.svg'
 import iconbag from '@/assets/Images/Icons/bag.svg'
 import line from '@/assets/Images/Icons/Line.svg'
-import {Link} from 'react-router-dom'
 import html2canvas from 'html2canvas'
 import jsPDF from 'jspdf'
 import wallet from '@/assets/Images/Icons/wallet.svg'
 import backHome from '@/assets/Images/Icons/backHome.svg'
 import noPayment from '@/assets/Images/Icons/noPayment.svg'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export const Payment = () => {
   const [loading, setLoading] = useState(false)
@@ -54,14 +55,14 @@ export const Payment = () => {
             <div className="flex flex-col">
               <div className="flex flex-col justify-center items-center">
                 <div className="w-3/4 bg-green-50 h-7 flex justify-center items-center py-8 gap-4 text-green-700 rounded-lg">
-                  <img src={paymant.src} alt="" className="animate-pulse" />
+                  <Image src={paymant} alt="" className="animate-pulse" />
                   پرداخت شما با موفقیت انجام شد.
                 </div>
               </div>
               <div className="outline p-5 outline-gray-400 rounded-lg mt-7  ">
                 <div className="flex justify-between">
                   <h3 className="flex gap-4">
-                    <img src={airplane.src} alt="" />
+                    <Image src={airplane} alt="" />
                     پرواز استانبول به دبی
                   </h3>
                   <div className=" text-blue-500  flex justify-center items-center gap-1 py-[2px] px-2 h-6 border rounded-md">
@@ -90,7 +91,7 @@ export const Payment = () => {
                     <div onClick={toggleDetails}>
                       <Buttons className={'border-none'}>
                         جزئیات سفر
-                        <img src={arrowdown} alt="" />
+                        <Image src={arrowdown} alt="" />
                       </Buttons>
                     </div>
                   )}
@@ -100,7 +101,7 @@ export const Payment = () => {
                     <div className="flex flex-col">
                       <div className="flex mt-9">
                         <div className="pb-5 gap-6 w-[575px] flex items-center ">
-                          <img src={omanAir.src} />
+                          <Image src={omanAir} />
                           <div>
                             <div className="pl-8 gap-2 flex flex-col items-center">
                               <p>02:50</p>
@@ -110,17 +111,17 @@ export const Payment = () => {
                           <div className="flex items-center justify-center">
                             <div className="gap-6 flex flex-col">
                               <div className="gap-[2px] flex items-center justify-center">
-                                <img src={iconetimer.src} />
+                                <Image src={iconetimer} />
                                 <p className="text-gray-500 ">19:00</p>
                               </div>
                               <div className="relative flex items-center justify-center ">
-                                <img className="z-20" src={iconeairplan} />
+                                <Image className="z-20" src={iconeairplan} />
                                 <span className="absolute w-[142px] h-[1px] fill-none z-10">
-                                  <img src={line.src} />
+                                  <Image src={line} />
                                 </span>
                               </div>
                               <div className="gap-[2px] flex items-center justify-center">
-                                <img src={iconbag.src} />
+                                <Image src={iconbag} />
                                 <p className="text-gray-500">20Kg</p>
                               </div>
                             </div>
@@ -157,7 +158,7 @@ export const Payment = () => {
                       <div onClick={toggleDetails} className="flex justify-end">
                         <Buttons className={'border-none'}>
                           بستن
-                          <img src={arrowdown} alt="" />
+                          <Image src={arrowdown} alt="" />
                         </Buttons>
                       </div>
                     </div>
@@ -171,9 +172,9 @@ export const Payment = () => {
               <Buttons variant="fill" onClick={downloadPDF} loading={loading}>
                 دانلود بیلیط
               </Buttons>
-              <Link to={'/'}>
+              <Link href='/'>
                 <Buttons>
-                  <img src={backHome.src} alt="" />
+                  <Image src={backHome} alt="" />
                   بازگشت به صفحه اصلی
                 </Buttons>
               </Link>
@@ -184,14 +185,14 @@ export const Payment = () => {
             <div className="flex flex-col">
               <div className="flex flex-col justify-center items-center">
                 <div className="w-3/4 bg-red-10 h-7 flex justify-center items-center py-8 gap-4 text-red-20 rounded-lg">
-                  <img src={noPayment.src} alt="" className="animate-pulse" />
+                  <Image src={noPayment} alt="" className="animate-pulse" />
                   پرداخت شما با موفقیت به خطا خورد.
                 </div>
               </div>
               <div className="outline p-5 outline-gray-400 rounded-lg mt-7  ">
                 <div className="flex justify-between">
                   <h3 className="flex gap-4">
-                    <img src={airplane} alt="" />
+                    <Image src={airplane} alt="" />
                     پرواز استانبول به دبی
                   </h3>
                   <div className=" text-blue-500  flex justify-center items-center gap-1 py-[2px] px-2 h-6 border rounded-md">
@@ -220,7 +221,7 @@ export const Payment = () => {
                     <div onClick={toggleDetails}>
                       <Buttons className={'border-none'}>
                         جزئیات سفر
-                        <img src={arrowdown} alt="" />
+                        <Image src={arrowdown} alt="" />
                       </Buttons>
                     </div>
                   )}
@@ -230,7 +231,7 @@ export const Payment = () => {
                     <div className="flex flex-col">
                       <div className="flex mt-9">
                         <div className="pb-5 gap-6 w-[575px] flex items-center ">
-                          <img src={omanAir.src} />
+                          <Image src={omanAir} />
                           <div>
                             <div className="pl-8 gap-2 flex flex-col items-center">
                               <p>02:50</p>
@@ -240,17 +241,17 @@ export const Payment = () => {
                           <div className="flex items-center justify-center">
                             <div className="gap-6 flex flex-col">
                               <div className="gap-[2px] flex items-center justify-center">
-                                <img src={iconetimer.src} />
+                                <Image src={iconetimer} />
                                 <p className="text-gray-500 ">19:00</p>
                               </div>
                               <div className="relative flex items-center justify-center ">
-                                <img className="z-20" src={iconeairplan} />
+                                <Image className="z-20" src={iconeairplan} />
                                 <span className="absolute w-[142px] h-[1px] fill-none z-10">
-                                  <img src={line.src} />
+                                  <Image src={line} />
                                 </span>
                               </div>
                               <div className="gap-[2px] flex items-center justify-center">
-                                <img src={iconbag.src} />
+                                <Image src={iconbag} />
                                 <p className="text-gray-500">20Kg</p>
                               </div>
                             </div>
@@ -287,7 +288,7 @@ export const Payment = () => {
                       <div onClick={toggleDetails} className="flex justify-end">
                         <Buttons className={'border-none'}>
                           بستن
-                          <img src={arrowUp.src} alt="" />
+                          <Image src={arrowUp} alt="" />
                         </Buttons>
                       </div>
                     </div>
@@ -307,9 +308,9 @@ export const Payment = () => {
             </div>
             </div>
             <div className="flex justify-center mt-9 gap-8">
-              <Link to={'/form/confirm-buy'}>
+              <Link href='/form/confirm-buy'>
                 <Buttons variant="fill" size="xxls">
-                  <img src={wallet.src} alt="" />
+                  <Image src={wallet} alt="" />
                   پرداخت مجدد
                 </Buttons>
               </Link>
@@ -317,7 +318,7 @@ export const Payment = () => {
           </div>
         )}
         <Buttons onClick={hanldTest} variant="fill">
-          <img src={wallet.src} alt="" />
+          <Image src={wallet} alt="" />
         </Buttons>
       </div>
     </div>

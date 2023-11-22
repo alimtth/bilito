@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react'
 import support from '@/assets/Images/customersupport.png' 
 import Link from 'next/link'
 import { memo } from 'react'
+import Image from 'next/image'
 // eslint-disable-next-line react/prop-types
 function BubbleTip({className}) {
   const [isShow, setIsShow] = useState(true)
@@ -30,7 +31,7 @@ function BubbleTip({className}) {
             <span className={'text-blue-500'}>
               فکر کنم بتونم کمکت کنم همراه من باش!!!
             </span>
-            <img className={'w-1/2'} src={support.src} />
+            <Image className={'w-1/2'} src={support} />
           </div>
 
           <div className="flex gap-8">

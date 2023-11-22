@@ -6,6 +6,7 @@ import iconeairplan from '@/assets/Images/Icons/airplaneblue.svg'
 import line from '@/assets/Images/Icons/Line.svg'
 import FormList from '@/pages/PageFormList/FormList'
 import Link from 'next/link'
+import Image from 'next/image'
 
 // eslint-disable-next-line react/prop-types
 export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
@@ -31,7 +32,7 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
               <ul onClick={() => handleTapClick(2)}>قوانین ویزا و مسیر</ul>
               <ul onClick={() => handleTapClick(3)}>بار مجاز</ul>
               <div className="flex justify-end">
-                <img src={close} alt="" onClick={() => setIsShow(false)} />
+                <Image src={close} alt="" onClick={() => setIsShow(false)} />
               </div>
               {console.log(activeTab)}
             </div>
@@ -42,7 +43,7 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
                 <div className="flex flex-col">
                   <div className="flex justify-between items-center">
                     <h3 className="flex justify-center ">
-                      <img src={imagess} alt="" className="w-7" />
+                      <Image src={imagess} alt="" className="w-7" />
                       gulf air
                     </h3>
                     <p>مجموعا 19:00 ساعت</p>
@@ -72,9 +73,9 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
                   </div>
                   <div className="flex items-center">
                     <div className=" flex items-center justify-center rotate-90 mt-20">
-                      <img className="z-10" src={iconeairplan} />
+                      <Image className="z-10" src={iconeairplan} />
                       <span className="absolute w-[142px] h-[1px] ">
-                        <img src={line} />
+                        <Image src={line} />
                       </span>
                     </div>
                     <div className="bg-zard-100 w-[280px] py-2 px-2 rounded-lg">
@@ -97,9 +98,9 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
                   </div>
                   <div className="flex">
                     <div className=" flex items-center justify-center rotate-90 mt-20">
-                      <img className="z-10" src={iconeairplan} />
+                      <Image className="z-10" src={iconeairplan} />
                       <span className="absolute w-[142px] h-[1px] ">
-                        <img src={line} />
+                        <Image src={line} />
                       </span>
                     </div>
                   </div>

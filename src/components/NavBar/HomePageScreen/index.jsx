@@ -2,14 +2,16 @@ import titlePic2 from '@/assets/Images/titelePic2.png'
 import Fade from 'react-reveal/Fade'
 import Typed from 'react-typed'
 import airr from '@/assets/gif/airplane-joypixels.gif'
+import Image from 'next/image'
 
 function HomePageScreen() {
   return (
     <div>
       <div className="flex flex-col relative w-full">
-        <img alt={'airplane'} src={titlePic2.src} className="w-full rounded-xl" />
-        <img
-          src={airr.src}
+        <Image
+         alt={'airplane'} src={titlePic2} className="w-full rounded-xl" />
+        <Image
+          src={airr}
           alt=""
           className="w-40 absolute rotate-45 left-10 hidden md:block"
         />

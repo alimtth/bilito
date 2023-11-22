@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import PageScreenAbout from '@/assets/Images/about-us.png'
 import InputTextField from '@/components/Ui/InputTextField'
 import Buttons from '@/components/Ui/Button'
+import Image from 'next/image'
 function About() {
   const [select, setSelect] = useState(false)
 
@@ -11,7 +12,7 @@ function About() {
   }
   return (
     <div className='px-7'>
-      <img src={PageScreenAbout} alt="" className="w-full  rounded-xl " />
+      <Image src={PageScreenAbout} alt="" className="w-full  rounded-xl " />
       <div id="container">
         <div className="flex justify-start gap-6 mt-12">
           <h2 className="text-blue-650 cursor-pointer">درباره ما</h2>

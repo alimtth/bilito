@@ -12,6 +12,7 @@ import bilitoIconsss from '@/assets/Images/Icons/AirplaneSelected.svg'
 import {apiRegisterUser} from '@/api/user'
 import {useRouter} from 'next/router'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const schema = yup.object().shape({
   username: yup.string().required('فیلد نام کاربری اجباری است'),
@@ -68,7 +69,7 @@ function Register() {
         <div className="w-[600px] fixed z-20 mt-[100px] opacity-75">
           <div className="bg-white p-2 rounded-[8px]">
             <div className="flex flex-col items-center">
-              <img
+              <Image
                 src={bilitoIcon}
                 alt=""
                 className="w-[96px] flex justify-center mt-8"
@@ -164,7 +165,7 @@ function Register() {
             </div>
           </div>
         </div>
-        <img
+        <Image
           src={bilitoIconsss}
           alt=""
           className="lg:w-96 z-10	 blur-md relative -right-[700px] rotate-12 animate-pulse inline-block transition-transform duration-75"

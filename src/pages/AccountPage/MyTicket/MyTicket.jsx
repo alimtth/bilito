@@ -5,6 +5,7 @@ import arrowdown from '@/assets/Images/Icons/arrow-down.svg'
 import calendar from '@/assets/Images/Icons/calendar.svg'
 import like from '@/assets/Images/Icons/like.png'
 import dislike from '@/assets/Images/Icons/dislike.png'
+import Image from 'next/image'
 function MyTicket() {
   return (
     <>
@@ -13,29 +14,29 @@ function MyTicket() {
           <h3 className="font-bold"> تیکت‌های من</h3>
           <Buttons variant="grayBTN">
             مرتب سازی
-            <img src={arrowdown} alt="" />
+            <Image src={arrowdown} alt="" />
           </Buttons>
         </div>
         <div className="outline p-5 outline-gray-400 rounded-lg mt-7  ">
           <div className="flex justify-between">
             <p className="text-gray-500 flex gap-2">
-              <img src={calendar} alt="" />
+              <Image src={calendar} alt="" />
               ۱۴:۵۳ - ۱۴۰۲/۶/۰۷
             </p>
-            <img src={deletesss} alt="" />
+            <Image src={deletesss} alt="" />
           </div>
           <h2 className="text-gray-500 mt-3">
             چگونه می‌توانم از سایت شما بلیط اوکراین را رزرو کنم؟
           </h2>
           <div className="flex justify-between mt-5">
             <p className="flex gap-3">
-              <img src={undo} alt="" />
+              <Image src={undo} alt="" />
               با سلام و وقت بخیر. لطفا به قسمت راهنمای تهیه بلیط در بخش هدر
               مراجعه نمایید.
             </p>
             <div className="flex justify-center items-center gap-2">
-              <img src={dislike} alt="" />
-              <img src={like} alt="" />
+              <Image src={dislike} alt="" />
+              <Image src={like} alt="" />
             </div>
           </div>
         </div>

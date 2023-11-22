@@ -12,6 +12,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
+import Image from 'next/image'
 
 
 function HomePageComponenets() {
@@ -21,8 +22,8 @@ function HomePageComponenets() {
         <div className="grid grid-cols-3 w-full gap-4 ">
           <div className={ "relative w-full"}>
             <div style={{ paddingBottom: "100%" }} />
-            <img
-              src={kish.src}
+            <Image
+              src={kish}
               className="absolute top-0 left-0 h-full object-cover rounded-lg  "
             />
 
@@ -37,8 +38,8 @@ function HomePageComponenets() {
           </div>
           <div className={"relative w-full"}>
             <div style={{ paddingBottom: "100%" }} />
-            <img
-              src={turkey.src}
+            <Image
+              src={turkey}
               className="absolute top-0 left-0 w-full h-full object-cover rounded-lg"
             />
             <div className="absolute bottom-0 z-10">
@@ -55,8 +56,8 @@ function HomePageComponenets() {
 
             <div className={"relative w-full"}>
               <div style={{ paddingBottom: "50%" }} />
-              <img
-                src={shiraz.src}
+              <Image
+                src={shiraz}
                 className="absolute top-0 left-0 w-full h-full object-cover rounded-lg bg-gradient-to-l from-blue-950"
               />
               <div className="absolute bottom-0 z-10">
@@ -71,8 +72,8 @@ function HomePageComponenets() {
             </div>
             <div className={"relative w-full"}>
               <div style={{ paddingBottom: "50%" }} />
-              <img
-                src={dubai.src}
+              <Image
+                src={dubai}
                 className="absolute top-0 left-0 w-full h-full object-cover rounded-lg"
               />
               <div className="absolute bottom-0 z-10">
@@ -131,8 +132,8 @@ function HomePageComponenets() {
             <div className="relative w-full">
               <div className={ styles.box2 }>
                 <div style={{ paddingBottom: '55%' }} />
-                <img
-                  src={kish.src}
+                <Image
+                  src={kish}
                   alt="Photo of kish island"
                   className="absolute top-0 left-0 h-auto rounded-lg object-cover"
                 />
@@ -152,8 +153,8 @@ function HomePageComponenets() {
             <div className="relative w-full ">
               <div className={ styles.box2 }>
                 <div style={{ paddingBottom: '55%' }} />
-                <img
-                  src={shiraz.src}
+                <Image
+                  src={shiraz}
                   alt="Photo of takht jamshid shiraz"
                   className="absolute top-0 left-0 h-auto rounded-lg object-cover "
                 />
@@ -173,8 +174,8 @@ function HomePageComponenets() {
             <div className="relative w-full ">
               <div className={ styles.box2 }>
                 <div style={{ paddingBottom: '55%' }} />
-                <img
-                  src={dubai.src}
+                <Image
+                  src={dubai}
                   alt="Photo of city dubai"
                   className="absolute top-0 left-0 h-auto rounded-lg object-cover "
                 />
@@ -194,8 +195,8 @@ function HomePageComponenets() {
             <div className="relative w-full ">
               <div className={ styles.box2 }>
                 <div style={{ paddingBottom: '55%' }} />
-                <img
-                  src={turkey.src}
+                <Image
+                  src={turkey}
                   alt="Photo of City turkiye"
                   className="absolute top-0 left-0 w-full h-auto rounded-lg object-cover "
                 />

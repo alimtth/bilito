@@ -15,6 +15,7 @@ import userIconLog from '@/assets/Images/Icons/UserIconLog.svg'
 import CallIcon from '@/assets/Images/Icons/CallIcon.svg'
 import styles from '../style.module.css'
 import Link from 'next/link'
+import Image from 'next/image'
 function HeaderTabs() {
   const [showMenu, setShowMenu] = useState(false)
   const [isHeaderSticky, setIsHeaderSticky] = useState(false)
@@ -57,7 +58,7 @@ function HeaderTabs() {
           id="container"
         >
           <div className="flex justify-between flex-row-reverse lg:flex-row gap-16">
-            <img src={bilitoIcon.src} />
+            <Image src={bilitoIcon} />
             <div className="flex justify-between gap-16">
               <ul className="lg:flex justify-between items-center gap-8 text-sm hidden">
                 <Link href="/">
@@ -72,7 +73,7 @@ function HeaderTabs() {
                 </Link>
                 <li className={styles.dropdown + 'cursor-pointer'}>
                   <button className={styles.dropButton}>سایر موارد</button>
-                  <img src={arrowDown.src} className="" />
+                  <Image src={arrowDown} className="" />
                   <div className={styles.dropdown_content}>
                     <Link href="/insurance">بیمه مسافرتی</Link>
                     <Link href="/about"> درباره ما</Link>
@@ -103,7 +104,7 @@ function HeaderTabs() {
           >
             <div className="flex flex-col h-full">
               <div className="flex justify-end gap-32">
-                <img className="w-14 h-auto" src={bilitoIcon.src} />
+                <Image className="w-14 h-auto" src={bilitoIcon} />
                 <Close
                   style={{
                     cursor: 'pointer',
@@ -146,7 +147,7 @@ function HeaderTabs() {
                 <div className="flex justify-center gap-3 py-4 text-gray-20 font-light">
                   <Link href="/login">
                     <Button variant="fill" onClick={handleToggle}>
-                      <img src={userIconLog.src} />
+                      <Image src={userIconLog} />
                       <div> ورود/ ثبت نام</div>
                     </Button>
                   </Link>
@@ -159,7 +160,7 @@ function HeaderTabs() {
             <div className="inline-flex items-center gap-2 opacity-80">
               <p className="">4045_021</p>
               <p>پشتیبانی</p>
-              <img src={CallIcon.src} />
+              <Image src={CallIcon} />
             </div>
             {isLoggedIn ? (
               <div className="flex justify-center items-center gap-4">
@@ -169,8 +170,8 @@ function HeaderTabs() {
                   </div>
                 ) : (
                   <div>
-                    <img
-                      src={currentUser?.avatar.src}
+                    <Image
+                      src={currentUser?.avatar}
                       className="w-10 h-10 rounded-full z-50"
                       onClick={handlHoverd}
                     />
@@ -197,7 +198,7 @@ function HeaderTabs() {
             ) : (
               <Link href="/login">
                 <Button variant="fill">
-                  <img src={userIconLog.src} />
+                  <Image src={userIconLog} />
                   <div> ورود/ ثبت نام</div>
                 </Button>
               </Link>

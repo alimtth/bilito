@@ -3,6 +3,7 @@ import keshti from '@/assets/Images/pictureHaram.svg'
 import haram from '@/assets/Images/pictureKeshti.svg'
 import milad from '@/assets/Images/pictureMilad.svg'
 import airplane from '@/assets/Images/Icons/airplane.svg'
+import Image from 'next/image'
 
 function Popular() {
   return (
@@ -25,11 +26,11 @@ function Popular() {
       <div className="pt-8 gap-6 flex items-start justify-center lg:justify-start flex-wrap">
         <div>
           <div className=" flex">
-            <img src={azadi.src} alt="Photo of Square Azadi" />
+            <Image src={azadi} alt="Photo of Square Azadi" />
             <div className="flex flex-col justify-center items-end flex-2 border-gray-400 border-l border-b border-t rounded-l ">
               <div className="py-2 px-4 gap-2 flex justify-center items-center self-stretch ">
                 <p>شیراز</p>
-                <img src={airplane.src} alt="" />
+                <Image src={airplane} alt="" />
                 <p className="text-blue-500">تهران</p>
               </div>
 
@@ -46,11 +47,11 @@ function Popular() {
 
         <div>
           <div className=" flex shrink-0">
-            <img src={haram.src} alt="Ship photo" />
+            <Image src={haram} alt="Ship photo" />
             <div className="flex flex-col justify-center items-end flex-2 border-gray-400 border-l border-b border-t rounded-l ">
               <div className="py-2 px-4 gap-2 flex justify-center items-center self-stretch ">
                 <p className="text-blue-500">تهران</p>
-                <img src={airplane.src} alt="" />
+                <Image src={airplane} alt="" />
                 <p>کیش</p>
               </div>
 
@@ -67,11 +68,11 @@ function Popular() {
 
         <div>
           <div className=" flex shrink-0">
-            <img src={keshti.src} alt="Photo of mashhad shine" />
+            <Image src={keshti} alt="Photo of mashhad shine" />
             <div className="flex flex-col justify-center items-end flex-2 border-gray-400 border-l border-b border-t rounded-l ">
               <div className="py-2 px-4 gap-2 flex justify-center items-center self-stretch ">
                 <p className="text-blue-500">تهران</p>
-                <img src={airplane.src} alt="" />
+                <Image src={airplane} alt="" />
                 <p>مشهد</p>
               </div>
 
@@ -88,11 +89,11 @@ function Popular() {
 
         <div>
           <div className="flex shrink-0 rounded overflow-hidden">
-            <img src={milad.src} alt="Photo of milad tower in tehran" />
+            <Image src={milad} alt="Photo of milad tower in tehran" />
             <div className="flex flex-col justify-center items-end flex-2 border-gray-400 border-l border-b border-t rounded-l ">
               <div className="py-2 px-4 gap-2 flex justify-center items-center self-stretch ">
                 <p>مشهد</p>
-                <img src={airplane.src} alt="" />
+                <Image src={airplane} alt="" />
                 <p className="text-blue-500">تهران</p>
               </div>
 

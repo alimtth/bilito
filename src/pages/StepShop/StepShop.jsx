@@ -2,6 +2,7 @@
 import React from 'react'
 import stepper from '@/assets/Images/Icons/levels.png'
 import {Search} from '@mui/icons-material'
+import Image from 'next/image'
 
 // eslint-disable-next-line no-unused-vars
 function StepShop(props) {
@@ -11,7 +12,7 @@ function StepShop(props) {
         مراحل خرید آنلاین بلیط هواپیما
       </h3>
       <div className="flex">
-        <img src={stepper.src} alt="" className="p-8" />
+        <Image src={stepper} alt="" className="p-8" />
         <div className="mt-9 max-w-xl lg:max-w-max lg:mr-7">
           <h3>
             <Search /> جستجوی بلیط{' '}

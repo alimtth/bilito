@@ -3,7 +3,7 @@ import React from 'react'
 import iconUser from '@/assets/Images/Icons/iconUser.svg'
 import InputTextField from '@/components/Ui/InputTextField'
 import Buttons from '@/components/Ui/Button'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 const dataForm = [
   {
@@ -32,7 +32,7 @@ export const ConfirmBuy = () => {
       <div className="flex flex-col gap-10">
         <div className="flex flex-col gap-8 ">
           <div className="flex items-center gap-5">
-            <img src={iconUser} alt="" />
+            <Image src={iconUser} alt="" />
             <h3 className="flex flex-col justify-center">
               <p className="font-bold">Mr.Ali Motahari</p>
               <p className="text-gray-450">آقای علی مطهری</p>
@@ -47,7 +47,7 @@ export const ConfirmBuy = () => {
         </div>
         <div className="flex flex-col gap-8 ">
           <div className="flex items-center gap-5">
-            <img src={iconUser} alt="" />
+            <Image src={iconUser} alt="" />
             <h3 className="flex flex-col justify-center">
               <p className="font-bold">Mrs.zahra Amiri</p>
               <p className="text-gray-450">خانم زهرا امیری</p>
@@ -62,7 +62,7 @@ export const ConfirmBuy = () => {
         </div>
         <div className="flex flex-col gap-8 ">
           <div className="flex items-center gap-5">
-            <img src={iconUser} alt="" />
+            <Image src={iconUser} alt="" />
             <h3 className="flex flex-col justify-center">
               <p className="font-bold">Mr.Mamad Hossein</p>
               <p className="text-gray-450">آقای محمد حسین فلان</p>
@@ -92,12 +92,12 @@ export const ConfirmBuy = () => {
           <p className="text-gray-500">استفاده از موجودی کیف پول</p>
         </div>
         <div className="flex mt-6 justify-between items-center">
-            <Link to={"/form/data-form"}>
+            <Link href="/form/data-form">
           <Buttons className={"outline-none border-none"}>بازگشت به مرحله قبل</Buttons>
             </Link>
 
             <h3 className='flex gap-8 items-center text-blue-500'>مجموع پرداختی شما 11٬470٬1543 تومان
-            <Link to={"/payment"}>
+            <Link href="/payment">
                 <Buttons  variant='fill' size='lg'>پرداخت</Buttons>
             </Link>
             </h3>

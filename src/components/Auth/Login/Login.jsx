@@ -13,6 +13,7 @@ import Buttons from '@/components/Ui/Button'
 import { Alert, AlertTitle } from '@mui/material'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 
 const schema = yup.object().shape({
   username: yup.string().required('فیلد نام کاربری اجباری است'),
@@ -60,7 +61,7 @@ function Login() {
         <div className="w-[600px] opacity-75">
           <div className="bg-white p-2 rounded-[8px]">
             <div className="flex flex-col items-center">
-              <img
+              <Image
                 src={bilitoIcon}
                 alt=""
                 className="w-[96px] flex justify-center mt-8"
@@ -144,7 +145,7 @@ function Login() {
           </div>
         </div>
       </div>
-      <img
+      <Image
         src={bilitoIconsss}
         alt=""
         className="lg:w-96 z-10	 blur-md relative right-[1290px] rotate-12 animate-pulse inline-block"

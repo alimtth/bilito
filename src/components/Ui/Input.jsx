@@ -8,13 +8,11 @@ function Input({size = 'lg', placeholder}) {
   }
   return (
     <div className="rounded border border-gray-100 shrink hover:shadow-xl hover:transition-shadow focus:border-blue-400">
-      {/* <img src={tickSquareButton} /> */}
       <input
         type="text"
         placeholder={`${placeholder}`}
         className={`py-4 focus:outline-none text-right h-full flex-grow placeholder-gray-450 ${sizes[size]}`}
       />
-      {/* <img src={tickSquareButton} /> */}
     </div>
   )
 }

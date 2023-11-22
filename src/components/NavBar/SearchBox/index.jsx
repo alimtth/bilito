@@ -65,11 +65,7 @@ function SearchBox() {
                     }`}
                 >
                   <img
-                    src={`${internationalFlights
-                        ? AirplanSelected
-                        : AirplanNotSelected
-                      }`}
-                    className="md:block w-full h-full object-cover hidden"
+                    src={`${internationalFlights.src ? AirplanSelected.src : AirplanNotSelected.src}`}className="md:block w-full h-full object-cover hidden"
                   />
                   پروازخارجی
                 </li>
@@ -81,10 +77,7 @@ function SearchBox() {
                     }`}
                 >
                   <img
-                    src={`${internationalFlights
-                        ? AirplanNotSelected
-                        : AirplanSelected
-                      }`}
+                    src={`${internationalFlights.src ? AirplanNotSelected.src : AirplanSelected.src }`}
                     className="md:block w-full h-full object-cover hidden"
                   />
                   <span className={'basis-full'}>پروازداخلی</span>
@@ -163,7 +156,7 @@ function SearchBox() {
                 className={' sm:px-56 lg:px-3'}
                 type="submit"
               >
-                <img src={searchIcon} />
+                <img src={searchIcon.src} />
                 جستجو
               </Button>
             </form>
