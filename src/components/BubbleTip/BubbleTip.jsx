@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, {memo, useEffect, useState} from 'react'
-import user from '@/assets/Images/stewardess.jpg'
+import customer from '@/assets/Images/Icons/customer-support.png'
 import {Link} from 'react-router-dom'
 // eslint-disable-next-line react/prop-types
 function BubbleTip({className}) {
@@ -8,7 +8,7 @@ function BubbleTip({className}) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollThreshold = 100
+      const scrollThreshold = 10
       const shouldHide = window.scrollY > scrollThreshold
       setIsShow(!shouldHide)
     }
@@ -29,7 +29,8 @@ function BubbleTip({className}) {
             <span className={'text-blue-500'}>
               فکر کنم بتونم کمکت کنم همراه من باش!!!
             </span>
-            <img className={'w-1/2'} src={user} />
+            <img className={'w-1/2'} src={customer} />
+            <img src={customer} alt="" />
           </div>
 
           <div className="flex gap-8">
