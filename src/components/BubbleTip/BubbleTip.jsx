@@ -1,6 +1,8 @@
+// eslint-disable-next-line no-unused-vars
 import React, {memo, useState} from 'react';
 import user from '@/assets/Images/stewardess.jpg'
 import {Link} from "react-router-dom";
+// eslint-disable-next-line react/prop-types
 function BubbleTip({className}) {
     const [isShow , setIsShow]= useState(true)
     return (
@@ -27,4 +29,5 @@ function BubbleTip({className}) {
             );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export default memo(BubbleTip);
