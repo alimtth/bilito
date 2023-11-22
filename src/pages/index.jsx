@@ -5,28 +5,26 @@ import SearchBox from '@/components/NavBar/SearchBox/index'
 import HomePageComponents from '@/components/HomePagePictures/HomePageComponenets'
 import HomePageScreen from '@/components/NavBar/HomePageScreen'
 
-import {useEffect, useState} from "react";
-import BubbleTip from "@/components/BubbleTip/BubbleTip.jsx";
-
+import {useEffect, useState} from 'react'
+import BubbleTip from '@/components/BubbleTip/BubbleTip.jsx'
+import BaseLayout from '@/layouts/index.jsx'
 
 function HomePage() {
-    const [show,setShow]=useState(false)
-    const handle = () => {
-        setTimeout(()=>{
-            setShow(true)
-        },4000)
-
-
-    }
-    useEffect(() => {
-        handle()
-    }, [])
-            return (
+  const [show, setShow] = useState(false)
+  const handle = () => {
+    setTimeout(() => {
+      setShow(true)
+    }, 4000)
+  }
+  useEffect(() => {
+    handle()
+  }, [])
+  return (
     <div className="flex items-center flex-col w-full">
       <HomePageScreen />
       <SearchBox />
       <HomePageComponents />
-      <BubbleTip className={show}/>
+      <BubbleTip className={show} />
       <Popular />
       <CustomizedAccordions />
       <Advantages />
@@ -34,4 +32,7 @@ function HomePage() {
   )
 }
 
+HomePage.Layout = function Layout({children}) {
+  return <BaseLayout>{children}</BaseLayout>
+}
 export default HomePage

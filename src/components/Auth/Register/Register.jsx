@@ -2,7 +2,6 @@
 import React, {useState} from 'react'
 import InputTextField from '@/components/Ui/InputTextField'
 import {Alert, AlertTitle} from '@mui/material'
-import {Link, useNavigate} from 'react-router-dom'
 import bilitoIcon from '@/assets/Images/Icons/BilitoIcone.png'
 import {useForm} from 'react-hook-form'
 import * as yup from 'yup'
@@ -11,6 +10,8 @@ import Buttons from '@/components/Ui/Button'
 import {useAuthContext} from '@/providers/AuthProvider'
 import bilitoIconsss from '@/assets/Images/Icons/AirplaneSelected.svg'
 import {apiRegisterUser} from '@/api/user'
+import {useRouter} from 'next/router'
+import Link from 'next/link'
 
 const schema = yup.object().shape({
   username: yup.string().required('فیلد نام کاربری اجباری است'),
@@ -32,7 +33,7 @@ function Register() {
   const [error, setError] = useState(null)
   const [errMsg, setErrMsg] = useState('')
 
-  const navigate = useNavigate()
+  const router = useRouter()
 
   const {saveAccess} = useAuthContext()
 
@@ -50,7 +51,7 @@ function Register() {
       const result = await apiRegisterUser(data)
 
       saveAccess(result.data.token.accessToken)
-      navigate('/')
+      router.push('/')
 
       console.log(result)
     } catch (err) {
@@ -109,7 +110,7 @@ function Register() {
                 </InputTextField>
                 {errors.password && (
                   <p className="text-red-500 text-sm mt-1">
-                     {errors.password?.message}
+                    {errors.password?.message}
                   </p>
                 )}
                 <br />
@@ -138,7 +139,7 @@ function Register() {
                     />
                     <h4>
                       با ورود و ثبت‌نام در سایت، با{' '}
-                      <Link className="text-blue-650" to={'#'}>
+                      <Link className="text-blue-650" href={'#'}>
                         قوانین بیلیتو
                       </Link>{' '}
                       موافقت می‌کنم.
@@ -155,7 +156,7 @@ function Register() {
                   >
                     ثبت نام
                   </Buttons>
-                  <Link to={'/login '} className="flex justify-center mb-1">
+                  <Link href={'/auth/login '} className="flex justify-center mb-1">
                     <Buttons> ورود</Buttons>
                   </Link>
                 </div>

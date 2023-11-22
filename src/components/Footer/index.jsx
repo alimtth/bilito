@@ -63,14 +63,14 @@ function Footer() {
                                 <div className={'line w-full lg:w-2/6'}></div>
                             </div>
                             <div className="flex flex-col justify-center gap-[8px] self-stretch">
-                                <Link to={'about'}>
+                                <Link href={'about'}>
                                     <span className="text-gray-500">درباره ما</span>
                                 </Link>
-                                <Link to={'about'}>
+                                <Link href={'about'}>
                                     <span className="text-gray-500">تماس با ما</span>
                                 </Link>
                                 <span className="text-gray-500">استرداد بلیط</span>
-                                <Link to={'/stepshop'}>
+                                <Link href={'/stepshop'}>
                                     <span className="text-gray-500">راهنمای خرید بلیط</span>
                                 </Link>
                                 <span className="text-gray-500">قوانین و مقررات</span>

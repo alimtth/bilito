@@ -1,4 +1,5 @@
 // eslint-disable-next-line no-unused-vars
+import cx from 'clsx'
 import React, {useState, useEffect} from 'react'
 import {RiMenu3Line} from 'react-icons/ri'
 import {AiOutlineHome} from 'react-icons/ai'
@@ -59,23 +60,23 @@ function HeaderTabs() {
             <img src={bilitoIcon.src} />
             <div className="flex justify-between gap-16">
               <ul className="lg:flex justify-between items-center gap-8 text-sm hidden">
-                <Link href='/'>
+                <Link href="/">
                   <li className="cursor-pointer hover:text-blue-500 hover:rotate-2 hover:animate-pulse">
                     صفحه اصلی
                   </li>
                 </Link>
-                <Link href='/account/my-travels'>
+                <Link href="/account/my-travels">
                   <li className="cursor-pointer hover:text-blue-500 hover:rotate-2 hover:animate-pulse">
                     سفرهای من
                   </li>
                 </Link>
-                <li className={styles.dropdown + "cursor-pointer"}>
+                <li className={styles.dropdown + 'cursor-pointer'}>
                   <button className={styles.dropButton}>سایر موارد</button>
                   <img src={arrowDown.src} className="" />
                   <div className={styles.dropdown_content}>
-                    <Link href='/insurance'>بیمه مسافرتی</Link>
-                    <Link href='/about'> درباره ما</Link>
-                    <Link href='/about '> تماس با ما</Link>
+                    <Link href="/insurance">بیمه مسافرتی</Link>
+                    <Link href="/about"> درباره ما</Link>
+                    <Link href="/about "> تماس با ما</Link>
                   </div>
                 </li>
               </ul>
@@ -96,7 +97,9 @@ function HeaderTabs() {
           />
 
           <div
-            className={ styles.sidebar + `shadow-2xl border rounded p-5 ${ showMenu ? styles.open : ''}`}
+            className={cx('shadow-2xl border rounded p-5', styles.sidebar, {
+              [styles.open]: showMenu,
+            })}
           >
             <div className="flex flex-col h-full">
               <div className="flex justify-end gap-32">
@@ -114,7 +117,7 @@ function HeaderTabs() {
                   close
                 </Close>
               </div>
-              <div className={ styles.line }></div>
+              <div className={styles.line}></div>
               <div className="flex flex-col py-12">
                 <div className="flex justify-start gap-3 py-4 text-gray-20 font-light">
                   <AiOutlineHome />
@@ -134,14 +137,14 @@ function HeaderTabs() {
                 </div>
                 <div className="flex justify-start gap-3 py-4 text-gray-20 font-light">
                   <BiUser />
-                  <Link href='account'>حساب کاربری</Link>
+                  <Link href="account">حساب کاربری</Link>
                 </div>
                 <div className="flex justify-start gap-3 py-4 text-gray-20 font-light">
                   4045_021 پشتیبانی
                   <BsTelephone />
                 </div>
                 <div className="flex justify-center gap-3 py-4 text-gray-20 font-light">
-                  <Link href='/login'>
+                  <Link href="/login">
                     <Button variant="fill" onClick={handleToggle}>
                       <img src={userIconLog.src} />
                       <div> ورود/ ثبت نام</div>
@@ -177,7 +180,7 @@ function HeaderTabs() {
                           'p-[20px] bg-white  -mr-10 rounded-lg flex flex-col items-center justify-center absolute top-[25px] gap-[20px] w-100 z-30 shadow-lg mt-7'
                         }
                       >
-                        <Link href='/account/data-user'>
+                        <Link href="/account/data-user">
                           <div className="nested-item text-[13px] text-[#080808BF] opacity-75">
                             حساب کاربری
                           </div>
@@ -192,7 +195,7 @@ function HeaderTabs() {
                 />
               </div>
             ) : (
-              <Link href='/login'>
+              <Link href="/login">
                 <Button variant="fill">
                   <img src={userIconLog.src} />
                   <div> ورود/ ثبت نام</div>

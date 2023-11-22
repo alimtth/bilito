@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-unused-vars
 import bilitoIcon from '@/assets/Images/Icons/BilitoIcone.png'
-import {useNavigate} from 'react-router-dom'
 import InputTextField from '@/components/Ui/InputTextField'
 import Button from '@/components/Ui/Button'
 import * as yup from 'yup'
@@ -13,6 +12,7 @@ import {useState} from 'react'
 import Buttons from '@/components/Ui/Button'
 import { Alert, AlertTitle } from '@mui/material'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const schema = yup.object().shape({
   username: yup.string().required('فیلد نام کاربری اجباری است'),
@@ -25,9 +25,9 @@ function Login() {
     formState: {errors},
   } = useForm({resolver: yupResolver(schema)})
 
+  const router = useRouter()
   const {isLoggedIn, saveAccess} = useAuthContext()
   const [isloding, setIsloding] = useState(false)
-  const navigate = useNavigate()
   const [isButtonEnabled, setIsButtonEnabled] = useState(false)
   const [errMsg, setErrMsg] = useState('')
   const [error, setError] = useState(null)
@@ -43,7 +43,7 @@ function Login() {
       setIsloding(true)
       const res = await apiLoginUser(data)
       saveAccess(res.data.token.accessToken)
-      navigate('/')
+      router.push('/')
 
       console.log(res)
     } catch (err) {
@@ -135,7 +135,7 @@ function Login() {
                   >
                     ورود
                   </Buttons>
-                  <Link href='/register' className="flex justify-center mb-1">
+                  <Link href='/auth/register' className="flex justify-center mb-1">
                     <Button> ثبت نام</Button>
                   </Link>
                 </div>

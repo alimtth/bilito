@@ -11,9 +11,7 @@ const useAuthContext = () => {
 const AuthProvider = ({children}) => {
   const [currentUser, setCurrentUser] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
-  const [accessToken, setAccessToken] = useState(() =>
-    typeof window !== 'undefined' ? localStorage.getItem('accessToken') : null
-  )
+  const [accessToken, setAccessToken] = useState(null)
   const isLoggedIn = !!accessToken
 
   const saveAccess = (token) => {
