@@ -1,10 +1,24 @@
 // eslint-disable-next-line no-unused-vars
-import React, {memo, useState} from 'react';
+import React, {memo, useEffect, useState} from 'react';
 import user from '@/assets/Images/stewardess.jpg'
 import {Link} from "react-router-dom";
 // eslint-disable-next-line react/prop-types
 function BubbleTip({className}) {
     const [isShow , setIsShow]= useState(true)
+
+    useEffect(() => {
+        const handleScroll = () => {
+          const scrollThreshold = 100;
+          const shouldHide = window.scrollY > scrollThreshold;
+          setIsShow(!shouldHide);
+        };
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
+    
     return (
         <>
              <div className={`cloud ${className && isShow === true ? 'animated' : ''}`}>
@@ -29,5 +43,4 @@ function BubbleTip({className}) {
             );
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export default memo(BubbleTip);
