@@ -1,8 +1,8 @@
-import azadi from '../../assets/Images/pictureAzadi.svg'
-import keshti from '../../assets/Images/pictureHaram.svg'
-import haram from '../../assets/Images/pictureKeshti.svg'
-import milad from '../../assets/Images/pictureMilad.svg'
-import airplane from '../../assets/Images/Icons/airplane.svg'
+import azadi from '@/assets/Images/pictureAzadi.svg'
+import keshti from '@/assets/Images/pictureHaram.svg'
+import haram from '@/assets/Images/pictureKeshti.svg'
+import milad from '@/assets/Images/pictureMilad.svg'
+import airplane from '@/assets/Images/Icons/airplane.svg'
 
 function Popular() {
   return (

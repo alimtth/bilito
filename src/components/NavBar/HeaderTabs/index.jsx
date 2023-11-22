@@ -73,7 +73,7 @@ function HeaderTabs() {
                   <button className="dropButton">سایر موارد</button>
                   <img src={arrowDown} className="" />
                   <div className="dropdown-content">
-                    <Link to={'/insurance'}>بیمه مسافرتی</Link>
+                    <Link to={'/insurace'}>بیمه مسافرتی</Link>
                     <Link to={'/about'}> درباره ما</Link>
                     <Link to={'/about '}> تماس با ما</Link>
                   </div>
