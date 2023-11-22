@@ -16,9 +16,10 @@ import EditUser from '@/pages/AccountPage/EditUser/EditUser'
 import MyTicket from '@/pages/AccountPage/MyTicket/MyTicket'
 import MyTravels from '@/pages/AccountPage/MyTravels/MyTravels'
 import FormList from '@/pages/PageFormList/FormList'
-import { BaseLayoutsForm } from '@/pages/PageFormList/BaseLayoutsForm/BaseLayoutsForm'
-import { ConfirmBuy } from '@/pages/PageFormList/ConfirmBuy'
-import { Payment } from '@/pages/Payment/Payment'
+import {BaseLayoutsForm} from '@/pages/PageFormList/BaseLayoutsForm/BaseLayoutsForm'
+import {ConfirmBuy} from '@/pages/PageFormList/ConfirmBuy'
+import {Payment} from '@/pages/Payment/Payment'
+import Insurace from '@/pages/Insurance'
 
 const routes = [
   {
@@ -45,6 +46,10 @@ const routes = [
       {
         path: 'about',
         element: <About />,
+      },
+      {
+        path: 'insurace',
+        element: <Insurace />,
       },
     ],
   },

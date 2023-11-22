@@ -62,4 +62,43 @@ footer hr {
   }
 }
 
+.cloud{
+  position: fixed;
+  bottom: 100px;
+  left: -400px;
+  animation-name: flamelab-convo-widget_enter;
+  animation-duration: 1.5s;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 1000;
+  color: black;
+  transition: left 0.5s ease-in-out;
+}
+.flamelab-cw-msg-box {
+  background: white;
+  width: 380px;
+  border-radius: 20px 20px 20px 0 ;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .25);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  animation-name: flamelab-convo-widget_msg-appear;
+  animation-duration: 2s;
+  font-size: 15px;
+  line-height: 23px;
+}
+.cloud.animated {
+  left: 20px; /* Move on-screen */
+  animation: fadeInUp 0.5s ease-in-out; /* Animation for fading in */
+}
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

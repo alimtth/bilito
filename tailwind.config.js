@@ -19,6 +19,7 @@ export default {
           600: '#606060',
           650: '#ADADAD',
           700: '#868686',
+          800: '#ffff',
         },
         red:{
           10:'#FFF2F2',
@@ -26,6 +27,7 @@ export default {
         },
         blue: {
           100: '#E8F4FA',
+          250: '#D2E9F5',
           300:'#77BDE0',
           400:  '#E8F4FA',
           500: '#1D91CC',

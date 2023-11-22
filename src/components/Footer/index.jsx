@@ -19,16 +19,16 @@ import ArrowUp from '../../assets/Images/arrow-circle-up.png'
 import Link from 'next/link'
 
 function Footer() {
-    return (<div className={'bg-blue-65'}>
-            <footer className="mx-auto rounded-t-[80px] pt-8 bg-gray-200">
+    return (
+        <footer className="mx-auto pt-8 bg-gray-200">
 
-                <div className="flex lg:flex-row flex-col" id="container">
-                    <div className="flex flex-col justify-start basis-3/4 text-gray-500 text-xl font-normal">
-                        <div className="lg:flex flex-col hidden">
+            <div className="flex lg:flex-row flex-col" id="container">
+                <div className="flex flex-col justify-start basis-3/4 text-gray-500 text-xl font-normal">
+                    <div className="lg:flex flex-col hidden">
             <span className="font-bold text-black leading-7">
               اپلیکیشن بیلیتو
             </span>
-                            <span className="mt-2 text-gray-500">
+                        <span className="mt-2 text-gray-500">
               با نصب اپلیکیشن بیلیتو راحتی و سرعت در رزرو بلیط هواپیما را داشته
               باشید.
             </span>
@@ -39,7 +39,7 @@ function Footer() {
               <span className="mt-8 lg:text-gray-500 text-sm block">
                 تلفن پشتیبانی: 98 76 54 32_021
               </span>
-                                <span className="mt-6 text-gray-500 text-sm">
+                            <span className="mt-6 text-gray-500 text-sm">
                 آدرس دفتر مرکزی: تهران، میدان آزادی، خیابان آزادی، خیابان جیحون،
                 طوس غربی.
               </span>
@@ -63,14 +63,14 @@ function Footer() {
                                 <div className={'line w-full lg:w-2/6'}></div>
                             </div>
                             <div className="flex flex-col justify-center gap-[8px] self-stretch">
-                                <Link href='about'>
+                                <Link to={'about'}>
                                     <span className="text-gray-500">درباره ما</span>
                                 </Link>
-                                <Link href='about'>
+                                <Link to={'about'}>
                                     <span className="text-gray-500">تماس با ما</span>
                                 </Link>
                                 <span className="text-gray-500">استرداد بلیط</span>
-                                <Link href='/stepshop'>
+                                <Link to={'/stepshop'}>
                                     <span className="text-gray-500">راهنمای خرید بلیط</span>
                                 </Link>
                                 <span className="text-gray-500">قوانین و مقررات</span>
@@ -80,34 +80,34 @@ function Footer() {
                 </div>
                 <div className="lg:justify-around lg:items-center flex flex-col lg:flex-row " id="container">
                     <div className="flex gap-[20px] justify-center">
-                        <img src={TelegramIcon.src} alt="TelegramIcon"/>
-                        <img src={LinkedInIcon.src} alt="LinkedInIcon"/>
-                        <img src={YouTubeIcon.src} alt="YouTubeIcon"/>
-                        <img src={InstagramIcon.src} alt="InstagramIcon"/>
-                        <img src={FaceBookIcon.src} alt="FaceBookIcon"/>
-                        <img src={TweeterIcon.src} alt="TweeterIcon"/>
+                        <img src={TelegramIcon} alt="TelegramIcon"/>
+                        <img src={LinkedInIcon} alt="LinkedInIcon"/>
+                        <img src={YouTubeIcon} alt="YouTubeIcon"/>
+                        <img src={InstagramIcon} alt="InstagramIcon"/>
+                        <img src={FaceBookIcon} alt="FaceBookIcon"/>
+                        <img src={TweeterIcon} alt="TweeterIcon"/>
                     </div>
                     <div className="flex gap-[20px] lg:items-end justify-center pt-3 lg:p-0">
-                        <img src={EpIcon.src} alt={'EpIcon'}/>
-                        <img src={CaoIcon.src} alt={'CaoIcon'}/>
-                        <img src={AiraIcon.src} alt={'AiraIcon'}/>
-                        <img src={EnemadIcon.src} alt={'EnemadIcon'}/>
-                        <img src={PassengerIcon.src} alt={'PassengerIcon'}/>
+                        <img src={EpIcon} alt={'EpIcon'}/>
+                        <img src={CaoIcon} alt={'CaoIcon'}/>
+                        <img src={AiraIcon} alt={'AiraIcon'}/>
+                        <img src={EnemadIcon} alt={'EnemadIcon'}/>
+                        <img src={PassengerIcon} alt={'PassengerIcon'}/>
                     </div>
                 </div>
                 <div className="line" id="container"/>
                 <div className="mx-auto text-center mt-4">
                     <div className="flex flex-col gap-[16px] justify-center items-center">
                         <div>
-                            <img src={ArrowUp.src} alt={'ArrowUp'}/>
+                            <img src={ArrowUp} alt={'ArrowUp'}/>
                         </div>
                         <div className={'text-gray-500'}>بازگشت به بالا</div>
                     </div>
                 </div>
 
 
-            </footer>
-        </div>)
+        </footer>
+   )
 }
 
 export default Footer
