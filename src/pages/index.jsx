@@ -3,7 +3,6 @@ import CustomizedAccordions from '@/components/Ui/Accordion'
 import Advantages from '../components/Advantages/index.jsx'
 import SearchBox from '@/components/NavBar/SearchBox/index'
 import HomePageComponents from '@/components/HomePagePictures/HomePageComponenets'
-import styles from './style.module.css'
 import HomePageScreen from '@/components/NavBar/HomePageScreen'
 
 import {useEffect, useState} from "react";

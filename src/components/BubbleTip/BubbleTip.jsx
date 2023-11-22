@@ -1,7 +1,8 @@
 // eslint-disable-next-line no-unused-vars
-import React, {memo, useEffect, useState} from 'react'
-import customer from '@/assets/Images/Icons/customer-support.png'
-import {Link} from 'react-router-dom'
+import React, {useEffect, useState} from 'react'
+import support from '@/assets/Images/customersupport.png' 
+import Link from 'next/link'
+import { memo } from 'react'
 // eslint-disable-next-line react/prop-types
 function BubbleTip({className}) {
   const [isShow, setIsShow] = useState(true)
@@ -29,14 +30,13 @@ function BubbleTip({className}) {
             <span className={'text-blue-500'}>
               فکر کنم بتونم کمکت کنم همراه من باش!!!
             </span>
-            <img className={'w-1/2'} src={customer} />
-            <img src={customer} alt="" />
+            <img className={'w-1/2'} src={support.src} />
           </div>
 
           <div className="flex gap-8">
             <Link
               onClick={() => setIsShow(false)}
-              to={'/stepshop'}
+              href='/stepshop'
               className={'transform hover:scale-105 text-blue-500'}
             >
               بزن بریم
