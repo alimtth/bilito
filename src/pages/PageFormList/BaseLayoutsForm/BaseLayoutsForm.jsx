@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import HeaderTabs from '@/components/NavBar/HeaderTabs'
-
+import styles from './style.module.css'
 import {useEffect, useState} from 'react'
 import { Outlet } from 'react-router-dom'
 import { BilitForm } from '@/components/BilitForm/BilitForm'
@@ -36,7 +36,7 @@ export const BaseLayoutsForm = () => {
       <div id="container">
         <HeaderTabs />
         <hr />
-        <div className="my-8 border border-gray-100 rounded-lg hidden-mobile">
+        <div className={styles.hidden_mobile + "my-8 border border-gray-100 rounded-lg"}>
             <BilitForm />
           <div className="p-8 flex items-start justify-between">
             <div className="flex justify-center items-center gap-[8px]">

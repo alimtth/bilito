@@ -1,7 +1,6 @@
 import HistoryIcon from '@/assets/Images/Icons/History.svg'
 import CloseSquare from '@/assets/Images/Icons/close-square.svg'
 import Button from '@/components/Ui/Button'
-
 import {Swiper, SwiperSlide} from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/scrollbar'
@@ -12,7 +11,7 @@ function History() {
     <div className="flex flex-col gap-4 mt-44 flex-wrap" id="container">
       <div className="flex justify-between px-9">
         <div className="flex justify-between gap-4">
-          <img src={HistoryIcon} />
+          <img src={HistoryIcon.src} />
           <p>تاریخچه جستجو</p>
         </div>
         <button className="text-blue-500 cursor-pointer">پاک کردن همه</button>
@@ -47,7 +46,7 @@ function History() {
             <div key={items.id}>
               <SwiperSlide>
                 <Button variant="grayBTN">
-                  <img src={CloseSquare} />
+                  <img src={CloseSquare.src} />
                   {items.forth} به {items.back}
                 </Button>
               </SwiperSlide>

@@ -34,7 +34,7 @@ function Footer() {
             </span>
                         </div>
                         <div className="flex lg:flex-col flex-row-reverse">
-                            <img className="w-24 mt-16" src={BilitoIcon} alt="Bilito-Icon"/>
+                            <img className="w-24 mt-16" src={BilitoIcon.src} alt="Bilito-Icon"/>
                             <div>
               <span className="mt-8 lg:text-gray-500 text-sm block">
                 تلفن پشتیبانی: 98 76 54 32_021
@@ -80,26 +80,26 @@ function Footer() {
                 </div>
                 <div className="lg:justify-around lg:items-center flex flex-col lg:flex-row " id="container">
                     <div className="flex gap-[20px] justify-center">
-                        <img src={TelegramIcon} alt="TelegramIcon"/>
-                        <img src={LinkedInIcon} alt="LinkedInIcon"/>
-                        <img src={YouTubeIcon} alt="YouTubeIcon"/>
-                        <img src={InstagramIcon} alt="InstagramIcon"/>
-                        <img src={FaceBookIcon} alt="FaceBookIcon"/>
-                        <img src={TweeterIcon} alt="TweeterIcon"/>
+                        <img src={TelegramIcon.src} alt="TelegramIcon"/>
+                        <img src={LinkedInIcon.src} alt="LinkedInIcon"/>
+                        <img src={YouTubeIcon.src} alt="YouTubeIcon"/>
+                        <img src={InstagramIcon.src} alt="InstagramIcon"/>
+                        <img src={FaceBookIcon.src} alt="FaceBookIcon"/>
+                        <img src={TweeterIcon.src} alt="TweeterIcon"/>
                     </div>
                     <div className="flex gap-[20px] lg:items-end justify-center pt-3 lg:p-0">
-                        <img src={EpIcon} alt={'EpIcon'}/>
-                        <img src={CaoIcon} alt={'CaoIcon'}/>
-                        <img src={AiraIcon} alt={'AiraIcon'}/>
-                        <img src={EnemadIcon} alt={'EnemadIcon'}/>
-                        <img src={PassengerIcon} alt={'PassengerIcon'}/>
+                        <img src={EpIcon.src} alt={'EpIcon'}/>
+                        <img src={CaoIcon.src} alt={'CaoIcon'}/>
+                        <img src={AiraIcon.src} alt={'AiraIcon'}/>
+                        <img src={EnemadIcon.src} alt={'EnemadIcon'}/>
+                        <img src={PassengerIcon.src} alt={'PassengerIcon'}/>
                     </div>
                 </div>
                 <div className="line" id="container"/>
                 <div className="mx-auto text-center mt-4">
                     <div className="flex flex-col gap-[16px] justify-center items-center">
                         <div>
-                            <img src={ArrowUp} alt={'ArrowUp'}/>
+                            <img src={ArrowUp.src} alt={'ArrowUp'}/>
                         </div>
                         <div className={'text-gray-500'}>بازگشت به بالا</div>
                     </div>

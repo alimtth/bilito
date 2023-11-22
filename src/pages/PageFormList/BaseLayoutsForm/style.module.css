@@ -1,0 +1,29 @@
+@media (max-width: 1024px) {
+    .hidden_mobile {
+      display: none;
+    }
+  }
+  @media (min-width: 970px){
+    .hidden_mobile{
+      width: 85%;
+      margin-right: 70px;
+     
+      
+    }
+  }
+  @media (min-width: 1070px){
+    .hidden_mobile{
+      width: 85%;
+      margin-right: 85px;
+     
+      
+    }
+  }
+  @media (min-width: 1320px){
+    .hidden_mobile{
+      width: 85%;
+      margin-right: 95px;
+     
+      
+    }
+  }

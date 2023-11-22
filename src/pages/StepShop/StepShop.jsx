@@ -11,7 +11,7 @@ function StepShop(props) {
         مراحل خرید آنلاین بلیط هواپیما
       </h3>
       <div className="flex">
-        <img src={stepper} alt="" className="p-8" />
+        <img src={stepper.src} alt="" className="p-8" />
         <div className="mt-9 max-w-xl lg:max-w-max lg:mr-7">
           <h3>
             <Search /> جستجوی بلیط{' '}

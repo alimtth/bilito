@@ -19,10 +19,10 @@ function HomePageComponenets() {
     <div className="mt-14" id="container">
       <div className={styles.dextop_grid}>
         <div className="grid grid-cols-3 w-full gap-4 ">
-          <div className={ styles.box + "relative w-full"}>
+          <div className={ "relative w-full"}>
             <div style={{ paddingBottom: "100%" }} />
             <img
-              src={kish}
+              src={kish.src}
               className="absolute top-0 left-0 h-full object-cover rounded-lg  "
             />
 
@@ -35,10 +35,10 @@ function HomePageComponenets() {
               </button>
             </div>
           </div>
-          <div className={ styles.box + "relative w-full"}>
+          <div className={"relative w-full"}>
             <div style={{ paddingBottom: "100%" }} />
             <img
-              src={turkey}
+              src={turkey.src}
               className="absolute top-0 left-0 w-full h-full object-cover rounded-lg"
             />
             <div className="absolute bottom-0 z-10">
@@ -53,10 +53,10 @@ function HomePageComponenets() {
 
           <div className="grid gap-4">
 
-            <div className={ styles.box + "relative w-full"}>
+            <div className={"relative w-full"}>
               <div style={{ paddingBottom: "50%" }} />
               <img
-                src={shiraz}
+                src={shiraz.src}
                 className="absolute top-0 left-0 w-full h-full object-cover rounded-lg bg-gradient-to-l from-blue-950"
               />
               <div className="absolute bottom-0 z-10">
@@ -69,10 +69,10 @@ function HomePageComponenets() {
               </div>
 
             </div>
-            <div className={ styles.box + "relative w-full"}>
+            <div className={"relative w-full"}>
               <div style={{ paddingBottom: "50%" }} />
               <img
-                src={dubai}
+                src={dubai.src}
                 className="absolute top-0 left-0 w-full h-full object-cover rounded-lg"
               />
               <div className="absolute bottom-0 z-10">
@@ -132,7 +132,7 @@ function HomePageComponenets() {
               <div className={ styles.box2 }>
                 <div style={{ paddingBottom: '55%' }} />
                 <img
-                  src={kish}
+                  src={kish.src}
                   alt="Photo of kish island"
                   className="absolute top-0 left-0 h-auto rounded-lg object-cover"
                 />
@@ -153,7 +153,7 @@ function HomePageComponenets() {
               <div className={ styles.box2 }>
                 <div style={{ paddingBottom: '55%' }} />
                 <img
-                  src={shiraz}
+                  src={shiraz.src}
                   alt="Photo of takht jamshid shiraz"
                   className="absolute top-0 left-0 h-auto rounded-lg object-cover "
                 />
@@ -174,7 +174,7 @@ function HomePageComponenets() {
               <div className={ styles.box2 }>
                 <div style={{ paddingBottom: '55%' }} />
                 <img
-                  src={dubai}
+                  src={dubai.src}
                   alt="Photo of city dubai"
                   className="absolute top-0 left-0 h-auto rounded-lg object-cover "
                 />
@@ -195,7 +195,7 @@ function HomePageComponenets() {
               <div className={ styles.box2 }>
                 <div style={{ paddingBottom: '55%' }} />
                 <img
-                  src={turkey}
+                  src={turkey.src}
                   alt="Photo of City turkiye"
                   className="absolute top-0 left-0 w-full h-auto rounded-lg object-cover "
                 />

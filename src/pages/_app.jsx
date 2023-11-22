@@ -2,6 +2,7 @@ import { AuthProvider } from "@/providers/AuthProvider";
 import { UserDataProvider } from "@/providers/UserDataProvider";
 import { QueryClient } from "@tanstack/react-query";
 import { QueryClientProvider } from "react-query";
+import '../index.css'
 
 const queryClient = new QueryClient();
 

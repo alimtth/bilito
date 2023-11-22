@@ -7,9 +7,9 @@ function HomePageScreen() {
   return (
     <div>
       <div className="flex flex-col relative w-full">
-        <img alt={'airplane'} src={titlePic2} className="w-full rounded-xl" />
+        <img alt={'airplane'} src={titlePic2.src} className="w-full rounded-xl" />
         <img
-          src={airr}
+          src={airr.src}
           alt=""
           className="w-40 absolute rotate-45 left-10 hidden md:block"
         />
