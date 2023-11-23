@@ -1,5 +1,4 @@
 import * as React from 'react'
-import HomePageScreen from '@/components/NavBar/HomePageScreen'
 import Button from '@/components/Ui/Button'
 import InputTextField from '@/components/Ui/InputTextField'
 import searchIcon from '@/assets/Images/Icons/search-normal.svg'
@@ -16,6 +15,7 @@ import {
   Typography,
 } from '@mui/material'
 import {insuraceAccordion} from '@/FakeData/insuraceAccordion'
+import HomePageInsurance from '@/components/NavBar/HomePageInsurance'
 
 function Insurace() {
   const [expanded, setExpanded] = React.useState('panel1')
@@ -26,7 +26,7 @@ function Insurace() {
 
   return (
     <>
-        <HomePageScreen />
+    <HomePageInsurance />
       <div id="container">
         <div className="p-8">
           <div className="w-full h-full flex flex-col lg:flex-row justify-between gap-8 items-center md:sm:shadow-2xl sm:shadow-none lg:w-fit m-auto bg-white lg:items-start rounded-xl p-6">
