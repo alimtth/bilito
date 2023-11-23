@@ -7,12 +7,15 @@ import iconeairplan from '@/assets/Images/Icons/airplaneblue.svg'
 import line from '@/assets/Images/Icons/Line.svg'
 import FormList from '@/pages/PageFormList/FormList'
 import {motion, AnimatePresence} from 'framer-motion'
+import {useEffect} from 'react'
 
 // eslint-disable-next-line react/prop-types
 export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
   const [activeTab, setActiveTab] = useState(0)
-  // const {forth} = useParams()
 
+  const handlClose = () => {
+    setIsShow(false)
+  }
   const handleTapClick = (tabIndex) => {
     setActiveTab(tabIndex)
   }
@@ -21,6 +24,19 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
     setActiveTab((s) => s + 1)
     console.log(activeTab)
   }
+
+  // useEffect(() => {
+  //   const handleBodyClick = (e) => {
+  //     const isClickInsideModal = e.target.closest('class')
+
+  //     handlClose()
+  //   }
+  //   document.body.addEventListener('click', handleBodyClick)
+
+  //   return () => {
+  //     document.body.removeEventListener('click', handleBodyClick)
+  //   }
+  // }, [])
   return (
     <div>
       <AnimatePresence>
@@ -28,7 +44,7 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
           <motion.div
             className="fixed inset-0 flex items-center justify-center z-50 bg-gray-600 bg-opacity-70"
             initial={{opacity: 0}}
-            animate={{opacity: 1}}
+            animate={{opacity: 2}}
             exit={{opacity: 0}}
           >
             <motion.div
@@ -37,15 +53,16 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
               animate={{scale: 1}}
               exit={{scale: 0.95}}
             >
-              <div className="flex gap-6">
+              <div className="flex justify-between">
+                <div className="flex gap-6">
                 <ul onClick={() => handleTapClick(0)}>اطلاعات پرواز</ul>
                 <ul onClick={() => handleTapClick(1)}>قوانین استرداد</ul>
                 <ul onClick={() => handleTapClick(2)}>قوانین ویزا و مسیر</ul>
                 <ul onClick={() => handleTapClick(3)}>بار مجاز</ul>
-                <div className="flex justify-end">
-                  <img src={close} alt="" onClick={() => setIsShow(false)} />
                 </div>
-                {console.log(activeTab)}
+                <div className="flex">
+                  <img src={close} alt="" onClick={handlClose} />
+                </div>
               </div>
               <hr className="w-full bg-gray-400 h-0.5 mt-3 mb-5" />
 
