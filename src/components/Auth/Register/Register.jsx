@@ -63,7 +63,7 @@ function Register() {
 
   return (
     <div>
-    <div className="fixed inset-0 bg-blue-650 bg-opacity-10 backdrop-blur-[0.5px] flex justify-center items-center">
+      <div className="fixed inset-0 bg-blue-650 bg-opacity-10 backdrop-blur-[0.5px] flex justify-center items-center">
         <div className="fixed z-20 mt-[100px] opacity-75 mb-16">
           <div className="bg-white p-2 rounded-[8px] shadow-md">
             <div className="flex flex-col items-center gap-6 justify-center">
@@ -81,7 +81,6 @@ function Register() {
               >
                 <InputTextField
                   size="slx"
-                  
                   type={'text'}
                   register={register('username')}
                 >
@@ -102,7 +101,7 @@ function Register() {
                 </InputTextField>
                 {errors.password && (
                   <p className="text-red-500 text-sm mt-1">
-                     {errors.password?.message}
+                    {errors.password?.message}
                   </p>
                 )}
                 <br />
@@ -119,7 +118,7 @@ function Register() {
                   </p>
                 )}
 
-                <div className='flex flex-col'>
+                <div className="flex flex-col">
                   <div className="flex gap-4  mt-[40px] text-gray-600 mr-4">
                     <input
                       type="checkbox"
@@ -127,7 +126,7 @@ function Register() {
                       id=""
                       onChange={handleCheckboxChange}
                     />
-                    <h4>
+                    <h4 className='text-sm'>
                       با ورود و ثبت‌نام در سایت، با{' '}
                       <Link className="text-blue-650" to={'#'}>
                         قوانین بیلیتو
@@ -137,7 +136,7 @@ function Register() {
                   </div>
                   <Buttons
                     className="bg-gray-650 text-white flex justify-center  rounded-[8px] mt-4 mb-[32px]"
-                    size='slx'
+                    size="slx"
                     type="submit"
                     loading={isloding}
                     styles={{

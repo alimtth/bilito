@@ -6,7 +6,6 @@ import Button from '@/components/Ui/Button'
 import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
 import {useForm} from 'react-hook-form'
-import bilitoIconsss from '@/assets/Images/Icons/AirplaneSelected.svg'
 import {useAuthContext} from '@/providers/AuthProvider'
 import {apiLoginUser} from '@/api/user'
 import {useState} from 'react'
@@ -56,7 +55,7 @@ function Login() {
   return (
     <div>
       <div className="fixed inset-0 bg-blue-650 bg-opacity-10 backdrop-blur-[0.5px] flex justify-center items-center">
-        <div className="w-[600px] opacity-75">
+        <div className=" opacity-75">
           <div className="bg-white p-2 rounded-[8px]">
             <div className="flex flex-col items-center">
               <img
@@ -64,23 +63,18 @@ function Login() {
                 alt=""
                 className="w-[96px] flex justify-center mt-8"
               />
-              <h3 className="font-semibold mt-7 flex justify-center text-[20px]">
+              <h3 className="font-semibold mt-7 flex justify-center text-[20px] animate-pulse hover:text-blue-650">
                 ورود یا ثبت نام
               </h3>
-
-              <h6 className="-mr-[150px] font-normal text-gray-600 mt-[32px] mb-[16px]">
-                کد تایید به شماره موبایلی که وارد می‌کنید، ارسال خواهد شد.
-              </h6>
               <br />
               <form
                 onSubmit={handleSubmit(onFormSubmit)}
-                className="flex flex-col justify-start items-start px-6"
+                className="flex flex-col items-center px-6"
               >
                 <InputTextField
-                  size="xl"
+                  size="slx"
                   placeholder={''}
                   register={register('username')}
-                  className="w-[530px]"
                 >
                   نام کاربری
                 </InputTextField>
@@ -91,10 +85,8 @@ function Login() {
                 )}
                 <br />
                 <InputTextField
-                  size="md"
-                  placeholder={''}
+                  size="slx"
                   register={register('password')}
-                  className="w-[530px]"
                 >
                   پسورد
                 </InputTextField>
@@ -105,7 +97,7 @@ function Login() {
                   </p>
                 )}
 
-                <div>
+                <div className='flex flex-col'>
                   <div className="flex gap-4  mt-[40px] text-gray-600 mr-4">
                     <input
                       type="checkbox"
@@ -113,7 +105,7 @@ function Login() {
                       id=""
                       onChange={handleCheckboxChange}
                     />
-                    <h4>
+                    <h4 className='text-sm'>
                       با ورود و ثبت‌نام در سایت، با{' '}
                       <Link className="text-blue-650" to={'#'}>
                         قوانین بیلیتو
@@ -122,7 +114,8 @@ function Login() {
                     </h4>
                   </div>
                   <Buttons
-                    className="bg-gray-650 text-white flex justify-center w-[536px] h-[48px] rounded-[8px] mt-4 mb-[32px]"
+                    className="bg-gray-650 text-white flex justify-center  rounded-[8px] mt-4 mb-[32px]"
+                    size="slx"
                     type="submit"
                     loading={isloding}
                     styles={{
