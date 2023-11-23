@@ -1,11 +1,12 @@
 import Buttons from '@/components/Ui/Button'
 import {Link} from 'react-router-dom'
-import {useUser} from '@/providers/UserDataProvider'
+import { useAuthContext } from '@/providers/AuthProvider'
+import SelectField from '@/components/Ui/SelectField';
 
 function UserData() {
-  const {userData} = useUser()
+  const {currentUser} = useAuthContext()
 
-  
+  console.log(currentUser);
   return (
     <>
       <div className="flex flex-col mt-16 ] ">
@@ -19,17 +20,17 @@ function UserData() {
                 نام و نام خانوادگی
               </span>
               <span className="text-gray-20 font-bold">
-                {userData.fullName}
+                {currentUser?.name ?? 'فیلد نام و نام خانوادگی الزامی!'}
               </span>
             </div>
             <div className="flex flex-col gap-2">
               <span className="text-gray-500 font-light text-sm">جنسیت</span>
-              <span className="text-gray-20 font-bold">{userData.gender}</span>
+              <span className="text-gray-20 font-bold">{currentUser?.gender ?? 'جسنیت را وارد کنید'}</span>
             </div>
             <div className="flex flex-col gap-2">
               <span className="text-gray-500 font-light text-sm">کدملی</span>
               <span className="text-gray-20 font-bold">
-                {userData.nationalCode}
+                {currentUser?.national_code ?? 'کد ملی الزامی است !!'}
               </span>
             </div>
             <div className="flex flex-col gap-2">
@@ -37,7 +38,7 @@ function UserData() {
                 شماره تماس
               </span>
               <span className="text-gray-20 font-bold">
-                {userData.phoneNumber}
+                {currentUser?.mobile}
               </span>
             </div>
           </div>
