@@ -78,7 +78,6 @@ function Login() {
               >
                 <InputTextField
                   size="xl"
-                  value={''}
                   placeholder={''}
                   register={register('username')}
                   className="w-[530px]"
@@ -93,7 +92,6 @@ function Login() {
                 <br />
                 <InputTextField
                   size="md"
-                  value={''}
                   placeholder={''}
                   register={register('password')}
                   className="w-[530px]"
@@ -143,11 +141,6 @@ function Login() {
           </div>
         </div>
       </div>
-      <img
-        src={bilitoIconsss}
-        alt=""
-        className="lg:w-96 z-10	 blur-md relative right-[1290px] rotate-12 animate-pulse inline-block"
-      />
        {error && (
         <Alert
           severity="error"

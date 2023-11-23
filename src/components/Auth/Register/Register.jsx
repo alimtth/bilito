@@ -63,8 +63,8 @@ function Register() {
 
   return (
     <div>
-      <div className="fixed inset-0 bg-blue-650 bg-opacity-10 backdrop-blur-[0.5px] flex justify-center items-center">
-        <div className="w-[600px] fixed z-20 mt-[100px] opacity-75">
+    <div className="fixed inset-0 bg-blue-650 bg-opacity-10 backdrop-blur-[0.5px] flex justify-center items-center">
+        <div className="w-[600px] fixed z-20 mt-[100px] opacity-75 mb-16">
           <div className="bg-white p-2 rounded-[8px]">
             <div className="flex flex-col items-center">
               <img
@@ -161,11 +161,11 @@ function Register() {
             </div>
           </div>
         </div>
-        <img
+        {/* <img
           src={bilitoIconsss}
           alt=""
           className="lg:w-96 z-10	 blur-md relative -right-[700px] rotate-12 animate-pulse inline-block transition-transform duration-75"
-        />
+        /> */}
       </div>
       {error && (
         <Alert
