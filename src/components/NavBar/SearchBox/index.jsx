@@ -20,7 +20,6 @@ function SearchBox() {
   const [passengerCountValue, setPassengerCountValue] = useState('')
   const [flightClassValue, setFlightClassValue] = useState('')
   const [internationalFlights, setInternationalFlights] = useState(true)
-  // const [searchHistory, setSearchHistory] = useState([])
   const navigate = useNavigate()
 
   const handleFlight = () => {
@@ -37,17 +36,6 @@ function SearchBox() {
       passengerCount: passengerCountValue,
       flightClass: flightClassValue,
     }))
-    // setSearchHistory((prevHistory) => [
-    //   {
-    //     q: query,
-    //     origin: originValue,
-    //     destination: destinationValue,
-    //     travelDate: travelDateValue,
-    //     passengerCount: passengerCountValue,
-    //     flightClass: flightClassValue,
-    //   },
-    //   ...prevHistory.slice(0, 2),
-    // ])
   }
 
   return (

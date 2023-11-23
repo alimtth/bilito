@@ -28,8 +28,11 @@ function Insurace() {
     <>
     <HomePageInsurance />
       <div id="container">
-        <div className="p-8">
-          <div className="w-full h-full flex flex-col lg:flex-row justify-between gap-8 items-center md:sm:shadow-2xl sm:shadow-none lg:w-fit m-auto bg-white lg:items-start rounded-xl p-6">
+        <section
+        className="-m-2 lg:-m-12  bg-white flex flex-col items-center rounded-lg shadow-2xl"
+        id="container"
+      >
+          <form className="p-6 px-0 gap-3 flex justify-center flex-col lg:flex lg:flex-row lg:gap-6 w-full lg:w-auto flex-wrap items-center sm:gap-8 ">
             <InputTextField
               value={''}
               size="sm"
@@ -60,9 +63,9 @@ function Insurace() {
               <img src={searchIcon} />
               جستجو
             </Button>
-          </div>
-        </div>
-        <div className="p-8 flex flex-col gap-4">
+          </form>
+        </section>
+        <div className="p-8 flex flex-col gap-4 mt-12">
           <p className="font-bold">بیمه مسافرتی چیست؟</p>
           <p>
             بیمه مسافرتی (Travel Insurance) یک نوع بیمه است که برای پوشش

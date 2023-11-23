@@ -89,7 +89,6 @@ function TickedList() {
   return (
     <div className="flex flex-col items-center">
       <HomePageScreen />
-      <section className="flex flex-col relative items-center"></section>
       <section
         className="-m-2 lg:-m-12 z-10 bg-white flex flex-col items-center rounded-lg shadow-2xl"
         id="container"
