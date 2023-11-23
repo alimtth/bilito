@@ -9,7 +9,6 @@ import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
 import Buttons from '@/components/Ui/Button'
 import {useAuthContext} from '@/providers/AuthProvider'
-import bilitoIconsss from '@/assets/Images/Icons/AirplaneSelected.svg'
 import {apiRegisterUser} from '@/api/user'
 
 const schema = yup.object().shape({
@@ -93,9 +92,7 @@ function Register() {
                 )}
                 <br />
                 <InputTextField
-                  size="slx"
-                  
-                  className="w-[530px]"
+                  size="slx" 
                   placeholder={''}
                   register={register('password')}
                 >
