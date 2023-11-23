@@ -2,7 +2,6 @@ import HeaderTabs from '@/components/NavBar/HeaderTabs'
 import {useAuthContext} from '@/providers/AuthProvider'
 import {Link, Outlet} from 'react-router-dom'
 import profile from '@/assets/Images/Icons/profile-add.svg'
-import {useUser} from '@/providers/UserDataProvider'
 
 function BaseLayoutAcc() {
   const {currentUser, logout} = useAuthContext()  
@@ -20,9 +19,9 @@ function BaseLayoutAcc() {
               className="rounded-full w-[50%] h-[75%] lg:w-[20%] lg:h-[50%]"
             />
             <h4 className="mt-4 font-bold text-gray-500">
-              {currentUser.name}
+              {currentUser?.name}
             </h4>
-            <p className="text-gray-500">{currentUser.mobile}</p>
+            <p className="text-gray-500">{currentUser?.mobile}</p>
           </div>
           <div className="lg:flex hidden flex-col items-start gap-5 w-full px-4">
             <div className="line w-full" />
