@@ -48,7 +48,7 @@ export const Payment = () => {
   return (
     <div>
       <HeaderTabs />
-      <div id="container">
+      <div className="custom-container">
         {payments ? (
           <div className="ypayment">
             <div className="flex flex-col">

@@ -33,7 +33,7 @@ export const BaseLayoutsForm = () => {
   })
   return (
     <div>
-      <div id="container">
+      <div className="custom-container">
         <HeaderTabs />
         <hr />
         <div className="my-8 border border-gray-100 rounded-lg hidden-mobile">

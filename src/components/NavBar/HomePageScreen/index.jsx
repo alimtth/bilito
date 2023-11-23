@@ -6,13 +6,12 @@ import airr from '@/assets/gif/airplane-joypixels.gif'
 
 function HomePageScreen() {
   return (
-    <div className="">
       <div className="flex flex-col relative w-full">
-        <img alt={'airplane'} src={titlePic2} className="w-full rounded-xl" />
+        <img alt={'airplane'} src={titlePic2} className="w-full rounded-b-xl" />
         <img
           src={airr}
           alt=""
-          className="w-40 absolute rotate-45 left-10 hidden md:block"
+          className="w-40 absolute left-12 hidden md:block"
         />
         <Fade right>
           <p className="absolute text-white font-extrabold text-lg lg:text-3xl p-5 lg:p-20 pb-0">
@@ -27,7 +26,6 @@ function HomePageScreen() {
           </p>
         </Fade>
       </div>
-    </div>
   )
 }
 

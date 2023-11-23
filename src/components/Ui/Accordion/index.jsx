@@ -54,7 +54,7 @@ export default function CustomizedAccordions() {
   return (
     <div className={'bg-blue-65 w-full'}>
       <div className={'w-full bg-white py-24 rounded-b-[80px]'}>
-        <div id="container" className=" ">
+        <div className="custom-container">
           <h1 className="text-xl font-bold mb-8">سوالات متداول</h1>
           {accordionData.map((e) => {
             return (

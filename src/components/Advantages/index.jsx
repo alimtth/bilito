@@ -19,7 +19,7 @@ function Advantages() {
             <div className="bubble"></div>
             <div className="bubble"></div>
             <div className="bubble"></div>
-            <div className="flex justify-around lg:flex-row flex-col" id="container">
+            <div className="flex justify-around lg:flex-row flex-col custom-container" >
                 <Fade top cascade>
                     <div className="flex flex-col justify-between items-center gap-[32px] pt-8 lg:pt-0">
                         <div

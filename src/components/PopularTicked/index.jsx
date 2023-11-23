@@ -7,8 +7,8 @@ import airplane from '@/assets/Images/Icons/airplane.svg'
 function Popular() {
   return (
     <div
-      className="flex flex-col justify-center items-center lg:items-start pt-24"
-      id="container"
+      className="flex flex-col justify-center items-center custom-container lg:items-start pt-24"
+
     >
       <div>
         <p className="text-xl pb-3">پرطرفدار ترین پروازهای داخلی</p>

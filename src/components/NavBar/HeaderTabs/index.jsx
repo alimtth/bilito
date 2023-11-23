@@ -23,37 +23,37 @@ function HeaderTabs() {
     setShowMenu(!showMenu)
   }
 
-  const handleScroll = () => {
-    if (window.scrollY > 600) {
-      setIsHeaderSticky(true)
-    } else {
-      setIsHeaderSticky(false)
-    }
-  }
+  // const handleScroll = () => {
+  //   if (window.scrollY > 600) {
+  //     setIsHeaderSticky(true)
+  //   } else {
+  //     setIsHeaderSticky(false)
+  //   }
+  // }
   //commit own in res ad req bla bla
   const handlHoverd = () => {
     setHover(!hover)
   }
 
   const {isLoggedIn, logout, currentUser, isLoading} = useAuthContext()
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+  //
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll)
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll)
+  //   }
+  // }, [])
 
   return (
     <>
       <div className={`${isHeaderSticky ? 'bg-gray-100' : ''}`}>
         <div
-          className={` flex justify-between  items-center py-4 flex-row-reverse  lg:flex-row z-50 bg-white rounded-lg  bg-opacity-100 ${
+          className={`flex custom-container justify-between items-center py-4 flex-row-reverse lg:flex-row z-50 bg-white rounded-lg bg-opacity-100 ${
             isHeaderSticky
               ? 'fixed top-6 w-full left-1/2 transform -translate-x-1/2 transition-all duration-700 ease-linear shadow-2xl'
               : ''
           }`}
-          id="container"
+
         >
           <div className="flex justify-between flex-row-reverse lg:flex-row gap-16">
             <img src={bilitoIcon} />

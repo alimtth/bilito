@@ -23,7 +23,7 @@ function Footer() {
     return (
         <footer className="mx-auto pt-8 bg-gray-200">
 
-            <div className="flex lg:flex-row flex-col" id="container">
+            <div className="flex lg:flex-row flex-col custom-container">
                 <div className="flex flex-col justify-start basis-3/4 text-gray-500 text-xl font-normal">
                     <div className="lg:flex flex-col hidden">
             <span className="font-bold text-black leading-7">
@@ -50,10 +50,10 @@ function Footer() {
                 <div className="flex lg:flex-col basis-3/5 flex-row justify-between">
                     <div
                         className="flex justify-center items-start flex-col lg:flex-row gap-[24px] lg:order-1 order-2">
-                        <ContactUsButton id="container" icon={PlayStoreIcon}>
+                        <ContactUsButton className="custom-container" icon={PlayStoreIcon}>
                             Play Store
                         </ContactUsButton>
-                        <ContactUsButton id="container" icon={AppleIcon}>
+                        <ContactUsButton className="custom-container" icon={AppleIcon}>
                             Apple Store
                         </ContactUsButton>
                     </div>
@@ -79,7 +79,7 @@ function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="lg:justify-around lg:items-center flex flex-col lg:flex-row " id="container">
+            <div className="lg:justify-around lg:items-center flex flex-col lg:flex-row custom-container" >
                 <div className="flex gap-[20px] justify-center">
                     <img src={TelegramIcon} alt="TelegramIcon"/>
                     <img src={LinkedInIcon} alt="LinkedInIcon"/>
@@ -96,7 +96,7 @@ function Footer() {
                     <img src={PassengerIcon} alt={'PassengerIcon'}/>
                 </div>
             </div>
-            <div className="line" id="container"/>
+            <div className="line custom-container" />
             <div className="mx-auto text-center mt-4">
                 <div className="flex flex-col gap-[16px] justify-center items-center">
                     <div>

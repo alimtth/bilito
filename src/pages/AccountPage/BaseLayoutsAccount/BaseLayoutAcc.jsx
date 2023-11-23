@@ -11,8 +11,8 @@ function BaseLayoutAcc() {
     <>
       <HeaderTabs />
       <div
-        className="flex lg:flex-nowrap flex-wrap justify-center gap-4  -mt-12"
-        id="container"
+        className="flex lg:flex-nowrap custom-container flex-wrap justify-center gap-4  -mt-12"
+
       >
         <div className=" lg:outline lg:outline-gray-400 lg:rounded-lg mt-28 basis-1/4">
           <div className="flex flex-col gap-1 items-center pt-5">

@@ -12,7 +12,7 @@ function About() {
   return (
     <div className='px-7'>
       <img src={PageScreenAbout} alt="" className="w-full  rounded-xl " />
-      <div id="container">
+      <div className="custom-container">
         <div className="flex justify-start gap-6 mt-12">
           <h2 className="text-blue-650 cursor-pointer">درباره ما</h2>
           <h2 className="text-gray-500 cursor-pointer" onClick={handlSelect}>

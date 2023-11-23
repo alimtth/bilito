@@ -38,130 +38,130 @@ function SearchBox() {
     }))
   }
 
-  return (
-    <>
-      <Fade bottom>
-        <div className="lg:z-20 lg:-m-28 md:sm:shadow-2xl sm:shadow-none rounded lg:w-fit m-auto">
-          <div className="bg-white flex flex-col lg:items-start items-center rounded-xl p-6">
-            <div>
-              <ul className="flex justify-around gap-10 md:text-base sm:text-3xl ">
-                <li
-                  className={`flex gap-2 ${
-                    internationalFlights ? 'text-blue-500 font-bold' : ''
-                  }`}
-                >
-                  <img
-                    src={`${
-                      internationalFlights
-                        ? AirplanSelected
-                        : AirplanNotSelected
-                    }`}
-                    className="md:block w-full h-full object-cover hidden"
-                  />
-                  پروازخارجی
-                </li>
-                <li onClick={handleFlight}>
-                  <FontAwesomeIcon icon={faArrowRightArrowLeft} />
-                </li>
-                <li
-                  className={`flex gap-2 ${
-                    internationalFlights ? '' : 'text-blue-500 font-bold'
-                  }`}
-                >
-                  <img
-                    src={`${
-                      internationalFlights
-                        ? AirplanNotSelected
-                        : AirplanSelected
-                    }`}
-                    className="md:block w-full h-full object-cover hidden"
-                  />
-                  <span className={'basis-full'}>پروازداخلی</span>
-                </li>
-              </ul>
-            </div>
-            <hr className="" />
-            <div className="line w-full" />
-            <div className="flex py-6 gap-4 items-center justify-center">
-              <Button
-                size="lg"
-                variant="fill"
-                className={'lg:text-sm sm:py-4 px-8 '}
-              >
-                یک طرفه
-              </Button>
-              <Button variant="outline" className={'lg:text-sm sm:py-4 px-8'}>
-                رفت و برگشت
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className={'lg:text-sm sm:py-4 px-8 '}
-              >
-                چند مسیره
-              </Button>
-            </div>
-            <form
-              className="flex flex-col lg:flex lg:flex-row lg:gap-4 w-full lg:w-auto flex-wrap items-center sm:gap-8 "
-              onSubmit={handleSearch}
-            >
-              <InputTextField
-                size="sm"
-                className={'sm:px-44 lg:px-0 '}
-                value={query ? query : ''}
-                onChange={(e) => setQuery(e.target.value)}
-              >
-                مبدا
-              </InputTextField>
-              <ConnectingAirportsIcon />
-              <InputTextField
-                size="sm"
-                value={destinationValue}
-                onChange={(e) => setDestinationValue(e.target.value)}
-                className={'sm:px-44 lg:px-0'}
-              >
-                مقصد
-              </InputTextField>
-              <InputTextField
-                size="sm"
-                value={travelDateValue ? travelDateValue : ''}
-                onChange={(e) => setTravelDateValue(e.target.value)}
-                className={'sm:px-44 lg:px-0'}
-              >
-                تاریخ رفت و برگشت
-              </InputTextField>
-              <InputTextField
-                size="sm"
-                value={passengerCountValue}
-                onChange={(e) => setPassengerCountValue(e.target.value)}
-                className={'sm:px-44 lg:px-0'}
-              >
-                تعداد مسافر
-              </InputTextField>
-              <InputTextField
-                size="sm"
-                value={flightClassValue}
-                onChange={(e) => setFlightClassValue(e.target.value)}
-                className={'sm:px-44 lg:px-0'}
-              >
-                کلاس پرواز
-              </InputTextField>
-              <Button
-                variant="fill"
-                size="xl"
-                className={' sm:px-56 lg:px-3'}
-                type="submit"
-              >
-                <img src={searchIcon} />
-                جستجو
-              </Button>
-            </form>
-          </div>
-        </div>
-      </Fade>
-      <History />
-    </>
-  )
+    return (
+        <>
+            <Fade bottom>
+                <div className="lg:z-20 lg:-m-28 md:sm:shadow-2xl sm:shadow-none rounded lg:w-fit m-auto">
+                    <div className="bg-white flex flex-col lg:items-start items-center rounded-xl p-6">
+                        <div>
+                            <ul className="flex justify-around gap-10 md:text-base sm:text-3xl ">
+                                <li
+                                    className={`flex gap-2 ${
+                                        internationalFlights ? 'text-blue-500 font-bold' : ''
+                                    }`}
+                                >
+                                    <img
+                                        src={`${
+                                            internationalFlights
+                                                ? AirplanSelected
+                                                : AirplanNotSelected
+                                        }`}
+                                        className="md:block w-full h-full object-cover hidden"
+                                    />
+                                    پروازخارجی
+                                </li>
+                                <li onClick={handleFlight}>
+                                    <FontAwesomeIcon icon={faArrowRightArrowLeft}/>
+                                </li>
+                                <li
+                                    className={`flex gap-2 ${
+                                        internationalFlights ? '' : 'text-blue-500 font-bold'
+                                    }`}
+                                >
+                                    <img
+                                        src={`${
+                                            internationalFlights
+                                                ? AirplanNotSelected
+                                                : AirplanSelected
+                                        }`}
+                                        className="md:block w-full h-full object-cover hidden"
+                                    />
+                                    <span className={'basis-full'}>پروازداخلی</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <hr className=""/>
+                        <div className="line w-full"/>
+                        <div className="flex py-6 gap-4 items-center justify-center">
+                            <Button
+                                size="lg"
+                                variant="fill"
+                                className={'lg:text-sm sm:py-4 px-8 '}
+                            >
+                                یک طرفه
+                            </Button>
+                            <Button variant="outline" className={'lg:text-sm sm:py-4 px-8'}>
+                                رفت و برگشت
+                            </Button>
+                            <Button
+                                size="lg"
+                                variant="outline"
+                                className={'lg:text-sm sm:py-4 px-8 '}
+                            >
+                                چند مسیره
+                            </Button>
+                        </div>
+                        <form
+                            className="flex flex-col lg:flex lg:flex-row lg:gap-4 w-full lg:w-auto flex-wrap items-center gap-2 "
+                            onSubmit={handleSearch}
+                        >
+                            <InputTextField
+                                size="sm"
+                                className={'sm:px-44 lg:px-0 '}
+                                value={query ? query : ''}
+                                onChange={(e) => setQuery(e.target.value)}
+                            >
+                                مبدا
+                            </InputTextField>
+                            <ConnectingAirportsIcon/>
+                            <InputTextField
+                                size="sm"
+                                value={destinationValue}
+                                onChange={(e) => setDestinationValue(e.target.value)}
+                                className={'sm:px-44 lg:px-0'}
+                            >
+                                مقصد
+                            </InputTextField>
+                            <InputTextField
+                                size="sm"
+                                value={travelDateValue ? travelDateValue : ''}
+                                onChange={(e) => setTravelDateValue(e.target.value)}
+                                className={'sm:px-44 lg:px-0'}
+                            >
+                                تاریخ رفت و برگشت
+                            </InputTextField>
+                            <InputTextField
+                                size="sm"
+                                value={passengerCountValue}
+                                onChange={(e) => setPassengerCountValue(e.target.value)}
+                                className={'sm:px-44 lg:px-0'}
+                            >
+                                تعداد مسافر
+                            </InputTextField>
+                            <InputTextField
+                                size="sm"
+                                value={flightClassValue}
+                                onChange={(e) => setFlightClassValue(e.target.value)}
+                                className={'sm:px-44 lg:px-0'}
+                            >
+                                کلاس پرواز
+                            </InputTextField>
+                            <Button
+                                variant="fill"
+                                size="xl"
+                                className={' sm:px-56 lg:px-3'}
+                                type="submit"
+                            >
+                                <img src={searchIcon}/>
+                                جستجو
+                            </Button>
+                        </form>
+                    </div>
+                </div>
+            </Fade>
+            <History/>
+        </>
+    )
 }
 
 export default SearchBox

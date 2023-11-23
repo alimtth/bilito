@@ -10,7 +10,7 @@ import {sampleTicket} from '@/FakeData/ticket'
 
 function History() {
   return (
-    <div className="flex flex-col gap-4 mt-44 flex-wrap justify-center" id="container">
+    <div className="flex flex-col gap-4 mt-44 flex-wrap custom-container" >
       <div className="flex justify-between px-9">
         <div className="flex justify-between gap-4">
           <img src={HistoryIcon} />
