@@ -13,8 +13,8 @@ import Buttons from '@/components/Ui/Button'
 import { Alert, AlertTitle } from '@mui/material'
 
 const schema = yup.object().shape({
-  username: yup.string().required('فیلد نام کاربری اجباری است'),
-  password: yup.string().min(6).max(12).required('فیلد پسورد اجباری است'),
+  mobile: yup.string().required('فیلد نام کاربری اجباری است'),
+  password: yup.string().min(4).max(12).required('فیلد پسورد اجباری است'),
 })
 function Login() {
   const {
@@ -40,7 +40,7 @@ function Login() {
       setErrMsg('')
       setIsloding(true)
       const res = await apiLoginUser(data)
-      saveAccess(res.data.token.accessToken)
+      saveAccess(res.data.token)
       navigate('/')
 
       console.log(res)
@@ -74,13 +74,13 @@ function Login() {
                 <InputTextField
                   size="slx"
                   placeholder={''}
-                  register={register('username')}
+                  register={register('mobile')}
                 >
                   نام کاربری
                 </InputTextField>
-                {errors.username && (
+                {errors.mobile && (
                   <p className="text-red-500 text-sm mt-1">
-                    {errors.username?.message}
+                    {errors.mobile?.message}
                   </p>
                 )}
                 <br />

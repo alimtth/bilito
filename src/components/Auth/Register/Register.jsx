@@ -12,9 +12,9 @@ import {useAuthContext} from '@/providers/AuthProvider'
 import {apiRegisterUser} from '@/api/user'
 
 const schema = yup.object().shape({
-  username: yup.string().required('فیلد نام کاربری اجباری است'),
+  mobile: yup.string().required('فیلد نام کاربری اجباری است'),
   password: yup.string().min(4).max(8).required('فیلد پسورد اجباری است'),
-  confirmPassword: yup
+  password_confirmation: yup
     .string()
     .oneOf([yup.ref('password')], 'تکرار پسورد اشتباه است')
     .required(),
@@ -48,7 +48,7 @@ function Register() {
       setIsloding(true)
       const result = await apiRegisterUser(data)
 
-      saveAccess(result.data.token.accessToken)
+      saveAccess(result.data.token)
       navigate('/')
 
       console.log(result)
@@ -81,13 +81,13 @@ function Register() {
                 <InputTextField
                   size="slx"
                   type={'text'}
-                  register={register('username')}
+                  register={register('mobile')}
                 >
                   شماره موبایل
                 </InputTextField>
-                {errors.username && (
+                {errors.mobile && (
                   <p className="text-red-500 text-sm mt-1">
-                    {errors.username?.message}
+                    {errors.mobile?.message}
                   </p>
                 )}
                 <br />
@@ -107,13 +107,13 @@ function Register() {
                 <InputTextField
                   size="slx"
                   placeholder={''}
-                  register={register('confirmPassword')}
+                  register={register('password_confirmation')}
                 >
                   تکرار رمز عبور
                 </InputTextField>
-                {errors.confirmPassword && (
+                {errors.password_confirmation && (
                   <p className="text-red-500 text-sm mt-1">
-                    {errors.confirmPassword?.message}
+                    {errors.password_confirmation?.message}
                   </p>
                 )}
 
