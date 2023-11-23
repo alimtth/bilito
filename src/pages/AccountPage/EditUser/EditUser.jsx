@@ -88,6 +88,9 @@ function EditUser() {
                         >
                             {isSaving ? 'در حال ارسال' : 'ویرایش'}
                         </Buttons>
+                        <Buttons >
+                            <a href="https://widget.raychat.io/655e21fae2bda8dde47a9c67?version=2">s</a>
+                        </Buttons>
                     </div>
                 </div>
             </div>

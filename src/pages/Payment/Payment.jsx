@@ -298,13 +298,13 @@ export const Payment = () => {
               </div>
             </div>
             <div className="flex justify-center">
-            <div className="w-2/3 bg-yellow-50 text-yellow-700 flex flex-col justify-center items-center py-10 rounded-lg mt-10 ">
-              <div className="">
-                پرداخت شما ناموفق بود، اگر هزینه بلیط از حسابتان کسر شده ظرف مدت
-                72 ساعت به حساب شما برمی گردد
+              <div className="w-2/3 bg-yellow-50 text-yellow-700 flex flex-col justify-center items-center py-10 rounded-lg mt-10 ">
+                <div className="">
+                  پرداخت شما ناموفق بود، اگر هزینه بلیط از حسابتان کسر شده ظرف
+                  مدت 72 ساعت به حساب شما برمی گردد
+                </div>
+                <div className="mt-9">شماره پیگیری تراکنش: 123456789123</div>
               </div>
-              <div className="mt-9">شماره پیگیری تراکنش: 123456789123</div>
-            </div>
             </div>
             <div className="flex justify-center mt-9 gap-8">
               <Link to={'/form/confirm-buy'}>
@@ -319,6 +319,7 @@ export const Payment = () => {
         <Buttons onClick={hanldTest} variant="fill">
           <img src={wallet} alt="" />
         </Buttons>
+        
       </div>
     </div>
   )
