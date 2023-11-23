@@ -66,7 +66,7 @@ function SingleTicket({forth, back, imagess, price, id, length, children}) {
             </div>
             <div className="flex justify-between items-end gap-[64px] px-4 lg:flex-row flex-col">
               <div className="pb-5 gap-6 w-[575px] flex items-center ">
-                <img src={imagess} />
+                <img className='w-10' src={imagess} />
                 <div>
                   <div className="pl-8 gap-2 flex flex-col items-center">
                     <p>02:{id}</p>

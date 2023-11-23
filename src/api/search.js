@@ -1,6 +1,6 @@
-import {sampleTicket} from '@/FakeData/ticket'
-import {fakeRequest} from '@/FakeData/utils'
-import {apiClient} from '@/api/request.js'
+import { sampleTicket } from '@/FakeData/ticket'
+import { fakeRequest } from '@/FakeData/utils'
+import { apiClient } from '@/api/request.js'
 
 const apiSearch = async (filters) => {
   var data = sampleTicket
@@ -30,4 +30,12 @@ const searchInput = async (value) => {
   return apiClient.get(`/search?query=${value}`)
 }
 
-export {apiSearch, searchInput}
+const apiSearchFlight = (data) => {
+  return apiClient.post('/flight', data)
+}
+
+const apiGetFlightDetail = (flight_id) => {
+  return apiClient.get(`/flight/${flight_id}`)
+}
+
+export { apiSearch, searchInput, apiSearchFlight }

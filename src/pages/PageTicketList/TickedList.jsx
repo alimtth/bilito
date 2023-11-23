@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
-import React, {useEffect, useState} from 'react'
-import {IoIosArrowDown} from 'react-icons/io'
+import React, { useEffect, useState } from 'react'
+import { IoIosArrowDown } from 'react-icons/io'
 import airplane from '@/assets/Images/Icons/airplaneBorder.svg'
 import calendar from '@/assets/Images/Icons/calendar.svg'
 import profileAdd from '@/assets/Images/Icons/profile-add.svg'
@@ -11,45 +11,66 @@ import InputTextField from '@/components/Ui/InputTextField'
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports'
 import HomePageScreen from '@/components/NavBar/HomePageScreen'
 import SingleTicket from '@/components/TicketList/SingleTicket'
-import {apiSearch} from '@/api/search'
-import {useSearchParams} from 'react-router-dom'
-import {SideBarForm} from '@/components/SideBarForm/SideBarForm'
+import { apiSearch, apiSearchFlight } from '@/api/search'
+import { useSearchParams } from 'react-router-dom'
+import { SideBarForm } from '@/components/SideBarForm/SideBarForm'
+import { useQuery } from '@tanstack/react-query'
+import SelectField from '@/components/Ui/SelectField'
+import useGetCities from '@/api/hooks/use-get-cities'
+import { useMemo } from 'react'
+import DatePicker from "react-multi-date-picker"
+import persian from "react-date-object/calendars/persian"
+import persian_fa from "react-date-object/locales/persian_fa"
 // import { useQuery } from 'react-query'
 
+const filters = [
+  {
+    key: 'destination'
+  },
+  {
+    key: 'origin'
+  },
+  {
+    key: 'departure'
+  },
+  {
+    key: 'capacity'
+  },
+  {
+    key: 'class'
+  }
+]
+
 function TickedList() {
+  const citiesQuery = useGetCities()
   const [trySearch, setTrySearch] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
-  const [searchData, setSearchData] = useState([])
   const [searchParams, setSearchParams] = useSearchParams()
-  const [query, setQuery] = useState(() => searchParams.get('q'))
-  const [destination, setDestination] = useState(() =>
-    searchParams.get('destination')
-  )
-  const [travelDate, setTravelDate] = useState(() =>
-    searchParams.get('travelDate')
-  )
-  const [passengerCount, setPassengerCount] = useState(() =>
-    searchParams.get('passengerCount')
-  )
-  const [flightClass, setFlightClass] = useState(() =>
-    searchParams.get('flightClass')
-  )
+
+  const appliedFilters = useMemo(() => {
+    const result = {}
+
+    filters.forEach(filter => {
+      result[filter.key] = searchParams.get(filter.key) || ''
+    })
+
+    return result
+  }, [searchParams])
+
+  const [localFilters, setLocalFilters] = useState(appliedFilters)
+
+  const updateLocalFilter = (key, value) => {
+    setLocalFilters((s) => ({ ...s, [key]: value }))
+  }
 
   const hanldeSearch = (e) => {
     e.preventDefault()
     setSearchParams((s) => ({
       ...s,
-      q: query,
-      destination,
-      travelDate,
-      passengerCount,
-      flightClass,
+      ...localFilters
     }))
 
     setTrySearch(true)
   }
-
-  console.log(searchData)
 
   // const {data: searchData, isLoading} = useQuery(
   //   'searchData',
@@ -63,28 +84,47 @@ function TickedList() {
   // )
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const getSearchData = async () => {
-    try {
-      setIsLoading(true)
-      const data = await apiSearch({
-        q: query,
-        destination,
-        travelDate,
-        passengerCount,
-        flightClass,
-      })
-      setSearchData(data)
-    } catch (error) {
-      console.log(error)
-    } finally {
-      setIsLoading(false)
-    }
-  }
+  // const getSearchData = async () => {
+  //   try {
+  //     setIsLoading(true)
+  //     const data = await apiSearch({
+  //       q: query,
+  //       destination,
+  //       travelDate,
+  //       passengerCount,
+  //       flightClass,
+  //     })
+  //     setSearchData(data)
+  //   } catch (error) {
+  //     console.log(error)
+  //   } finally {
+  //     setIsLoading(false)
+  //   }
+  // }
 
-  useEffect(() => {
-    getSearchData()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query, destination, travelDate, passengerCount, flightClass])
+  // useEffect(() => {
+  //   getSearchData()
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [])
+
+
+  const searchQuery = useQuery({
+    queryFn: () => apiSearchFlight(appliedFilters),
+    queryKey: ['search-flight', appliedFilters]
+  })
+
+  const queryCity = useMemo(() => {
+    return citiesQuery.data?.find((c) => c.id == appliedFilters.origin)
+  }, [appliedFilters.origin, citiesQuery.data])
+
+
+  const destinationCity = useMemo(() => {
+    return citiesQuery.data?.find((c) => c.id == appliedFilters.destination)
+  }, [appliedFilters.destination, citiesQuery.data])
+
+ const searchData = useMemo(() => {
+  return searchQuery.data?.data?.data || []
+ }, [searchQuery.data])
 
   return (
     <div className="flex flex-col items-center">
@@ -98,46 +138,46 @@ function TickedList() {
             className="p-6 px-0 gap-3 flex justify-center flex-col lg:flex lg:flex-row lg:gap-6 w-full lg:w-auto flex-wrap items-center sm:gap-8 "
             onSubmit={hanldeSearch}
           >
-            <InputTextField
-              className={'sm:px-44 lg:px-0 '}
-              size={'ssl'}
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-            >
-              مبدا
-            </InputTextField>
+
+            <SelectField
+              value={localFilters.origin}
+              label="مبدا"
+              onChange={(option) => updateLocalFilter('origin', option.id)}
+              options={citiesQuery.data || []} />
+
             <div className="">
               <ConnectingAirportsIcon />
             </div>
+            <SelectField
+              value={localFilters.destination}
+              label="مقصد"
+              onChange={(option) => updateLocalFilter('destination', option.id)}
+              options={citiesQuery.data || []} />
             <InputTextField
               className={'sm:px-44 lg:px-0 '}
               size={'ssl'}
-              value={destination}
-              onChange={(e) => setDestination(e.target.value)}
-            >
-              مقصد
-            </InputTextField>
-            <InputTextField
-              className={'sm:px-44 lg:px-0 '}
-              size={'ssl'}
-              value={travelDate}
-              onChange={(e) => setTravelDate(e.target.value)}
+              value={localFilters.departure}
+              type='date'
+              onChange={(e) => updateLocalFilter('departure', e.target.value)}
             >
               تاریخ رفت و برگشت
             </InputTextField>
+            {/* <DatePicker
+              calendar={persian}
+              locale={persian_fa} /> */}
             <InputTextField
               className={'sm:px-44 lg:px-0 '}
               size={'ssl'}
-              value={passengerCount}
-              onChange={(e) => setPassengerCount(e.target.value)}
+              value={localFilters.capacity}
+              onChange={(e) => updateLocalFilter('capacity',e.target.value)}
             >
               تعداد مسافر
             </InputTextField>
             <InputTextField
               className={'sm:px-44 lg:px-0 '}
               size={'ssl'}
-              value={flightClass}
-              onChange={(e) => setFlightClass(e.target.value)}
+              value={localFilters.class}
+              onChange={(e) => updateLocalFilter('class',e.target.value)}
             >
               کلاس پرواز
             </InputTextField>
@@ -151,7 +191,7 @@ function TickedList() {
             <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
               <img src={airplane} alt="airplane" />
               <p>
-                بلیط همواپیما {query} به {destination}
+                بلیط همواپیما {queryCity ? queryCity.name : '...'} به {destinationCity ? destinationCity.name : '...'}
               </p>
             </div>
 
@@ -191,7 +231,7 @@ function TickedList() {
             </div>
           </div>
 
-          {isLoading ? (
+          {searchQuery.isLoading ? (
             <div className="flex justify-center items-center rounded-md h-12 w-12 border-4 border-t-4 border-blue-500 animate-spin  mr-[50%] mt-20"></div>
           ) : searchData.length === 0 ? (
             <div className="flex flex-col items-center mt-9">
@@ -206,15 +246,15 @@ function TickedList() {
               </div>
             </div>
           ) : (
-            searchData.map((product) => (
+            searchData.map((flight) => (
               <SingleTicket
-                key={product.id}
-                forth={product.forth}
-                back={product.back}
-                imagess={product.image}
-                price={product.price}
-                id={product.id}
-                length={product.length}
+                key={flight.id}
+                forth={flight.origin?.name}
+                back={flight.destination?.name}
+                imagess={flight.airline?.image_url}
+                price={flight.price}
+                id={flight.id}
+                length={flight.capacity}
               ></SingleTicket>
             ))
           )}
