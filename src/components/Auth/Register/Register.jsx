@@ -64,31 +64,26 @@ function Register() {
   return (
     <div>
     <div className="fixed inset-0 bg-blue-650 bg-opacity-10 backdrop-blur-[0.5px] flex justify-center items-center">
-        <div className="w-[600px] fixed z-20 mt-[100px] opacity-75 mb-16">
-          <div className="bg-white p-2 rounded-[8px]">
-            <div className="flex flex-col items-center">
+        <div className="fixed z-20 mt-[100px] opacity-75 mb-16">
+          <div className="bg-white p-2 rounded-[8px] shadow-md">
+            <div className="flex flex-col items-center gap-6 justify-center">
               <img
                 src={bilitoIcon}
                 alt=""
                 className="w-[96px] flex justify-center mt-8"
               />
-              <h3 className="font-semibold mt-7 flex justify-center text-[20px]">
+              <h3 className="font-semibold mt-7 flex justify-center text-[20px] animate-pulse hover:text-blue-650">
                 ورود یا ثبت نام
               </h3>
-
-              <h6 className="-mr-[150px] font-normal text-gray-600 mt-[32px] mb-[16px]">
-                کد تایید به شماره موبایلی که وارد می‌کنید، ارسال خواهد شد.
-              </h6>
               <form
-                className="flex flex-col justify-start items-start px-6"
+                className="flex flex-col items-center px-6"
                 onSubmit={handleSubmit(onFormSubmit)}
               >
                 <InputTextField
-                  size="sm"
+                  size="slx"
                   
                   type={'text'}
                   register={register('username')}
-                  className="w-[530px] "
                 >
                   شماره موبایل
                 </InputTextField>
@@ -99,8 +94,7 @@ function Register() {
                 )}
                 <br />
                 <InputTextField
-                  size="sm"
-                  className="w-[530px]"
+                  size="slx"
                   placeholder={''}
                   register={register('password')}
                 >
@@ -113,8 +107,7 @@ function Register() {
                 )}
                 <br />
                 <InputTextField
-                  size="sm"
-                  className="w-[530px]"
+                  size="slx"
                   placeholder={''}
                   register={register('confirmPassword')}
                 >
@@ -126,7 +119,7 @@ function Register() {
                   </p>
                 )}
 
-                <div>
+                <div className='flex flex-col'>
                   <div className="flex gap-4  mt-[40px] text-gray-600 mr-4">
                     <input
                       type="checkbox"
@@ -143,7 +136,8 @@ function Register() {
                     </h4>
                   </div>
                   <Buttons
-                    className="bg-gray-650 text-white flex justify-center w-[536px] h-[48px] rounded-[8px] mt-4 mb-[32px]"
+                    className="bg-gray-650 text-white flex justify-center  rounded-[8px] mt-4 mb-[32px]"
+                    size='slx'
                     type="submit"
                     loading={isloding}
                     styles={{
