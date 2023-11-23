@@ -53,7 +53,6 @@ function HeaderTabs() {
               ? 'fixed top-6 w-full left-1/2 transform -translate-x-1/2 transition-all duration-700 ease-linear shadow-2xl'
               : ''
           }`}
-
         >
           <div className="flex justify-between flex-row-reverse lg:flex-row gap-16">
             <img src={bilitoIcon} />
@@ -168,7 +167,7 @@ function HeaderTabs() {
                 ) : (
                   <div>
                     <img
-                      src={currentUser?.avatar}
+                      src={currentUser?.image ?? '/src/assets/Images/profile.jpg'}
                       className="w-10 h-10 rounded-full z-50"
                       onClick={handlHoverd}
                     />

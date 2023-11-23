@@ -2,7 +2,6 @@ import HeaderTabs from '@/components/NavBar/HeaderTabs'
 import {useAuthContext} from '@/providers/AuthProvider'
 import {Link, Outlet} from 'react-router-dom'
 import profile from '@/assets/Images/Icons/profile-add.svg'
-import profileUser from '@/assets/Images/profile.jpg'
 import {useUser} from '@/providers/UserDataProvider'
 
 function BaseLayoutAcc() {
