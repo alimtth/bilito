@@ -18,7 +18,7 @@ const apiGetProfile = () => {
 
 
 const apiUpdateCurrentUser = (data) => {
-  return apiClient.post('/profile', data)
+  return apiClient.put('/profile', data)
 }
 
-export {apiLoginUser, apiRegisterUser, apiGetCurrentUser, apiGetProfile}
+export {apiLoginUser, apiRegisterUser, apiGetCurrentUser, apiGetProfile, apiUpdateCurrentUser}

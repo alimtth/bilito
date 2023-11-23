@@ -1,12 +1,17 @@
 import Buttons from '@/components/Ui/Button'
 import {Link} from 'react-router-dom'
-import { useAuthContext } from '@/providers/AuthProvider'
-import SelectField from '@/components/Ui/SelectField';
+import {useAuthContext} from '@/providers/AuthProvider'
+import { apiGetProfile } from '@/api/user'
 
 function UserData() {
   const {currentUser} = useAuthContext()
+  // console.log(currentUser)
 
-  console.log(currentUser);
+  const salma = async() => {
+    const res = await apiGetProfile()
+
+    console.log(res);
+  }
   return (
     <>
       <div className="flex flex-col mt-16 ] ">
@@ -25,7 +30,9 @@ function UserData() {
             </div>
             <div className="flex flex-col gap-2">
               <span className="text-gray-500 font-light text-sm">جنسیت</span>
-              <span className="text-gray-20 font-bold">{currentUser?.gender ?? 'جسنیت را وارد کنید'}</span>
+              <span className="text-gray-20 font-bold">
+                {currentUser?.gender ?? 'جسنیت را وارد کنید'}
+              </span>
             </div>
             <div className="flex flex-col gap-2">
               <span className="text-gray-500 font-light text-sm">کدملی</span>

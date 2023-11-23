@@ -2,25 +2,18 @@
 import React, {useState} from 'react'
 import InputTextField from '@/components/Ui/InputTextField'
 import Buttons from '@/components/Ui/Button'
-import {useUser} from '@/providers/UserDataProvider'
-import { apiGetProfile } from '@/api/user'
+import {apiUpdateCurrentUser} from '@/api/user'
 
 function EditUser() {
-  const {userData, setUserData, savaUserData} = useUser()
-  const [isSaving, setIsSaving] = useState(false)
-
-  const handleSaveChanges = () => {
-    setIsSaving(true)
-    setTimeout(() => {
-      savaUserData(userData)
-      setIsSaving(false)
-    }, 1000)
-  }
-
-  const salamProfile = async() => {
-    const res = await apiGetProfile()
-
-    console.log(res);
+  const [userData, setUserData] = useState({
+    name: '',
+    gender: '',
+    national_code: '',
+    mobile: '',
+  })
+  const handleSaveChanges  = async () => {
+    const res = await apiUpdateCurrentUser(userData)
+    console.log(res)
   }
   return (
     <>
@@ -33,11 +26,11 @@ function EditUser() {
             <InputTextField
               className="w-full lg:w-[350px]"
               size={'ssl'}
-              value={userData.fullName}
+              value={userData.name}
               onChange={(e) =>
                 setUserData({
                   ...userData,
-                  fullName: e.target.value,
+                  name: e.target.value,
                 })
               }
             >
@@ -60,11 +53,11 @@ function EditUser() {
             <InputTextField
               className="w-full lg:w-[350px]"
               size={'ssl'}
-              value={userData.nationalCode}
+              value={userData.national_code}
               onChange={(e) =>
                 setUserData({
                   ...userData,
-                  nationalCode: e.target.value,
+                  national_code: e.target.value,
                 })
               }
             >
@@ -73,11 +66,11 @@ function EditUser() {
             <InputTextField
               className="w-full lg:w-[350px]"
               size={'ssl'}
-              value={userData.phoneNumber}
+              value={userData.mobile}
               onChange={(e) =>
                 setUserData({
                   ...userData,
-                  phoneNumber: e.target.value,
+                  mobile: e.target.value,
                 })
               }
             >
@@ -89,9 +82,9 @@ function EditUser() {
               variant="fill"
               className={'w-full lg:w-1/4 flex justify-center items-end'}
               onClick={handleSaveChanges}
-              disabled={isSaving}
+            //   disabled={isSaving}
             >
-              {isSaving ? 'در حال ارسال' : 'ویرایش'}
+              {/* {isSaving ? 'در حال ارسال' : 'ویرایش'} */}
             </Buttons>
             {/* <Buttons >
                             <a href="https://widget.raychat.io/655e21fae2bda8dde47a9c67?version=2">s</a>
