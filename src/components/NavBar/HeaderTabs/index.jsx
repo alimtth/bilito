@@ -71,9 +71,9 @@ function HeaderTabs() {
                     سفرهای من
                   </li>
                 </Link>
-                <li className={styles.dropdown + 'cursor-pointer'}>
+                <li className={ styles.dropdown + ' cursor-pointer'}>
                   <button className={styles.dropButton}>سایر موارد</button>
-                  <Image src={arrowDown} className="" />
+                  <Image src={arrowDown} />
                   <div className={styles.dropdown_content}>
                     <Link href="/insurance">بیمه مسافرتی</Link>
                     <Link href="/about"> درباره ما</Link>

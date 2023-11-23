@@ -10,7 +10,7 @@
     background: var(--primary-shade-2, #11577A);
     flex-direction: row-reverse;
 }
-.material-textfield {
+.material_textfield {
     position: relative;
 }
 .label {

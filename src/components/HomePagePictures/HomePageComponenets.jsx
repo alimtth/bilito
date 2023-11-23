@@ -20,7 +20,7 @@ function HomePageComponenets() {
     <div className="mt-14" id="container">
       <div className={styles.dextop_grid}>
         <div className="grid grid-cols-3 w-full gap-4 ">
-          <div className={ "relative w-full"}>
+          <div className={ styles.box + " relative w-full"}>
             <div style={{ paddingBottom: "100%" }} />
             <Image
               src={kish}
@@ -36,7 +36,7 @@ function HomePageComponenets() {
               </button>
             </div>
           </div>
-          <div className={"relative w-full"}>
+          <div className={styles.box + " relative w-full"}>
             <div style={{ paddingBottom: "100%" }} />
             <Image
               src={turkey}
@@ -54,7 +54,7 @@ function HomePageComponenets() {
 
           <div className="grid gap-4">
 
-            <div className={"relative w-full"}>
+            <div className={ styles.box + " relative w-full"}>
               <div style={{ paddingBottom: "50%" }} />
               <Image
                 src={shiraz}
@@ -70,7 +70,7 @@ function HomePageComponenets() {
               </div>
 
             </div>
-            <div className={"relative w-full"}>
+            <div className={styles.box +  " relative w-full"}>
               <div style={{ paddingBottom: "50%" }} />
               <Image
                 src={dubai}
