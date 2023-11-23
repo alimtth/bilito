@@ -130,8 +130,8 @@ function TickedList() {
     <div className="flex flex-col items-center">
       <HomePageScreen />
       <section
-        className="-m-2 lg:-m-12 z-10 bg-white flex flex-col items-center rounded-lg shadow-2xl"
-        id="container"
+        className="-m-2 lg:-m-12 z-10 bg-white flex flex-col items-center rounded-lg shadow-2xl custom-container"
+
       >
         {trySearch ? (
           <form
@@ -215,7 +215,7 @@ function TickedList() {
           </div>
         )}
       </section>
-      <div className="flex mt-20 gap-6 justify-center" id="container">
+      <div className="flex mt-20 gap-6 justify-center custom-container" >
         <SideBarForm searchData={searchData} />
         <div className="lg:flex-auto lg:basis-[75%]">
           <div className="flex gap-4 justify-between">

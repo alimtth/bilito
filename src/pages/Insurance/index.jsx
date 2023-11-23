@@ -27,10 +27,10 @@ function Insurace() {
   return (
     <>
     <HomePageInsurance />
-      <div id="container">
+      <div className={'custom-container'}>
         <section
-        className="-m-2 lg:-m-12  bg-white flex flex-col items-center rounded-lg shadow-2xl"
-        id="container"
+        className="custom-container -m-2 lg:-m-12  bg-white flex flex-col items-center rounded-lg shadow-2xl"
+
       >
           <form className="p-6 px-0 gap-3 flex justify-center flex-col lg:flex lg:flex-row lg:gap-6 w-full lg:w-auto flex-wrap items-center sm:gap-8 ">
             <InputTextField
