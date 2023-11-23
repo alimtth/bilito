@@ -17,7 +17,11 @@ import '../style.css'
 function HeaderTabs() {
   const [showMenu, setShowMenu] = useState(false)
   const [isHeaderSticky, setIsHeaderSticky] = useState(false)
-  const [hover, setHover] = useState(false)
+  const [isHovered, setIsHovered] = useState(false)
+
+  const handleHover = () => {
+    setIsHovered(!isHovered)
+  }
 
   const handleToggle = () => {
     setShowMenu(!showMenu)
@@ -31,9 +35,6 @@ function HeaderTabs() {
   //   }
   // }
   //commit own in res ad req bla bla
-  const handlHoverd = () => {
-    setHover(!hover)
-  }
 
   const {isLoggedIn, logout, currentUser, isLoading} = useAuthContext()
   //
@@ -167,16 +168,19 @@ function HeaderTabs() {
                 ) : (
                   <div>
                     <img
-                      src={currentUser?.image ?? '/src/assets/Images/profile.jpg'}
-                      className="w-10 h-10 rounded-full z-50"
-                      onClick={handlHoverd}
+                      src={
+                        currentUser?.image ?? '/src/assets/Images/profile.jpg'
+                      }
+                      className="w-10 h-10 rounded-full z-10"
+                      onClick={handleHover}
                     />
-                    {hover && (
+                    {isHovered && (
                       <div
                         className={
-                          'p-[20px] bg-white  -mr-10 rounded-lg flex flex-col items-center justify-center absolute top-[25px] gap-[20px] w-100 z-30 shadow-lg mt-7'
+                          'p-[20px] bg-white  -mr-10 rounded-lg flex flex-col items-center justify-center absolute top-[25px] gap-[20px] w-100 z-10 shadow-lg mt-8'
                         }
-                      >
+                        >
+                          
                         <Link to={'/account/data-user'}>
                           <div className="nested-item text-[13px] text-[#080808BF] opacity-75">
                             حساب کاربری

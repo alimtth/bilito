@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import InputTextField from '@/components/Ui/InputTextField'
 import Buttons from '@/components/Ui/Button'
 import {apiUpdateCurrentUser} from '@/api/user'
+import { Button } from '@mui/material'
 
 function EditUser() {
   const [userData, setUserData] = useState({
@@ -11,7 +12,7 @@ function EditUser() {
     national_code: '',
     mobile: '',
   })
-  const handleSaveChanges  = async () => {
+  const handleSaveChanges = async () => {
     const res = await apiUpdateCurrentUser(userData)
     console.log(res)
   }
@@ -76,15 +77,23 @@ function EditUser() {
             >
               شماره موبایل
             </InputTextField>
+
+            <Button
+              component="label"
+              variant="contained"
+              startIcon={<CloudUploadIcon />}
+            >
+              Upload file
+              <VisuallyHiddenInput type="file" />
+            </Button>
           </div>
           <div className="justify-end flex">
             <Buttons
               variant="fill"
               className={'w-full lg:w-1/4 flex justify-center items-end'}
               onClick={handleSaveChanges}
-            //   disabled={isSaving}
             >
-              {/* {isSaving ? 'در حال ارسال' : 'ویرایش'} */}
+              ویرایش
             </Buttons>
             {/* <Buttons >
                             <a href="https://widget.raychat.io/655e21fae2bda8dde47a9c67?version=2">s</a>
