@@ -55,10 +55,11 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
             >
               <div className="flex justify-between">
                 <div className="flex gap-6">
-                <ul onClick={() => handleTapClick(0)}>اطلاعات پرواز</ul>
-                <ul onClick={() => handleTapClick(1)}>قوانین استرداد</ul>
-                <ul onClick={() => handleTapClick(2)}>قوانین ویزا و مسیر</ul>
-                <ul onClick={() => handleTapClick(3)}>بار مجاز</ul>
+                  <ul onClick={() => handleTapClick(0)}>اطلاعات پرواز</ul>
+                  <ul onClick={() => handleTapClick(1)}>قوانین استرداد</ul>
+                  <ul onClick={() => handleTapClick(2)}>قوانین ویزا و مسیر</ul>
+                  <ul onClick={() => handleTapClick(3)}>بار مجاز</ul>
+               
                 </div>
                 <div className="flex">
                   <img src={close} alt="" onClick={handlClose} />

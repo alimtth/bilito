@@ -153,7 +153,6 @@ function HeaderTabs() {
               </div>
             </div>
           </div>
-          {/* edit in side efect */}
           <div className="lg:flex justify-between gap-8 hidden">
             <div className="inline-flex items-center gap-2 opacity-80">
               <p className="">4045_021</p>

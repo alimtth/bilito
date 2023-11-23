@@ -12,7 +12,8 @@ const sizes = {
   lg: "flex py-2 text-lg px-5 text-center",
   xl: "flex py-3 text-xl px-6 text-center",
   xxl: "flex py-4 text-xl px-7 text-center",
-  xxls: "flex py-4 text-xl px-60 text-center"
+  xxls: "flex py-4 text-xl px-60 text-center",
+  slx: 'flex py-4 text-sm px-36',
 };
 
 // eslint-disable-next-line react/prop-types
