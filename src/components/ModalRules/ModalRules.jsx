@@ -59,6 +59,7 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {
                   <ul onClick={() => handleTapClick(1)}>قوانین استرداد</ul>
                   <ul onClick={() => handleTapClick(2)}>قوانین ویزا و مسیر</ul>
                   <ul onClick={() => handleTapClick(3)}>بار مجاز</ul>
+               
                 </div>
                 <div className="flex">
                   <img src={close} alt="" onClick={handlClose} />

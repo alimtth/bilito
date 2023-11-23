@@ -94,6 +94,8 @@ function Register() {
                 <br />
                 <InputTextField
                   size="slx"
+                  
+                  className="w-[530px]"
                   placeholder={''}
                   register={register('password')}
                 >
