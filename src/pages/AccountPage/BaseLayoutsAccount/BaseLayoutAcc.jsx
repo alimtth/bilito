@@ -2,23 +2,24 @@ import HeaderTabs from '@/components/NavBar/HeaderTabs'
 import {useAuthContext} from '@/providers/AuthProvider'
 import {Link, Outlet} from 'react-router-dom'
 import profile from '@/assets/Images/Icons/profile-add.svg'
+import profileUser from '@/assets/Images/profile.jpg'
 import {useUser} from '@/providers/UserDataProvider'
 
 function BaseLayoutAcc() {
   const {currentUser, logout} = useAuthContext()
   const {userData} = useUser()
+  
   return (
     <>
       <HeaderTabs />
       <div
         className="flex lg:flex-nowrap custom-container flex-wrap justify-center gap-4  -mt-12"
-
       >
         <div className=" lg:outline lg:outline-gray-400 lg:rounded-lg mt-28 basis-1/4">
           <div className="flex flex-col gap-1 items-center pt-5">
             <img
-              src={currentUser?.avatar}
-              alt=""
+              src={currentUser?.image ?? '/src/assets/Images/profile.jpg'}
+              alt="ss"
               className="rounded-full w-[50%] h-[75%] lg:w-[20%] lg:h-[50%]"
             />
             <h4 className="mt-4 font-bold text-gray-500">

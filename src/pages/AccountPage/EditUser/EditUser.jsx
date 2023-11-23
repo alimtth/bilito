@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import InputTextField from '@/components/Ui/InputTextField'
 import Buttons from '@/components/Ui/Button'
 import {useUser} from '@/providers/UserDataProvider'
+import { apiGetProfile } from '@/api/user'
 
 function EditUser() {
   const {userData, setUserData, savaUserData} = useUser()
@@ -14,6 +15,12 @@ function EditUser() {
       savaUserData(userData)
       setIsSaving(false)
     }, 1000)
+  }
+
+  const salamProfile = async() => {
+    const res = await apiGetProfile()
+
+    console.log(res);
   }
   return (
     <>
