@@ -3,8 +3,11 @@ import {useAuthContext} from '@/providers/AuthProvider'
 import {Link, Outlet} from 'react-router-dom'
 import profile from '@/assets/Images/Icons/profile-add.svg'
 
+
 function BaseLayoutAcc() {
-  const {currentUser, logout} = useAuthContext()
+  const {currentUser, logout} = useAuthContext()  
+
+  
   return (
     <>
       <HeaderTabs />
@@ -97,16 +100,13 @@ function BaseLayoutAcc() {
           >
             <img src={profile} alt="" /> کیف پول
           </p>
-          <Link to={'/login'}>
           <p
             className={`flex items-center text-red-600 gap-3 mb-6 cursor-pointer w-72 h-12 rounded-md ''}`}
             onClick={logout}
-            
-            >
+          >
             <img src={profile} alt="" />
             خروج از حساب کاربری
           </p>
-            </Link>
         </div>
       </div>
     </>

@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect, useState } from 'react'
-import { IoIosArrowDown } from 'react-icons/io'
+import React, {useEffect, useState} from 'react'
+import {IoIosArrowDown} from 'react-icons/io'
 import airplane from '@/assets/Images/Icons/airplaneBorder.svg'
 import calendar from '@/assets/Images/Icons/calendar.svg'
 import profileAdd from '@/assets/Images/Icons/profile-add.svg'
@@ -11,13 +11,13 @@ import InputTextField from '@/components/Ui/InputTextField'
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports'
 import HomePageScreen from '@/components/NavBar/HomePageScreen'
 import SingleTicket from '@/components/TicketList/SingleTicket'
-import {  apiSearchFlight } from '@/api/search'
-import { useSearchParams } from 'react-router-dom'
-import { SideBarForm } from '@/components/SideBarForm/SideBarForm'
-import { useQuery } from '@tanstack/react-query'
+import {apiSearchFlight} from '@/api/search'
+import {useSearchParams} from 'react-router-dom'
+import {SideBarForm} from '@/components/SideBarForm/SideBarForm'
+import {useQuery} from '@tanstack/react-query'
 import SelectField from '@/components/Ui/SelectField'
 import useGetCities from '@/api/hooks/use-get-cities'
-import { useMemo } from 'react'
+import {useMemo} from 'react'
 // import DatePicker from "react-multi-date-picker"
 // import persian from "react-date-object/calendars/persian"
 // import persian_fa from "react-date-object/locales/persian_fa"
@@ -25,20 +25,20 @@ import { useMemo } from 'react'
 
 const filters = [
   {
-    key: 'destination'
+    key: 'destination',
   },
   {
-    key: 'origin'
+    key: 'origin',
   },
   {
-    key: 'departure'
+    key: 'departure',
   },
   {
-    key: 'capacity'
+    key: 'capacity',
   },
   {
-    key: 'class'
-  }
+    key: 'class',
+  },
 ]
 
 function TickedList() {
@@ -48,7 +48,7 @@ function TickedList() {
 
   const appliedFilters = useMemo(() => {
     const result = {}
-    filters.forEach(filter => {
+    filters.forEach((filter) => {
       result[filter.key] = searchParams.get(filter.key) || ''
     })
 
@@ -58,14 +58,14 @@ function TickedList() {
   const [localFilters, setLocalFilters] = useState(appliedFilters)
 
   const updateLocalFilter = (key, value) => {
-    setLocalFilters((s) => ({ ...s, [key]: value }))
+    setLocalFilters((s) => ({...s, [key]: value}))
   }
 
   const hanldeSearch = (e) => {
     e.preventDefault()
     setSearchParams((s) => ({
       ...s,
-      ...localFilters
+      ...localFilters,
     }))
 
     setTrySearch(true)
@@ -106,43 +106,38 @@ function TickedList() {
   //   // eslint-disable-next-line react-hooks/exhaustive-deps
   // }, [])
 
-
   const searchQuery = useQuery({
     queryFn: () => apiSearchFlight(appliedFilters),
-    queryKey: ['search-flight', appliedFilters]
+    queryKey: ['search-flight', appliedFilters],
   })
 
   const queryCity = useMemo(() => {
     return citiesQuery.data?.find((c) => c.id == appliedFilters.origin)
   }, [appliedFilters.origin, citiesQuery.data])
 
-
   const destinationCity = useMemo(() => {
     return citiesQuery.data?.find((c) => c.id == appliedFilters.destination)
   }, [appliedFilters.destination, citiesQuery.data])
 
- const searchData = useMemo(() => {
-  return searchQuery.data?.data?.data || []
- }, [searchQuery.data])
+  const searchData = useMemo(() => {
+    return searchQuery.data?.data?.data || []
+  }, [searchQuery.data])
 
   return (
     <div className="flex flex-col items-center">
       <HomePageScreen />
-      <section
-        className="-m-2 lg:-m-12 z-10 bg-white flex flex-col items-center rounded-lg shadow-2xl custom-container"
-
-      >
+      <section className="-m-2 lg:-m-12 z-10 bg-white flex flex-col items-center rounded-lg shadow-2xl custom-container">
         {trySearch ? (
           <form
             className="p-6 px-0 gap-3 flex justify-center flex-col lg:flex lg:flex-row lg:gap-6 w-full lg:w-auto flex-wrap items-center sm:gap-8 "
             onSubmit={hanldeSearch}
           >
-
             <SelectField
               value={localFilters.origin}
               label="مبدا"
               onChange={(option) => updateLocalFilter('origin', option.id)}
-              options={citiesQuery.data || []} />
+              options={citiesQuery.data || []}
+            />
 
             <div className="">
               <ConnectingAirportsIcon />
@@ -151,24 +146,22 @@ function TickedList() {
               value={localFilters.destination}
               label="مقصد"
               onChange={(option) => updateLocalFilter('destination', option.id)}
-              options={citiesQuery.data || []} />
+              options={citiesQuery.data || []}
+            />
             <InputTextField
               className={'text-right sm:px-44 lg:px-0 '}
               size={'ssl'}
               value={localFilters.departure}
-              type='date'
+              type="date"
               onChange={(e) => updateLocalFilter('departure', e.target.value)}
             >
-              تاریخ 
+              تاریخ
             </InputTextField>
-            {/* <DatePicker
-              calendar={persian}
-              locale={persian_fa} /> */}
             <InputTextField
               className={'sm:px-44 lg:px-0 '}
               size={'ssl'}
               value={localFilters.capacity}
-              onChange={(e) => updateLocalFilter('capacity',e.target.value)}
+              onChange={(e) => updateLocalFilter('capacity', e.target.value)}
             >
               تعداد مسافر
             </InputTextField>
@@ -176,7 +169,7 @@ function TickedList() {
               className={'sm:px-44 lg:px-0 '}
               size={'ssl'}
               value={localFilters.class}
-              onChange={(e) => updateLocalFilter('class',e.target.value)}
+              onChange={(e) => updateLocalFilter('class', e.target.value)}
             >
               کلاس پرواز
             </InputTextField>
@@ -190,7 +183,8 @@ function TickedList() {
             <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
               <img src={airplane} alt="airplane" />
               <p>
-                بلیط همواپیما {queryCity ? queryCity.name : '...'} به {destinationCity ? destinationCity.name : '...'}
+                بلیط همواپیما {queryCity ? queryCity.name : '...'} به{' '}
+                {destinationCity ? destinationCity.name : '...'}
               </p>
             </div>
 
@@ -214,7 +208,7 @@ function TickedList() {
           </div>
         )}
       </section>
-      <div className="flex mt-20 gap-6 justify-center custom-container" >
+      <div className="flex mt-20 gap-6 justify-center custom-container">
         <SideBarForm searchData={searchData} />
         <div className="lg:flex-auto lg:basis-[75%]">
           <div className="flex gap-4 justify-between">
@@ -229,7 +223,6 @@ function TickedList() {
               <IoIosArrowDown />
             </div>
           </div>
-
           {searchQuery.isLoading ? (
             <div className="flex justify-center items-center rounded-md h-12 w-12 border-4 border-t-4 border-blue-500 animate-spin  mr-[50%] mt-20"></div>
           ) : searchData.length === 0 ? (

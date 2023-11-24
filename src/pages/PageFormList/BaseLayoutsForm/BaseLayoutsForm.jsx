@@ -3,12 +3,24 @@ import React from 'react'
 import HeaderTabs from '@/components/NavBar/HeaderTabs'
 
 import {useEffect, useState} from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useParams, useSearchParams } from 'react-router-dom'
 import { BilitForm } from '@/components/BilitForm/BilitForm'
+import { useQuery } from '@tanstack/react-query'
+import { apiGetFlightDetail } from '@/api/search'
 
 export const BaseLayoutsForm = () => {
   const [seconds, setSeconds] = useState(0)
   const [minutes, setMinutes] = useState(10)
+  const [searchParams] = useSearchParams()
+
+  const flight_id = searchParams.get('flight_id')
+
+  const flightQuery = useQuery({
+    queryKey: ['flight', flight_id],
+    queryFn: () => apiGetFlightDetail(flight_id)
+  })
+
+  console.log(flightQuery)
 
   function updateTime() {
     if (minutes == 0 && seconds == 0) {
@@ -36,7 +48,7 @@ export const BaseLayoutsForm = () => {
       <div className="custom-container">
         <HeaderTabs />
         <hr />
-        <div className="my-8 border border-gray-100 rounded-lg hidden-mobile">
+        <div className="my-8 border border-gray-100 rounded-lg">
             <BilitForm />
           <div className="p-8 flex items-start justify-between">
             <div className="flex justify-center items-center gap-[8px]">

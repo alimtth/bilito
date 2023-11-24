@@ -3,11 +3,11 @@ import React, { useState } from 'react'
 import InputTextField from '@/components/Ui/InputTextField'
 import Buttons from '@/components/Ui/Button'
 import { apiUpdateCurrentUser, apiUpdateCurrentUserAvatar } from '@/api/user'
-import { TextField } from '@mui/material'
 import { useAuthContext } from '@/providers/AuthProvider'
 import { useNavigate } from 'react-router-dom'
 import { useMutation } from '@tanstack/react-query'
 import AvatarField from '@/components/Ui/AvatarField'
+import { SlCloudUpload } from "react-icons/sl";
 
 function EditUser() {
   const navigate = useNavigate()
@@ -29,14 +29,7 @@ function EditUser() {
     mobile: currentUser.mobile,
   })
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-
-    setUserData(() => ({
-      ...userData,
-      image: file,
-    }));
-  };
+  
 
   const handleSaveChanges = async () => {
     if (
@@ -45,7 +38,6 @@ function EditUser() {
       !userData.national_code ||
       !userData.mobile
     ) {
-      toast.error('لطفاً تمام فیلدهای اطلاعات را پر کنید.');
       return
     }
 
@@ -139,7 +131,10 @@ function EditUser() {
               شماره موبایل
             </InputTextField>
 
-            <AvatarField onChange={handleChangeAvatar} loading={updateUserAvatarMutation.isPending}/>
+          </div>
+          <div className='flex flex-col gap-3 justify-start mr-10'>
+            <AvatarField onChange={handleChangeAvatar} loading={updateUserAvatarMutation.isPending} />
+            <h3>عکس خود را بارگذاری کنید</h3>
           </div>
           <div className="justify-end flex">
             <Buttons

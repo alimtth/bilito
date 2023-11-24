@@ -38,4 +38,4 @@ const apiGetFlightDetail = (flight_id) => {
   return apiClient.get(`/flight/${flight_id}`)
 }
 
-export { apiSearch, searchInput, apiSearchFlight }
+export { apiSearch, searchInput, apiSearchFlight, apiGetFlightDetail }
