@@ -12,9 +12,13 @@ const apiGetCurrentUser = () => {
   return apiClient.get('/user')
 }
 
-
-const apiUpdateCurrentUser = (data) => {
-  return apiClient.post('/profile', data)
+const apiGetProfile = () => {
+  return apiClient.get('/profile')
 }
 
-export {apiLoginUser, apiRegisterUser, apiGetCurrentUser}
+
+const apiUpdateCurrentUser = (data) => {
+  return apiClient.put('/profile', data)
+}
+
+export {apiLoginUser, apiRegisterUser, apiGetCurrentUser, apiGetProfile, apiUpdateCurrentUser}

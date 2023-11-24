@@ -40,7 +40,6 @@ function Register() {
   }
 
   const onFormSubmit = async (data) => {
-    console.log(data)
     if (isloding) return
 
     try {

@@ -31,10 +31,10 @@ const AuthProvider = ({children}) => {
     if (isLoading) return
     setIsLoading(true)
     const result = await apiGetCurrentUser()
-
     setCurrentUser(result.data)
     setIsLoading(false)
   }
+
 
   useEffect(() => {
     if (isLoggedIn) {

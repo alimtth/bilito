@@ -7,7 +7,6 @@ import iconeairplan from '@/assets/Images/Icons/airplaneblue.svg'
 import line from '@/assets/Images/Icons/Line.svg'
 import FormList from '@/pages/PageFormList/FormList'
 import {motion, AnimatePresence} from 'framer-motion'
-import {useEffect} from 'react'
 
 // eslint-disable-next-line react/prop-types
 export const ModalRules = ({showModal, setIsShow, forth, back, imagess}) => {

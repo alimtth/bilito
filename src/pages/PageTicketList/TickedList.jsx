@@ -48,7 +48,6 @@ function TickedList() {
 
   const appliedFilters = useMemo(() => {
     const result = {}
-
     filters.forEach(filter => {
       result[filter.key] = searchParams.get(filter.key) || ''
     })
