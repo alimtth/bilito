@@ -14,7 +14,6 @@ const AvatarField = ({onChange, loading, children}) => {
       onChange?.(_file)
     }
   }
-
   const filePreview = useMemo(() => {
     return file ? URL.createObjectURL(file) : null
   }, [file])

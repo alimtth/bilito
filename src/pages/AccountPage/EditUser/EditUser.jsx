@@ -1,25 +1,24 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import InputTextField from '@/components/Ui/InputTextField'
 import Buttons from '@/components/Ui/Button'
-import { apiUpdateCurrentUser, apiUpdateCurrentUserAvatar } from '@/api/user'
-import { useAuthContext } from '@/providers/AuthProvider'
-import { useNavigate } from 'react-router-dom'
-import { useMutation } from '@tanstack/react-query'
+import {apiUpdateCurrentUser, apiUpdateCurrentUserAvatar} from '@/api/user'
+import {useAuthContext} from '@/providers/AuthProvider'
+import {useNavigate} from 'react-router-dom'
+import {useMutation} from '@tanstack/react-query'
 import AvatarField from '@/components/Ui/AvatarField'
-import { SlCloudUpload } from "react-icons/sl";
 
 function EditUser() {
   const navigate = useNavigate()
-  const { currentUser, setCurrentUser } = useAuthContext()
+  const {currentUser, setCurrentUser} = useAuthContext()
   const [errors, setErrors] = useState({})
 
   const updateUserMutation = useMutation({
-    mutationFn: apiUpdateCurrentUser
+    mutationFn: apiUpdateCurrentUser,
   })
 
   const updateUserAvatarMutation = useMutation({
-    mutationFn: apiUpdateCurrentUserAvatar
+    mutationFn: apiUpdateCurrentUserAvatar,
   })
 
   const [userData, setUserData] = useState({
@@ -28,8 +27,6 @@ function EditUser() {
     national_code: currentUser.national_code,
     mobile: currentUser.mobile,
   })
-
-  
 
   const handleSaveChanges = async () => {
     if (
@@ -51,19 +48,17 @@ function EditUser() {
           setErrors(err.response.data.errors)
         }
         console.log(err)
-      }
+      },
     })
   }
-
 
   const handleChangeAvatar = (file) => {
     updateUserAvatarMutation.mutate(file, {
       onSuccess: (res) => {
         console.log(res)
-      }
+      },
     })
   }
-
 
   return (
     <>
@@ -130,10 +125,12 @@ function EditUser() {
             >
               شماره موبایل
             </InputTextField>
-
           </div>
-          <div className='flex flex-col gap-3 justify-start mr-10'>
-            <AvatarField onChange={handleChangeAvatar} loading={updateUserAvatarMutation.isPending} />
+          <div className="flex flex-col gap-3 justify-start mr-10">
+            <AvatarField
+              onChange={handleChangeAvatar}
+              loading={updateUserAvatarMutation.isPending}
+            />
             <h3>عکس خود را بارگذاری کنید</h3>
           </div>
           <div className="justify-end flex">
@@ -145,7 +142,6 @@ function EditUser() {
             >
               ویرایش
             </Buttons>
-
           </div>
         </div>
       </div>
