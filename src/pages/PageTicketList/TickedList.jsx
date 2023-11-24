@@ -301,6 +301,7 @@ function TickedList() {
                         searchData.map((flight) => (
                             <SingleTicket
                                 key={flight.id}
+                                flight_id={flight.id}
                                 forth={flight.origin?.name}
                                 back={flight.destination?.name}
                                 imagess={flight.airline?.image_url}

@@ -9,11 +9,11 @@ import FormList from '@/pages/PageFormList/FormList'
 import {motion, AnimatePresence} from 'framer-motion'
 
 // eslint-disable-next-line react/prop-types
-export const ModalRules = ({showModal, setIsShow, forth, back, imagess, search}) => {
+export const ModalRules = ({showModal, setIsShow, forth, back, imagess,flight_id}) => {
     const [activeTab, setActiveTab] = useState(0)
 
     const [searchParams, setSearchParams] = useSearchParams()
-
+    console.log(searchParams.get('capacity'))
     const handlClose = () => {
         setIsShow(false)
     }
@@ -23,10 +23,13 @@ export const ModalRules = ({showModal, setIsShow, forth, back, imagess, search})
     const navigate = useNavigate()
 
     const handleSearchParam = () => {
-        navigate('/form/data-form')
-        setSearchParams((s) => ({
-            ...s,
-        }))
+        navigate({
+            pathname: '/form/data-form',
+            search: new URLSearchParams({
+                flight_id: flight_id,
+                capacity: searchParams.get('capacity'),
+            }).toString()
+        })
     }
 
     const handleStepTab = () => {
