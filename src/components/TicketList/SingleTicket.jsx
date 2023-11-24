@@ -19,7 +19,7 @@ function SingleTicket({forth, back, imagess, price, id, length, children}) {
 
   return (
     <>
-      <div className="flex border-gray-10 border rounded-lg flex-col gap-4 mt-6 justify-evenly  ">
+      <div className="flex border-gray-10 border rounded-lg flex-col gap-4 mt-6 justify-evenly hover:border-blue-500 hover:text-blue-500  ">
         {isloding ? (
           <div className="flex w-[100%] h-[150px] mx-auto overflow-hidden bg-white rounded-lg shadow-lg animate-pulse  py-0">
             <div className="w-1/4 bg-gray-300 "></div>

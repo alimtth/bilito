@@ -45,7 +45,12 @@ function TickedList() {
   const citiesQuery = useGetCities()
   const [trySearch, setTrySearch] = useState(false)
   const [searchParams, setSearchParams] = useSearchParams()
-  const [PriceCalendar, setPriceCalendar] = useState(true)
+  const [priceCalender, setPriceCalender] = useState(false);
+
+
+  const togglePriceCalender = () => {
+    setPriceCalender(!priceCalender)
+  }
   const appliedFilters = useMemo(() => {
     const result = {}
 
@@ -125,10 +130,6 @@ function TickedList() {
   const searchData = useMemo(() => {
     return searchQuery.data?.data?.data || []
   }, [searchQuery.data])
-
-  const handleClick = () => {
-    setPriceCalendar(!PriceCalendar)
-  }
   return (
     <div className="flex flex-col items-center">
       <HomePageScreen />
@@ -226,32 +227,71 @@ function TickedList() {
 
 
           <div className="flex gap-4 justify-between">
-            <div className='w-full'>
+            <div className='mb-8 w-full border border-gray-100 rounded-lg shadow-2xl hover:border-blue-500 hover:text-blue-500'>
               <button
-                className="flex w-full items-center border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 basis-3/4 py-2 px-4 "
-                onClick={handleClick}
+                className="flex w-full items-center  basis-3/4 py-2 px-4 border-b"
+                onClick={togglePriceCalender}
               >
                 <span>تقویم قیمتی</span>
                 <span>
                   <IoIosArrowDown />
                 </span>
               </button>
+              {priceCalender && (
 
-              <div className='border border-gray-100 '>
+              <div className='p-3 flex justify-between '>
 
+                <div className='gap-3 flex flex-col items-center'>
+                  <span className='text-gray-600'>شنبه 5/27</span>
+                  <span className='text-gray-100'>22 Aug</span>
+                  <span className='text-red-600'>ظرفیت تکمیل</span>
+                </div>
+
+                <div className='gap-3 flex flex-col items-center'>
+                  <span className='text-gray-600'>شنبه 5/28</span>
+                  <span className='text-gray-100'>22 Aug</span>
+                  <span className='text-red-600'>ظرفیت تکمیل</span>
+                </div>
+
+                <div className='gap-3 flex flex-col items-center'>
+                  <span className='text-gray-600'>شنبه 5/29</span>
+                  <span className='text-gray-100'>22 Aug</span>
+                  <span className='text-gray-600'>1,3000,000</span>
+                </div>
+
+                <div className='gap-3 flex flex-col items-center'>
+                  <span className='text-gray-600'>شنبه 5/30</span>
+                  <span className='text-gray-100'>22 Aug</span>
+                  <span className='text-gray-600'>2,3000,0000</span>
+                </div>
+
+                <div className='gap-3 flex flex-col items-center'>
+                  <span className='text-gray-600'>شنبه 6/1</span>
+                  <span className='text-gray-100'>22 Aug</span>
+                  <span className='text-gray-600'>1,3000</span>
+                </div>
+
+                <div className='gap-3 flex flex-col items-center'>
+                  <span className='text-gray-600'>شنبه 6/2</span>
+                  <span className='text-gray-100'>22 Aug</span>
+                  <span className='text-gray-600'>ناموجود</span>
+                </div>
+
+                <div className='gap-3 flex flex-col items-center'>
+                  <span className='text-gray-600'>شنبه 6/3</span>
+                  <span className='text-gray-100'>22 Aug</span>
+                  <span className='text-gray-600'>1,600,000</span>
+                </div>
               </div>
+              )}
 
             </div>
-            <div className="flex justify-between items-center border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 basis-1/4 py-2 px-4 ">
+            
+            <div className="flex h-11 justify-between items-center border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 basis-1/4 py-2 px-4 ">
               <span>مرتب سازی</span>
               <IoIosArrowDown />
             </div>
           </div>
-
-
-
-
-
 
           {searchQuery.isLoading ? (
             <div className="flex justify-center items-center rounded-md h-12 w-12 border-4 border-t-4 border-blue-500 animate-spin  mr-[50%] mt-20"></div>
