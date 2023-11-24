@@ -13,11 +13,14 @@ import bilitoIcon from '@/assets/Images/Icons/BilitoIcone.png'
 import arrowDown from '@/assets/Images/Icons/arrow-down.svg'
 import userIconLog from '@/assets/Images/Icons/UserIconLog.svg'
 import CallIcon from '@/assets/Images/Icons/CallIcon.svg'
+import waving from '@/assets/gif/waving-hand-people.gif'
 import '../style.css'
 function HeaderTabs() {
   const [showMenu, setShowMenu] = useState(false)
   const [isHeaderSticky, setIsHeaderSticky] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
+
+
 
   const handleHover = () => {
     setIsHovered(!isHovered)
@@ -100,9 +103,9 @@ function HeaderTabs() {
               showMenu ? 'open' : ''
             }`}
           >
-            <div className="flex flex-col h-full">
+            <div className="flex flex-col w-[100%]">
               <div className="flex justify-end gap-32">
-                <img className="w-14 h-auto" src={bilitoIcon} />
+                <img className="" src={bilitoIcon} />
                 <Close
                   style={{
                     cursor: 'pointer',
@@ -117,39 +120,60 @@ function HeaderTabs() {
                 </Close>
               </div>
               <div className="line"></div>
-              <div className="flex flex-col py-12">
-                <div className="flex justify-start gap-3 py-4 text-gray-20 font-light">
-                  <AiOutlineHome />
-                  صفحه اصلی
-                </div>
-                <div className="flex justify-start gap-3 py-4 text-gray-20 font-light">
-                  <BsAirplane />
-                  سفرهای من
-                </div>
-                <div className="flex justify-start gap-3 py-4 text-gray-20 font-light">
-                  <BsTelephone />
-                  تماس با ما
-                </div>
-                <div className="flex justify-start gap-3 py-4 text-gray-20 font-light">
-                  <TbUserSearch />
-                  درباره ما
-                </div>
-                <div className="flex justify-start gap-3 py-4 text-gray-20 font-light">
-                  <BiUser />
-                  <Link to={'account'}>حساب کاربری</Link>
-                </div>
+              <div className="flex flex-col text-2xl gap-8 px-9 mt-11">
+                <Link to={'/'}>
+                  <div className="flex justify-start gap-3 py-4 text-gray-20 font-light">
+                    <AiOutlineHome />
+                    صفحه اصلی
+                  </div>
+                </Link>
+                <Link to={'/account/my-travels'}>
+                  <div className="flex justify-start gap-3 py-4 text-gray-20 font-light">
+                    <BsAirplane />
+                    سفرهای من
+                  </div>
+                </Link>
+                <Link to={'/about'}>
+                  <div className="flex justify-start gap-3 py-4 text-gray-20 font-light">
+                    <BsTelephone />
+                    تماس با ما
+                  </div>
+                </Link>
+                <Link to={'/about'}>
+                  <div className="flex justify-start gap-3 py-4 text-gray-20 font-light">
+                    <TbUserSearch />
+                    درباره ما
+                  </div>
+                </Link>
+                <Link to={'account'}>
+                  <div className="flex justify-start gap-3 py-4 text-gray-20 font-light">
+                    <BiUser />
+                    حساب کاربری
+                  </div>
+                </Link>
                 <div className="flex justify-start gap-3 py-4 text-gray-20 font-light">
                   4045_021 پشتیبانی
                   <BsTelephone />
                 </div>
-                <div className="flex justify-center gap-3 py-4 text-gray-20 font-light">
-                  <Link to={'/login'}>
-                    <Button variant="fill" onClick={handleToggle}>
-                      <img src={userIconLog} />
-                      <div> ورود/ ثبت نام</div>
-                    </Button>
-                  </Link>
-                </div>
+                {isLoggedIn ? (
+                  <h3 className='text-blue-500 font-bold text-2xl flex justify-center mt-20 gap-5 items-center'>سلام&nbsp;({currentUser?.name}) خوش اومدی <img src={waving} className='w-12' alt="" /></h3>
+                ) : (
+                  <div className="flex justify-center gap-3 py-4 text-gray-20 font-light">
+                    <Link to={'/login'}>
+                      <Button
+                        variant="fill"
+                        onClick={handleToggle}
+                        size="xsxls"
+                      >
+                        <img src={userIconLog} />
+                        <div> ورود/ ثبت نام</div>
+                      </Button>
+                    </Link>
+                  </div>
+                )}
+
+{/* ________________________________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________________________________ */}
               </div>
             </div>
           </div>
@@ -179,8 +203,7 @@ function HeaderTabs() {
                         className={
                           'p-[20px] bg-white  -mr-10 rounded-lg flex flex-col items-center justify-center absolute top-[25px] gap-[20px] w-100 z-10 shadow-lg mt-8'
                         }
-                        >
-                          
+                      >
                         <Link to={'/account/data-user'}>
                           <div className="nested-item text-[13px] text-[#080808BF] opacity-75">
                             حساب کاربری
