@@ -13,6 +13,7 @@ const sizes = {
   xl: "flex py-3 text-xl px-6 text-center",
   xxl: "flex py-4 text-xl px-7 text-center",
   xxls: "flex py-4 text-xl px-60 text-center",
+  xsxls: "flex py-4 text-xl px-40 text-center",
   slx: 'flex py-4 text-sm px-36',
 };
 
