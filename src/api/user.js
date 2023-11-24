@@ -16,9 +16,12 @@ const apiGetProfile = () => {
   return apiClient.get('/profile')
 }
 
+const apiOrder = () => {
+  return apiClient.get('profile/user_orders')
+}
 
 const apiUpdateCurrentUser = (data) => {
   return apiClient.put('/profile', data)
 }
 
-export {apiLoginUser, apiRegisterUser, apiGetCurrentUser, apiGetProfile, apiUpdateCurrentUser}
+export {apiLoginUser, apiRegisterUser, apiGetCurrentUser, apiGetProfile, apiUpdateCurrentUser, apiOrder}
