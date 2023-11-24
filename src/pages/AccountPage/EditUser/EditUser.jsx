@@ -11,17 +11,18 @@ function EditUser() {
     gender: '',
     national_code: '',
     mobile: '',
-    image: null
+    // image: null,
   })
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    setUserData({
-      ...userData,
-      image: file,
-    });
-  };
+//   const handleFileChange = (e) => {
+//     const file = e.target.files[0];
+//     setUserData(() => ({
+//       ...userData,
+//       image: file,
+//     }));
+//   };
   
+
 
   const handleSaveChanges = async () => {
     const res = await apiUpdateCurrentUser(userData)
@@ -89,7 +90,11 @@ function EditUser() {
               شماره موبایل
             </InputTextField>
 
-            <TextField type="file" className=""  onChange={handleFileChange}/>
+            <TextField
+              type="file"
+            //   className=""
+            //   onChange={handleFileChange}
+            />
           </div>
           <div className="justify-end flex">
             <Buttons
