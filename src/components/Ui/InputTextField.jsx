@@ -11,7 +11,7 @@ const sizes = {
   xl: 'flex py-4 text-sm px-1 ',
   ssl: 'flex py-3 text-sm px-3 ',
   sll: 'flex py-4 text-sm px-6',
-  slx: 'flex py-4 text-sm px-36',
+  slx: 'flex py-4 text-sm pl-28',
   xsl: 'flex py-3 text-sm pl-32 ',
 }
 function InputTextField({

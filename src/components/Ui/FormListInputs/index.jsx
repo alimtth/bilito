@@ -1,11 +1,10 @@
 // eslint-disable-next-line no-unused-vars
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import InputTextField from '@/components/Ui/InputTextField.jsx'
-import {IoIosArrowDown} from 'react-icons/io'
+import { IoIosArrowDown } from 'react-icons/io'
 import * as yup from 'yup'
-import {useForm} from 'react-hook-form'
-import {yupResolver} from '@hookform/resolvers/yup'
-
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
 let birthYears = []
 for (let i = 1300; i < 1403; i++) {
   let year = {
@@ -23,21 +22,21 @@ for (let i = 1402; i < 1421; i++) {
 }
 
 const months = [
-  {title: 'فروردین', value: '01'},
-  {title: 'اردیبهشت', value: '02'},
-  {title: 'خرداد', value: '03'},
-  {title: 'تیر', value: '04'},
-  {title: 'مرداد', value: '05'},
-  {title: 'شهریور', value: '06'},
-  {title: 'مهر', value: '07'},
-  {title: 'آبان', value: '08'},
-  {title: 'آذر', value: '09'},
-  {title: 'دی', value: '10'},
-  {title: 'بهمن', value: '11'},
-  {title: 'اسفند', value: '12'},
+  { title: 'فروردین', value: '01' },
+  { title: 'اردیبهشت', value: '02' },
+  { title: 'خرداد', value: '03' },
+  { title: 'تیر', value: '04' },
+  { title: 'مرداد', value: '05' },
+  { title: 'شهریور', value: '06' },
+  { title: 'مهر', value: '07' },
+  { title: 'آبان', value: '08' },
+  { title: 'آذر', value: '09' },
+  { title: 'دی', value: '10' },
+  { title: 'بهمن', value: '11' },
+  { title: 'اسفند', value: '12' },
 ]
 // eslint-disable-next-line no-unused-vars
-const monthTest = [{title: 'mmd', id: 1}]
+const monthTest = [{ title: 'mmd', id: 1 }]
 
 // eslint-disable-next-line react/prop-types
 const schema = yup.object().shape({
@@ -45,11 +44,11 @@ const schema = yup.object().shape({
   lastName: yup.string().required('نام  خانوادگی را وارد کنید'),
 })
 // eslint-disable-next-line react/prop-types
-function FormListInputs({isAdult, passenger, onUpdate}) {
+function FormListInputs({ isAdult, passenger, onUpdate }) {
   const {
     handleSubmit,
-    formState: {errors},
-  } = useForm({resolver: yupResolver(schema)})
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(schema) })
   const [adult, setAdult] = useState(true)
   const [dayDropdown, setDayDropdown] = useState(false)
   const [monthDropdown, setMonthDropdown] = useState(false)
@@ -141,141 +140,146 @@ function FormListInputs({isAdult, passenger, onUpdate}) {
         <span className="basis-[60%]">{adult ? 'بزرگسال' : 'کودک'}</span>
       </div>
       <form onSubmit={handleSubmit(onFormSubmit)}>
-        <div className="px-0 w-full gap-3 flex flex-col lg:flex lg:flex-row items-end">
-          <InputTextField
-            name="latin_name"
-            size={'sll'}
-            type="text"
-            value={passenger.latin_name || ''}
-            onChange={handleChange}
-          >
-            نام لاتین
-          </InputTextField>
-          {errors.firstName && (
-            <p className="text-red-500 text-sm mt-1">
-              {errors.firstName.message}
-            </p>
-          )}
-          <InputTextField
-            size={'sll'}
-            name="latin_last_name"
-            type="text"
-            value={passenger.latin_last_name || ''}
-            onChange={handleChange}
-          >
-            نام خانوادگی
-          </InputTextField>
-          <InputTextField size={'sll'}>جنسیت</InputTextField>
-          <div className="flex flex-col rounded-lg gap-2">
-            <div>تاریخ تولد (شمسی)</div>
-            <div className={'flex'}>
-              <div className="relative border border-gray-500 w-40 px-4 rounded-r-lg">
-                <div
-                  className="flex items-center justify-between py-4"
-                  onClick={toggleDropdownDay}
-                >
-                  <input
-                    readOnly
-                    type={'text'}
-                    className="w-1/2 focus:outline-none caret-transparent"
-                    value={dayBirthValue}
-                  />
+        <div className="px-0 w-full gap-3">
+          <div className='gap-3 flex flex-col lg:flex-row items-center '>
+            <InputTextField
+              name="latin_name"
+              size={'slx'}
+              type="text"
+              value={passenger.latin_name || ''}
+              onChange={handleChange}
+            >
+              نام لاتین
+            </InputTextField>
+            {errors.firstName && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.firstName.message}
+              </p>
+            )}
+            <InputTextField
+              size={'slx'}
+              name="latin_last_name"
+              type="text"
+              value={passenger.latin_last_name || ''}
+              onChange={handleChange}
+            >
+              نام خانوادگی
+            </InputTextField>
+            <InputTextField size={'slx'}>جنسیت</InputTextField>
+          </div>
+          <div className='flex flex-col justify-end items-center lg:fle lg:items-start'>
+            <div className="my-10 rounded-lg gap-2">
+              <div>تاریخ تولد (شمسی)</div>
+              <div className={'flex'}>
+                <div className="relative border border-gray-500 w-40 px-4 rounded-r-lg">
+                  <div
+                    className="flex items-center justify-between py-4"
+                    onClick={toggleDropdownDay}
+                  >
+                    <input
+                      readOnly
+                      type={'text'}
+                      className="w-1/2 focus:outline-none caret-transparent"
+                      value={dayBirthValue}
+                    />
 
-                  <IoIosArrowDown />
-                </div>
-                {dayDropdown && (
-                  <div className="flex flex-wrap w-40 bg-white shadow-lg gap-2 py-2 rounded-lg px-3 absolute z-10 -mr-4">
-                    <ul className="h-[300px] w-full overflow-y-scroll scroll-bar">
-                      {[...Array(31)].map((_, index) => (
-                        <li
-                          key={index + 1}
-                          value={index + 1}
-                          onClick={handleDay}
-                          className={`py-1 px-2 flex-shrink-0 cursor-pointer hover:bg-gray-10 hover:rounded-md ${
-                            selectedDay
+                    <IoIosArrowDown />
+                  </div>
+                  {dayDropdown && (
+                    <div className="flex flex-wrap w-40 bg-white shadow-lg gap-2 py-2 rounded-lg px-3 absolute z-10 -mr-4">
+                      <ul className="h-[300px] w-full overflow-y-scroll scroll-bar">
+                        {[...Array(31)].map((_, index) => (
+                          <li
+                            key={index + 1}
+                            value={index + 1}
+                            onClick={handleDay}
+                            className={`py-1 px-2 flex-shrink-0 cursor-pointer hover:bg-gray-10 hover:rounded-md ${selectedDay
                               ? index === 'bg-blue-500 text-white'
                               : ''
-                          }`}
-                        >
-                          {index + 1}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-              <div className="relative border border-gray-500 w-40 px-4">
-                <div
-                  onClick={toggleDropdownMonth}
-                  className="flex items-center justify-between py-4"
-                >
-                  <input
-                    readOnly
-                    type={'text'}
-                    className="w-1/2 focus:outline-none caret-transparent"
-                    value={monthValue}
-                  />
-                  <IoIosArrowDown />
+                              }`}
+                          >
+                            {index + 1}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
-                {monthDropdown && (
-                  <div className="flex flex-wrap w-40 bg-white shadow-lg gap-2 py-2 rounded-lg px-3 absolute z-10 -mr-4">
-                    <ul className="h-[300px] w-full overflow-y-scroll  scroll-bar">
-                      {months.map((items) => (
-                        <li
-                          key={items.id}
-                          value={items.value}
-                          onClick={handleMonth}
-                          className={`py-1 px-2 flex-shrink-0 cursor-pointer hover:bg-gray-10 hover:rounded-md `}
-                        >
-                          {items.title}
-                        </li>
-                      ))}
-                    </ul>
+                <div className="relative border border-gray-500 w-40 px-4">
+                  <div
+                    onClick={toggleDropdownMonth}
+                    className="flex items-center justify-between py-4"
+                  >
+                    <input
+                      readOnly
+                      type={'text'}
+                      className="w-1/2 focus:outline-none caret-transparent"
+                      value={monthValue}
+                    />
+                    <IoIosArrowDown />
                   </div>
-                )}
-              </div>
-              <div className="relative border border-gray-500 w-40 px-4 rounded-l-lg">
-                <div
-                  onClick={toggleDropdownYear}
-                  className="flex items-center justify-between py-4"
-                >
-                  <input
-                    readOnly
-                    type={'text'}
-                    className="w-1/2 focus:outline-none caret-transparent"
-                    value={yearValue}
-                  />
-                  <IoIosArrowDown />
+                  {monthDropdown && (
+                    <div className="flex flex-wrap w-40 bg-white shadow-lg gap-2 py-2 rounded-lg px-3 absolute z-10 -mr-4">
+                      <ul className="h-[300px] w-full overflow-y-scroll  scroll-bar">
+                        {months.map((items) => (
+                          <li
+                            key={items.id}
+                            value={items.value}
+                            onClick={handleMonth}
+                            className={`py-1 px-2 flex-shrink-0 cursor-pointer hover:bg-gray-10 hover:rounded-md `}
+                          >
+                            {items.title}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
-                {yearDropdown && (
-                  <div className="flex flex-wrap w-40 bg-white shadow-lg gap-2 py-2 rounded-lg px-3 absolute z-10 -mr-4">
-                    <ul className="h-[300px] w-full overflow-y-scroll  scroll-bar">
-                      {birthYears.map((items, index) => (
-                        <li
-                          key={index + 1}
-                          value={items.title}
-                          onClick={handleYear}
-                          className={`py-1 px-2 flex-shrink-0 cursor-pointer hover:bg-gray-10 hover:rounded-md ${
-                            selectedDay
+                <div className="relative border border-gray-500 w-40 px-4 rounded-l-lg">
+                  <div
+                    onClick={toggleDropdownYear}
+                    className="flex items-center justify-between py-4"
+                  >
+                    <input
+                      readOnly
+                      type={'text'}
+                      className="w-1/2 focus:outline-none caret-transparent"
+                      value={yearValue}
+                    />
+                    <IoIosArrowDown />
+                  </div>
+                  {yearDropdown && (
+                    <div className="flex flex-wrap w-40 bg-white shadow-lg gap-2 py-2 rounded-lg px-3 absolute z-10 -mr-4">
+                      <ul className="h-[300px] w-full overflow-y-scroll  scroll-bar">
+                        {birthYears.map((items, index) => (
+                          <li
+                            key={index + 1}
+                            value={items.title}
+                            onClick={handleYear}
+                            className={`py-1 px-2 flex-shrink-0 cursor-pointer hover:bg-gray-10 hover:rounded-md ${selectedDay
                               ? index === 'bg-blue-500 text-white'
                               : ''
-                          }`}
-                        >
-                          {items.title}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
+                              }`}
+                          >
+                            {items.title}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="pt-4 px-0 w-full gap-3 flex flex-col lg:flex lg:flex-row items-end">
-          <InputTextField size={'sll'}>ملیت</InputTextField>
-          <InputTextField size={'sll'}>کد ملی</InputTextField>
-          <InputTextField size={'sll'}>شماره پاسپورت</InputTextField>
-          <div className="flex flex-col rounded-lg gap-2">
+
+        <div className="my-7 pt-4 px-0 w-full gap-3">
+          <div className='gap-3 flex flex-col lg:flex-row items-center'>
+          <InputTextField size={'slx'}>ملیت</InputTextField>
+          <InputTextField size={'slx'}>کد ملی</InputTextField>
+          <InputTextField size={'slx'}>شماره پاسپورت</InputTextField>
+          </div>
+          <div className="mt-10 rounded-lg gap-2  flex flex-col justify-end items-center lg:fle lg:items-start">
             <div>تاریخ انقضا پاسپورت (شمسی)</div>
             <div className={'flex'}>
               <div className="relative border border-gray-500 w-40 px-4 rounded-r-lg">
@@ -298,11 +302,10 @@ function FormListInputs({isAdult, passenger, onUpdate}) {
                           key={index + 1}
                           value={index + 1}
                           onClick={handleExpireDay}
-                          className={`py-1 px-2 flex-shrink-0 cursor-pointer hover:bg-gray-10 hover:rounded-md ${
-                            selectedDay
-                              ? index === 'bg-blue-500 text-white'
-                              : ''
-                          }`}
+                          className={`py-1 px-2 flex-shrink-0 cursor-pointer hover:bg-gray-10 hover:rounded-md ${selectedDay
+                            ? index === 'bg-blue-500 text-white'
+                            : ''
+                            }`}
                         >
                           {index + 1}
                         </li>
@@ -358,11 +361,10 @@ function FormListInputs({isAdult, passenger, onUpdate}) {
                           key={index + 1}
                           value={items.title}
                           onClick={handleExpireYear}
-                          className={`py-1 px-2 flex-shrink-0 cursor-pointer hover:bg-gray-10 hover:rounded-md ${
-                            selectedDay
-                              ? index === 'bg-blue-500 text-white'
-                              : ''
-                          }`}
+                          className={`py-1 px-2 flex-shrink-0 cursor-pointer hover:bg-gray-10 hover:rounded-md ${selectedDay
+                            ? index === 'bg-blue-500 text-white'
+                            : ''
+                            }`}
                         >
                           {items.title}
                         </li>
@@ -374,6 +376,7 @@ function FormListInputs({isAdult, passenger, onUpdate}) {
             </div>
           </div>
         </div>
+
         <div className="flex justify-center items-center pb-14"></div>
         <div className="line w-full" />
       </form>
@@ -382,4 +385,3 @@ function FormListInputs({isAdult, passenger, onUpdate}) {
 }
 
 export default FormListInputs
-  

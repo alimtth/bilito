@@ -11,6 +11,7 @@ const useAuthContext = () => {
 const AuthProvider = ({children}) => {
   const [currentUser, setCurrentUser] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
+
   const [accessToken, setAccessToken] = useState(() =>
     localStorage.getItem('accessToken')
   )
