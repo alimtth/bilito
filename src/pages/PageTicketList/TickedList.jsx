@@ -11,17 +11,13 @@ import InputTextField from '@/components/Ui/InputTextField'
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports'
 import HomePageScreen from '@/components/NavBar/HomePageScreen'
 import SingleTicket from '@/components/TicketList/SingleTicket'
-import { apiSearch, apiSearchFlight } from '@/api/search'
+import { apiSearchFlight } from '@/api/search'
 import { useSearchParams } from 'react-router-dom'
 import { SideBarForm } from '@/components/SideBarForm/SideBarForm'
 import { useQuery } from '@tanstack/react-query'
 import SelectField from '@/components/Ui/SelectField'
 import useGetCities from '@/api/hooks/use-get-cities'
 import { useMemo } from 'react'
-import DatePicker from "react-multi-date-picker"
-import persian from "react-date-object/calendars/persian"
-import persian_fa from "react-date-object/locales/persian_fa"
-// import { useQuery } from 'react-query'
 
 const filters = [
   {
@@ -239,54 +235,54 @@ function TickedList() {
               </button>
               {priceCalender && (
 
-              <div className='p-3 flex justify-between '>
+                <div className='p-3 flex justify-between '>
 
-                <div className='gap-3 flex flex-col items-center'>
-                  <span className='text-gray-600'>شنبه 5/27</span>
-                  <span className='text-gray-100'>22 Aug</span>
-                  <span className='text-red-600'>ظرفیت تکمیل</span>
-                </div>
+                  <div className='gap-3 flex flex-col items-center'>
+                    <span className='text-gray-600'>شنبه 5/27</span>
+                    <span className='text-gray-100'>22 Aug</span>
+                    <span className='text-red-600'>ظرفیت تکمیل</span>
+                  </div>
 
-                <div className='gap-3 flex flex-col items-center'>
-                  <span className='text-gray-600'>شنبه 5/28</span>
-                  <span className='text-gray-100'>22 Aug</span>
-                  <span className='text-red-600'>ظرفیت تکمیل</span>
-                </div>
+                  <div className='gap-3 flex flex-col items-center'>
+                    <span className='text-gray-600'>شنبه 5/28</span>
+                    <span className='text-gray-100'>22 Aug</span>
+                    <span className='text-red-600'>ظرفیت تکمیل</span>
+                  </div>
 
-                <div className='gap-3 flex flex-col items-center'>
-                  <span className='text-gray-600'>شنبه 5/29</span>
-                  <span className='text-gray-100'>22 Aug</span>
-                  <span className='text-gray-600'>1,3000,000</span>
-                </div>
+                  <div className='gap-3 flex flex-col items-center'>
+                    <span className='text-gray-600'>شنبه 5/29</span>
+                    <span className='text-gray-100'>22 Aug</span>
+                    <span className='text-gray-600'>1,3000,000</span>
+                  </div>
 
-                <div className='gap-3 flex flex-col items-center'>
-                  <span className='text-gray-600'>شنبه 5/30</span>
-                  <span className='text-gray-100'>22 Aug</span>
-                  <span className='text-gray-600'>2,3000,0000</span>
-                </div>
+                  <div className='gap-3 flex flex-col items-center'>
+                    <span className='text-gray-600'>شنبه 5/30</span>
+                    <span className='text-gray-100'>22 Aug</span>
+                    <span className='text-gray-600'>2,3000,0000</span>
+                  </div>
 
-                <div className='gap-3 flex flex-col items-center'>
-                  <span className='text-gray-600'>شنبه 6/1</span>
-                  <span className='text-gray-100'>22 Aug</span>
-                  <span className='text-gray-600'>1,3000</span>
-                </div>
+                  <div className='gap-3 flex flex-col items-center'>
+                    <span className='text-gray-600'>شنبه 6/1</span>
+                    <span className='text-gray-100'>22 Aug</span>
+                    <span className='text-gray-600'>1,3000</span>
+                  </div>
 
-                <div className='gap-3 flex flex-col items-center'>
-                  <span className='text-gray-600'>شنبه 6/2</span>
-                  <span className='text-gray-100'>22 Aug</span>
-                  <span className='text-gray-600'>ناموجود</span>
-                </div>
+                  <div className='gap-3 flex flex-col items-center'>
+                    <span className='text-gray-600'>شنبه 6/2</span>
+                    <span className='text-gray-100'>22 Aug</span>
+                    <span className='text-gray-600'>ناموجود</span>
+                  </div>
 
-                <div className='gap-3 flex flex-col items-center'>
-                  <span className='text-gray-600'>شنبه 6/3</span>
-                  <span className='text-gray-100'>22 Aug</span>
-                  <span className='text-gray-600'>1,600,000</span>
+                  <div className='gap-3 flex flex-col items-center'>
+                    <span className='text-gray-600'>شنبه 6/3</span>
+                    <span className='text-gray-100'>22 Aug</span>
+                    <span className='text-gray-600'>1,600,000</span>
+                  </div>
                 </div>
-              </div>
               )}
 
             </div>
-            
+
             <div className="flex h-11 justify-between items-center border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 basis-1/4 py-2 px-4 ">
               <span>مرتب سازی</span>
               <IoIosArrowDown />

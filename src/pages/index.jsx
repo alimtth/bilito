@@ -8,7 +8,6 @@ import HomePageScreen from '@/components/NavBar/HomePageScreen'
 
 import {useEffect, useState} from "react";
 import BubbleTip from "@/components/BubbleTip/BubbleTip.jsx";
-import axios from 'axios'
 
 
 function HomePage() {
