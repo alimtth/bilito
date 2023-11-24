@@ -45,7 +45,7 @@ function TickedList() {
   const citiesQuery = useGetCities()
   const [trySearch, setTrySearch] = useState(false)
   const [searchParams, setSearchParams] = useSearchParams()
-  const [PriceCalendar, setPriceCalendar  ] = useState(true)
+  const [PriceCalendar, setPriceCalendar] = useState(true)
   const appliedFilters = useMemo(() => {
     const result = {}
 
@@ -122,13 +122,13 @@ function TickedList() {
     return citiesQuery.data?.find((c) => c.id == appliedFilters.destination)
   }, [appliedFilters.destination, citiesQuery.data])
 
- const searchData = useMemo(() => {
-  return searchQuery.data?.data?.data || []
- }, [searchQuery.data])
+  const searchData = useMemo(() => {
+    return searchQuery.data?.data?.data || []
+  }, [searchQuery.data])
 
- const handleClick = () => {
-  setPriceCalendar(!PriceCalendar)
-}
+  const handleClick = () => {
+    setPriceCalendar(!PriceCalendar)
+  }
   return (
     <div className="flex flex-col items-center">
       <HomePageScreen />
@@ -172,7 +172,7 @@ function TickedList() {
               className={'sm:px-44 lg:px-0 '}
               size={'ssl'}
               value={localFilters.capacity}
-              onChange={(e) => updateLocalFilter('capacity',e.target.value)}
+              onChange={(e) => updateLocalFilter('capacity', e.target.value)}
             >
               تعداد مسافر
             </InputTextField>
@@ -180,7 +180,7 @@ function TickedList() {
               className={'sm:px-44 lg:px-0 '}
               size={'ssl'}
               value={localFilters.class}
-              onChange={(e) => updateLocalFilter('class',e.target.value)}
+              onChange={(e) => updateLocalFilter('class', e.target.value)}
             >
               کلاس پرواز
             </InputTextField>
@@ -226,22 +226,28 @@ function TickedList() {
 
 
           <div className="flex gap-4 justify-between">
-            <button 
-            className="flex justify-between items-center border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 basis-3/4 py-2 px-4 "
-            onClick={handleClick}
-            >
-              <span>تقویم قیمتی</span>
-              <span>
-                <IoIosArrowDown />
-              </span>
-            </button>
+            <div className='w-full'>
+              <button
+                className="flex w-full items-center border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 basis-3/4 py-2 px-4 "
+                onClick={handleClick}
+              >
+                <span>تقویم قیمتی</span>
+                <span>
+                  <IoIosArrowDown />
+                </span>
+              </button>
+
+              <div className='border border-gray-100 '>
+
+              </div>
+
+            </div>
             <div className="flex justify-between items-center border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 basis-1/4 py-2 px-4 ">
               <span>مرتب سازی</span>
               <IoIosArrowDown />
             </div>
           </div>
-          <div>
-       </div>
+
 
 
 
