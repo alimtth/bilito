@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, {useState} from 'react'
+import React, {useMemo, useState} from 'react'
 import AirplanSelected from '@/assets/Images/Icons/AirplaneSelected.svg'
 import AirplanNotSelected from '@/assets/Images/Icons/AirplaneNotSelected.svg'
 import Button from '@/components/Ui/Button'
@@ -11,16 +11,52 @@ import {useNavigate, useSearchParams} from 'react-router-dom'
 import {faArrowRightArrowLeft} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import Fade from 'react-reveal/Fade'
+import useGetCities from '@/api/hooks/use-get-cities'
+import SelectField from '@/components/Ui/SelectField'
 
+const filters = [
+  {
+    key: 'destination',
+  },
+  {
+    key: 'origin',
+  },
+  {
+    key: 'departure',
+  },
+  {
+    key: 'capacity',
+  },
+  {
+    key: 'class',
+  },
+]
 function SearchBox() {
-  const [searchParams, setSearchParams] = useSearchParams()
-  const [query, setQuery] = useState(() => searchParams.get('q'))
-  const [destinationValue, setDestinationValue] = useState('')
-  const [travelDateValue, setTravelDateValue] = useState('')
-  const [passengerCountValue, setPassengerCountValue] = useState('')
-  const [flightClassValue, setFlightClassValue] = useState('')
+  // const [query, setQuery] = useState(() => searchParams.get('q'))
+  // const [destinationValue, setDestinationValue] = useState('')
+  // const [travelDateValue, setTravelDateValue] = useState('')
+  // const [passengerCountValue, setPassengerCountValue] = useState('')
+  // const [flightClassValue, setFlightClassValue] = useState('')
   const [internationalFlights, setInternationalFlights] = useState(true)
+  const [searchParams, setSearchParams] = useSearchParams()
+  const citiesQuery = useGetCities()
+
   const navigate = useNavigate()
+
+  const appliedFilters = useMemo(() => {
+    const res = {}
+    filters.forEach((filter) => {
+      res[filter.key] = searchParams.get(filter.key) || ''
+    })
+
+    return res
+  }, [searchParams])
+
+  const [localFilters, setLocalFilters] = useState(appliedFilters)
+
+  const updataLocal = (key, value) => {
+    setLocalFilters((s) => ({...s, [key]: value}))
+  }
 
   const handleFlight = () => {
     setInternationalFlights(!internationalFlights)
@@ -30,11 +66,7 @@ function SearchBox() {
     navigate('/ticket')
     setSearchParams((s) => ({
       ...s,
-      q: query,
-      destination: destinationValue,
-      travelDate: travelDateValue,
-      passengerCount: passengerCountValue,
-      flightClass: flightClassValue,
+      ...localFilters,
     }))
   }
 
@@ -105,47 +137,46 @@ function SearchBox() {
               className="flex flex-col lg:flex lg:flex-row lg:gap-4 w-full lg:w-auto flex-wrap items-center gap-2 "
               onSubmit={handleSearch}
             >
-              <InputTextField
-                size="sm"
-                className={'sm:px-44 lg:px-0 '}
-                value={query ? query : ''}
-                onChange={(e) => setQuery(e.target.value)}
-              >
-                مبدا
-              </InputTextField>
+              <SelectField
+                value={localFilters.origin}
+                label="مبدا"
+                onChange={(option) => updataLocal('origin', option.id)}
+                options={citiesQuery.data || []}
+              />
               <ConnectingAirportsIcon />
+              <SelectField
+                value={localFilters.destination}
+                label="مقصد"
+                onChange={(option) =>
+                  updataLocal('destination', option.id)
+                }
+                options={citiesQuery.data || []}
+              />
               <InputTextField
-                size="sm"
-                value={destinationValue}
-                onChange={(e) => setDestinationValue(e.target.value)}
-                className={'sm:px-44 lg:px-0'}
-              >
-                مقصد
-              </InputTextField>
-              <InputTextField
-                size="sm"
-                value={travelDateValue ? travelDateValue : ''}
-                onChange={(e) => setTravelDateValue(e.target.value)}
-                className={'sm:px-44 lg:px-0'}
-              >
-                تاریخ رفت و برگشت
-              </InputTextField>
-              <InputTextField
-                size="sm"
-                value={passengerCountValue}
-                onChange={(e) => setPassengerCountValue(e.target.value)}
-                className={'sm:px-44 lg:px-0'}
-              >
-                تعداد مسافر
-              </InputTextField>
-              <InputTextField
-                size="sm"
-                value={flightClassValue}
-                onChange={(e) => setFlightClassValue(e.target.value)}
-                className={'sm:px-44 lg:px-0'}
-              >
-                کلاس پرواز
-              </InputTextField>
+              className={'text-right sm:px-44 lg:px-0 '}
+              size={'ssl'}
+              value={localFilters.departure}
+              type='date'
+              onChange={(e) => updataLocal('departure', e.target.value)}
+            >
+              تاریخ 
+            </InputTextField>
+            <InputTextField
+              className={'sm:px-44 lg:px-0 '}
+              size={'ssl'}
+              value={localFilters.capacity}
+              onChange={(e) => updataLocal('capacity',e.target.value)}
+            >
+              تعداد مسافر
+            </InputTextField>
+            <InputTextField
+              className={'sm:px-44 lg:px-0 '}
+              size={'ssl'}
+              value={localFilters.class}
+              onChange={(e) => updataLocal('class',e.target.value)}
+            >
+              کلاس پرواز
+            </InputTextField>
               <Button
                 variant="fill"
                 size="xl"
