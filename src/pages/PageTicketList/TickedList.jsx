@@ -45,7 +45,7 @@ function TickedList() {
   const citiesQuery = useGetCities()
   const [trySearch, setTrySearch] = useState(false)
   const [searchParams, setSearchParams] = useSearchParams()
-
+  const [PriceCalendar, setPriceCalendar  ] = useState(true)
   const appliedFilters = useMemo(() => {
     const result = {}
 
@@ -126,6 +126,9 @@ function TickedList() {
   return searchQuery.data?.data?.data || []
  }, [searchQuery.data])
 
+ const handleClick = () => {
+  setPriceCalendar(!PriceCalendar)
+}
   return (
     <div className="flex flex-col items-center">
       <HomePageScreen />
@@ -218,18 +221,31 @@ function TickedList() {
       <div className="flex mt-20 gap-6 justify-center custom-container" >
         <SideBarForm searchData={searchData} />
         <div className="lg:flex-auto lg:basis-[75%]">
+
+
+
+
           <div className="flex gap-4 justify-between">
-            <div className="flex justify-between items-center border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 basis-3/4 py-2 px-4 ">
+            <button 
+            className="flex justify-between items-center border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 basis-3/4 py-2 px-4 "
+            onClick={handleClick}
+            >
               <span>تقویم قیمتی</span>
               <span>
                 <IoIosArrowDown />
               </span>
-            </div>
+            </button>
             <div className="flex justify-between items-center border border-gray-100 rounded-lg hover:border-blue-500 hover:text-blue-500 basis-1/4 py-2 px-4 ">
               <span>مرتب سازی</span>
               <IoIosArrowDown />
             </div>
           </div>
+          <div>
+       </div>
+
+
+
+
 
           {searchQuery.isLoading ? (
             <div className="flex justify-center items-center rounded-md h-12 w-12 border-4 border-t-4 border-blue-500 animate-spin  mr-[50%] mt-20"></div>

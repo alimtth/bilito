@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import AirplanSelected from '@/assets/Images/Icons/AirplaneSelected.svg'
 import AirplanNotSelected from '@/assets/Images/Icons/AirplaneNotSelected.svg'
 import Button from '@/components/Ui/Button'
@@ -7,36 +7,36 @@ import searchIcon from '@/assets/Images/Icons/search-normal.svg'
 import History from '../History'
 import InputTextField from '@/components/Ui/InputTextField'
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports'
-import {useNavigate, useSearchParams} from 'react-router-dom'
-import {faArrowRightArrowLeft} from '@fortawesome/free-solid-svg-icons'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { useNavigate, useSearchParams } from 'react-router-dom'
+import { faArrowRightArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Fade from 'react-reveal/Fade'
 
 function SearchBox() {
-  const [searchParams, setSearchParams] = useSearchParams()
-  const [query, setQuery] = useState(() => searchParams.get('q'))
-  const [destinationValue, setDestinationValue] = useState('')
-  const [travelDateValue, setTravelDateValue] = useState('')
-  const [passengerCountValue, setPassengerCountValue] = useState('')
-  const [flightClassValue, setFlightClassValue] = useState('')
-  const [internationalFlights, setInternationalFlights] = useState(true)
-  const navigate = useNavigate()
+    const [searchParams, setSearchParams] = useSearchParams()
+    const [query, setQuery] = useState(() => searchParams.get('q'))
+    const [destinationValue, setDestinationValue] = useState('')
+    const [travelDateValue, setTravelDateValue] = useState('')
+    const [passengerCountValue, setPassengerCountValue] = useState('')
+    const [flightClassValue, setFlightClassValue] = useState('')
+    const [internationalFlights, setInternationalFlights] = useState(true)
+    const navigate = useNavigate()
 
-  const handleFlight = () => {
-    setInternationalFlights(!internationalFlights)
-  }
-  const handleSearch = (e) => {
-    e.preventDefault()
-    navigate('/ticket')
-    setSearchParams((s) => ({
-      ...s,
-      q: query,
-      destination: destinationValue,
-      travelDate: travelDateValue,
-      passengerCount: passengerCountValue,
-      flightClass: flightClassValue,
-    }))
-  }
+    const handleFlight = () => {
+        setInternationalFlights(!internationalFlights)
+    }
+    const handleSearch = (e) => {
+        e.preventDefault()
+        navigate('/ticket')
+        setSearchParams((s) => ({
+            ...s,
+            q: query,
+            destination: destinationValue,
+            travelDate: travelDateValue,
+            passengerCount: passengerCountValue,
+            flightClass: flightClassValue,
+        }))
+    }
 
     return (
         <>
@@ -46,42 +46,38 @@ function SearchBox() {
                         <div>
                             <ul className="flex justify-around gap-10 md:text-base sm:text-3xl ">
                                 <li
-                                    className={`flex gap-2 ${
-                                        internationalFlights ? 'text-blue-500 font-bold' : ''
-                                    }`}
+                                    className={`flex gap-2 ${internationalFlights ? 'text-blue-500 font-bold' : ''
+                                        }`}
                                 >
                                     <img
-                                        src={`${
-                                            internationalFlights
-                                                ? AirplanSelected
-                                                : AirplanNotSelected
-                                        }`}
+                                        src={`${internationalFlights
+                                            ? AirplanSelected
+                                            : AirplanNotSelected
+                                            }`}
                                         className="md:block w-full h-full object-cover hidden"
                                     />
                                     پروازخارجی
                                 </li>
                                 <li onClick={handleFlight}>
-                                    <FontAwesomeIcon icon={faArrowRightArrowLeft}/>
+                                    <FontAwesomeIcon icon={faArrowRightArrowLeft} />
                                 </li>
                                 <li
-                                    className={`flex gap-2 ${
-                                        internationalFlights ? '' : 'text-blue-500 font-bold'
-                                    }`}
+                                    className={`flex gap-2 ${internationalFlights ? '' : 'text-blue-500 font-bold'
+                                        }`}
                                 >
                                     <img
-                                        src={`${
-                                            internationalFlights
-                                                ? AirplanNotSelected
-                                                : AirplanSelected
-                                        }`}
+                                        src={`${internationalFlights
+                                            ? AirplanNotSelected
+                                            : AirplanSelected
+                                            }`}
                                         className="md:block w-full h-full object-cover hidden"
                                     />
                                     <span className={'basis-full'}>پروازداخلی</span>
                                 </li>
                             </ul>
                         </div>
-                        <hr className=""/>
-                        <div className="line w-full"/>
+                        <hr className="" />
+                        <div className="line w-full" />
                         <div className="flex py-6 gap-4 items-center justify-center">
                             <Button
                                 size="lg"
@@ -113,7 +109,7 @@ function SearchBox() {
                             >
                                 مبدا
                             </InputTextField>
-                            <ConnectingAirportsIcon/>
+                            <ConnectingAirportsIcon />
                             <InputTextField
                                 size="sm"
                                 value={destinationValue}
@@ -152,14 +148,14 @@ function SearchBox() {
                                 className={' sm:px-56 lg:px-3'}
                                 type="submit"
                             >
-                                <img src={searchIcon}/>
+                                <img src={searchIcon} />
                                 جستجو
                             </Button>
                         </form>
                     </div>
                 </div>
             </Fade>
-            <History/>
+            <History />
         </>
     )
 }
