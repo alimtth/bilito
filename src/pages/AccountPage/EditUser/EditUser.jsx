@@ -14,20 +14,30 @@ function EditUser() {
     // image: null,
   })
 
-//   const handleFileChange = (e) => {
-//     const file = e.target.files[0];
-//     setUserData(() => ({
-//       ...userData,
-//       image: file,
-//     }));
-//   };
-  
-
+  //   const handleFileChange = (e) => {
+  //     const file = e.target.files[0];
+  //     setUserData(() => ({
+  //       ...userData,
+  //       image: file,
+  //     }));
+  //   };
 
   const handleSaveChanges = async () => {
+    if (
+      !userData.name ||
+      !userData.gender ||
+      !userData.national_code ||
+      !userData.mobile
+    ) {
+      toast.error('لطفاً تمام فیلدهای اطلاعات را پر کنید.');
+      return
+    }
+
     const res = await apiUpdateCurrentUser(userData)
     console.log(res)
   }
+
+
   return (
     <>
       <div className="flex flex-col mt-16">
@@ -92,8 +102,8 @@ function EditUser() {
 
             <TextField
               type="file"
-            //   className=""
-            //   onChange={handleFileChange}
+              //   className=""
+              //   onChange={handleFileChange}
             />
           </div>
           <div className="justify-end flex">
@@ -104,6 +114,7 @@ function EditUser() {
             >
               ویرایش
             </Buttons>
+            
           </div>
         </div>
       </div>
