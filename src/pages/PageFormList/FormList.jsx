@@ -1,11 +1,21 @@
 import InputTextField from '@/components/Ui/InputTextField'
 import Buttons from '@/components/Ui/Button'
 import FormListInputs from '@/components/Ui/FormListInputs/index.jsx'
-import {Link} from 'react-router-dom'
+import {Link, useSearchParams} from 'react-router-dom'
 import {useState} from 'react'
 
 // eslint-disable-next-line react/prop-types
 function FormList() {
+  const [searchParams, setSearchParams] = useSearchParams()
+  // const handleSearch = (e) => {
+  //   e.preventDefault()
+  //   navigate('/ticket')
+  //   setSearchParams((s) => ({
+  //     ...s,
+  //     ...localFilters,
+  //   }))
+  // }
+
   const [passengers, setPassengers] = useState([{}, {}, {}])
 
   const handleUpdatePassenger = (data, index) => {

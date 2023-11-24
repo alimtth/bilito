@@ -1,11 +1,21 @@
 // eslint-disable-next-line no-unused-vars
-import React, {memo, useEffect, useState} from 'react'
+import React, {memo, useCallback, useEffect, useState} from 'react'
 import customer from '@/assets/Images/stewardess.jpg'
 import {Link} from 'react-router-dom'
 // eslint-disable-next-line react/prop-types
-function BubbleTip({className}) {
-  const [isShow, setIsShow] = useState(true)
+function BubbleTip({}) {
+  const [isShow, setIsShow] = useState(false)
 
+  const handle = useCallback(() => {
+    return setTimeout(()=>{
+      setIsShow(true)
+    },4000)
+
+
+  },[])
+  useEffect(() => {
+    handle()
+  }, [])
   // useEffect(() => {
   //   const handleScroll = () => {
   //     const scrollThreshold = 10
@@ -22,7 +32,7 @@ function BubbleTip({className}) {
   return (
     <>
       <div
-        className={`cloud ${className && isShow === true ? 'animated' : ''}`}
+        className={`cloud ${isShow === true ? 'animated' : ''}`}
       >
         <div className="flamelab-cw-msg-box">
           <div className={'flex'}>
