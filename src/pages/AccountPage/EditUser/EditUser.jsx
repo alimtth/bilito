@@ -20,6 +20,7 @@ function EditUser() {
   const updateUserAvatarMutation = useMutation({
     mutationFn: apiUpdateCurrentUserAvatar,
   })
+  //meute
 
   const [userData, setUserData] = useState({
     name: currentUser.name,
