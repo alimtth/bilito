@@ -49,20 +49,23 @@ function About() {
               برای تماس با ما استفاده کنید. تیم پشتیبانی ما در اسرع وقت پاسخگوی
               شما خواهد بود.{' '}
             </h2>
-            <div className="flex outline outline-gray-400 justify-between p-7 rounded-xl mt-9 mb-10">
-              <div className="flex flex-col gap-6">
+            <div className="flex outline outline-gray-400 justify-center p-7 rounded-xl mt-9 mb-10">
+              <div className="gap-3 flex flex-col ">
+              <div className=" flex flex-col items-center lg:items-start gap-6">
                 <h1 className="text-lg"> فرم تماس با ما</h1>
                 <hr className="w-[50%] h-1" />
-                <InputTextField size={'xsl'}>نام و نام خانوادگی</InputTextField>
-                <InputTextField size={'xsl'}>ایمیل</InputTextField>
-                <InputTextField size={'xsl'}>موضوع</InputTextField>
+                <div className='gap-3 flex flex-col lg:flex-row'>
+                <InputTextField size={'slx'}>نام و نام خانوادگی</InputTextField>
+                <InputTextField size={'slx'}>ایمیل</InputTextField>
+                <InputTextField size={'slx'}>موضوع</InputTextField>
+                </div>
               </div>
-              <div className="">
+              <div className='gap-3 flex flex-col'>
                 <textarea
                   name=""
                   id=""
                   placeholder="پیام"
-                  className="border-none outline outline-gray-450 rounded-lg h-[200px] mt-12 w-[380px] text-gray-20 p-3 placeholder-gray-20"
+                  className="border-none outline outline-gray-450 rounded-lg h-[200px] mt-12 w-full text-gray-20 p-3 placeholder-gray-20"
                 ></textarea>
                 <Buttons
                   variant="fill"
@@ -70,6 +73,7 @@ function About() {
                 >
                   ارسال پیام
                 </Buttons>
+                </div>
               </div>
             </div>
           </div>
