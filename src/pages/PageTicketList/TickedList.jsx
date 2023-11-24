@@ -227,7 +227,7 @@ function TickedList() {
 
 
           <div className="flex gap-4 justify-between">
-            <div className='mb-8 w-full border border-gray-100 rounded-lg shadow-2xl hover:border-blue-500 hover:text-blue-500'>
+            <div className='mb-8 w-full border border-gray-100 rounded-lg  hover:border-blue-500 hover:text-blue-500'>
               <button
                 className="flex w-full items-center  basis-3/4 py-2 px-4 border-b"
                 onClick={togglePriceCalender}
