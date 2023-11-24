@@ -1,26 +1,42 @@
 // eslint-disable-next-line no-unused-vars
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import InputTextField from '@/components/Ui/InputTextField'
 import Buttons from '@/components/Ui/Button'
-import {apiUpdateCurrentUser} from '@/api/user'
-import {TextField} from '@mui/material'
+import { apiUpdateCurrentUser, apiUpdateCurrentUserAvatar } from '@/api/user'
+import { TextField } from '@mui/material'
+import { useAuthContext } from '@/providers/AuthProvider'
+import { useNavigate } from 'react-router-dom'
+import { useMutation } from '@tanstack/react-query'
+import AvatarField from '@/components/Ui/AvatarField'
 
 function EditUser() {
-  const [userData, setUserData] = useState({
-    name: '',
-    gender: '',
-    national_code: '',
-    mobile: '',
-    // image: null,
+  const navigate = useNavigate()
+  const { currentUser, setCurrentUser } = useAuthContext()
+  const [errors, setErrors] = useState({})
+
+  const updateUserMutation = useMutation({
+    mutationFn: apiUpdateCurrentUser
   })
 
-  //   const handleFileChange = (e) => {
-  //     const file = e.target.files[0];
-  //     setUserData(() => ({
-  //       ...userData,
-  //       image: file,
-  //     }));
-  //   };
+  const updateUserAvatarMutation = useMutation({
+    mutationFn: apiUpdateCurrentUserAvatar
+  })
+
+  const [userData, setUserData] = useState({
+    name: currentUser.name,
+    gender: currentUser.gender,
+    national_code: currentUser.national_code,
+    mobile: currentUser.mobile,
+  })
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+
+    setUserData(() => ({
+      ...userData,
+      image: file,
+    }));
+  };
 
   const handleSaveChanges = async () => {
     if (
@@ -33,8 +49,27 @@ function EditUser() {
       return
     }
 
-    const res = await apiUpdateCurrentUser(userData)
-    console.log(res)
+    updateUserMutation.mutate(userData, {
+      onSuccess: (res) => {
+        setCurrentUser(res.data)
+        navigate('/account/data-user')
+      },
+      onError: (err) => {
+        if (err?.response?.status == 422) {
+          setErrors(err.response.data.errors)
+        }
+        console.log(err)
+      }
+    })
+  }
+
+
+  const handleChangeAvatar = (file) => {
+    updateUserAvatarMutation.mutate(file, {
+      onSuccess: (res) => {
+        console.log(res)
+      }
+    })
   }
 
 
@@ -50,6 +85,7 @@ function EditUser() {
               className="w-full lg:w-[350px]"
               size={'ssl'}
               value={userData.name}
+              error={errors.name}
               onChange={(e) =>
                 setUserData({
                   ...userData,
@@ -63,6 +99,7 @@ function EditUser() {
               className="w-full lg:w-[350px]"
               size={'ssl'}
               value={userData.gender}
+              error={errors.gender}
               onChange={(e) =>
                 setUserData({
                   ...userData,
@@ -76,6 +113,7 @@ function EditUser() {
             <InputTextField
               className="w-full lg:w-[350px]"
               size={'ssl'}
+              error={errors.national_code}
               value={userData.national_code}
               onChange={(e) =>
                 setUserData({
@@ -90,6 +128,7 @@ function EditUser() {
               className="w-full lg:w-[350px]"
               size={'ssl'}
               value={userData.mobile}
+              error={errors.mobile}
               onChange={(e) =>
                 setUserData({
                   ...userData,
@@ -100,21 +139,18 @@ function EditUser() {
               شماره موبایل
             </InputTextField>
 
-            <TextField
-              type="file"
-              //   className=""
-              //   onChange={handleFileChange}
-            />
+            <AvatarField onChange={handleChangeAvatar} loading={updateUserAvatarMutation.isPending}/>
           </div>
           <div className="justify-end flex">
             <Buttons
+              loading={updateUserMutation.isPending}
               variant="fill"
               className={'w-full lg:w-1/4 flex justify-center items-end'}
               onClick={handleSaveChanges}
             >
               ویرایش
             </Buttons>
-            
+
           </div>
         </div>
       </div>

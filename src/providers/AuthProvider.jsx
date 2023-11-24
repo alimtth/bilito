@@ -50,9 +50,12 @@ const AuthProvider = ({children}) => {
     logout,
     currentUser,
     isLoading,
+    setCurrentUser,
   }
 
-  return <authContext.Provider value={values}>{children}</authContext.Provider>
+  return <authContext.Provider value={values}>
+    {isLoggedIn && !currentUser ? "loading": children}
+  </authContext.Provider>
 }
 
 AuthProvider.propTypes = {

@@ -24,6 +24,7 @@ function InputTextField({
   size,
   disabled,
   name,
+  error
 }) {
   return (
     <div>
@@ -31,7 +32,7 @@ function InputTextField({
         <input
           onChange={onChange}
           value={value}
-          className={`${value?.length === 0 ? "input-text-field" : "selected-input-text-field"} ${sizes[size]} ${className}`}
+          className={`${value?.length === 0 ? "input-text-field" : "selected-input-text-field"} ${sizes[size]} ${className} ${error ? '!border-red-500' : ''}`}
           type={type}
           name={name}
           {...register}
@@ -39,6 +40,7 @@ function InputTextField({
         />
 
         <label className="label">{children}</label>
+        {error && <div className='text-xs mt-1 text-red-400'>{error}</div>}
       </div>
     </div>
   )

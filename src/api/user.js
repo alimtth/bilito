@@ -20,10 +20,18 @@ const apiOrder = () => {
   return apiClient.get('profile/user_orders')
 }
 
+const apiUpdateCurrentUserAvatar = async (file) => {
+  const formData = new FormData()
+  formData.append('iamge', file)
 
-const apiUpdateCurrentUser = (data) => {
+  return apiClient.put('/profile', formData)
+}
+
+
+
+const apiUpdateCurrentUser = async (data) => {
   return apiClient.put('/profile', data)
 }
 
-export {apiLoginUser, apiRegisterUser, apiGetCurrentUser, apiGetProfile, apiUpdateCurrentUser, apiOrder}
+export {apiLoginUser, apiRegisterUser, apiGetCurrentUser, apiGetProfile, apiUpdateCurrentUser, apiOrder, apiUpdateCurrentUserAvatar}
 
