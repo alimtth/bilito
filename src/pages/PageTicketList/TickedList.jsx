@@ -18,9 +18,9 @@ import { useQuery } from '@tanstack/react-query'
 import SelectField from '@/components/Ui/SelectField'
 import useGetCities from '@/api/hooks/use-get-cities'
 import { useMemo } from 'react'
-import DatePicker from "react-multi-date-picker"
-import persian from "react-date-object/calendars/persian"
-import persian_fa from "react-date-object/locales/persian_fa"
+// import DatePicker from "react-multi-date-picker"
+// import persian from "react-date-object/calendars/persian"
+// import persian_fa from "react-date-object/locales/persian_fa"
 // import { useQuery } from 'react-query'
 
 const filters = [
@@ -153,13 +153,13 @@ function TickedList() {
               onChange={(option) => updateLocalFilter('destination', option.id)}
               options={citiesQuery.data || []} />
             <InputTextField
-              className={'sm:px-44 lg:px-0 '}
+              className={'text-right sm:px-44 lg:px-0 '}
               size={'ssl'}
               value={localFilters.departure}
               type='date'
               onChange={(e) => updateLocalFilter('departure', e.target.value)}
             >
-              تاریخ رفت و برگشت
+              تاریخ 
             </InputTextField>
             {/* <DatePicker
               calendar={persian}
