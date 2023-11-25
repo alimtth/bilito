@@ -42,7 +42,10 @@ const filters = [
     },
     {
         key: 'class'
-    }
+    },
+    // {
+    //     key: 'start_price'
+    // },
 ]
 
 function TickedList() {
@@ -89,6 +92,11 @@ function TickedList() {
     const queryCity = useMemo(() => {
         return citiesQuery.data?.find((c) => c.id == appliedFilters.origin)
     }, [appliedFilters.origin, citiesQuery.data])
+
+    // const queryStartPrice = useMemo(() => {
+    //     return citiesQuery.data?.find((c) => c.id == appliedFilters.start_price )
+
+    // }, [appliedFilters.start_price, citiesQuery.data])
 
 
     const destinationCity = useMemo(() => {
