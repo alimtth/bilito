@@ -11,6 +11,7 @@ import {motion, AnimatePresence} from 'framer-motion'
 export const ModalRules = ({showModal,setIsShow, forth, back, imagess, airname, flight_id, formattedDateArrival, date, price}) => {
     const [activeTab, setActiveTab] = useState(0)
 
+    
   const [searchParams] = useSearchParams()
   const handlClose = () => {
     setIsShow(false)
@@ -33,6 +34,8 @@ export const ModalRules = ({showModal,setIsShow, forth, back, imagess, airname, 
   const handleStepTab = () => {
     setActiveTab((s) => s + 1)
   }
+
+//   const combinedTime = {date  formattedDateArrival}
 
   return (
     <div>
@@ -159,7 +162,7 @@ export const ModalRules = ({showModal,setIsShow, forth, back, imagess, airname, 
 
               {activeTab === 1 && (
                 <div>
-                  <div className="flex flex-col gap-8 mb-[334px]">
+                  <div className="flex flex-col gap-8 ">
                     <h3 className="font-bold">قوانین عمومی سفر</h3>
                     <p>
                       ساعت الزامی حضور: از 4 ساعت قبل پروزا حضور الزامی است و 1
