@@ -16,13 +16,9 @@ function BaseLayoutAcc() {
         <div className=" lg:outline lg:outline-gray-400 lg:rounded-lg mt-28 basis-1/4">
           <div className="flex flex-col gap-1 items-center pt-5">
             <img
-<<<<<<< HEAD
               src={currentUser?.image_url }
-              
-=======
-              src={currentUser?.image_url}
+  
 
->>>>>>> 3102bde64030df78bc5ba400b885b24332b6f093
               className="rounded-full w-[50%] h-[75%] lg:w-[20%] lg:h-[50%]"
             />
             <h4 className="mt-4 font-bold text-gray-500">
