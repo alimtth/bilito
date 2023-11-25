@@ -4,9 +4,11 @@ import stepper from '@/assets/Images/Icons/levels.png'
 import {Search} from '@mui/icons-material'
 
 // eslint-disable-next-line no-unused-vars
-function StepShop(props) {
+function StepShop() {
   return (
-    <div className="py-7">
+    <div id="container">
+
+    <div className="py-7 px-24 mb-16" >
       <h3 className="text-[36px] font-semibold p-5 mr-3">
         مراحل خرید آنلاین بلیط هواپیما
       </h3>
@@ -84,6 +86,7 @@ function StepShop(props) {
           </h3>
         </div>
       </div>
+    </div>
     </div>
   )
 }

@@ -20,8 +20,6 @@ function HeaderTabs() {
   const [isHeaderSticky, setIsHeaderSticky] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
 
-
-
   const handleHover = () => {
     setIsHovered(!isHovered)
   }
@@ -40,7 +38,7 @@ function HeaderTabs() {
   //commit own in res ad req bla bla
 
   const {isLoggedIn, logout, currentUser, isLoading} = useAuthContext()
-  //
+
   // useEffect(() => {
   //   window.addEventListener('scroll', handleScroll)
   //   return () => {
@@ -156,7 +154,10 @@ function HeaderTabs() {
                   <BsTelephone />
                 </div>
                 {isLoggedIn ? (
-                  <h3 className='text-blue-500 font-bold text-2xl flex justify-center mt-20 gap-5 items-center'>سلام&nbsp;({currentUser?.name}) خوش اومدی <img src={waving} className='w-12' alt="" /></h3>
+                  <h3 className="text-blue-500 font-bold text-2xl flex justify-center mt-20 gap-5 items-center">
+                    سلام&nbsp;({currentUser?.name}) خوش اومدی{' '}
+                    <img src={waving} className="w-12" alt="" />
+                  </h3>
                 ) : (
                   <div className="flex justify-center gap-3 py-4 text-gray-20 font-light">
                     <Link to={'/login'}>
@@ -172,7 +173,7 @@ function HeaderTabs() {
                   </div>
                 )}
 
-{/* ________________________________________________________________________________________________________________________________________________________
+                {/* ________________________________________________________________________________________________________________________________________________________
 _________________________________________________________________________________________________________________________________________________________ */}
               </div>
             </div>
@@ -190,28 +191,17 @@ ________________________________________________________________________________
                     <div className="rounded-full bg-gray-650 h-10 w-10"></div>
                   </div>
                 ) : (
-                  <div>
-                    <img
-                      src={
-                        currentUser?.image ?? '/src/assets/Images/profile.jpg'
-                      }
-                      className="w-10 h-10 rounded-full z-10"
-                      onClick={handleHover}
-                    />
-                    {isHovered && (
-                      <div
-                        className={
-                          'p-[20px] bg-white  -mr-10 rounded-lg flex flex-col items-center justify-center absolute top-[25px] gap-[20px] w-100 z-10 shadow-lg mt-8'
+                  <Link to={'/account/data-user'}>
+                    <div className='hover:bg-blue-500 rounded-[100%]'>
+                      <img
+                        src={
+                          currentUser?.image ?? '/src/assets/Images/profile.jpg'
                         }
-                      >
-                        <Link to={'/account/data-user'}>
-                          <div className="nested-item text-[13px] text-[#080808BF] opacity-75">
-                            حساب کاربری
-                          </div>
-                        </Link>
-                      </div>
-                    )}
-                  </div>
+                        className="w-10 h-10 rounded-full z-10 hover:blur-[0.8px]"
+                        onClick={handleHover}
+                      />
+                    </div>
+                  </Link>
                 )}
                 <BiExit
                   className="w-9 h-9 cursor-pointer	"
