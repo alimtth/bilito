@@ -6,14 +6,15 @@ import Buttons from '@/components/Ui/Button'
 import {IoIosArrowDown} from 'react-icons/io'
 
 // eslint-disable-next-line react/prop-types
-export const BilitForm = ({forth, back, imagess}) => {
+export const BilitForm = ({flightname, image,forth,destination,price}) => {
   return (
     <div className="p-6 flex justify-between">
       <div className="pt-6 gap-6 w-[575px] flex items-center ">
-        <img src={imagess} />
+        <img src={image} className='w-10 h-10 rounded-2xl' />
         <div>
           <div className="pl-8 gap-2 flex flex-col items-center">
             <p>02:50</p>
+            {/* <p className="text-gray-600">{flightDetails?.data?.departure}</p> */}
             <p className="text-gray-600">{forth}</p>
           </div>
         </div>
@@ -39,7 +40,7 @@ export const BilitForm = ({forth, back, imagess}) => {
 
         <div className="pr-8 gap-2 flex flex-col items-center">
           <p>21:50</p>
-          <p className="text-gray-600">{back}</p>
+          <p className="text-gray-600">{destination}</p>
         </div>
         <div className="pr-6 flex items-center">
           <p> دوشنبه 6 شهریور</p>

@@ -12,13 +12,14 @@ export const BaseLayoutsForm = () => {
   const [time, setTime] = useState(12)
   const [searchParams] = useSearchParams()
 
-  // const flight_id = searchParams.get('flight_id')
+  const flight_id = searchParams.get('flight_id')
 
-  // const flightQuery = useQuery({
-  //   queryKey: ['flight', flight_id],
-  //   queryFn: () => apiGetFlightDetail(flight_id),
-  // })
+  const flightQuery = useQuery({
+    queryKey: ['flight', flight_id],
+    queryFn: () => apiGetFlightDetail(flight_id),
+  })
 
+  console.log(flightQuery.data.data.data)
 
   const formatTime = () => {
     if (time > 0) {
@@ -52,14 +53,20 @@ export const BaseLayoutsForm = () => {
     }
   }, [time])
 
-  
   return (
     <div>
       <div className="custom-container">
         <HeaderTabs />
         <hr />
         <div className="my-8 border border-gray-100 rounded-lg">
-          <BilitForm />
+          <BilitForm
+            flightname={flightQuery.data.data.data.id}
+            image={flightQuery.data.data.data.airline.image_url}
+            forth={flightQuery.data.data.data.origin.name}
+            destination={flightQuery.data.data.data.destination.name}
+            price={flightQuery.data.data.data.price}
+          />
+
           <div className="p-8 flex items-start justify-between">
             <div className="flex justify-center items-center gap-[8px]">
               <div className="bg-blue-100 text-blue-500  flex justify-center items-center gap-1 py-[2px] px-2 h-8 border rounded-md">
