@@ -1,26 +1,21 @@
 // eslint-disable-next-line no-unused-vars
 import React, {useMemo, useState} from 'react'
 import AirplanSelected from '@/assets/Images/Icons/AirplaneSelected.svg'
-import AirplanNotSelected from '@/assets/Images/Icons/AirplaneNotSelected.svg'
 import Button from '@/components/Ui/Button'
 import searchIcon from '@/assets/Images/Icons/search-normal.svg'
 import History from '../History'
 import InputTextField from '@/components/Ui/InputTextField'
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports'
 import {useNavigate, useSearchParams} from 'react-router-dom'
-import {faArrowRightArrowLeft} from '@fortawesome/free-solid-svg-icons'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import Fade from 'react-reveal/Fade'
 import useGetCities from "@/api/hooks/use-get-cities.js";
 import {useQuery} from "@tanstack/react-query";
 import {apiSearchFlight} from "@/api/search.js";
 import SelectField from "@/components/Ui/SelectField.jsx";
 import PassengerInput from "@/components/Ui/PassengerInput.jsx";
-import {log} from "next/dist/server/typescript/utils.js";
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 import DatePicker from "react-multi-date-picker";
-import DateObject from "react-date-object";
 
 
 const filters = [
@@ -72,6 +67,9 @@ function SearchBox() {
             ...s,
             ...localFilters,
         }))
+
+        // window.scrollTo({ top: 0, behavior: 'smooth' });
+
     }
 
     const searchQuery = useQuery({
