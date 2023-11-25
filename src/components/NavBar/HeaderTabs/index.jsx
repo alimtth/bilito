@@ -195,7 +195,7 @@ ________________________________________________________________________________
                     <div className='hover:bg-blue-500 rounded-[100%]'>
                       <img
                         src={
-                          currentUser?.image ?? '/src/assets/Images/profile.jpg'
+                          currentUser?.image_url ?? '/src/assets/Images/profile.jpg'
                         }
                         className="w-10 h-10 rounded-full z-10 hover:blur-[0.8px]"
                         onClick={handleHover}
