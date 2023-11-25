@@ -7,7 +7,7 @@ import airr from '@/assets/gif/airplane-joypixels.gif'
 function HomePageScreen() {
   return (
       <div className="flex flex-col relative w-full">
-        <img alt={'airplane'} src={titlePic2} className="w-full rounded-b-xl" />
+        <img alt={'airplane'} src={titlePic2} className="w-full" />
         <img
           src={airr}
           alt=""

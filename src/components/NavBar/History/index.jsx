@@ -2,36 +2,30 @@ import HistoryIcon from '@/assets/Images/Icons/History.svg'
 import CloseSquare from '@/assets/Images/Icons/close-square.svg'
 import Button from '@/components/Ui/Button'
 import '@/components/NavBar/History/style.css'
-
-import { Swiper, SwiperSlide } from 'swiper/react'
+import {Swiper, SwiperSlide} from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/scrollbar'
-import { sampleTicket } from '@/FakeData/ticket'
-import { useState } from 'react'
+import {sampleTicket} from '@/FakeData/ticket'
+import {useState} from 'react'
 
 function History() {
-  const [isShow, setisShow] = useState(true);
-
+  const [isShow, setisShow] = useState(true)
 
   const togglisShow = () => {
     setisShow(false)
   }
   return (
-    <div className="flex flex-col gap-4 mt-44 flex-wrap custom-container" >
+    <div className="flex flex-col gap-4 mt-44 flex-wrap custom-container">
       <div className="flex justify-between px-9">
         <div className="flex justify-between gap-4">
           <img src={HistoryIcon} />
           <p>تاریخچه جستجو</p>
         </div>
-        <button
-          className="text-blue-500 cursor-pointer"
-          onClick={togglisShow}
-        >پاک کردن همه</button>
-
+        <button className="text-blue-500 cursor-pointer" onClick={togglisShow}>
+          پاک کردن همه
+        </button>
       </div>
-      {!isShow && (
-        <span className='text-sm pr-6'>تاریخچه  شما پاک شد</span>
-        )}
+      {!isShow && <span className="text-sm pr-6">تاریخچه شما پاک شد</span>}
       {isShow && (
         <Swiper
           spaceBetween={10}
