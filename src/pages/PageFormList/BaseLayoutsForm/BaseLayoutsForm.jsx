@@ -19,8 +19,6 @@ export const BaseLayoutsForm = () => {
   //   queryFn: () => apiGetFlightDetail(flight_id),
   // })
 
-  
-
   const formatTime = () => {
     if (time > 0) {
       const minutes = Math.floor(time / 60)
