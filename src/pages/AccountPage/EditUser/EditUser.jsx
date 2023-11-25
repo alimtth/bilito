@@ -39,7 +39,7 @@ function EditUser() {
       return
     }
 
-    updateUserMutation.mutate(userData, {
+    updateUserMutation.mutate({ ...userData, _method: 'put'}, {
       onSuccess: (res) => {
         setCurrentUser(res.data)
         navigate('/account/data-user')

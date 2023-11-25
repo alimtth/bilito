@@ -22,15 +22,17 @@ const apiOrder = () => {
 
 const apiUpdateCurrentUserAvatar = async (file) => {
   const formData = new FormData()
-  formData.append('iamge', file)
-
-  return apiClient.put('/profile', formData)
+  formData.append('image', file)
+  
+  return apiClient.post('/profile', { image: formData.get('image'), _method: 'put' }, { headers: {
+    'Content-Type': 'multipart/form-data'
+  }})
 }
 
 
 
 const apiUpdateCurrentUser = async (data) => {
-  return apiClient.put('/profile', data)
+  return apiClient.post('/profile', data)
 }
 
 export {apiLoginUser, apiRegisterUser, apiGetCurrentUser, apiGetProfile, apiUpdateCurrentUser, apiOrder, apiUpdateCurrentUserAvatar}
