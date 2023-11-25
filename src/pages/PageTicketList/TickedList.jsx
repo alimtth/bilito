@@ -11,6 +11,7 @@ import InputTextField from '@/components/Ui/InputTextField'
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports'
 import HomePageScreen from '@/components/NavBar/HomePageScreen'
 import SingleTicket from '@/components/TicketList/SingleTicket'
+
 import {apiSearch, apiSearchFlight} from '@/api/search'
 import {useSearchParams} from 'react-router-dom'
 import {SideBarForm} from '@/components/SideBarForm/SideBarForm'
@@ -24,6 +25,7 @@ import persian_fa from "react-date-object/locales/persian_fa"
 import DateObject from "react-date-object";
 
 // import { useQuery } from 'react-query'
+
 
 const filters = [
     {
@@ -93,6 +95,7 @@ function TickedList() {
         return citiesQuery.data?.find((c) => c.id == appliedFilters.destination)
     }, [appliedFilters.destination, citiesQuery.data])
 
+
     const departureDate = useMemo(() => {
         if (!appliedFilters.departure) return null
 
@@ -117,6 +120,83 @@ function TickedList() {
             <HomePageScreen/>
             <section
                 className="-m-2 lg:-m-12 z-10 bg-white flex flex-col items-center rounded-lg shadow-2xl custom-container"
+
+            <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
+              <img src={calendar} alt="calendar" />
+              <p>اکونومی</p>
+            </div>
+            <Button variant="fill" onClick={() => setTrySearch(true)}>
+              <img src={EditPen} alt="edit-pen" />
+            </Button>
+          </div>
+        )}
+      </section>
+      <div className="flex mt-20 gap-6 justify-center custom-container" >
+        <SideBarForm searchData={searchData} />
+        <div className="lg:flex-auto lg:basis-[75%]">
+
+
+
+
+          <div className="flex gap-4 justify-between">
+            <div className='mb-8 w-full border border-gray-100 rounded-lg  hover:border-blue-500 hover:text-blue-500'>
+              <button
+                className="flex w-full items-center  basis-3/4 py-2 px-4"
+                onClick={togglePriceCalender}
+              >
+                <span>تقویم قیمتی</span>
+                <span>
+                  <IoIosArrowDown />
+                </span>
+              </button>
+              {priceCalender && (
+
+                <div className='p-3 flex justify-between '>
+
+                  <div className='gap-3 flex flex-col items-center'>
+                    <span className='text-gray-600'>شنبه 5/27</span>
+                    <span className='text-gray-100'>22 Aug</span>
+                    <span className='text-red-600'>ظرفیت تکمیل</span>
+                  </div>
+
+                  <div className='gap-3 flex flex-col items-center'>
+                    <span className='text-gray-600'>شنبه 5/28</span>
+                    <span className='text-gray-100'>22 Aug</span>
+                    <span className='text-red-600'>ظرفیت تکمیل</span>
+                  </div>
+
+                  <div className='gap-3 flex flex-col items-center'>
+                    <span className='text-gray-600'>شنبه 5/29</span>
+                    <span className='text-gray-100'>22 Aug</span>
+                    <span className='text-gray-600'>1,3000,000</span>
+                  </div>
+
+                  <div className='gap-3 flex flex-col items-center'>
+                    <span className='text-gray-600'>شنبه 5/30</span>
+                    <span className='text-gray-100'>22 Aug</span>
+                    <span className='text-gray-600'>2,3000,0000</span>
+                  </div>
+
+                  <div className='gap-3 flex flex-col items-center'>
+                    <span className='text-gray-600'>شنبه 6/1</span>
+                    <span className='text-gray-100'>22 Aug</span>
+                    <span className='text-gray-600'>1,3000</span>
+                  </div>
+
+                  <div className='gap-3 flex flex-col items-center'>
+                    <span className='text-gray-600'>شنبه 6/2</span>
+                    <span className='text-gray-100'>22 Aug</span>
+                    <span className='text-gray-600'>ناموجود</span>
+                  </div>
+
+                  <div className='gap-3 flex flex-col items-center'>
+                    <span className='text-gray-600'>شنبه 6/3</span>
+                    <span className='text-gray-100'>22 Aug</span>
+                    <span className='text-gray-600'>1,600,000</span>
+                  </div>
+                </div>
+              )}
+
 
             >
                 {trySearch ? (

@@ -2,7 +2,7 @@ import HeaderTabs from '@/components/NavBar/HeaderTabs'
 // eslint-disable-next-line no-unused-vars
 import paymant from '@/assets/Images/Icons/paymant.svg'
 // eslint-disable-next-line no-unused-vars
-import React, {useRef, useState} from 'react'
+import React, { useRef, useState } from 'react'
 import Buttons from '@/components/Ui/Button'
 import arrowdown from '@/assets/Images/Icons/arrow-down.svg'
 import arrowUp from '@/assets/Images/Icons/arowUp.svg'
@@ -12,7 +12,7 @@ import iconetimer from '@/assets/Images/Icons/timer.svg'
 import iconeairplan from '@/assets/Images/Icons/airplaneblue.svg'
 import iconbag from '@/assets/Images/Icons/bag.svg'
 import line from '@/assets/Images/Icons/Line.svg'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import html2canvas from 'html2canvas'
 import jsPDF from 'jspdf'
 import wallet from '@/assets/Images/Icons/wallet.svg'
@@ -319,7 +319,7 @@ export const Payment = () => {
         <Buttons onClick={hanldTest} variant="fill">
           <img src={wallet} alt="" />
         </Buttons>
-        
+
       </div>
     </div>
   )
