@@ -59,17 +59,14 @@ export const BaseLayoutsForm = () => {
         <hr />
         <div className="my-8 border border-gray-100 rounded-lg">
           {flightQuery.isLoading   ? <span>Loading...</span> : (
-
           <BilitForm
-            flightname={flightQuery.data.data.data.id}
-            image={flightQuery.data.data.data.airline.image_url}
-            forth={flightQuery.data.data.data.origin.name}
-            destination={flightQuery.data.data.data.destination.name}
-            price={flightQuery.data.data.data.price}
+            image={flightQuery?.data?.data?.data?.airline?.image_url}
+            forth={flightQuery?.data?.data?.data.origin?.name}
+            destination={flightQuery?.data?.data?.data.destination?.name}
+            price={flightQuery?.data?.data?.data?.price}
           />
           )}
-
-
+          
           <div className="p-8 flex items-start justify-between">
             <div className="flex justify-center items-center gap-[8px]">
               <div className="bg-blue-100 text-blue-500  flex justify-center items-center gap-1 py-[2px] px-2 h-8 border rounded-md">
@@ -82,7 +79,7 @@ export const BaseLayoutsForm = () => {
             <div className="gap-1 flex">
               <div className="gap-3 flex">
                 <p className="text-lg text-blue-500">مجموع پرداختی شما</p>
-                <p className="text-lg text-blue-500">34,410,462</p>
+                <p className="text-lg text-blue-500">{flightQuery?.data?.data?.data?.price}</p>
               </div>
               <p className="text-lg text-blue-500">تومان</p>
             </div>
