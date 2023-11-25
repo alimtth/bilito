@@ -12,12 +12,14 @@ export const BaseLayoutsForm = () => {
   const [time, setTime] = useState(12)
   const [searchParams] = useSearchParams()
 
-  const flight_id = searchParams.get('flight_id')
+  // const flight_id = searchParams.get('flight_id')
 
-  const flightQuery = useQuery({
-    queryKey: ['flight', flight_id],
-    queryFn: () => apiGetFlightDetail(flight_id),
-  })
+  // const flightQuery = useQuery({
+  //   queryKey: ['flight', flight_id],
+  //   queryFn: () => apiGetFlightDetail(flight_id),
+  // })
+
+  
 
   const formatTime = () => {
     if (time > 0) {
