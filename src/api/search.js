@@ -34,8 +34,8 @@ const apiSearchFlight = (data) => {
   return apiClient.post('/flight', data)
 }
 
-const apiGetFlightDetail = (flight_id) => {
-  return apiClient.get(`/flight/${flight_id}`)
-}
+// const apiGetFlightDetail = (flight_id) => {
+//   return apiClient.get(`/flight/${flight_id}`)
+// }
 
 export { apiSearch, searchInput, apiSearchFlight, apiGetFlightDetail }

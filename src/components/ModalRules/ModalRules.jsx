@@ -8,7 +8,14 @@ import line from '@/assets/Images/Icons/Line.svg'
 import {motion, AnimatePresence} from 'framer-motion'
 
 // eslint-disable-next-line react/prop-types
-export const ModalRules = ({  showModal, setIsShow, forth, back, imagess, flight_id, }) => {
+export const ModalRules = ({
+  showModal,
+  setIsShow,
+  forth,
+  back,
+  imagess,
+  flight_id,
+}) => {
   const [activeTab, setActiveTab] = useState(0)
 
   const [searchParams] = useSearchParams()
@@ -54,10 +61,30 @@ export const ModalRules = ({  showModal, setIsShow, forth, back, imagess, flight
             >
               <div className="flex justify-between">
                 <div className="flex gap-6">
-                  <ul onClick={() => handleTapClick(0)}>اطلاعات پرواز</ul>
-                  <ul onClick={() => handleTapClick(1)}>قوانین استرداد</ul>
-                  <ul onClick={() => handleTapClick(2)}>قوانین ویزا و مسیر</ul>
-                  <ul onClick={() => handleTapClick(3)}>بار مجاز</ul>
+                  <ul
+                    className={activeTab === 0 ? 'text-blue-500' : ''}
+                    onClick={() => handleTapClick(0)}
+                  >
+                    اطلاعات پرواز
+                  </ul>
+                  <ul
+                    className={activeTab === 1 ? 'text-blue-500' : ''}
+                    onClick={() => handleTapClick(1)}
+                  >
+                    قوانین استرداد
+                  </ul>
+                  <ul
+                    className={activeTab === 2 ? 'text-blue-500' : ''}
+                    onClick={() => handleTapClick(2)}
+                  >
+                    قوانین ویزا و مسیر
+                  </ul>
+                  <ul
+                    className={activeTab === 3 ? 'text-blue-500' : ''}
+                    onClick={() => handleTapClick(3)}
+                  >
+                    بار مجاز
+                  </ul>
                 </div>
                 <div className="flex">
                   <img src={close} alt="" onClick={handlClose} />
