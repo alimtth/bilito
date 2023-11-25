@@ -105,7 +105,7 @@ export const ModalRules = ({showModal,setIsShow, forth, back, imagess, flight_id
                     </div>
                     <div className="flex justify-between items-center mt-6">
                       <div className="flex gap-3">
-                        <h3>02:50</h3>
+                        <h3>{formattedDateArrival}</h3>
                         <p>{forth} &nbsp;فرودگاه امام </p>
                         <p>دوشنبه 6 شهریور (شماره پرواز: 615)</p>
                       </div>
@@ -119,7 +119,7 @@ export const ModalRules = ({showModal,setIsShow, forth, back, imagess, flight_id
                       </div>
                     </div>
                     <div className="flex items-center">
-                      <div className=" flex items-center justify-center rotate-90 mt-20">
+                      <div className=" flex items-center justify-center -rotate-90 mt-20">
                         <img className="z-10" src={iconeairplan} />
                         <span className="absolute w-[142px] h-[1px] ">
                           <img src={line} />
@@ -133,7 +133,7 @@ export const ModalRules = ({showModal,setIsShow, forth, back, imagess, flight_id
                     </div>
                     <div className="flex justify-between mt-16">
                       <div className="flex gap-3">
-                        <h3>17:00</h3>
+                        <h3>{date}</h3>
                         <p>{back} فرودگاه Queen Alia</p>
                         <p>دوشنبه 6 شهریور (شماره پرواز: 625)</p>
                       </div>
@@ -144,7 +144,7 @@ export const ModalRules = ({showModal,setIsShow, forth, back, imagess, flight_id
                     <div className="flex justify-end items-center gap-3 mt-5">
                       <div className="flex text-blue-500 gap-2">
                         <h2>مجموع پرداختی شما</h2>
-                        <p>34,410,462</p>
+                        <p>{price}</p>
                         <p>تومان</p>
                       </div>
                       <Buttons
