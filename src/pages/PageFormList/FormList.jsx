@@ -1,18 +1,34 @@
 import InputTextField from '@/components/Ui/InputTextField'
 import Buttons from '@/components/Ui/Button'
 import FormListInputs from '@/components/Ui/FormListInputs/index.jsx'
-import {Link} from 'react-router-dom'
-import {useState} from 'react'
+import {Link, useSearchParams} from 'react-router-dom'
+import {useEffect, useState} from 'react'
+import {usePassengerContext} from "@/providers/PassengerProvider.jsx";
 
 // eslint-disable-next-line react/prop-types
 function FormList() {
-  const [passengers, setPassengers] = useState([{}, {}, {}])
+  const [searchParams, setSearchParams] = useSearchParams()
+
+  const [passengers, setPassengers] = useState([])
 
   const handleUpdatePassenger = (data, index) => {
     setPassengers((oldData) => oldData.map((p, i) => (i === index ? data : p)))
   }
 
-  console.log(passengers)
+  useEffect(()=>{
+    const createObjects = () => {
+      const newObjects = [];
+      for (let i = 0; i < searchParams.get('capacity'); i++) {
+        newObjects.push({});
+      }
+      setPassengers(newObjects);
+    };
+    createObjects();
+  },[searchParams.get('capacity')])
+
+
+  const {saveDetail} = usePassengerContext()
+  saveDetail(passengers)
 
   return (
     <>
