@@ -8,11 +8,10 @@ import line from '@/assets/Images/Icons/Line.svg'
 import {motion, AnimatePresence} from 'framer-motion'
 
 // eslint-disable-next-line react/prop-types
-export const ModalRules = ({showModal,setIsShow, forth, back, imagess, flight_id, formattedDateArrival, date, price}) => {
+export const ModalRules = ({showModal,setIsShow, forth, back, imagess, airname, flight_id, formattedDateArrival, date, price}) => {
     const [activeTab, setActiveTab] = useState(0)
 
   const [searchParams] = useSearchParams()
-  console.log(searchParams.get('capacity'))
   const handlClose = () => {
     setIsShow(false)
   }
@@ -33,7 +32,6 @@ export const ModalRules = ({showModal,setIsShow, forth, back, imagess, flight_id
 
   const handleStepTab = () => {
     setActiveTab((s) => s + 1)
-    console.log(activeTab)
   }
 
   return (
@@ -91,7 +89,7 @@ export const ModalRules = ({showModal,setIsShow, forth, back, imagess, flight_id
                     <div className="flex justify-between items-center">
                       <h3 className="flex justify-center ">
                         <img src={imagess} alt="" className="w-9  rounded-2xl ml-6" />
-                        gulf air
+                        {airname}
                       </h3>
                       <p>مجموعا 19:00 ساعت</p>
                       <div className="flex flex-col gap-3">

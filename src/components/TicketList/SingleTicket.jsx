@@ -8,7 +8,7 @@ import propTypes from 'prop-types'
 import {ModalRules} from '../ModalRules/ModalRules'
 
 // eslint-disable-next-line react/prop-types, no-unused-vars
-function SingleTicket({forth,back,imagess, price, flight_id, id, length, children, search, arrival, departure,}) {
+function SingleTicket({forth,back,imagess, price, flight_id, id, length, children, search, arrival, departure, airname,}) {
   const [isloding, setIsloding] = useState(true)
   const [isShow, setIsShow] = useState(false)
   const [formattedDateArrival, setFormattedDateArrival] = useState('')
@@ -138,6 +138,7 @@ function SingleTicket({forth,back,imagess, price, flight_id, id, length, childre
                     forth={forth}
                     back={back}
                     imagess={imagess}
+                    airname={airname}
                     flight_id={flight_id}
                     price={priceTicket}
                     date={formattedDate}
