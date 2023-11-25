@@ -13,11 +13,8 @@ import {apiRegisterUser} from '@/api/user'
 
 const schema = yup.object().shape({
   mobile: yup.string().required('فیلد نام کاربری اجباری است'),
-  password: yup.string().min(4).max(8).required('فیلد پسورد اجباری است'),
-  password_confirmation: yup
-    .string()
-    .oneOf([yup.ref('password')], 'تکرار پسورد اشتباه است')
-    .required(),
+  password: yup.string().required('فیلد پسورد اجباری است'),
+  password_confirmation: yup.string().required().oneOf([yup.ref('password')], 'تکرار پسورد اشتباه است'),
 })
 
 function Register() {
