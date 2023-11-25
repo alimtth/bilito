@@ -1,12 +1,11 @@
-import React from 'react';
 import icon1 from '@/assets/Images/ticket_levels.svg'
 import icon2 from '@/assets/Images/best-price.svg'
 import icon3 from '@/assets/Images/whytrip.svg'
 
-function Test(props) {
+function Test() {
     return (
         <div className={'flex gap-8 justify-between  mt-10'} id={'container'}>
-            <div className="card-container basis-1/3">
+            <div className="card-container basis-1/3  hover:shadow-2xl">
                 <div className="flex items-center ">
                     <img className="h-14 mt-4 mb-3 ml-3 blur-0" alt="خرید اینترنتی بلیط هواپیما"
                          src={icon1}
@@ -46,7 +45,7 @@ function Test(props) {
                 </div>
 
             </div>
-            <div className="card-container basis-1/3">
+            <div className="card-container basis-1/3  hover:shadow-2xl">
                 <div className="flex items-center ">
                     <img className="h-14 mt-4 mb-3 ml-3 blur-0" alt="قیمت بلیط هواپیما"
                          src={icon2}
@@ -66,7 +65,7 @@ function Test(props) {
                 </div>
 
             </div>
-            <div className="card-container basis-1/3">
+            <div className="card-container basis-1/3  hover:shadow-2xl">
                 <div className="flex items-center ">
                     <img className="h-14 mt-4 mb-3 ml-3 blur-0" alt="مزایای خرید بلیط هواپیما از تریپ"
                          src={icon3}
