@@ -14,7 +14,7 @@ import { Alert, AlertTitle } from '@mui/material'
 
 const schema = yup.object().shape({
   mobile: yup.string().required('فیلد نام کاربری اجباری است'),
-  password: yup.string().min(4).max(12).required('فیلد پسورد اجباری است'),
+  password: yup.string().required('فیلد پسورد اجباری است'),
 })
 function Login() {
   const {
