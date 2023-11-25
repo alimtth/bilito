@@ -19,7 +19,6 @@ export const BaseLayoutsForm = () => {
     queryFn: () => apiGetFlightDetail(flight_id),
   })
 
-  console.log(flightQuery.data.data.data)
 
   const formatTime = () => {
     if (time > 0) {
@@ -59,6 +58,8 @@ export const BaseLayoutsForm = () => {
         <HeaderTabs />
         <hr />
         <div className="my-8 border border-gray-100 rounded-lg">
+          {flightQuery.isLoading   ? <span>Loading...</span> : (
+
           <BilitForm
             flightname={flightQuery.data.data.data.id}
             image={flightQuery.data.data.data.airline.image_url}
@@ -66,6 +67,8 @@ export const BaseLayoutsForm = () => {
             destination={flightQuery.data.data.data.destination.name}
             price={flightQuery.data.data.data.price}
           />
+          )}
+
 
           <div className="p-8 flex items-start justify-between">
             <div className="flex justify-center items-center gap-[8px]">
