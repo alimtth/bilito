@@ -36,7 +36,7 @@ const AuthProvider = ({children}) => {
     setIsLoading(false)
   }
 
-
+console.log(currentUser);
   useEffect(() => {
     if (isLoggedIn) {
       currentUsers();
