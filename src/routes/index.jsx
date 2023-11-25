@@ -19,9 +19,14 @@ import FormList from '@/pages/PageFormList/FormList'
 import {BaseLayoutsForm} from '@/pages/PageFormList/BaseLayoutsForm/BaseLayoutsForm'
 import {ConfirmBuy} from '@/pages/PageFormList/ConfirmBuy'
 import {Payment} from '@/pages/Payment/Payment'
+import Test from "@/components/test/index.jsx";
 import Insurace from '@/pages/Insurance'
 
 const routes = [
+  {
+    path: '/test',
+    element: <Test/>,
+  },
   {
     path: '/',
     element: <BaseLayout />,

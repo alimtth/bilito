@@ -44,14 +44,12 @@ function History() {
       >
         {sampleTicket.map((items) => {
           return (
-            <div key={items.id}>
-              <SwiperSlide>
+              <SwiperSlide key={items.id}>
                 <Button variant="grayBTN">
                   <img src={CloseSquare} />
                   {items.forth} به {items.back}
                 </Button>
               </SwiperSlide>
-            </div>
           )
         })}
       </Swiper>

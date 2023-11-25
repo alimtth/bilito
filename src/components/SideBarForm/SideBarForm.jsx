@@ -8,7 +8,7 @@ import {Slider} from '@mui/material'
 export const SideBarForm = ({searchData}) => {
   return (
     <div>
-        <div className="lg:block lg:bg-gray-400 lg:rounded-md lg:basis-[25%] lg:p-6 hidden">
+        <div className="lg:block lg:bg-gray-400 lg:rounded-md lg:basis-[25%] lg:p-6 hidden sticky top-5">
           <div className="flex justify-between">
             <h3>تعداد نتایج: {searchData.length}</h3>
             <h3 className="text-blue-500 text-[13px]"> پاک کردن فیلتر‌ها</h3>
@@ -96,46 +96,6 @@ export const SideBarForm = ({searchData}) => {
                 className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
               />
               <h3 className="mr-[10px]">Fly dubai</h3>
-            </div>
-            <hr className="mt-[16px] bg-gray-500 w-full h-[2px]" />
-
-            <div className="flex justify-between">
-              <h4>تعداد توقف</h4>
-              <IoIosArrowDown />
-            </div>
-            <div className="flex flex-col gap-4 items-start mt-[17px]">
-              <div className="flex">
-                <input type="radio" className="border-none outline-none" />
-                <img
-                  src={airport}
-                  className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
-                />
-                <h3 className="mr-[10px]">همه</h3>
-              </div>
-              <div className="flex">
-                <input type="radio" className="border-none outline-none" />
-                <img
-                  src={airport}
-                  className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
-                />
-                <h3 className="mr-[10px]">مستقیم</h3>
-              </div>
-              <div className="flex">
-                <input type="radio" className="border-none outline-none" />
-                <img
-                  src={airport}
-                  className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
-                />
-                <h3 className="mr-[10px]">یک</h3>
-              </div>
-              <div className="flex">
-                <input type="radio" className="border-none outline-none" />
-                <img
-                  src={airport}
-                  className="w-[26px] h-[27px] mr-[10px] rounded-[50px]"
-                />
-                <h3 className="mr-[10px]">دو یا بیشتر</h3>
-              </div>
             </div>
             <hr className="mt-[16px] bg-gray-500 w-full h-[2px]" />
           </div>

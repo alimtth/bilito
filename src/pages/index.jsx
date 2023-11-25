@@ -11,17 +11,7 @@ import BubbleTip from "@/components/BubbleTip/BubbleTip.jsx";
 
 
 function HomePage() {
-    const [show,setShow]=useState(false)
-    const handle = () => {
-        setTimeout(()=>{
-            setShow(true)
-        },4000)
 
-
-    }
-    useEffect(() => {
-        handle()
-    }, [])
 
     // useEffect(() => {
     //   axios.get('https://bilitoo.iran.liara.run/sanctum/csrf-cookie').then((res) => {
@@ -33,7 +23,7 @@ function HomePage() {
       <HomePageScreen />
       <SearchBox />
       <HomePageComponents />
-      <BubbleTip className={show}/>
+      <BubbleTip/>
       <Popular />
       <CustomizedAccordions />
       <Advantages />
