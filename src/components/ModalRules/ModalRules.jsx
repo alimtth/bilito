@@ -29,6 +29,8 @@ export const ModalRules = ({showModal,setIsShow, forth, back, imagess, airname, 
         capacity: searchParams.get('capacity'),
       }).toString(),
     })
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   const handleStepTab = () => {
