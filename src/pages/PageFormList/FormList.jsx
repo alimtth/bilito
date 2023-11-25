@@ -15,6 +15,10 @@ function FormList() {
     setPassengers((oldData) => oldData.map((p, i) => (i === index ? data : p)))
   }
 
+  const handleLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   useEffect(() => {
     const createObjects = () => {
       const newObjects = []
@@ -59,7 +63,7 @@ function FormList() {
         </div>
 
         <div className="flex justify-center items-center pb-14">
-          <Link to={'/form/confirm-buy'}>
+          <Link to={'/form/confirm-buy'} onClick={handleLinkClick}>
             <Buttons
               className={'w-1/4 justify-center'}
               size={'xl '}
