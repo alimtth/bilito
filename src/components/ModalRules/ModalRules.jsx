@@ -8,15 +8,8 @@ import line from '@/assets/Images/Icons/Line.svg'
 import {motion, AnimatePresence} from 'framer-motion'
 
 // eslint-disable-next-line react/prop-types
-export const ModalRules = ({
-  showModal,
-  setIsShow,
-  forth,
-  back,
-  imagess,
-  flight_id,
-}) => {
-  const [activeTab, setActiveTab] = useState(0)
+export const ModalRules = ({showModal,setIsShow, forth, back, imagess, flight_id, formattedDateArrival, date, price}) => {
+    const [activeTab, setActiveTab] = useState(0)
 
   const [searchParams] = useSearchParams()
   console.log(searchParams.get('capacity'))
@@ -97,7 +90,7 @@ export const ModalRules = ({
                   <div className="flex flex-col">
                     <div className="flex justify-between items-center">
                       <h3 className="flex justify-center ">
-                        <img src={imagess} alt="" className="w-7" />
+                        <img src={imagess} alt="" className="w-9  rounded-2xl ml-6" />
                         gulf air
                       </h3>
                       <p>مجموعا 19:00 ساعت</p>
@@ -113,7 +106,7 @@ export const ModalRules = ({
                     <div className="flex justify-between items-center mt-6">
                       <div className="flex gap-3">
                         <h3>02:50</h3>
-                        <p>{forth} فرودگاه استانبول</p>
+                        <p>{forth} &nbsp;فرودگاه امام </p>
                         <p>دوشنبه 6 شهریور (شماره پرواز: 615)</p>
                       </div>
                       <div className="flex gap-2">
@@ -132,9 +125,9 @@ export const ModalRules = ({
                           <img src={line} />
                         </span>
                       </div>
-                      <div className="bg-zard-100 w-[280px] py-2 px-2 rounded-lg">
+                      <div className="bg-zard-100 w-[280px] py-2 px-2 rounded-lg mt-16 mr-16">
                         <h3 className="">
-                          15:35 توقف در امان،فرودگاه Queen Alia
+                          15:35 توقف در {forth}،فرودگاه Queen Alia
                         </h3>
                       </div>
                     </div>
@@ -144,25 +137,10 @@ export const ModalRules = ({
                         <p>{back} فرودگاه Queen Alia</p>
                         <p>دوشنبه 6 شهریور (شماره پرواز: 625)</p>
                       </div>
-                      <div className="flex gap-4">
-                        <h3>قیمت برای هر بزرگسال</h3>
-                        <p>11,470,154</p>
-                        <p>تومان</p>
-                      </div>
+                      
                     </div>
-                    <div className="flex">
-                      <div className=" flex items-center justify-center rotate-90 mt-20">
-                        <img className="z-10" src={iconeairplan} />
-                        <span className="absolute w-[142px] h-[1px] ">
-                          <img src={line} />
-                        </span>
-                      </div>
-                    </div>
-                    <div className="flex gap-3 mt-16">
-                      <h3>13:00</h3>
-                      <p>دبی فرودگاه Queen Alia</p>
-                      <p>دوشنبه 6 شهریور </p>
-                    </div>
+                    
+                    
                     <div className="flex justify-end items-center gap-3 mt-5">
                       <div className="flex text-blue-500 gap-2">
                         <h2>مجموع پرداختی شما</h2>

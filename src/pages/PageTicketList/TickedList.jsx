@@ -11,8 +11,7 @@ import InputTextField from '@/components/Ui/InputTextField'
 import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports'
 import HomePageScreen from '@/components/NavBar/HomePageScreen'
 import SingleTicket from '@/components/TicketList/SingleTicket'
-
-import {apiSearch, apiSearchFlight} from '@/api/search'
+import { apiSearchFlight} from '@/api/search'
 import {useSearchParams} from 'react-router-dom'
 import {SideBarForm} from '@/components/SideBarForm/SideBarForm'
 import {useQuery} from '@tanstack/react-query'
@@ -310,7 +309,6 @@ function TickedList() {
                                 length={flight.capacity}
                                 arrival={flight.arrival}
                                 departure={flight.departure}
-
                             ></SingleTicket>
                         ))
                     )}
