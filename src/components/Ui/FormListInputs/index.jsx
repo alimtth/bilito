@@ -1,14 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import React, {useEffect, useMemo, useState} from 'react'
 import InputTextField from '@/components/Ui/InputTextField.jsx'
-import {IoIosArrowDown} from 'react-icons/io'
 import * as yup from 'yup'
 import {useForm} from 'react-hook-form'
 import {yupResolver} from '@hookform/resolvers/yup'
 import persian from 'react-date-object/calendars/persian'
 import persian_fa from 'react-date-object/locales/persian_fa'
 import DatePicker from 'react-multi-date-picker'
-import {usePassengerContext} from '@/providers/PassengerProvider.jsx'
 
 let birthYears = []
 for (let i = 1300; i < 1403; i++) {
@@ -25,21 +23,6 @@ for (let i = 1402; i < 1421; i++) {
   }
   expireYears.push(expireYear)
 }
-
-const months = [
-  {title: 'فروردین', value: '01'},
-  {title: 'اردیبهشت', value: '02'},
-  {title: 'خرداد', value: '03'},
-  {title: 'تیر', value: '04'},
-  {title: 'مرداد', value: '05'},
-  {title: 'شهریور', value: '06'},
-  {title: 'مهر', value: '07'},
-  {title: 'آبان', value: '08'},
-  {title: 'آذر', value: '09'},
-  {title: 'دی', value: '10'},
-  {title: 'بهمن', value: '11'},
-  {title: 'اسفند', value: '12'},
-]
 // eslint-disable-next-line no-unused-vars
 const monthTest = [{title: 'mmd', id: 1}]
 
