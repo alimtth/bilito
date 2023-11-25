@@ -5,10 +5,23 @@ import InputTextField from '@/components/Ui/InputTextField'
 import Buttons from '@/components/Ui/Button'
 import {Link} from 'react-router-dom'
 import {usePassengerContext} from '@/providers/PassengerProvider.jsx'
+import Swal from 'sweetalert2'
 
 export const ConfirmBuy = () => {
   const {passengerDetail} = usePassengerContext()
 
+  // function showAlertOk() {
+  //   Swal.fire({
+  //     title: 'موفق',
+  //     text: 'مرحله بعد',
+  //     icon: 'success',
+  //     confirmButtonText: 'مرحله بعد',
+  //   })
+  // }
+
+  // const handleOk =() => {
+  //   showAlertOk()
+  // }
   return (
     <div>
       <div className="flex flex-col gap-10">
@@ -18,14 +31,24 @@ export const ConfirmBuy = () => {
               <img src={iconUser} alt="" />
               <h3 className="flex flex-col justify-center">
                 <p className="font-bold">
-                  Mr.{detail.latin_name + detail.latin_last_name}
+                  {detail?.latin_name || detail?.latin_last_name
+                    ? `Mr. ${detail?.latin_name} ${detail?.latin_last_name}`
+                    : 'نام و نام خانوادگی پر نشده است'}{' '}
                 </p>
               </h3>
             </div>
             <div className="flex gap-6">
               <p className="text-gray-500">رده سنی: بزرگسال</p>
-              <p className="text-gray-500">تاریخ تولد:{detail.birth_day}</p>
-              <p className="text-gray-500">کد ملی:{detail.national_code}</p>
+              <p className="text-gray-500">
+                تاریخ تولد:{' '}
+                {detail.birth_day ? detail.birth_day : 'اطلاعات نا مشخص'}
+              </p>
+              <p className="text-gray-500">
+                کد ملی:{' '}
+                {detail.national_code
+                  ? detail.national_code
+                  : 'اطلاعات نا مشخص'}
+              </p>
               <p className="text-gray-500">قیمت بیلیط:11٬470٬154 تومان</p>
             </div>
           </div>
@@ -67,6 +90,5 @@ export const ConfirmBuy = () => {
     </div>
   )
 }
-
 
 ///doneeeeeeeeeeeeeeeeeeeeeeeeeeeeeee

@@ -2,13 +2,14 @@
 import React from 'react'
 import HeaderTabs from '@/components/NavBar/HeaderTabs'
 import {useEffect, useState} from 'react'
-import {Outlet, useParams, useSearchParams} from 'react-router-dom'
+import {Outlet, useSearchParams} from 'react-router-dom'
 import {BilitForm} from '@/components/BilitForm/BilitForm'
 import {useQuery} from '@tanstack/react-query'
 import {apiGetFlightDetail} from '@/api/search'
+import Swal from 'sweetalert2'
 
 export const BaseLayoutsForm = () => {
-  const [time, setTime] = useState(600)
+  const [time, setTime] = useState(12)
   const [searchParams] = useSearchParams()
 
   const flight_id = searchParams.get('flight_id')
@@ -36,6 +37,21 @@ export const BaseLayoutsForm = () => {
       clearInterval(timer)
     }
   }, [])
+  function showAlertErr() {
+    Swal.fire({
+      title: 'وقت خرید تموم شد',
+      text: 'تلاش دوباره',
+      icon: 'error',
+      confirmButtonText: 'برگشت',
+    })
+  }
+  useEffect(() => {
+    if (time === 0) {
+      showAlertErr()
+    }
+  }, [time])
+
+  
   return (
     <div>
       <div className="custom-container">
