@@ -5,12 +5,10 @@ import { apiGetProfile } from '@/api/user'
 
 function UserData() {
   const {currentUser} = useAuthContext()
-  // console.log(currentUser)
 
   const salma = async() => {
     const res = await apiGetProfile()
 
-    console.log(res);
   }
   return (
     <>

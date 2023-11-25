@@ -21,7 +21,6 @@ function MyTravels() {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen)
   }
-  console.log(showDetails)
   return (
     <>
       <div className="flex flex-col w-full mt-11 ">

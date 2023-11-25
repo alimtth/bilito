@@ -47,7 +47,7 @@ function Register() {
       saveAccess(result.data.token)
       navigate('/')
 
-      console.log(result)
+  
     } catch (err) {
       setErrMsg(err.toJSON().message)
     } finally {

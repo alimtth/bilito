@@ -48,7 +48,7 @@ function EditUser() {
         if (err?.response?.status == 422) {
           setErrors(err.response.data.errors)
         }
-        console.log(err)
+     
       },
     })
   }
@@ -56,7 +56,7 @@ function EditUser() {
   const handleChangeAvatar = (file) => {
     updateUserAvatarMutation.mutate(file, {
       onSuccess: (res) => {
-        console.log(res)
+   
       },
     })
   }

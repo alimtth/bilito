@@ -43,7 +43,6 @@ function Login() {
       saveAccess(res.data.token)
       navigate('/')
 
-      console.log(res)
     } catch (err) {
       setErrMsg(err.toJSON().message)
     } finally {

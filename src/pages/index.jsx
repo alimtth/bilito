@@ -13,11 +13,6 @@ import BubbleTip from "@/components/BubbleTip/BubbleTip.jsx";
 function HomePage() {
 
 
-    // useEffect(() => {
-    //   axios.get('https://bilitoo.iran.liara.run/sanctum/csrf-cookie').then((res) => {
-    //     console.log(res);
-    //   })
-    // }, [])
             return (
     <div className="flex items-center flex-col w-full">
       <HomePageScreen />

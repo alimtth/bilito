@@ -42,7 +42,7 @@ function FormListInputs({passenger, onUpdate}) {
   const [birthDate, setBirthDate] = useState(null)
   const [expirePassport, setExpirePassport] = useState(null)
   const onFormSubmit = (data) => {
-    console.log(data)
+
   }
 
   const handleChange = (name, value) => {

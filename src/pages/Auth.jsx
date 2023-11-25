@@ -8,10 +8,9 @@ function AuthPage() {
   const [input, setInput] = useState('')
   const [showText, setShowText] = useState(true)
 
-  console.log(age)
+
 
   const hanlInput = (e) => {
-    console.log(e.target.value)
     setInput(e.target.value)
   }
 

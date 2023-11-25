@@ -84,7 +84,7 @@ function SearchBox() {
   const searchData = useMemo(() => {
     return searchQuery.data?.data?.data || []
   }, [searchQuery.data])
-  console.log(localFilters?.capacity)
+ 
   return (
     <>
       <Fade bottom>

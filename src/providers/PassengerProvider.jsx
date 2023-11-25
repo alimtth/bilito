@@ -14,7 +14,6 @@ function PassengerProvider({children}) {
     const saveDetail = (detail)=>{
         setPassengerDetail(detail)
     }
-    console.log(passengerDetail)
 
 
     const values = {
