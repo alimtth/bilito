@@ -8,7 +8,7 @@ import {Slider} from '@mui/material'
 export const SideBarForm = ({searchData}) => {
   return (
     <div>
-        <div className="lg:block lg:bg-gray-400 lg:rounded-md lg:basis-[25%] lg:p-6 hidden sticky top-5">
+        <div className="lg:block lg:bg-gray-400 lg:rounded-md lg:basis-[25%] lg:p-6 hidden sticky top-0">
           <div className="flex justify-between">
             <h3>تعداد نتایج: {searchData.length}</h3>
             <h3 className="text-blue-500 text-[13px]"> پاک کردن فیلتر‌ها</h3>

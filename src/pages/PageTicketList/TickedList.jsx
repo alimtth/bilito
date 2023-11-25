@@ -119,178 +119,99 @@ function TickedList() {
         <div className="flex flex-col items-center">
             <HomePageScreen/>
             <section
-                className="-m-2 lg:-m-12 z-10 bg-white flex flex-col items-center rounded-lg shadow-2xl custom-container"
-
-            <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
-              <img src={calendar} alt="calendar" />
-              <p>اکونومی</p>
-            </div>
-            <Button variant="fill" onClick={() => setTrySearch(true)}>
-              <img src={EditPen} alt="edit-pen" />
-            </Button>
-          </div>
-        )}
-      </section>
-      <div className="flex mt-20 gap-6 justify-center custom-container" >
-        <SideBarForm searchData={searchData} />
-        <div className="lg:flex-auto lg:basis-[75%]">
-
-
-
-
-          <div className="flex gap-4 justify-between">
-            <div className='mb-8 w-full border border-gray-100 rounded-lg  hover:border-blue-500 hover:text-blue-500'>
-              <button
-                className="flex w-full items-center  basis-3/4 py-2 px-4"
-                onClick={togglePriceCalender}
-              >
-                <span>تقویم قیمتی</span>
-                <span>
-                  <IoIosArrowDown />
-                </span>
-              </button>
-              {priceCalender && (
-
-                <div className='p-3 flex justify-between '>
-
-                  <div className='gap-3 flex flex-col items-center'>
-                    <span className='text-gray-600'>شنبه 5/27</span>
-                    <span className='text-gray-100'>22 Aug</span>
-                    <span className='text-red-600'>ظرفیت تکمیل</span>
-                  </div>
-
-                  <div className='gap-3 flex flex-col items-center'>
-                    <span className='text-gray-600'>شنبه 5/28</span>
-                    <span className='text-gray-100'>22 Aug</span>
-                    <span className='text-red-600'>ظرفیت تکمیل</span>
-                  </div>
-
-                  <div className='gap-3 flex flex-col items-center'>
-                    <span className='text-gray-600'>شنبه 5/29</span>
-                    <span className='text-gray-100'>22 Aug</span>
-                    <span className='text-gray-600'>1,3000,000</span>
-                  </div>
-
-                  <div className='gap-3 flex flex-col items-center'>
-                    <span className='text-gray-600'>شنبه 5/30</span>
-                    <span className='text-gray-100'>22 Aug</span>
-                    <span className='text-gray-600'>2,3000,0000</span>
-                  </div>
-
-                  <div className='gap-3 flex flex-col items-center'>
-                    <span className='text-gray-600'>شنبه 6/1</span>
-                    <span className='text-gray-100'>22 Aug</span>
-                    <span className='text-gray-600'>1,3000</span>
-                  </div>
-
-                  <div className='gap-3 flex flex-col items-center'>
-                    <span className='text-gray-600'>شنبه 6/2</span>
-                    <span className='text-gray-100'>22 Aug</span>
-                    <span className='text-gray-600'>ناموجود</span>
-                  </div>
-
-                  <div className='gap-3 flex flex-col items-center'>
-                    <span className='text-gray-600'>شنبه 6/3</span>
-                    <span className='text-gray-100'>22 Aug</span>
-                    <span className='text-gray-600'>1,600,000</span>
-                  </div>
-                </div>
-              )}
-
+                className="custom-container -m-2 lg:-m-12 z-10 bg-white flex flex-col items-center rounded-lg shadow-2xl"
 
             >
-                {trySearch ? (
-                    <form
-                        className="p-6 px-0 gap-3 flex justify-center flex-col lg:flex lg:flex-row lg:gap-6 w-full lg:w-auto flex-wrap items-center sm:gap-8 "
-                        onSubmit={handleSearch}
-                    >
+            {trySearch ? (
+                <form
+                    className="p-6 px-0 gap-3 flex justify-center flex-col lg:flex lg:flex-row lg:gap-6 w-full lg:w-auto flex-wrap items-center sm:gap-8 "
+                    onSubmit={handleSearch}
+                >
 
-                        <SelectField
-                            value={localFilters.origin}
-                            label="مبدا"
-                            onChange={(option) => updateLocalFilter('origin', option.id)}
-                            options={citiesQuery.data || []}/>
+                    <SelectField
+                        value={localFilters.origin}
+                        label="مبدا"
+                        onChange={(option) => updateLocalFilter('origin', option.id)}
+                        options={citiesQuery.data || []}/>
 
-                        <div className="">
-                            <ConnectingAirportsIcon/>
-                        </div>
-                        <SelectField
-                            value={localFilters.destination}
-                            label="مقصد"
-                            onChange={(option) => updateLocalFilter('destination', option.id)}
-                            options={citiesQuery.data || []}/>
-                        <DatePicker
-                            showOtherDays={true}
-                            style={{
-                                padding: '24px 20px',
-                                borderRadius: '0.5rem',
-                                borderColor: 'rgb(134 134 134 / var(--tw-border-opacity)'
-                            }}
-                            calendar={persian}
-                            value={localFilters?.departure ? new Date(localFilters.departure) : null}
-                            locale={persian_fa}
-                            format='D MMMM YYYY'
-                            onChange={(date) => {
-                                const _date = new Date(date.toDate())
-                                updateLocalFilter('departure', `${_date.getFullYear()}-${_date.getMonth() + 1}-${_date.getDate()}`)
-                            }}
-                        />
-                        <InputTextField
-                            className={'sm:px-44 lg:px-0 '}
-                            size={'ssl'}
-                            value={localFilters.capacity}
-                            onChange={(e) => updateLocalFilter('capacity', e.target.value)}
-                        >
-                            تعداد مسافر
-                        </InputTextField>
-                        <InputTextField
-                            className={'sm:px-44 lg:px-0 '}
-                            size={'ssl'}
-                            value={localFilters.class}
-                            onChange={(e) => updateLocalFilter('class', e.target.value)}
-                        >
-                            کلاس پرواز
-                        </InputTextField>
-
-                        <Button variant="fill" type="submit">
-                            جستجو
-                        </Button>
-                    </form>
-                ) : (
-                    <div className="p-6 gap-8 flex justify-center items-center font-bold">
-                        <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
-                            <img src={airplane} alt="airplane"/>
-                            <p>
-                                بلیط
-                                همواپیما {queryCity ? queryCity.name : '...'} به {destinationCity ? destinationCity.name : '...'}
-                            </p>
-                        </div>
-
-                        <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
-                            <img src={calendar} alt="calendar"/>
-                            <p>{departureDate}</p>
-                        </div>
-
-                        <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
-                            <img src={profileAdd} alt="profile-add"/>
-                            <p>برای {localFilters.capacity} نفر</p>
-                        </div>
-
-                        <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
-                            <img src={calendar} alt="calendar"/>
-                            <p>اکونومی</p>
-                        </div>
-                        <Button variant="fill" onClick={() => setTrySearch(true)}>
-                            <img src={EditPen} alt="edit-pen"/>
-                        </Button>
+                    <div className="">
+                        <ConnectingAirportsIcon/>
                     </div>
-                )}
+                    <SelectField
+                        value={localFilters.destination}
+                        label="مقصد"
+                        onChange={(option) => updateLocalFilter('destination', option.id)}
+                        options={citiesQuery.data || []}/>
+                    <DatePicker
+                        showOtherDays={true}
+                        style={{
+                            padding: '24px 20px',
+                            borderRadius: '0.5rem',
+                            borderColor: 'rgb(134 134 134 / var(--tw-border-opacity)'
+                        }}
+                        calendar={persian}
+                        value={localFilters?.departure ? new Date(localFilters.departure) : null}
+                        locale={persian_fa}
+                        format='D MMMM YYYY'
+                        onChange={(date) => {
+                            const _date = new Date(date.toDate())
+                            updateLocalFilter('departure', `${_date.getFullYear()}-${_date.getMonth() + 1}-${_date.getDate()}`)
+                        }}
+                    />
+                    <InputTextField
+                        className={'sm:px-44 lg:px-0 '}
+                        size={'ssl'}
+                        value={localFilters.capacity}
+                        onChange={(e) => updateLocalFilter('capacity', e.target.value)}
+                    >
+                        تعداد مسافر
+                    </InputTextField>
+                    <InputTextField
+                        className={'sm:px-44 lg:px-0 '}
+                        size={'ssl'}
+                        value={localFilters.class}
+                        onChange={(e) => updateLocalFilter('class', e.target.value)}
+                    >
+                        کلاس پرواز
+                    </InputTextField>
+
+                    <Button variant="fill" type="submit">
+                        جستجو
+                    </Button>
+                </form>
+            ) : (
+                <div className="p-6 gap-8 flex justify-center items-center font-bold">
+                    <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
+                        <img src={airplane} alt="airplane"/>
+                        <p>
+                            بلیط
+                            همواپیما {queryCity ? queryCity.name : '...'} به {destinationCity ? destinationCity.name : '...'}
+                        </p>
+                    </div>
+
+                    <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
+                        <img src={calendar} alt="calendar"/>
+                        <p>{departureDate}</p>
+                    </div>
+
+                    <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
+                        <img src={profileAdd} alt="profile-add"/>
+                        <p>برای {localFilters.capacity} نفر</p>
+                    </div>
+
+                    <div className="gap-2 flex items-center lg:text-xl lg:font-bold text-sm font-light">
+                        <img src={calendar} alt="calendar"/>
+                        <p>اکونومی</p>
+                    </div>
+                    <Button variant="fill" onClick={() => setTrySearch(true)}>
+                        <img src={EditPen} alt="edit-pen"/>
+                    </Button>
+                </div>
+            )}
             </section>
             <div className="flex mt-20 gap-6 justify-center custom-container">
                 <SideBarForm searchData={searchData}/>
                 <div className="lg:flex-auto lg:basis-[75%]">
-
-
                     <div className="flex gap-4 justify-between">
                         <div
                             className='mb-8 w-full border border-gray-100 rounded-lg  hover:border-blue-500 hover:text-blue-500'>
@@ -301,7 +222,7 @@ function TickedList() {
                                 <span>تقویم قیمتی</span>
                                 <span>
                                     <IoIosArrowDown/>
-                                </span>
+                                    </span>
                             </button>
                             {priceCalender && (
 
@@ -377,8 +298,7 @@ function TickedList() {
                                 </h3>
                             </div>
                         </div>
-                    ) : (
-                        searchData.map((flight) => (
+                    ) : (searchData.map((flight) => (
                             <SingleTicket
                                 key={flight.id}
                                 flight_id={flight.id}
@@ -396,8 +316,9 @@ function TickedList() {
                     )}
                 </div>
             </div>
-        </div>
-    )
+        </div>)
 }
 
 export default TickedList
+
+
