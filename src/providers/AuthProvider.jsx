@@ -7,7 +7,6 @@ const authContext = createContext()
 const useAuthContext = () => {
   return useContext(authContext)
 }
-
 const AuthProvider = ({children}) => {
   const [currentUser, setCurrentUser] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
@@ -26,8 +25,6 @@ const AuthProvider = ({children}) => {
     setAccessToken(null)
     localStorage.removeItem('accessToken')
   }
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const currentUsers = async () => {
     if (isLoading) return
     setIsLoading(true)
