@@ -26,7 +26,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <UserDataProvider>
           <AuthProvider>
             <PassengerProvider>
-              <RouterProvider router={router} />
             </PassengerProvider>
           </AuthProvider>
         </UserDataProvider>

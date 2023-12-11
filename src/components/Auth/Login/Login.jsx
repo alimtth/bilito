@@ -6,7 +6,7 @@ import Button from '@/components/Ui/Button'
 import * as yup from 'yup'
 import {yupResolver} from '@hookform/resolvers/yup'
 import {useForm} from 'react-hook-form'
-import {useAuthContext} from '@/providers/AuthProvider'
+import {useAuthCon  text} from '@/providers/AuthProvider'
 import {apiLoginUser} from '@/api/user'
 import {useState} from 'react'
 import Buttons from '@/components/Ui/Button'
@@ -22,7 +22,7 @@ function Login() {
     handleSubmit,
     formState: {errors},
   } = useForm({resolver: yupResolver(schema)})
-
+// test in forth commit
   const {isLoggedIn, saveAccess} = useAuthContext()
   const [isloding, setIsloding] = useState(false)
   const navigate = useNavigate()
@@ -35,7 +35,6 @@ function Login() {
   }
   const onFormSubmit = async (data) => {
     if (isLoggedIn === true) return
-
     try {
       setErrMsg('')
       setIsloding(true)

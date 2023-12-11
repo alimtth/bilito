@@ -38,7 +38,7 @@ const AuthProvider = ({children}) => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      currentUsers();
+      currentUsers()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoggedIn])
@@ -52,9 +52,11 @@ const AuthProvider = ({children}) => {
     setCurrentUser,
   }
 
-  return <authContext.Provider value={values}>
-    {isLoggedIn && !currentUser ? "loading": children}
-  </authContext.Provider>
+  return (
+    <authContext.Provider value={values}>
+      {isLoggedIn && !currentUser ? 'loading' : children}
+    </authContext.Provider>
+  )
 }
 
 AuthProvider.propTypes = {
