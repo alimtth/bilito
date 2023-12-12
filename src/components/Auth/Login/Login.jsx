@@ -22,7 +22,6 @@ function Login() {
     handleSubmit,
     formState: {errors},
   } = useForm({resolver: yupResolver(schema)})
-
   const {isLoggedIn, saveAccess} = useAuthContext()
   const [isloding, setIsloding] = useState(false)
   const navigate = useNavigate()
@@ -35,7 +34,6 @@ function Login() {
   }
   const onFormSubmit = async (data) => {
     if (isLoggedIn === true) return
-
     try {
       setErrMsg('')
       setIsloding(true)
