@@ -51,6 +51,10 @@ function Login() {
 
   return (
     <div>
+
+      <div>
+        <img src="" alt="dsds" />
+      </div>
       <div className="fixed inset-0 bg-blue-650 bg-opacity-10 backdrop-blur-[0.5px] flex justify-center items-center">
         <div className=" opacity-75">
           <div className="bg-white p-2 rounded-[8px]">

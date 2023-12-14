@@ -21,6 +21,8 @@ const AuthProvider = ({children}) => {
     setAccessToken(token)
   }
 
+  //TODO in fr __________________________________><_________________________________________
+
   const logout = () => {
     setAccessToken(null)
     localStorage.removeItem('accessToken')
