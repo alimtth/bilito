@@ -1,8 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import router from './routes/index.jsx'
-import { RouterProvider } from 'react-router-dom'
 import { AuthProvider } from './providers/AuthProvider'
 import { UserDataProvider } from './providers/UserDataProvider'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
