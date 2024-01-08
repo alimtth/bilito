@@ -1,11 +1,11 @@
-import { useQuery } from "@tanstack/react-query"
-import { apiGetCities } from "../common"
+// import { useQuery } from "@tanstack/react-query"
+// import { apiGetCities } from "../common"
 
-const useGetCities = () => {
-    return useQuery({
-        queryKey: ['cities'],
-        queryFn: apiGetCities
-    })
-}
+// const useGetCities = () => {
+//     return useQuery({
+//         queryKey: ['cities'],
+//         queryFn: apiGetCities
+//     })
+// }
 
-export default useGetCities
+// export default useGetCities

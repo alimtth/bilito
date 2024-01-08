@@ -15,7 +15,7 @@ import SingleTicket from '@/components/TicketList/SingleTicket'
 import { apiSearchFlight} from '@/api/search'
 import {useSearchParams} from 'react-router-dom'
 import {SideBarForm} from '@/components/SideBarForm/SideBarForm'
-import {useQuery} from '@tanstack/react-query'
+// import {useQuery} from '@tanstack/react-query'
 import SelectField from '@/components/Ui/SelectField'
 import useGetCities from '@/api/hooks/use-get-cities'
 import {useMemo} from 'react'
@@ -84,10 +84,10 @@ function TickedList() {
     }
 
 
-    const searchQuery = useQuery({
-        queryFn: () => apiSearchFlight(appliedFilters),
-        queryKey: ['search-flight', appliedFilters]
-    })
+    // const searchQuery = useQuery({
+    //     queryFn: () => apiSearchFlight(appliedFilters),
+    //     queryKey: ['search-flight', appliedFilters]
+    // })
 
     const queryCity = useMemo(() => {
         return citiesQuery.data?.find((c) => c.id == appliedFilters.origin)
@@ -113,15 +113,15 @@ function TickedList() {
 
     }, [appliedFilters.departure])
 
-    const searchData = useMemo(() => {
-        return searchQuery.data?.data?.data || []
-    }, [searchQuery.data])
+    // const searchData = useMemo(() => {
+    //     return searchQuery.data?.data?.data || []
+    // }, [searchQuery.data])
 
-    useEffect(() => {
-        if (searchQuery.isFetching) {
-            setTrySearch(false)
-        }
-    }, [searchQuery.isFetching]);
+    // useEffect(() => {
+    //     if (searchQuery.isFetching) {
+    //         setTrySearch(false)
+    //     }
+    // }, [searchQuery.isFetching]);
 
     return (
         <div className="flex flex-col items-center">
@@ -218,7 +218,7 @@ function TickedList() {
             )}
             </section>
             <div className="flex mt-20 gap-6 justify-center custom-container">
-                <SideBarForm searchData={searchData}/>
+                {/* <SideBarForm searchData={searchData}/> */}
                 <div className="lg:flex-auto lg:basis-[75%]">
                     <div className="flex gap-4 justify-between">
                         <div
@@ -289,7 +289,7 @@ function TickedList() {
                         </div>
                     </div>
 
-                    {searchQuery.isLoading ? (
+                    {/* {searchQuery.isLoading ? (
                         <div
                             className="flex justify-center items-center rounded-md h-12 w-12 border-4 border-t-4 border-blue-500 animate-spin  mr-[50%] mt-20"></div>
                     ) : searchData.length === 0 ? (
@@ -322,7 +322,7 @@ function TickedList() {
 
                             ></SingleTicket>
                         ))
-                    )}
+                    )} */}
                 </div>
             </div>
         </div>)

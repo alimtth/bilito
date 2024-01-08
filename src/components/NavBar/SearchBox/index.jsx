@@ -9,7 +9,7 @@ import ConnectingAirportsIcon from '@mui/icons-material/ConnectingAirports'
 import {useNavigate, useSearchParams} from 'react-router-dom'
 import Fade from 'react-reveal/Fade'
 import useGetCities from '@/api/hooks/use-get-cities.js'
-import {useQuery} from '@tanstack/react-query'
+// import {useQuery} from '@tanstack/react-query'
 import {apiSearchFlight} from '@/api/search.js'
 import SelectField from '@/components/Ui/SelectField.jsx'
 import PassengerInput from '@/components/Ui/PassengerInput.jsx'
@@ -68,22 +68,22 @@ function SearchBox() {
     // window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  const searchQuery = useQuery({
-    queryFn: () => apiSearchFlight(appliedFilters),
-    queryKey: ['search-flight', appliedFilters],
-  })
+  // const searchQuery = useQuery({
+  //   queryFn: () => apiSearchFlight(appliedFilters),
+  //   queryKey: ['search-flight', appliedFilters],
+  // })
 
-  const queryCity = useMemo(() => {
-    return citiesQuery.data?.find((c) => c.id == appliedFilters.origin)
-  }, [appliedFilters.origin, citiesQuery.data])
+  // const queryCity = useMemo(() => {
+  //   return citiesQuery.data?.find((c) => c.id == appliedFilters.origin)
+  // }, [appliedFilters.origin, citiesQuery.data])
 
-  const destinationCity = useMemo(() => {
-    return citiesQuery.data?.find((c) => c.id == appliedFilters.destination)
-  }, [appliedFilters.destination, citiesQuery.data])
+  // const destinationCity = useMemo(() => {
+  //   return citiesQuery.data?.find((c) => c.id == appliedFilters.destination)
+  // }, [appliedFilters.destination, citiesQuery.data])
 
-  const searchData = useMemo(() => {
-    return searchQuery.data?.data?.data || []
-  }, [searchQuery.data])
+  // const searchData = useMemo(() => {
+  //   return searchQuery.data?.data?.data || []
+  // }, [searchQuery.data])
  
   return (
     <>

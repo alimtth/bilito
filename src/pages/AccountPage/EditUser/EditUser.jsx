@@ -2,10 +2,10 @@
 import React, {useState} from 'react'
 import InputTextField from '@/components/Ui/InputTextField'
 import Buttons from '@/components/Ui/Button'
-import {apiUpdateCurrentUser, apiUpdateCurrentUserAvatar} from '@/api/user'
+// import {apiUpdateCurrentUser, apiUpdateCurrentUserAvatar} from '@/api/user'
 import {useAuthContext} from '@/providers/AuthProvider'
 import {useNavigate} from 'react-router-dom'
-import {useMutation} from '@tanstack/react-query'
+// import {useMutation} from '@tanstack/react-query'
 import AvatarField from '@/components/Ui/AvatarField'
 
 function EditUser() {
@@ -13,14 +13,14 @@ function EditUser() {
   const {currentUser, setCurrentUser} = useAuthContext()
   const [errors, setErrors] = useState({})
 
-  const updateUserMutation = useMutation({
-    mutationFn: apiUpdateCurrentUser,
-  })
+  // const updateUserMutation = useMutation({
+  //   mutationFn: apiUpdateCurrentUser,
+  // })
 
-  const updateUserAvatarMutation = useMutation({
-    mutationFn: apiUpdateCurrentUserAvatar,
-  })
-  //meute
+  // const updateUserAvatarMutation = useMutation({
+  //   mutationFn: apiUpdateCurrentUserAvatar,
+  // })
+  // //meute
 
   const [userData, setUserData] = useState({
     name: currentUser.name,
@@ -39,27 +39,27 @@ function EditUser() {
       return
     }
 
-    updateUserMutation.mutate({ ...userData, _method: 'put'}, {
-      onSuccess: (res) => {
-        setCurrentUser(res.data)
-        navigate('/account/data-user')
-      },
-      onError: (err) => {
-        if (err?.response?.status == 422) {
-          setErrors(err.response.data.errors)
-        }
+    // updateUserMutation.mutate({ ...userData, _method: 'put'}, {
+    //   onSuccess: (res) => {
+    //     setCurrentUser(res.data)
+    //     navigate('/account/data-user')
+    //   },
+    //   onError: (err) => {
+    //     if (err?.response?.status == 422) {
+    //       setErrors(err.response.data.errors)
+    //     }
      
-      },
-    })
+    //   },
+    // })
   }
 
-  const handleChangeAvatar = (file) => {
-    updateUserAvatarMutation.mutate(file, {
-      onSuccess: (res) => {
+  // const handleChangeAvatar = (file) => {
+  //   updateUserAvatarMutation.mutate(file, {
+  //     onSuccess: (res) => {
    
-      },
-    })
-  }
+  //     },
+  //   })
+  // }
 
   return (
     <>
@@ -129,14 +129,14 @@ function EditUser() {
           </div>
           <div className="flex flex-col gap-3 justify-start mr-10">
             <AvatarField
-              onChange={handleChangeAvatar}
-              loading={updateUserAvatarMutation.isPending}
+              // onChange={handleChangeAvatar}
+              // loading={updateUserAvatarMutation.isPending}
             />
             <h3>عکس خود را بارگذاری کنید</h3>
           </div>
           <div className="justify-end flex">
             <Buttons
-              loading={updateUserMutation.isPending}
+              // loading={updateUserMutation.isPending}
               variant="fill"
               className={'w-full lg:w-1/4 flex justify-center items-end'}
               onClick={handleSaveChanges}

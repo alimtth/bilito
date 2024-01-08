@@ -4,7 +4,7 @@ import HeaderTabs from '@/components/NavBar/HeaderTabs'
 import {useEffect, useState} from 'react'
 import {Outlet, useSearchParams} from 'react-router-dom'
 import {BilitForm} from '@/components/BilitForm/BilitForm'
-import {useQuery} from '@tanstack/react-query'
+// import {useQuery} from '@tanstack/react-query'
 import {apiGetFlightDetail} from '@/api/search'
 import Swal from 'sweetalert2'
 
@@ -12,12 +12,12 @@ export const BaseLayoutsForm = () => {
   const [time, setTime] = useState(12)
   const [searchParams] = useSearchParams()
 
-  const flight_id = searchParams.get('flight_id')
+  // const flight_id = searchParams.get('flight_id')
 
-  const flightQuery = useQuery({
-    queryKey: ['flight', flight_id],
-    queryFn: () => apiGetFlightDetail(flight_id),
-  })
+  // const flightQuery = useQuery({
+  //   queryKey: ['flight', flight_id],
+  //   queryFn: () => apiGetFlightDetail(flight_id),
+  // })
 
 
   const formatTime = () => {
@@ -58,14 +58,14 @@ export const BaseLayoutsForm = () => {
         <HeaderTabs />
         <hr />
         <div className="my-8 border border-gray-100 rounded-lg">
-          {flightQuery.isLoading   ? <span>Loading...</span> : (
+          {/* {flightQuery.isLoading   ? <span>Loading...</span> : (
           <BilitForm
             image={flightQuery?.data?.data?.data?.airline?.image_url}
             forth={flightQuery?.data?.data?.data.origin?.name}
             destination={flightQuery?.data?.data?.data.destination?.name}
             price={flightQuery?.data?.data?.data?.price}
           />
-          )}
+          )} */}
           
           <div className="p-8 flex items-start justify-between">
             <div className="flex justify-center items-center gap-[8px]">
@@ -79,7 +79,7 @@ export const BaseLayoutsForm = () => {
             <div className="gap-1 flex">
               <div className="gap-3 flex">
                 <p className="text-lg text-blue-500">مجموع پرداختی شما</p>
-                <p className="text-lg text-blue-500">{flightQuery?.data?.data?.data?.price}</p>
+                {/* <p className="text-lg text-blue-500">{flightQuery?.data?.data?.data?.price}</p> */}
               </div>
               <p className="text-lg text-blue-500">تومان</p>
             </div>
