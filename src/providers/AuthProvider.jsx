@@ -7,6 +7,7 @@ const authContext = createContext()
 const useAuthContext = () => {
   return useContext(authContext)
 }
+
 const AuthProvider = ({children}) => {
   const [currentUser, setCurrentUser] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
@@ -21,12 +22,12 @@ const AuthProvider = ({children}) => {
     setAccessToken(token)
   }
 
-  //TODO in fr __________________________________><_________________________________________
-
   const logout = () => {
     setAccessToken(null)
     localStorage.removeItem('accessToken')
   }
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const currentUsers = async () => {
     if (isLoading) return
     setIsLoading(true)
@@ -37,7 +38,7 @@ const AuthProvider = ({children}) => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      currentUsers()
+      currentUsers();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoggedIn])
@@ -51,11 +52,9 @@ const AuthProvider = ({children}) => {
     setCurrentUser,
   }
 
-  return (
-    <authContext.Provider value={values}>
-      {isLoggedIn && !currentUser ? 'loading' : children}
-    </authContext.Provider>
-  )
+  return <authContext.Provider value={values}>
+    {isLoggedIn && !currentUser ? "loading": children}
+  </authContext.Provider>
 }
 
 AuthProvider.propTypes = {
